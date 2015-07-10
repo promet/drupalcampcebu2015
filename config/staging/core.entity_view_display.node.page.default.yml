@@ -1,0 +1,24 @@
+uuid: 5739c357-f5ca-47eb-9c00-ab5e7a328a43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.field_text
+    - node.type.page
+  module:
+    - text
+    - user
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  field_text:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  links:
+    weight: 100
+hidden: {  }

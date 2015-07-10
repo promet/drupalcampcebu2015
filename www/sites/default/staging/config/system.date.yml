@@ -1,0 +1,9 @@
+country:
+  default: PH
+first_day: 0
+timezone:
+  default: Asia/Manila
+  user:
+    configurable: true
+    warn: false
+    default: 0
