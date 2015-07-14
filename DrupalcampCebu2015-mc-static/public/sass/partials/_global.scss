@@ -1,0 +1,231 @@
+.header {
+ margin-top: 5em;
+ }
+.img-responsive {
+  margin-right: auto;
+  margin-left: auto;
+}
+.col-md-8,
+.col-md-3,
+.col-md-2 {
+  padding-left: 0;
+}
+.progress-box-wrapper,
+.more-info-tab-right,
+.gold-sponsor-tab-left,
+.promote-sponsor-tab,
+h3,
+.promote-sponsor-container .col-md-3 {
+  margin-top: 3em;
+}
+.promote-sponsor-tab {
+  margin-left: 1.5em;
+}
+p.progress-top-text,
+h2 {
+  font-size: 3em;
+}
+
+p.progress-bottom-text,
+.footer-container p,
+.bronze-sponsor-logo,
+.sponsor-tab-bottom-text,
+.promote-sponsor-bottom-text {
+ font-size: 1.5em;
+}
+
+.p-header {
+ padding-bottom: 5.5em;
+ .p-header-text-conference,
+ .p-header-text-joindrupal,
+ .p-header-text-codesprint {
+  padding-top: 0.8em;
+ }
+}
+
+h2,
+.more-info-tab-right p,
+.promote-sponsor-container p {
+ color: $color-blue;
+}
+
+h2 {
+ margin: 0;
+}
+
+.more-info-tab-right p {
+ font-size: 1.875em;
+ margin-top: 0.5em;
+}
+
+.gold-sponsor-tab-left,
+.promote-sponsor-tab,
+.progress-box-wrapper,
+.button {
+ background-color: $color-orange;
+}
+.button {
+  border: none;
+  margin-bottom: 3em;
+}
+.silver-sponsor-tab-left,
+.silver-sponsor-logo,
+.footer-container,
+.p-header {
+ background-color: $color-blue;
+}
+.bronze-sponsor-logo,
+.bronze-sponsor-tab-left {
+ background-color: $color-green;
+}
+
+#silver-sponsor-wrapper,
+#bronze-sponsor-wrapper {
+ padding-top: 0;
+}
+.p-header,
+.newsletter,
+.sponsor-logo {
+  padding-left: 2em;
+}
+.p-header-text-uni,
+.promote-sponsor-top-text,
+.sponsor-tab-top-text {
+  font-size: 2.500em;
+}
+h3 {
+  font-size: 2.250em;
+}
+
+#mc_embed_signup_scroll,
+h3 {
+  margin-top: 1.5em;
+}
+
+.email,
+h3,
+.email-address,
+.firstname {
+  color: $color-orange
+}
+.required {
+  border: 1px solid $color-orange;
+  width: 100%;
+}
+.email-address,
+.firstname {
+  font-size: 1.3em;
+}
+.button {
+  padding: 0.5em;
+  width: 64%;
+  margin-top: 1em;
+}
+h2,
+.uppercase,
+.p-email,
+.p-firstname,
+.sponsor-tab-top-text,
+.sponsor-tab-bottom-text,
+.silver-sponsor-logo,
+.bronze-sponsor-logo,
+.promote-sponsor-container p,
+.promote-sponsor-tab,
+.email-address,
+.firstname,
+.button {
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+.more-info-tab-right p,
+.footer-container p {
+  font-family: 'Montserrat', sans-serif;
+}
+.more-info-tab-right,
+#mc_embed_signup,
+.sponsors-tab-right {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.sponsors-tab-right {
+  padding-top: 1.5em;
+}
+
+.uppercase {
+  font-size: 1.688em;
+}
+.uppercase,
+.silver-sponsor-logo,
+.bronze-sponsor-logo,
+.gold-sponsor-tab-left,
+.silver-sponsor-tab-left,
+.bronze-sponsor-tab-left,
+.footer-container p,
+.footer-container a,
+.promote-sponsor-tab,
+.button {
+  color: $color-white-text;
+}
+.silver-sponsor-logo,
+.bronze-sponsor-logo,
+.footer-container p,
+.promote-sponsor-tab {
+  text-align: center;
+}
+.silver-sponsor-logo,
+.bronze-sponsor-logo {
+  padding: 1em;
+}
+.silver-sponsor-logo {
+  font-size: 2.223em;
+  height: 5em;
+  display: table-cell;
+  vertical-align: middle;
+  width: 11em;
+}
+.silver-sponsor-logo,
+.p-header,
+.sponsor-tab-top-text {
+  margin-bottom: 0;
+}
+.bronze-sponsor-logo {
+  height: 6.9em;
+  display: table-cell;
+  vertical-align: middle;
+  width: 10em;
+}
+.promote-sponsor-container .col-md-4,
+.promote-sponsor-container .col-md-3 {
+  margin-bottom: 5em;
+}
+
+#silver-sponsor-wrapper,
+#bronze-sponsor-wrapper,
+.promote-sponsor-container .col-md-4,
+.footer-container {
+  clear: both;
+}
+
+.gold-sponsor-tab-left,
+.silver-sponsor-tab-left,
+.bronze-sponsor-tab-left,
+.progress-box-wrapper,
+.promote-sponsor-tab-left,
+.p-header,
+.newsletter,
+.sponsor-logo {
+  padding: 3.5em;
+}
+.footer-top-text {
+  padding: 2em;
+  padding-top: 5em;
+}
+.footer-bottom-text {
+  padding-bottom: 7em;
+}
+.promote-sponsor-tab {
+  font-size: 1.375em;
+  padding: 1.5em;
+}
+
+
