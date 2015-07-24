@@ -2,11 +2,13 @@ module:
   block: 0
   breakpoint: 0
   config: 0
+  datetime: 0
   dblog: 0
   entity_reference: 0
   field: 0
   field_ui: 0
   filter: 0
+  link: 0
   node: 0
   page_cache: 0
   system: 0
