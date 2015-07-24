@@ -14,10 +14,10 @@
     color: $color-white-text;
     text-transform: uppercase;
     font-family: $font-title;
- }
- a:hover {
-  text-decoration: none;
- }
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 // General styling for sponsor-tabs (left).
@@ -72,8 +72,8 @@
 
 // Style specific for silver.
 .silver-sponsor-tab {
- background-color: $color-blue;
- margin-top: 1em;
+  background-color: $color-blue;
+  margin-top: 1em;
 }
 
 .silver-sponsor-logo {
