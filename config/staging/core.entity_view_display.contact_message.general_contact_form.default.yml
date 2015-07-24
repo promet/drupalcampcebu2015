@@ -1,0 +1,27 @@
+uuid: 4d0a8a25-f46f-414c-824c-7649423175ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.general_contact_form
+    - field.field.contact_message.general_contact_form.field_contact_category
+  module:
+    - options
+id: contact_message.general_contact_form.default
+targetEntityType: contact_message
+bundle: general_contact_form
+mode: default
+content:
+  field_contact_category:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  message:
+    type: basic_string
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
