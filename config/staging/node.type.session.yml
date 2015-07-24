@@ -1,0 +1,11 @@
+uuid: 52fcf3cb-b455-4272-b900-f0e5c5a6c65e
+langcode: en
+status: true
+dependencies: {  }
+name: Session
+type: session
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,17 @@
+uuid: 9ff0118e-bcfc-4335-b100-a72ae742a8bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_session_approved
+field_name: field_session_approved
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
