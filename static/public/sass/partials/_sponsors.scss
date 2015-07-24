@@ -52,7 +52,7 @@
   }
 }
 
-// Style specific for Gold
+// Style specific for Gold.
 .gold-sponsor-tab {
   background-color: $color-orange;
   margin-top: 2.5em;
@@ -99,10 +99,11 @@
   }
   .col-md-3 {
     padding: 0.7em;
+    margin-top: 0.9em;
   }
 }
 
-//Style specific for Bronze.
+// Style specific for Bronze.
 .bronze-sponsor-tab {
   background-color: $color-green;
   margin-top: 1.5em;
@@ -111,7 +112,6 @@
 .bronze-sponsor-logo {
   padding-left: 16px;
   padding-right: 16px;
-  // Styles the first three children.
   div:nth-child(1),
   div:nth-child(2),
   div:nth-child(3) {
@@ -136,7 +136,7 @@
   }
 }
 
-//Style specific for promote sponsor.
+// Style specific for promote sponsor.
 .promote-sponsor-tab {
   padding-bottom: 0.6em;
   padding-top: 1.5em;
@@ -152,6 +152,7 @@
     margin-bottom: 0;
   }
 }
+
 .promote-sponsor-button {
   background-color: $color-orange;
   text-align: center;
@@ -161,6 +162,7 @@
   font-size: 1.5em;
   padding: 1em;
 }
+
 a:hover {
   text-decoration: none;
 }

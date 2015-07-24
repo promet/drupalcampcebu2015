@@ -1,8 +1,9 @@
-//Tablet
+// Tablet.
 @media only screen and (min-width: 420px) {
   .img-responsive {
     margin-bottom: 2.5em;
   }
+
   .header-info-top {
     p,
     h2,
@@ -20,6 +21,7 @@
     padding-top: 3.5em;
     padding-bottom: 5.5em;
   }
+
   .header-info-bottom {
     h1 {
       font-size: 2.2em;
@@ -28,6 +30,7 @@
       font-size: 2em;
     }
   }
+
   .newsletter {
     h4 {
       font-size: 2.2em;
@@ -37,124 +40,145 @@
     font-size: 1.5em;
   }
 }
-.newsletter {
-  padding: 1em;
-}
-.newsletter form #mc_embed_signup_scroll .mc-field-group {
-  margin-top: 1.5em;
-}
-.newsletter form #mc_embed_signup_scroll .mc-field-group.col-md-8 .col-md-8 {
-  padding: 0;
-}
-.newsletter .button {
-  font-size: 1.5em;
-}
-.menu-box {
-  p:nth-child(1) {
-    font-size: 2.5em;
-  }
-  p:nth-child(2) {
-    font-size: 1.2em;
-  }
-}
-.gold-sponsor-tab,
-.silver-sponsor-tab,
-.bronze-sponsor-tab {
-  padding: 1.6em;
-  padding-top: 3em;
-  padding-bottom: 2em;
-  p:nth-child(1) {
-    font-size: 1.8em;
-  }
-}
-.gold-sponsor-tab {
-  margin-top: 5em;
-}
-.gold-sponsor-logo .col-md-7 {
-  margin-left: 0;
-  margin-top: 5.2em;
-  div:nth-child(1) {
-    font-size: 1.7em;
-  }
-}
-.silver-sponsor-logo .col-md-3 {
-  width: 37%;
-}
-.silver-sponsor-logo div:nth-child(1) div, .silver-sponsor-logo div:nth-child(2) div {
-  margin-left: 0;
-  height: 5em;
-  padding-left: 2.5em;
-  padding-right: 2.5em;
-}
-.silver-sponsor-tab {
-  margin-top: 0;
-}
-.silver-sponsor-logo div:nth-child(2) {
-  display: initial;
-}
-.bronze-sponsor-logo .col-md-2 {
-  margin-top: 1.5em;
-  width: 30%;
-}
 
+  .newsletter {
+    padding: 1em;
+  }
 
-.bronze-sponsor-logo div:nth-child(1) div,
-.bronze-sponsor-logo div:nth-child(2) div,
-.bronze-sponsor-logo div:nth-child(3) div {
-  margin-left: 0;
-  display: table-cell;
-  padding: 0.6em;
-  font-size: 1.3em;
-}
+  .newsletter form #mc_embed_signup_scroll .mc-field-group {
+    margin-top: 1.5em;
+  }
 
-.bronze-sponsor-logo div:nth-child(2), .bronze-sponsor-logo div:nth-child(3) {
-  display: initial;
-}
-.bronze-sponsor-tab {
-  margin-top: 0;
-}
-.promote-sponsor-tab {
-  padding-top: 2.5em;
-  p:nth-child(1) {
+  .newsletter form #mc_embed_signup_scroll .mc-field-group.col-md-8 .col-md-8 {
+    padding: 0;
+  }
+
+  .newsletter .button {
+    font-size: 1.5em;
+  }
+
+  .menu-box {
+    p:nth-child(1) {
+      font-size: 2.5em;
+    }
+    p:nth-child(2) {
+      font-size: 1.2em;
+    }
+  }
+
+  .gold-sponsor-tab,
+  .silver-sponsor-tab,
+  .bronze-sponsor-tab {
+    padding: 1.6em;
+    padding-top: 3em;
+    padding-bottom: 2em;
+    p:nth-child(1) {
+      font-size: 1.8em;
+    }
+  }
+
+  .gold-sponsor-tab {
+    margin-top: 5em;
+  }
+
+  .gold-sponsor-logo .col-md-7 {
+    margin-left: 0;
+    margin-top: 5.2em;
+    div:nth-child(1) {
+      font-size: 1.7em;
+    }
+  }
+
+  .silver-sponsor-logo .col-md-3 {
+    width: 37%;
+  }
+
+  .silver-sponsor-logo div:nth-child(1) div, .silver-sponsor-logo div:nth-child(2) div {
+    margin-left: 0;
+    height: 5em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  }
+
+  .silver-sponsor-tab {
+    margin-top: 0;
+  }
+
+  .silver-sponsor-logo div:nth-child(2) {
+    display: initial;
+  }
+
+  .bronze-sponsor-logo .col-md-2 {
+    margin-top: 1.5em;
+    width: 30%;
+  }
+
+  .bronze-sponsor-logo div:nth-child(1) div,
+  .bronze-sponsor-logo div:nth-child(2) div,
+  .bronze-sponsor-logo div:nth-child(3) div {
+    margin-left: 0;
+    display: table-cell;
+    padding: 0.6em;
+    font-size: 1.3em;
+  }
+
+  .bronze-sponsor-logo div:nth-child(2), .bronze-sponsor-logo div:nth-child(3) {
+    display: initial;
+  }
+
+  .bronze-sponsor-tab {
+    margin-top: 0;
+  }
+
+  .promote-sponsor-tab {
+    padding-top: 2.5em;
+    p:nth-child(1) {
+      font-size: 2em;
+    }
+  }
+
+  .promote-sponsor-button {
+    margin-top: 1em;
+    margin-left: 0.5em;
+  }
+
+  .footer-container p {
     font-size: 2em;
   }
 }
-.promote-sponsor-button {
-  margin-top: 1em;
-  margin-left: 0.5em;
-}
-.footer-container p {
-  font-size: 2em;
-}
-}
 
-//desktops
+// Desktops.
 @media only screen and (min-width: 1250px) {
-.header-info-top {
-  h3,
-  p {
-    font-size: 1.2em;
+  .header-info-top {
+    h3,
+    p {
+      font-size: 1.2em;
+    }
+    h2 {
+      font-size: 2.2em;
+    }
   }
-  h2 {
-    font-size: 2.2em;
-  }
-}
-.header-info-bottom p {
-  font-size: 1.8em;
-}
 
-.gold-sponsor-tab {
-  margin-top: 3em;
-}
-.gold-sponsor-logo .col-md-7 img {
-  margin-top: 3em;
-}
-.promote-sponsor-button a {
-  a:hover {
-    text-decoration: none;
+  .header-info-bottom p {
+    font-size: 1.8em;
   }
-}
-.footer-container {
-  padding-top: 3em;
-  padding-bottom: 5em;
+
+  .gold-sponsor-tab {
+    margin-top: 3em;
+  }
+
+  .gold-sponsor-logo .col-md-7 img {
+    margin-top: 3em;
+  }
+
+  .promote-sponsor-button a {
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .footer-container {
+    padding-top: 3em;
+    padding-bottom: 5em;
+  }
 }

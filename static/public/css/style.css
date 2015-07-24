@@ -2,302 +2,579 @@
  * style.scss
  ******************************************************************************/
 /* Colors */
-/* line 1, ../sass/partials/_global.scss */
+/* line 1, ../sass/partials/_header.scss */
 .header {
-  margin-top: 5em;
+  margin-top: 2.5em;
 }
 
-/* line 4, ../sass/partials/_global.scss */
+/* line 5, ../sass/partials/_header.scss */
 .img-responsive {
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  height: 30em;
 }
 
-/* line 10, ../sass/partials/_global.scss */
-.col-md-8,
-.col-md-3,
-.col-md-2 {
-  padding-left: 0;
+/* line 12, ../sass/partials/_header.scss */
+.menu-box {
+  background-color: #fcb040;
+  padding: 1em;
+  text-align: center;
+  margin-bottom: 1.2em;
+}
+/* line 17, ../sass/partials/_header.scss */
+.menu-box p {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: white;
+}
+/* line 22, ../sass/partials/_header.scss */
+.menu-box p:nth-child(1) {
+  font-size: 2.3em;
+}
+/* line 25, ../sass/partials/_header.scss */
+.menu-box p:nth-child(2) {
+  font-size: 1.1em;
+  line-height: 0;
 }
 
-/* line 18, ../sass/partials/_global.scss */
-.progress-box-wrapper,
-.more-info-tab-right,
-.gold-sponsor-tab-left,
-.promote-sponsor-tab,
-h3,
-.promote-sponsor-container .col-md-3 {
-  margin-top: 3em;
+/* line 31, ../sass/partials/_header.scss */
+.header-info-top {
+  background-color: #1664a6;
+  padding: 1.5em;
+  text-align: center;
+}
+/* line 37, ../sass/partials/_header.scss */
+.header-info-top p,
+.header-info-top h2,
+.header-info-top h3 {
+  color: white;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2em;
+}
+/* line 43, ../sass/partials/_header.scss */
+.header-info-top h2 {
+  font-size: 1.9em;
 }
 
-/* line 21, ../sass/partials/_global.scss */
-.promote-sponsor-tab {
-  margin-left: 1.5em;
+/* line 48, ../sass/partials/_header.scss */
+.header-info-bottom {
+  padding: 0.9em;
 }
-
-/* line 25, ../sass/partials/_global.scss */
-p.progress-top-text,
-h2 {
-  font-size: 3em;
-}
-
-/* line 33, ../sass/partials/_global.scss */
-p.progress-bottom-text,
-.footer-container p,
-.bronze-sponsor-logo,
-.sponsor-tab-bottom-text,
-.promote-sponsor-bottom-text {
-  font-size: 1.5em;
-}
-
-/* line 37, ../sass/partials/_global.scss */
-.p-header {
-  padding-bottom: 5.5em;
-}
-/* line 41, ../sass/partials/_global.scss */
-.p-header .p-header-text-conference,
-.p-header .p-header-text-joindrupal,
-.p-header .p-header-text-codesprint {
-  padding-top: 0.8em;
-}
-
-/* line 48, ../sass/partials/_global.scss */
-h2,
-.more-info-tab-right p,
-.promote-sponsor-container p {
+/* line 50, ../sass/partials/_header.scss */
+.header-info-bottom h1 {
+  font-weight: bold;
+  font-size: 1.8em;
   color: #1664a6;
 }
-
-/* line 52, ../sass/partials/_global.scss */
-h2 {
-  margin: 0;
-}
-
-/* line 56, ../sass/partials/_global.scss */
-.more-info-tab-right p {
-  font-size: 1.875em;
-  margin-top: 0.5em;
-}
-
-/* line 64, ../sass/partials/_global.scss */
-.gold-sponsor-tab-left,
-.promote-sponsor-tab,
-.progress-box-wrapper,
-.button {
-  background-color: #fcb040;
-}
-
-/* line 67, ../sass/partials/_global.scss */
-.button {
-  border: none;
-  margin-bottom: 3em;
-}
-
-/* line 74, ../sass/partials/_global.scss */
-.silver-sponsor-tab-left,
-.silver-sponsor-logo,
-.footer-container,
-.p-header {
-  background-color: #1664a6;
-}
-
-/* line 78, ../sass/partials/_global.scss */
-.bronze-sponsor-logo,
-.bronze-sponsor-tab-left {
-  background-color: #89caae;
-}
-
-/* line 83, ../sass/partials/_global.scss */
-#silver-sponsor-wrapper,
-#bronze-sponsor-wrapper {
-  padding-top: 0;
-}
-
-/* line 88, ../sass/partials/_global.scss */
-.p-header,
-.newsletter,
-.sponsor-logo {
-  padding-left: 2em;
-}
-
-/* line 93, ../sass/partials/_global.scss */
-.p-header-text-uni,
-.promote-sponsor-top-text,
-.sponsor-tab-top-text {
-  font-size: 2.500em;
-}
-
-/* line 96, ../sass/partials/_global.scss */
-h3 {
-  font-size: 2.250em;
-}
-
-/* line 101, ../sass/partials/_global.scss */
-#mc_embed_signup_scroll,
-h3 {
-  margin-top: 1.5em;
-}
-
-/* line 108, ../sass/partials/_global.scss */
-.email,
-h3,
-.email-address,
-.firstname {
-  color: #fcb040;
-}
-
-/* line 111, ../sass/partials/_global.scss */
-.required {
-  border: 1px solid #fcb040;
-  width: 100%;
-}
-
-/* line 116, ../sass/partials/_global.scss */
-.email-address,
-.firstname {
+/* line 55, ../sass/partials/_header.scss */
+.header-info-bottom p {
+  color: #1664a6;
   font-size: 1.3em;
 }
 
-/* line 119, ../sass/partials/_global.scss */
-.button {
-  padding: 0.5em;
-  width: 64%;
-  margin-top: 1em;
+/* line 1, ../sass/partials/_newsletter.scss */
+.newsletter {
+  padding: 0.9em;
 }
-
-/* line 136, ../sass/partials/_global.scss */
-h2,
-.uppercase,
-.p-email,
-.p-firstname,
-.sponsor-tab-top-text,
-.sponsor-tab-bottom-text,
-.silver-sponsor-logo,
-.bronze-sponsor-logo,
-.promote-sponsor-container p,
-.promote-sponsor-tab,
-.email-address,
-.firstname,
-.button {
+/* line 3, ../sass/partials/_newsletter.scss */
+.newsletter h4 {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #fcb040;
+  margin: 0;
+}
+/* line 11, ../sass/partials/_newsletter.scss */
+.newsletter form #mc_embed_signup_scroll .mc-field-group {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0.9em;
+}
+/* line 15, ../sass/partials/_newsletter.scss */
+.newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-4 {
+  padding: 0;
+}
+/* line 19, ../sass/partials/_newsletter.scss */
+.newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-3,
+.newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 22, ../sass/partials/_newsletter.scss */
+.newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-3 label,
+.newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 label {
+  font-weight: normal;
+}
+/* line 30, ../sass/partials/_newsletter.scss */
+.newsletter .email-address,
+.newsletter .firstname {
+  color: #fcb040;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-family: 'Montserrat', sans-serif;
+}
+/* line 37, ../sass/partials/_newsletter.scss */
+.newsletter .required {
+  border: 1px solid #fcb040;
+  width: 100%;
+  font-size: 1.3em;
+}
+/* line 42, ../sass/partials/_newsletter.scss */
+.newsletter .button {
+  padding: 0.3em;
+  width: 100%;
+  margin-top: 0.5em;
+  color: white;
+  background-color: #fcb040;
+  border: none;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.3em;
 }
 
-/* line 141, ../sass/partials/_global.scss */
-.more-info-tab-right p,
-.footer-container p {
-  font-family: 'Montserrat', sans-serif;
+/* line 1, ../sass/partials/_global.scss */
+h1, h2, h3, h4 {
+  font: "Montserrat", sans-serif;
+  text-transform: uppercase;
 }
 
-/* line 146, ../sass/partials/_global.scss */
-.more-info-tab-right,
-#mc_embed_signup,
-.sponsors-tab-right {
-  padding-left: 2em;
-  padding-right: 2em;
+/* line 6, ../sass/partials/_global.scss */
+p {
+  font: "Open Sans", sans-serif;
 }
 
-/* line 150, ../sass/partials/_global.scss */
-.sponsors-tab-right {
-  padding-top: 1.5em;
-}
-
-/* line 154, ../sass/partials/_global.scss */
-.uppercase {
-  font-size: 1.688em;
-}
-
-/* line 166, ../sass/partials/_global.scss */
-.uppercase,
-.silver-sponsor-logo,
-.bronze-sponsor-logo,
-.gold-sponsor-tab-left,
-.silver-sponsor-tab-left,
-.bronze-sponsor-tab-left,
-.footer-container p,
-.footer-container a,
-.promote-sponsor-tab,
-.button {
-  color: white;
-}
-
-/* line 172, ../sass/partials/_global.scss */
-.silver-sponsor-logo,
-.bronze-sponsor-logo,
-.footer-container p,
-.promote-sponsor-tab {
-  text-align: center;
-}
-
-/* line 176, ../sass/partials/_global.scss */
-.silver-sponsor-logo,
-.bronze-sponsor-logo {
-  padding: 1em;
-}
-
-/* line 179, ../sass/partials/_global.scss */
-.silver-sponsor-logo {
-  font-size: 2.223em;
-  height: 5em;
-  display: table-cell;
-  vertical-align: middle;
-  width: 11em;
-}
-
-/* line 188, ../sass/partials/_global.scss */
-.silver-sponsor-logo,
-.p-header,
-.sponsor-tab-top-text {
-  margin-bottom: 0;
-}
-
-/* line 191, ../sass/partials/_global.scss */
-.bronze-sponsor-logo {
-  height: 6.9em;
-  display: table-cell;
-  vertical-align: middle;
-  width: 10em;
-}
-
-/* line 198, ../sass/partials/_global.scss */
-.promote-sponsor-container .col-md-4,
-.promote-sponsor-container .col-md-3 {
-  margin-bottom: 5em;
-}
-
-/* line 205, ../sass/partials/_global.scss */
-#silver-sponsor-wrapper,
-#bronze-sponsor-wrapper,
-.promote-sponsor-container .col-md-4,
-.footer-container {
+/* line 1, ../sass/partials/_sponsors.scss */
+.col-md-4 {
   clear: both;
 }
 
-/* line 216, ../sass/partials/_global.scss */
-.gold-sponsor-tab-left,
-.silver-sponsor-tab-left,
-.bronze-sponsor-tab-left,
-.progress-box-wrapper,
-.promote-sponsor-tab-left,
-.p-header,
-.newsletter,
-.sponsor-logo {
-  padding: 3.5em;
+/* line 13, ../sass/partials/_sponsors.scss */
+.silver-sponsor-logo div,
+.silver-sponsor-logo p,
+.bronze-sponsor-logo div,
+.bronze-sponsor-logo p,
+.gold-sponsor-logo div,
+.gold-sponsor-logo p,
+.gold-sponsor-tab div,
+.gold-sponsor-tab p,
+.silver-sponsor-tab div,
+.silver-sponsor-tab p,
+.bronze-sponsor-tab div,
+.bronze-sponsor-tab p {
+  color: white;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+}
+/* line 18, ../sass/partials/_sponsors.scss */
+.silver-sponsor-logo a:hover,
+.bronze-sponsor-logo a:hover,
+.gold-sponsor-logo a:hover,
+.gold-sponsor-tab a:hover,
+.silver-sponsor-tab a:hover,
+.bronze-sponsor-tab a:hover {
+  text-decoration: none;
 }
 
-/* line 219, ../sass/partials/_global.scss */
-.footer-top-text {
-  padding: 2em;
-  padding-top: 5em;
+/* line 26, ../sass/partials/_sponsors.scss */
+.gold-sponsor-tab,
+.silver-sponsor-tab,
+.bronze-sponsor-tab {
+  padding: 1.2em;
+  text-align: center;
+}
+/* line 29, ../sass/partials/_sponsors.scss */
+.gold-sponsor-tab p:nth-child(1),
+.silver-sponsor-tab p:nth-child(1),
+.bronze-sponsor-tab p:nth-child(1) {
+  margin-bottom: 0;
+  font-size: 1.6em;
+}
+/* line 33, ../sass/partials/_sponsors.scss */
+.gold-sponsor-tab p:nth-child(2),
+.silver-sponsor-tab p:nth-child(2),
+.bronze-sponsor-tab p:nth-child(2) {
+  font-size: 1.2em;
 }
 
-/* line 223, ../sass/partials/_global.scss */
-.footer-bottom-text {
-  padding-bottom: 7em;
+/* line 45, ../sass/partials/_sponsors.scss */
+.gold-sponsor-logo div:nth-child(1) div,
+.gold-sponsor-logo div:nth-child(2) div,
+.gold-sponsor-logo div:nth-child(3) div,
+.bronze-sponsor-logo div:nth-child(1) div,
+.bronze-sponsor-logo div:nth-child(2) div,
+.bronze-sponsor-logo div:nth-child(3) div,
+.silver-sponsor-logo div:nth-child(1) div,
+.silver-sponsor-logo div:nth-child(2) div,
+.silver-sponsor-logo div:nth-child(3) div {
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 1em;
+  text-align: center;
 }
 
-/* line 226, ../sass/partials/_global.scss */
+/* line 56, ../sass/partials/_sponsors.scss */
+.gold-sponsor-tab {
+  background-color: #fcb040;
+  margin-top: 2.5em;
+}
+
+/* line 61, ../sass/partials/_sponsors.scss */
+.gold-sponsor-logo .col-md-7 {
+  padding: 0.6em;
+}
+/* line 63, ../sass/partials/_sponsors.scss */
+.gold-sponsor-logo .col-md-7 div:nth-child(1) {
+  background-color: #fcb040;
+  font-size: 1.4em;
+  padding-left: 3em;
+  padding-right: 3em;
+  width: 1%;
+  height: 5em;
+}
+
+/* line 74, ../sass/partials/_sponsors.scss */
+.silver-sponsor-tab {
+  background-color: #1664a6;
+  margin-top: 1em;
+}
+
+/* line 79, ../sass/partials/_sponsors.scss */
+.silver-sponsor-logo {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+/* line 84, ../sass/partials/_sponsors.scss */
+.silver-sponsor-logo div:nth-child(1) div,
+.silver-sponsor-logo div:nth-child(2) div {
+  font-size: 1.4em;
+  height: 5em;
+  background-color: #1664a6;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  display: table-cell;
+  width: 1%;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+/* line 97, ../sass/partials/_sponsors.scss */
+.silver-sponsor-logo div:nth-child(2) {
+  display: none;
+}
+/* line 100, ../sass/partials/_sponsors.scss */
+.silver-sponsor-logo .col-md-3 {
+  padding: 0.7em;
+  margin-top: 0.9em;
+}
+
+/* line 107, ../sass/partials/_sponsors.scss */
+.bronze-sponsor-tab {
+  background-color: #89caae;
+  margin-top: 1.5em;
+}
+
+/* line 112, ../sass/partials/_sponsors.scss */
+.bronze-sponsor-logo {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+/* line 118, ../sass/partials/_sponsors.scss */
+.bronze-sponsor-logo div:nth-child(1) div,
+.bronze-sponsor-logo div:nth-child(2) div,
+.bronze-sponsor-logo div:nth-child(3) div {
+  background-color: #89caae;
+  font-size: 1.5em;
+  height: 4.5em;
+  width: 1%;
+  display: table-cell;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+/* line 131, ../sass/partials/_sponsors.scss */
+.bronze-sponsor-logo div:nth-child(2),
+.bronze-sponsor-logo div:nth-child(3) {
+  display: none;
+}
+/* line 134, ../sass/partials/_sponsors.scss */
+.bronze-sponsor-logo .col-md-2 {
+  padding: 0.7em;
+}
+
+/* line 140, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab {
-  font-size: 1.375em;
-  padding: 1.5em;
+  padding-bottom: 0.6em;
+  padding-top: 1.5em;
+}
+/* line 143, ../sass/partials/_sponsors.scss */
+.promote-sponsor-tab p:nth-child(1) {
+  font-size: 1.6em;
+}
+/* line 146, ../sass/partials/_sponsors.scss */
+.promote-sponsor-tab p:nth-child(2) {
+  font-size: 1.5em;
+}
+/* line 150, ../sass/partials/_sponsors.scss */
+.promote-sponsor-tab p:nth-child(1),
+.promote-sponsor-tab p:nth-child(2) {
+  color: #1664a6;
+  margin-bottom: 0;
+}
+
+/* line 156, ../sass/partials/_sponsors.scss */
+.promote-sponsor-button {
+  background-color: #fcb040;
+  text-align: center;
+  margin-bottom: 2em;
+  width: 100%;
+  color: white;
+  font-size: 1.5em;
+  padding: 1em;
+}
+
+/* line 166, ../sass/partials/_sponsors.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 1, ../sass/partials/_footer.scss */
+.footer-container {
+  clear: both;
+  background: #1664a6;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+}
+/* line 9, ../sass/partials/_footer.scss */
+.footer-container div:nth-child(1),
+.footer-container div:nth-child(2) {
+  text-align: center;
+  font-size: 0.8em;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  padding-bottom: 0.5em;
+}
+/* line 15, ../sass/partials/_footer.scss */
+.footer-container div:nth-child(1) p a,
+.footer-container div:nth-child(2) p a {
+  color: white;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 420px) {
+  /* line 3, ../sass/partials/_media-queries.scss */
+  .img-responsive {
+    margin-bottom: 2.5em;
+  }
+
+  /* line 7, ../sass/partials/_media-queries.scss */
+  .header-info-top {
+    padding: 2.2em;
+    padding-top: 3.5em;
+    padding-bottom: 5.5em;
+  }
+  /* line 10, ../sass/partials/_media-queries.scss */
+  .header-info-top p,
+  .header-info-top h2,
+  .header-info-top h3 {
+    text-align: left;
+  }
+  /* line 14, ../sass/partials/_media-queries.scss */
+  .header-info-top h3,
+  .header-info-top p {
+    font-size: 1.5em;
+  }
+  /* line 17, ../sass/partials/_media-queries.scss */
+  .header-info-top h2 {
+    font-size: 2.1em;
+  }
+
+  /* line 26, ../sass/partials/_media-queries.scss */
+  .header-info-bottom h1 {
+    font-size: 2.2em;
+  }
+  /* line 29, ../sass/partials/_media-queries.scss */
+  .header-info-bottom p {
+    font-size: 2em;
+  }
+
+  /* line 35, ../sass/partials/_media-queries.scss */
+  .newsletter h4 {
+    font-size: 2.2em;
+  }
+  /* line 39, ../sass/partials/_media-queries.scss */
+  .newsletter .email-address,
+  .newsletter .firstname {
+    font-size: 1.5em;
+  }
+
+  /* line 44, ../sass/partials/_media-queries.scss */
+  .newsletter {
+    padding: 1em;
+  }
+
+  /* line 48, ../sass/partials/_media-queries.scss */
+  .newsletter form #mc_embed_signup_scroll .mc-field-group {
+    margin-top: 1.5em;
+  }
+
+  /* line 52, ../sass/partials/_media-queries.scss */
+  .newsletter form #mc_embed_signup_scroll .mc-field-group.col-md-8 .col-md-8 {
+    padding: 0;
+  }
+
+  /* line 56, ../sass/partials/_media-queries.scss */
+  .newsletter .button {
+    font-size: 1.5em;
+  }
+
+  /* line 61, ../sass/partials/_media-queries.scss */
+  .menu-box p:nth-child(1) {
+    font-size: 2.5em;
+  }
+  /* line 64, ../sass/partials/_media-queries.scss */
+  .menu-box p:nth-child(2) {
+    font-size: 1.2em;
+  }
+
+  /* line 71, ../sass/partials/_media-queries.scss */
+  .gold-sponsor-tab,
+  .silver-sponsor-tab,
+  .bronze-sponsor-tab {
+    padding: 1.6em;
+    padding-top: 3em;
+    padding-bottom: 2em;
+  }
+  /* line 75, ../sass/partials/_media-queries.scss */
+  .gold-sponsor-tab p:nth-child(1),
+  .silver-sponsor-tab p:nth-child(1),
+  .bronze-sponsor-tab p:nth-child(1) {
+    font-size: 1.8em;
+  }
+
+  /* line 80, ../sass/partials/_media-queries.scss */
+  .gold-sponsor-tab {
+    margin-top: 5em;
+  }
+
+  /* line 84, ../sass/partials/_media-queries.scss */
+  .gold-sponsor-logo .col-md-7 {
+    margin-left: 0;
+    margin-top: 5.2em;
+  }
+  /* line 87, ../sass/partials/_media-queries.scss */
+  .gold-sponsor-logo .col-md-7 div:nth-child(1) {
+    font-size: 1.7em;
+  }
+
+  /* line 92, ../sass/partials/_media-queries.scss */
+  .silver-sponsor-logo .col-md-3 {
+    width: 37%;
+  }
+
+  /* line 96, ../sass/partials/_media-queries.scss */
+  .silver-sponsor-logo div:nth-child(1) div, .silver-sponsor-logo div:nth-child(2) div {
+    margin-left: 0;
+    height: 5em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  }
+
+  /* line 103, ../sass/partials/_media-queries.scss */
+  .silver-sponsor-tab {
+    margin-top: 0;
+  }
+
+  /* line 107, ../sass/partials/_media-queries.scss */
+  .silver-sponsor-logo div:nth-child(2) {
+    display: initial;
+  }
+
+  /* line 111, ../sass/partials/_media-queries.scss */
+  .bronze-sponsor-logo .col-md-2 {
+    margin-top: 1.5em;
+    width: 30%;
+  }
+
+  /* line 118, ../sass/partials/_media-queries.scss */
+  .bronze-sponsor-logo div:nth-child(1) div,
+  .bronze-sponsor-logo div:nth-child(2) div,
+  .bronze-sponsor-logo div:nth-child(3) div {
+    margin-left: 0;
+    display: table-cell;
+    padding: 0.6em;
+    font-size: 1.3em;
+  }
+
+  /* line 125, ../sass/partials/_media-queries.scss */
+  .bronze-sponsor-logo div:nth-child(2), .bronze-sponsor-logo div:nth-child(3) {
+    display: initial;
+  }
+
+  /* line 129, ../sass/partials/_media-queries.scss */
+  .bronze-sponsor-tab {
+    margin-top: 0;
+  }
+
+  /* line 133, ../sass/partials/_media-queries.scss */
+  .promote-sponsor-tab {
+    padding-top: 2.5em;
+  }
+  /* line 135, ../sass/partials/_media-queries.scss */
+  .promote-sponsor-tab p:nth-child(1) {
+    font-size: 2em;
+  }
+
+  /* line 140, ../sass/partials/_media-queries.scss */
+  .promote-sponsor-button {
+    margin-top: 1em;
+    margin-left: 0.5em;
+  }
+
+  /* line 145, ../sass/partials/_media-queries.scss */
+  .footer-container p {
+    font-size: 2em;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  /* line 154, ../sass/partials/_media-queries.scss */
+  .header-info-top h3,
+  .header-info-top p {
+    font-size: 1.2em;
+  }
+  /* line 157, ../sass/partials/_media-queries.scss */
+  .header-info-top h2 {
+    font-size: 2.2em;
+  }
+
+  /* line 162, ../sass/partials/_media-queries.scss */
+  .header-info-bottom p {
+    font-size: 1.8em;
+  }
+
+  /* line 166, ../sass/partials/_media-queries.scss */
+  .gold-sponsor-tab {
+    margin-top: 3em;
+  }
+
+  /* line 170, ../sass/partials/_media-queries.scss */
+  .gold-sponsor-logo .col-md-7 img {
+    margin-top: 3em;
+  }
+
+  /* line 175, ../sass/partials/_media-queries.scss */
+  .promote-sponsor-button a a:hover {
+    text-decoration: none;
+  }
+
+  /* line 180, ../sass/partials/_media-queries.scss */
+  .footer-container {
+    padding-top: 3em;
+    padding-bottom: 5em;
+  }
 }
