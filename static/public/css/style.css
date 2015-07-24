@@ -85,28 +85,28 @@
   color: #fcb040;
   margin: 0;
 }
-/* line 11, ../sass/partials/_newsletter.scss */
+/* line 12, ../sass/partials/_newsletter.scss */
 .newsletter form #mc_embed_signup_scroll .mc-field-group {
   padding-left: 0;
   padding-right: 0;
   margin-top: 0.9em;
 }
-/* line 15, ../sass/partials/_newsletter.scss */
+/* line 16, ../sass/partials/_newsletter.scss */
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-4 {
   padding: 0;
 }
-/* line 19, ../sass/partials/_newsletter.scss */
+/* line 20, ../sass/partials/_newsletter.scss */
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-3,
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 22, ../sass/partials/_newsletter.scss */
+/* line 23, ../sass/partials/_newsletter.scss */
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-3 label,
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 label {
   font-weight: normal;
 }
-/* line 30, ../sass/partials/_newsletter.scss */
+/* line 32, ../sass/partials/_newsletter.scss */
 .newsletter .email-address,
 .newsletter .firstname {
   color: #fcb040;
@@ -115,13 +115,13 @@
   font-weight: normal;
   font-family: 'Montserrat', sans-serif;
 }
-/* line 37, ../sass/partials/_newsletter.scss */
+/* line 40, ../sass/partials/_newsletter.scss */
 .newsletter .required {
   border: 1px solid #fcb040;
   width: 100%;
   font-size: 1.3em;
 }
-/* line 42, ../sass/partials/_newsletter.scss */
+/* line 46, ../sass/partials/_newsletter.scss */
 .newsletter .button {
   padding: 0.3em;
   width: 100%;
@@ -465,7 +465,7 @@ a:hover {
   /* line 84, ../sass/partials/_media-queries.scss */
   .gold-sponsor-logo .col-md-7 {
     margin-left: 0;
-    margin-top: 5.2em;
+    margin-top: 3em;
   }
   /* line 87, ../sass/partials/_media-queries.scss */
   .gold-sponsor-logo .col-md-7 div:nth-child(1) {
