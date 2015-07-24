@@ -1,0 +1,166 @@
+.col-md-4 {
+  clear: both;
+}
+
+// General styling for sponsor tabs (left) and logos (right).
+.silver-sponsor-logo,
+.bronze-sponsor-logo,
+.gold-sponsor-logo,
+.gold-sponsor-tab,
+.silver-sponsor-tab,
+.bronze-sponsor-tab {
+  div,
+  p {
+    color: $color-white-text;
+    text-transform: uppercase;
+    font-family: $font-title;
+ }
+ a:hover {
+  text-decoration: none;
+ }
+}
+
+// General styling for sponsor-tabs (left).
+.gold-sponsor-tab,
+.silver-sponsor-tab,
+.bronze-sponsor-tab {
+  padding: 1.2em;
+  text-align: center;
+  p:nth-child(1) {
+   margin-bottom: 0;
+   font-size: 1.6em;
+  }
+  p:nth-child(2) {
+   font-size: 1.2em;
+  }
+}
+
+// General styling for sponsor logos (right).
+.gold-sponsor-logo,
+.bronze-sponsor-logo,
+.silver-sponsor-logo {
+  div:nth-child(1),
+  div:nth-child(2),
+  div:nth-child(3) {
+    div {
+     color: $color-white-text;
+     display: table-cell;
+     vertical-align: middle;
+     padding: 1em;
+     text-align: center;
+    }
+  }
+}
+
+// Style specific for Gold
+.gold-sponsor-tab {
+  background-color: $color-orange;
+  margin-top: 2.5em;
+}
+
+.gold-sponsor-logo .col-md-7 {
+  padding: 0.6em;
+  div:nth-child(1) {
+    background-color: $color-orange;
+    font-size: 1.4em;
+    padding-left: 3em;
+    padding-right: 3em;
+    width: 1%;
+    height: 5em;
+  }
+}
+
+// Style specific for silver.
+.silver-sponsor-tab {
+ background-color: $color-blue;
+ margin-top: 1em;
+}
+
+.silver-sponsor-logo {
+  padding-left: 16px;
+  padding-right: 16px;
+  div:nth-child(1),
+  div:nth-child(2) {
+    div {
+    font-size: 1.4em;
+    height: 5em;
+    background-color: $color-blue;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    display: table-cell;
+    width: 1%;
+    padding-left: 3em;
+    padding-right: 3em;
+    }
+  }
+  div:nth-child(2) {
+    display: none;
+  }
+  .col-md-3 {
+    padding: 0.7em;
+  }
+}
+
+//Style specific for Bronze.
+.bronze-sponsor-tab {
+  background-color: $color-green;
+  margin-top: 1.5em;
+}
+
+.bronze-sponsor-logo {
+  padding-left: 16px;
+  padding-right: 16px;
+  // Styles the first three children.
+  div:nth-child(1),
+  div:nth-child(2),
+  div:nth-child(3) {
+    div {
+      background-color: $color-green;
+       font-size: 1.5em;
+       height: 4.5em;
+       width: 1%;
+       display: table-cell;
+       margin-left: auto;
+       margin-right: auto;
+       padding-left: 3em;
+       padding-right: 3em;
+    }
+  }
+  div:nth-child(2),
+  div:nth-child(3) {
+    display: none;
+  }
+  .col-md-2 {
+    padding: 0.7em;
+  }
+}
+
+//Style specific for promote sponsor.
+.promote-sponsor-tab {
+  padding-bottom: 0.6em;
+  padding-top: 1.5em;
+  p:nth-child(1) {
+    font-size: 1.6em;
+  }
+  p:nth-child(2) {
+    font-size: 1.5em;
+  }
+  p:nth-child(1),
+  p:nth-child(2) {
+    color: $color-blue;
+    margin-bottom: 0;
+  }
+}
+.promote-sponsor-button {
+  background-color: $color-orange;
+  text-align: center;
+  margin-bottom: 2em;
+  width: 100%;
+  color: $color-white-text;
+  font-size: 1.5em;
+  padding: 1em;
+}
+a:hover {
+  text-decoration: none;
+}

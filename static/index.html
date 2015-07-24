@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drupal Camp Cebu 2015</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
-  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="public/css/style.css">
 </head>
 <body>
@@ -12,44 +14,44 @@
   <section class="header">
    <div class="col-md-4">
     <img class="img-responsive" src="public/images/camp15-logo.png">
-    <div class="progress-box-wrapper">
-     <p class="uppercase progress-top-text">In progress</p>
-     <p class="uppercase progress-bottom-text">More updates here soon</p>
+    <div class="menu-box">
+     <p>In progress</p>
+     <p>More updates here soon</p>
     </div>
    </div>
    <div class="col-md-8">
-    <div class="p-header">
-     <p class="uppercase">Drupalcamp Cebu, Saturday November 7 2015</p>
-     <p class="uppercase p-header-text-uni">University of the Philippines Cebu</p>
-     <p class="uppercase p-header-text-conference">A conference about drupal & open source for web development</p>
-     <p class="uppercase p-header-text-joindrupal">Join Drupal's largest event in Visayas & Mindanao</p>
-     <p class="uppercase p-header-text-codesprint">+ Code sprint on Sunday November 8 2015</p>
+    <div class="header-info-top">
+     <h3>Drupalcamp Cebu, Saturday November 7 2015</h3>
+     <h2>University of the Philippines Cebu</h2>
+     <p>A conference about drupal & open source for web development</p>
+     <p>Join Drupal's largest event in Visayas & Mindanao</p>
+     <p>+ Code sprint on Sunday November 8 2015</p>
     </div>
-    <div class="more-info-tab-right">
-     <h2>More Information Soon</h2>
-     <p>As for our first edition in 2014, Drupalcamp Cebu will happen in November
-     <br>This year it will be hosted by the University Cebu.</p>
+    <div class="header-info-bottom">
+     <h1>More Information Soon</h1>
+     <p>As for our first edition in 2014, Drupalcamp Cebu will happen in November.</p>
+     <p>This year it will be hosted by the University Cebu.</p>
      <p>Drupalcamp Cebu is the biggest event of the year in the Visayas adn Mindanao.
      It will be a one day event, followed by a code sprint on the second day.</p>
      <p>More updates to come. You can stay tune using our newsletter or social networks.</p>
     </div>
-    <div id="mc_embed_signup">
-     <h3>Join Drupal Cebu Newsletter</h3>
+    <div id="mc_embed_signup" class="newsletter">
+     <h4>Join Drupal Cebu Newsletter</h4>
      <form action="//drupalcebu.us8.list-manage.com/subscribe/post?u=d7c17f85aa93351e7a79703df&amp;id=1be4349981" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <div id="mc_embed_signup_scroll">
-       <div class="mc-field-group col-md-8">
-        <div class="col-md-3">
+       <div class="mc-field-group">
+        <div class="col-md-4">
          <label for="mce-EMAIL" class="email-address">Email </label>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-8">
          <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
         </div>
        </div>
-       <div class="mc-field-group col-md-8">
-        <div class="col-md-3">
+       <div class="mc-field-group">
+        <div class="col-md-4">
          <label for="mce-FNAME" class="firstname">First Name </label>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-8">
          <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
          <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
         </div>
@@ -66,63 +68,62 @@
   </section>
 
   <section class="sponsors">
-   <div class="gold-sponsor-container">
-     <div class="col-md-4">
-      <div class="gold-sponsor-tab-left">
-       <p class="sponsor-tab-top-text">Gold Sponsor</p>
-       <p class="sponsor-tab-bottom-text">Promet Source</p>
-     </div>
+   <div class="col-md-4">
+    <div class="gold-sponsor-tab">
+     <p>Gold Sponsor</p>
+     <p>Promet Source</p>
     </div>
-    <div class="col-md-8">
-     <div class="sponsors-tab-right">
-      <img src="public/images/promet-source-logo.png">
-     </div>
+   </div>
+   <div class="col-md-8 gold-sponsor-logo">
+    <div class="col-md-7">
+     <a href="#"><div>Your Logo Here</div></a>
     </div>
    </div>
 
-   <div class="silver-sponsor-container">
-     <div class="col-md-4" id="silver-sponsor-wrapper">
-      <div class="silver-sponsor-tab-left">
-       <p class="sponsor-tab-top-text">Silver Sponsors</p>
-       <p class="sponsor-tab-bottom-text">Sponsor Now</p>
-      </div>
-     </div>
-     <div class="col-md-3 sponsors-tab-right">
-      <div class="silver-sponsor-logo">Your logo here</div>
-     </div>
-     <div class="col-md-3 sponsors-tab-right">
-      <div class="silver-sponsor-logo">Or here!</div>
-     </div>
+   <div class="col-md-4">
+    <div class="silver-sponsor-tab">
+     <p>Silver Sponsors</p>
+     <p>Sponsor Now</p>
     </div>
+   </div>
+   <div class="col-md-8 silver-sponsor-logo">
+    <div class="col-md-3">
+     <a href="#"><div>Your logo here</div></a>
+    </div>
+    <div class="col-md-3">
+     <a href="#"><div>Or here!</div></a>
+    </div>
+   </div>
 
-    <div class="bronze-sponsor-container">
-     <div class="col-md-4" id="bronze-sponsor-wrapper">
-      <div class="bronze-sponsor-tab-left">
-       <p class="sponsor-tab-top-text">Bronze Sponsors</p>
-       <p class="sponsor-tab-bottom-text">Sponsor Now</p>
-      </div>
-     </div>
-     <div class="col-md-2 sponsors-tab-right">
-      <div class="bronze-sponsor-logo">Your logo here</div>
-     </div>
-     <div class="col-md-2 sponsors-tab-right">
-      <div class="bronze-sponsor-logo">Or here</div>
-     </div>
-     <div class="col-md-2 sponsors-tab-right">
-      <div class="bronze-sponsor-logo">even here!</div>
-     </div>
+   <div class="col-md-4">
+    <div class="bronze-sponsor-tab">
+     <p>Bronze Sponsors</p>
+     <p>Sponsor Now</p>
     </div>
+   </div>
+   <div class="col-md-8 bronze-sponsor-logo">
+    <div class="col-md-2">
+     <a href="#"><div>Your logo here</div></a>
+    </div>
+    <div class="col-md-2">
+     <a href="#"><div>Or here!</div></a>
+    </div>
+    <div class="col-md-2">
+      <a href="#"><div>Even here!</div></a>
+    </div>
+   </div>
 
-    <div class="promote-sponsor-container">
-     <div class="col-md-4" id="promote-sponsor-wrapper">
-      <div class="promote-sponsor-tab-left">
-       <p class="promote-sponsor-top-text">Sponsor</p>
-       <p class="promote-sponsor-bottom-text">Promote Your Business</p>
-      </div>
-     </div>
-     <div class="col-md-3 promote-sponsor-tab">Become a sponsor</div>
+   <div class="col-md-4">
+    <div class="promote-sponsor-tab">
+     <p>Promote Your Business</p>
     </div>
-  </section>
+   </div>
+   <div class="col-md-3">
+    <a href="#"><div class="promote-sponsor-button">
+     Become a sponsor
+    </div></a>
+   </div>
+  </div>
 
   <section class="footer-container">
    <div class="footer-top-text">
