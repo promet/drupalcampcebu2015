@@ -2,6 +2,13 @@
   clear: both;
 }
 
+.sponsors {
+  a {
+    text-decoration: underline;
+    color: $color-white-text;
+  }
+}
+
 // General styling for sponsor tabs (left) and logos (right).
 .silver-sponsor-logo,
 .bronze-sponsor-logo,
@@ -167,6 +174,10 @@
   color: $color-white-text;
   font-size: 1.5em;
   padding: 1em;
+}
+
+a .promote-sponsor-button {
+  text-decoration: underline;
 }
 
 a:hover {
