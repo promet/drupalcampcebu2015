@@ -5,10 +5,7 @@
 // General styling for sponsor tabs (left) and logos (right).
 .silver-sponsor-logo,
 .bronze-sponsor-logo,
-.gold-sponsor-logo,
-.gold-sponsor-tab,
-.silver-sponsor-tab,
-.bronze-sponsor-tab {
+.gold-sponsor-logo {
   div,
   p {
     color: $color-white-text;
@@ -20,18 +17,27 @@
   }
 }
 
-// General styling for sponsor-tabs (left).
-.gold-sponsor-tab,
-.silver-sponsor-tab,
-.bronze-sponsor-tab {
-  padding: 1.2em;
-  text-align: center;
-  p:nth-child(1) {
-   margin-bottom: 0;
-   font-size: 1.6em;
-  }
-  p:nth-child(2) {
-   font-size: 1.2em;
+// Style specific for sponsor boxes.
+.menu-box.gold-sponsor,
+.menu-box.silver-sponsor,
+.menu-box.bronze-sponsor {
+  padding-right: 0em;
+}
+.menu-box.gold-sponsor {
+  background-color: $color-orange;
+  margin-top: 2.5em;
+}
+.menu-box.silver-sponsor {
+  background-color: $color-blue;
+}
+.menu-box.bronze-sponsor {
+  background-color: $color-green;
+}
+.menu-box.sponsor-ad {
+  background-color: #fff;
+  p {
+    color: $color-blue;
+    font-size: 1.6em;
   }
 }
 
@@ -52,12 +58,6 @@
   }
 }
 
-// Style specific for Gold.
-.gold-sponsor-tab {
-  background-color: $color-orange;
-  margin-top: 2.5em;
-}
-
 .gold-sponsor-logo .col-md-7 {
   padding: 0.6em;
   div:nth-child(1) {
@@ -66,7 +66,7 @@
     padding-left: 3em;
     padding-right: 3em;
     width: 1%;
-    height: 5em;
+    height: 4em;
   }
 }
 
