@@ -16,7 +16,7 @@
     }
     h2 {
       font-size: 2.1em;
-      margin-top: 0;
+      margin-top: 0.5em;
     }
     h3 {
       margin-bottom: 0;
@@ -62,33 +62,30 @@
   }
 
   .menu-box {
+    p:nth-child(1),
+    p:nth-child(2) {
+      text-align: left;
+    }
     p:nth-child(1) {
-      font-size: 2.5em;
+      font-size: 1.8em;
+      padding-bottom: 0.2em;
     }
     p:nth-child(2) {
       font-size: 1.2em;
     }
   }
-
-  .gold-sponsor-tab,
-  .silver-sponsor-tab,
-  .bronze-sponsor-tab {
-    padding: 1.6em;
-    padding-top: 3em;
-    padding-bottom: 2em;
-    text-align: left;
-    p:nth-child(1) {
-      font-size: 1.8em;
-    }
+  .menu-box.silver-sponsor,
+  .menu-box.bronze-sponsor {
+    margin-top: 0;
   }
 
-  .gold-sponsor-tab {
+  .gold-sponsor {
     margin-top: 5em;
   }
 
   .gold-sponsor-logo .col-md-7 {
     margin-left: 0;
-    margin-top: 5em;
+    margin-top: 2.5em;
     div:nth-child(1) {
       font-size: 1.7em;
     }
@@ -96,6 +93,7 @@
 
   .silver-sponsor-logo .col-md-3 {
     width: 37%;
+    margin-top: 0.9em;
   }
 
   .silver-sponsor-logo div:nth-child(1) div, .silver-sponsor-logo div:nth-child(2) div {
@@ -114,7 +112,7 @@
   }
 
   .bronze-sponsor-logo .col-md-2 {
-    margin-top: 1.5em;
+    margin-top: 1em;
     width: 30%;
   }
 

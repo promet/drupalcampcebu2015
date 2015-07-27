@@ -28,7 +28,7 @@
   color: white;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 /* line 24, ../sass/partials/_header.scss */
 .header-info-top h2 {
@@ -130,7 +130,7 @@ p {
 /* line 14, ../sass/partials/_global.scss */
 .menu-box {
   background-color: #fcb040;
-  padding: 2.2em;
+  padding: 1.6em;
   padding-top: 3em;
   padding-bottom: 3em;
   text-align: left;
@@ -141,12 +141,13 @@ p {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   color: white;
-  font-size: 2.3em;
+  font-size: 2em;
+  text-align: center;
   line-height: 0.9em;
 }
-/* line 28, ../sass/partials/_global.scss */
+/* line 29, ../sass/partials/_global.scss */
 .menu-box p.subtitle {
-  font-size: 1.1em;
+  font-size: 1.4em;
   line-height: 0;
 }
 
@@ -177,36 +178,44 @@ p {
 .menu-box.gold-sponsor,
 .menu-box.silver-sponsor,
 .menu-box.bronze-sponsor {
-  padding-right: 0em;
+  text-align: center;
 }
 
-/* line 26, ../sass/partials/_sponsors.scss */
+/* line 27, ../sass/partials/_sponsors.scss */
+.menu-box.silver-sponsor,
+.menu-box.bronze-sponsor {
+  margin-top: 2em;
+}
+
+/* line 31, ../sass/partials/_sponsors.scss */
 .menu-box.gold-sponsor {
   background-color: #fcb040;
   margin-top: 2.5em;
 }
 
-/* line 30, ../sass/partials/_sponsors.scss */
+/* line 35, ../sass/partials/_sponsors.scss */
 .menu-box.silver-sponsor {
   background-color: #1664a6;
 }
 
-/* line 33, ../sass/partials/_sponsors.scss */
+/* line 38, ../sass/partials/_sponsors.scss */
 .menu-box.bronze-sponsor {
   background-color: #89caae;
 }
 
-/* line 36, ../sass/partials/_sponsors.scss */
-.menu-box.sponsor-ad {
+/* line 41, ../sass/partials/_sponsors.scss */
+.menu-box#sponsor-ad {
   background-color: #fff;
+  text-align: center;
+  padding-bottom: 0.5em;
 }
-/* line 38, ../sass/partials/_sponsors.scss */
-.menu-box.sponsor-ad p {
+/* line 45, ../sass/partials/_sponsors.scss */
+.menu-box#sponsor-ad p {
   color: #1664a6;
   font-size: 1.6em;
 }
 
-/* line 51, ../sass/partials/_sponsors.scss */
+/* line 58, ../sass/partials/_sponsors.scss */
 .gold-sponsor-logo div:nth-child(1) div,
 .gold-sponsor-logo div:nth-child(2) div,
 .gold-sponsor-logo div:nth-child(3) div,
@@ -223,11 +232,11 @@ p {
   text-align: center;
 }
 
-/* line 61, ../sass/partials/_sponsors.scss */
+/* line 68, ../sass/partials/_sponsors.scss */
 .gold-sponsor-logo .col-md-7 {
   padding: 0.6em;
 }
-/* line 63, ../sass/partials/_sponsors.scss */
+/* line 70, ../sass/partials/_sponsors.scss */
 .gold-sponsor-logo .col-md-7 div:nth-child(1) {
   background-color: #fcb040;
   font-size: 1.4em;
@@ -237,18 +246,18 @@ p {
   height: 4em;
 }
 
-/* line 74, ../sass/partials/_sponsors.scss */
+/* line 81, ../sass/partials/_sponsors.scss */
 .silver-sponsor-tab {
   background-color: #1664a6;
   margin-top: 1em;
 }
 
-/* line 79, ../sass/partials/_sponsors.scss */
+/* line 86, ../sass/partials/_sponsors.scss */
 .silver-sponsor-logo {
   padding-left: 16px;
   padding-right: 16px;
 }
-/* line 84, ../sass/partials/_sponsors.scss */
+/* line 91, ../sass/partials/_sponsors.scss */
 .silver-sponsor-logo div:nth-child(1) div,
 .silver-sponsor-logo div:nth-child(2) div {
   font-size: 1.4em;
@@ -262,28 +271,27 @@ p {
   padding-left: 3em;
   padding-right: 3em;
 }
-/* line 97, ../sass/partials/_sponsors.scss */
+/* line 104, ../sass/partials/_sponsors.scss */
 .silver-sponsor-logo div:nth-child(2) {
   display: none;
 }
-/* line 100, ../sass/partials/_sponsors.scss */
+/* line 107, ../sass/partials/_sponsors.scss */
 .silver-sponsor-logo .col-md-3 {
   padding: 0.7em;
-  margin-top: 0.9em;
 }
 
-/* line 107, ../sass/partials/_sponsors.scss */
+/* line 113, ../sass/partials/_sponsors.scss */
 .bronze-sponsor-tab {
   background-color: #89caae;
   margin-top: 1.5em;
 }
 
-/* line 112, ../sass/partials/_sponsors.scss */
+/* line 118, ../sass/partials/_sponsors.scss */
 .bronze-sponsor-logo {
   padding-left: 16px;
   padding-right: 16px;
 }
-/* line 118, ../sass/partials/_sponsors.scss */
+/* line 124, ../sass/partials/_sponsors.scss */
 .bronze-sponsor-logo div:nth-child(1) div,
 .bronze-sponsor-logo div:nth-child(2) div,
 .bronze-sponsor-logo div:nth-child(3) div {
@@ -297,37 +305,37 @@ p {
   padding-left: 3em;
   padding-right: 3em;
 }
-/* line 131, ../sass/partials/_sponsors.scss */
+/* line 137, ../sass/partials/_sponsors.scss */
 .bronze-sponsor-logo div:nth-child(2),
 .bronze-sponsor-logo div:nth-child(3) {
   display: none;
 }
-/* line 134, ../sass/partials/_sponsors.scss */
+/* line 140, ../sass/partials/_sponsors.scss */
 .bronze-sponsor-logo .col-md-2 {
   padding: 0.7em;
 }
 
-/* line 140, ../sass/partials/_sponsors.scss */
+/* line 146, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab {
   padding-bottom: 0.6em;
   padding-top: 1.5em;
 }
-/* line 143, ../sass/partials/_sponsors.scss */
+/* line 149, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1) {
   font-size: 1.6em;
 }
-/* line 146, ../sass/partials/_sponsors.scss */
+/* line 152, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(2) {
   font-size: 1.5em;
 }
-/* line 150, ../sass/partials/_sponsors.scss */
+/* line 156, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1),
 .promote-sponsor-tab p:nth-child(2) {
   color: #1664a6;
   margin-bottom: 0;
 }
 
-/* line 156, ../sass/partials/_sponsors.scss */
+/* line 162, ../sass/partials/_sponsors.scss */
 .promote-sponsor-button {
   background-color: #fcb040;
   text-align: center;
@@ -338,7 +346,7 @@ p {
   padding: 1em;
 }
 
-/* line 166, ../sass/partials/_sponsors.scss */
+/* line 172, ../sass/partials/_sponsors.scss */
 a:hover {
   text-decoration: none;
 }
@@ -347,24 +355,25 @@ a:hover {
 .footer-container {
   clear: both;
   background: #1664a6;
-  color: white;
-  font-size: 0.6em;
-  line-height: 1.1em;
-  text-align: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
 }
-/* line 8, ../sass/partials/_footer.scss */
-.footer-container a {
+/* line 9, ../sass/partials/_footer.scss */
+.footer-container div:nth-child(1),
+.footer-container div:nth-child(2) {
+  text-align: center;
+  font-size: 0.8em;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  padding-bottom: 0.5em;
+}
+/* line 15, ../sass/partials/_footer.scss */
+.footer-container div:nth-child(1) p a,
+.footer-container div:nth-child(2) p a {
   color: white;
   text-decoration: underline;
-}
-/* line 12, ../sass/partials/_footer.scss */
-.footer-container .footer-top-text {
-  margin-top: 5em;
-  margin-bottom: 3em;
-}
-/* line 16, ../sass/partials/_footer.scss */
-.footer-container .footer-bottom-text {
-  margin-bottom: 5em;
 }
 
 @media only screen and (min-width: 420px) {
@@ -393,7 +402,7 @@ a:hover {
   /* line 17, ../sass/partials/_media-queries.scss */
   .header-info-top h2 {
     font-size: 2.1em;
-    margin-top: 0;
+    margin-top: 0.5em;
   }
   /* line 21, ../sass/partials/_media-queries.scss */
   .header-info-top h3 {
@@ -439,52 +448,49 @@ a:hover {
     font-size: 1.5em;
   }
 
-  /* line 65, ../sass/partials/_media-queries.scss */
-  .menu-box p:nth-child(1) {
-    font-size: 2.5em;
+  /* line 66, ../sass/partials/_media-queries.scss */
+  .menu-box p:nth-child(1),
+  .menu-box p:nth-child(2) {
+    text-align: left;
   }
-  /* line 68, ../sass/partials/_media-queries.scss */
+  /* line 69, ../sass/partials/_media-queries.scss */
+  .menu-box p:nth-child(1) {
+    font-size: 1.8em;
+    padding-bottom: 0.2em;
+  }
+  /* line 73, ../sass/partials/_media-queries.scss */
   .menu-box p:nth-child(2) {
     font-size: 1.2em;
   }
 
-  /* line 75, ../sass/partials/_media-queries.scss */
-  .gold-sponsor-tab,
-  .silver-sponsor-tab,
-  .bronze-sponsor-tab {
-    padding: 1.6em;
-    padding-top: 3em;
-    padding-bottom: 2em;
-    text-align: left;
-  }
-  /* line 80, ../sass/partials/_media-queries.scss */
-  .gold-sponsor-tab p:nth-child(1),
-  .silver-sponsor-tab p:nth-child(1),
-  .bronze-sponsor-tab p:nth-child(1) {
-    font-size: 1.8em;
+  /* line 78, ../sass/partials/_media-queries.scss */
+  .menu-box.silver-sponsor,
+  .menu-box.bronze-sponsor {
+    margin-top: 0;
   }
 
-  /* line 85, ../sass/partials/_media-queries.scss */
-  .gold-sponsor-tab {
+  /* line 82, ../sass/partials/_media-queries.scss */
+  .gold-sponsor {
     margin-top: 5em;
   }
 
-  /* line 89, ../sass/partials/_media-queries.scss */
+  /* line 86, ../sass/partials/_media-queries.scss */
   .gold-sponsor-logo .col-md-7 {
     margin-left: 0;
-    margin-top: 5em;
+    margin-top: 2.5em;
   }
-  /* line 92, ../sass/partials/_media-queries.scss */
+  /* line 89, ../sass/partials/_media-queries.scss */
   .gold-sponsor-logo .col-md-7 div:nth-child(1) {
     font-size: 1.7em;
   }
 
-  /* line 97, ../sass/partials/_media-queries.scss */
+  /* line 94, ../sass/partials/_media-queries.scss */
   .silver-sponsor-logo .col-md-3 {
     width: 37%;
+    margin-top: 0.9em;
   }
 
-  /* line 101, ../sass/partials/_media-queries.scss */
+  /* line 99, ../sass/partials/_media-queries.scss */
   .silver-sponsor-logo div:nth-child(1) div, .silver-sponsor-logo div:nth-child(2) div {
     margin-left: 0;
     height: 5em;
@@ -492,23 +498,23 @@ a:hover {
     padding-right: 2.5em;
   }
 
-  /* line 108, ../sass/partials/_media-queries.scss */
+  /* line 106, ../sass/partials/_media-queries.scss */
   .silver-sponsor-tab {
     margin-top: 0;
   }
 
-  /* line 112, ../sass/partials/_media-queries.scss */
+  /* line 110, ../sass/partials/_media-queries.scss */
   .silver-sponsor-logo div:nth-child(2) {
     display: initial;
   }
 
-  /* line 116, ../sass/partials/_media-queries.scss */
+  /* line 114, ../sass/partials/_media-queries.scss */
   .bronze-sponsor-logo .col-md-2 {
-    margin-top: 1.5em;
+    margin-top: 1em;
     width: 30%;
   }
 
-  /* line 123, ../sass/partials/_media-queries.scss */
+  /* line 121, ../sass/partials/_media-queries.scss */
   .bronze-sponsor-logo div:nth-child(1) div,
   .bronze-sponsor-logo div:nth-child(2) div,
   .bronze-sponsor-logo div:nth-child(3) div {
@@ -518,70 +524,70 @@ a:hover {
     font-size: 1.3em;
   }
 
-  /* line 130, ../sass/partials/_media-queries.scss */
+  /* line 128, ../sass/partials/_media-queries.scss */
   .bronze-sponsor-logo div:nth-child(2), .bronze-sponsor-logo div:nth-child(3) {
     display: initial;
   }
 
-  /* line 134, ../sass/partials/_media-queries.scss */
+  /* line 132, ../sass/partials/_media-queries.scss */
   .bronze-sponsor-tab {
     margin-top: 0;
   }
 
-  /* line 138, ../sass/partials/_media-queries.scss */
+  /* line 136, ../sass/partials/_media-queries.scss */
   .promote-sponsor-tab {
     padding-top: 2.5em;
     padding: 1.6em;
   }
-  /* line 141, ../sass/partials/_media-queries.scss */
+  /* line 139, ../sass/partials/_media-queries.scss */
   .promote-sponsor-tab p:nth-child(1) {
     font-size: 1.8em;
   }
 
-  /* line 146, ../sass/partials/_media-queries.scss */
+  /* line 144, ../sass/partials/_media-queries.scss */
   .promote-sponsor-button {
     margin-top: 1em;
     margin-left: 0.5em;
   }
 
-  /* line 151, ../sass/partials/_media-queries.scss */
+  /* line 149, ../sass/partials/_media-queries.scss */
   .footer-container p {
     font-size: 1.5em;
     margin-bottom: 0;
   }
 }
 @media only screen and (min-width: 1250px) {
-  /* line 161, ../sass/partials/_media-queries.scss */
+  /* line 159, ../sass/partials/_media-queries.scss */
   .header-info-top h3,
   .header-info-top p {
     font-size: 1.2em;
   }
-  /* line 164, ../sass/partials/_media-queries.scss */
+  /* line 162, ../sass/partials/_media-queries.scss */
   .header-info-top h2 {
     font-size: 2.2em;
   }
 
-  /* line 169, ../sass/partials/_media-queries.scss */
+  /* line 167, ../sass/partials/_media-queries.scss */
   .header-info-bottom p {
     font-size: 1.8em;
   }
 
-  /* line 173, ../sass/partials/_media-queries.scss */
+  /* line 171, ../sass/partials/_media-queries.scss */
   .gold-sponsor-tab {
     margin-top: 3em;
   }
 
-  /* line 177, ../sass/partials/_media-queries.scss */
+  /* line 175, ../sass/partials/_media-queries.scss */
   .gold-sponsor-logo .col-md-7 img {
     margin-top: 3em;
   }
 
-  /* line 182, ../sass/partials/_media-queries.scss */
+  /* line 180, ../sass/partials/_media-queries.scss */
   .promote-sponsor-button a a:hover {
     text-decoration: none;
   }
 
-  /* line 187, ../sass/partials/_media-queries.scss */
+  /* line 185, ../sass/partials/_media-queries.scss */
   .footer-container {
     padding-top: 3em;
     padding-bottom: 5em;
