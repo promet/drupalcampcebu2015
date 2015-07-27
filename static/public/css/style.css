@@ -44,7 +44,11 @@
   padding: 1.5em;
   text-align: center;
 }
+<<<<<<< Updated upstream
 /* line 37, ../sass/partials/_header.scss */
+=======
+/* line 18, ../sass/partials/_header.scss */
+>>>>>>> Stashed changes
 .header-info-top p,
 .header-info-top h2,
 .header-info-top h3 {
@@ -135,27 +139,63 @@
 }
 
 /* line 1, ../sass/partials/_global.scss */
+body {
+  max-width: 1560px;
+}
+
+/* line 5, ../sass/partials/_global.scss */
 h1, h2, h3, h4 {
   font: "Montserrat", sans-serif;
   text-transform: uppercase;
 }
 
-/* line 6, ../sass/partials/_global.scss */
+/* line 10, ../sass/partials/_global.scss */
 p {
   font: "Open Sans", sans-serif;
 }
 
+<<<<<<< Updated upstream
+=======
+/* line 14, ../sass/partials/_global.scss */
+.menu-box {
+  background-color: #fcb040;
+  padding: 2.2em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  text-align: left;
+  margin-bottom: 0;
+}
+/* line 21, ../sass/partials/_global.scss */
+.menu-box p {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  font-size: 2.3em;
+  line-height: 0.9em;
+}
+/* line 28, ../sass/partials/_global.scss */
+.menu-box p.subtitle {
+  font-size: 1.1em;
+  line-height: 0;
+}
+
+>>>>>>> Stashed changes
 /* line 1, ../sass/partials/_sponsors.scss */
 .col-md-4 {
   clear: both;
 }
 
+<<<<<<< Updated upstream
 /* line 13, ../sass/partials/_sponsors.scss */
+=======
+/* line 10, ../sass/partials/_sponsors.scss */
+>>>>>>> Stashed changes
 .silver-sponsor-logo div,
 .silver-sponsor-logo p,
 .bronze-sponsor-logo div,
 .bronze-sponsor-logo p,
 .gold-sponsor-logo div,
+<<<<<<< Updated upstream
 .gold-sponsor-logo p,
 .gold-sponsor-tab div,
 .gold-sponsor-tab p,
@@ -163,6 +203,9 @@ p {
 .silver-sponsor-tab p,
 .bronze-sponsor-tab div,
 .bronze-sponsor-tab p {
+=======
+.gold-sponsor-logo p {
+>>>>>>> Stashed changes
   color: white;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
@@ -177,6 +220,16 @@ p {
   text-decoration: none;
 }
 
+<<<<<<< Updated upstream
+=======
+/* line 23, ../sass/partials/_sponsors.scss */
+.menu-box.gold-sponsor,
+.menu-box.silver-sponsor,
+.menu-box.bronze-sponsor {
+  padding-right: 0em;
+}
+
+>>>>>>> Stashed changes
 /* line 26, ../sass/partials/_sponsors.scss */
 .gold-sponsor-tab,
 .silver-sponsor-tab,
@@ -345,6 +398,7 @@ a:hover {
 .footer-container {
   clear: both;
   background: #1664a6;
+<<<<<<< Updated upstream
   padding-top: 3em;
   padding-bottom: 3em;
   padding-left: 0.8em;
@@ -362,6 +416,15 @@ a:hover {
 /* line 15, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1) p a,
 .footer-container div:nth-child(2) p a {
+=======
+  color: white;
+  font-size: 0.6em;
+  line-height: 1.1em;
+  text-align: center;
+}
+/* line 8, ../sass/partials/_footer.scss */
+.footer-container a {
+>>>>>>> Stashed changes
   color: white;
   text-decoration: underline;
 }
@@ -407,7 +470,11 @@ a:hover {
   .newsletter h4 {
     font-size: 2.2em;
   }
+<<<<<<< Updated upstream
   /* line 39, ../sass/partials/_media-queries.scss */
+=======
+  /* line 43, ../sass/partials/_media-queries.scss */
+>>>>>>> Stashed changes
   .newsletter .email-address,
   .newsletter .firstname {
     font-size: 1.5em;
@@ -501,7 +568,11 @@ a:hover {
     width: 30%;
   }
 
+<<<<<<< Updated upstream
   /* line 118, ../sass/partials/_media-queries.scss */
+=======
+  /* line 98, ../sass/partials/_media-queries.scss */
+>>>>>>> Stashed changes
   .bronze-sponsor-logo div:nth-child(1) div,
   .bronze-sponsor-logo div:nth-child(2) div,
   .bronze-sponsor-logo div:nth-child(3) div {
@@ -542,7 +613,11 @@ a:hover {
   }
 }
 @media only screen and (min-width: 1250px) {
+<<<<<<< Updated upstream
   /* line 154, ../sass/partials/_media-queries.scss */
+=======
+  /* line 134, ../sass/partials/_media-queries.scss */
+>>>>>>> Stashed changes
   .header-info-top h3,
   .header-info-top p {
     font-size: 1.2em;
