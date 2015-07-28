@@ -36,17 +36,17 @@
 }
 
 /* line 29, ../sass/partials/_header.scss */
-.header-info-bottom {
+.content {
   padding: 0.9em;
 }
 /* line 31, ../sass/partials/_header.scss */
-.header-info-bottom h1 {
+.content h1 {
   font-weight: bold;
   font-size: 1.8em;
   color: #1664a6;
 }
 /* line 36, ../sass/partials/_header.scss */
-.header-info-bottom p {
+.content p {
   color: #1664a6;
   font-size: 1.3em;
 }
@@ -415,11 +415,11 @@ a:hover {
   }
 
   /* line 30, ../sass/partials/_media-queries.scss */
-  .header-info-bottom h1 {
+  .content h1 {
     font-size: 2.2em;
   }
   /* line 33, ../sass/partials/_media-queries.scss */
-  .header-info-bottom p {
+  .content p {
     font-size: 2em;
   }
 
@@ -576,7 +576,7 @@ a:hover {
   }
 
   /* line 170, ../sass/partials/_media-queries.scss */
-  .header-info-bottom p {
+  .content p {
     font-size: 1.8em;
   }
 
