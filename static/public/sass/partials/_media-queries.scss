@@ -86,15 +86,18 @@
 
   .gold-sponsor-logo .col-md-7 {
     margin-left: 0;
-    margin-top: 2.5em;
+    margin-top: 0em;
     div:nth-child(1) {
       font-size: 1.7em;
     }
   }
 
+  .gold-sponsor-logo {
+    margin-top: 2.5em;
+  }
+
   .silver-sponsor-logo .col-md-3 {
     width: 37%;
-    margin-top: 0.9em;
   }
 
   .silver-sponsor-logo div:nth-child(1) div, .silver-sponsor-logo div:nth-child(2) div {
@@ -102,10 +105,6 @@
     height: 5em;
     padding-left: 2.5em;
     padding-right: 2.5em;
-  }
-
-  .silver-sponsor-tab {
-    margin-top: 0;
   }
 
   .silver-sponsor-logo div:nth-child(2) {
@@ -130,8 +129,11 @@
     display: initial;
   }
 
-  .bronze-sponsor-tab {
-    margin-top: 0;
+  .gold-sponsor-logo .col-md-7,
+  .silver-sponsor-logo .col-md-3,
+  .bronze-sponsor-logo .col-md-2 {
+    padding: 0.5em;
+    padding-top: 1em;
   }
 
   .promote-sponsor-tab {
@@ -169,8 +171,8 @@
     font-size: 1.8em;
   }
 
-  .gold-sponsor-tab {
-    margin-top: 3em;
+  .gold-sponsor-logo {
+    margin-top: 2.5em;
   }
 
   .gold-sponsor-logo .col-md-7 img {

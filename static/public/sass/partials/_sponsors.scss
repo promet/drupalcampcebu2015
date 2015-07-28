@@ -73,7 +73,6 @@
 }
 
 .gold-sponsor-logo .col-md-7 {
-  padding: 0.6em;
   div:nth-child(1) {
     background-color: $color-orange;
     font-size: 1.4em;
@@ -82,12 +81,6 @@
     width: 1%;
     height: 4em;
   }
-}
-
-// Style specific for silver.
-.silver-sponsor-tab {
-  background-color: $color-blue;
-  margin-top: 1em;
 }
 
 .silver-sponsor-logo {
@@ -111,15 +104,6 @@
   div:nth-child(2) {
     display: none;
   }
-  .col-md-3 {
-    padding: 0.7em;
-  }
-}
-
-// Style specific for Bronze.
-.bronze-sponsor-tab {
-  background-color: $color-green;
-  margin-top: 1.5em;
 }
 
 .bronze-sponsor-logo {
@@ -130,23 +114,26 @@
   div:nth-child(3) {
     div {
       background-color: $color-green;
-       font-size: 1.5em;
-       height: 4.5em;
-       width: 1%;
-       display: table-cell;
-       margin-left: auto;
-       margin-right: auto;
-       padding-left: 3em;
-       padding-right: 3em;
+      font-size: 1.5em;
+      height: 4.5em;
+      width: 1%;
+      display: table-cell;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 3em;
+      padding-right: 3em;
     }
   }
   div:nth-child(2),
   div:nth-child(3) {
     display: none;
   }
-  .col-md-2 {
-    padding: 0.7em;
-  }
+}
+
+.gold-sponsor-logo .col-md-7,
+.silver-sponsor-logo .col-md-3,
+.bronze-sponsor-logo .col-md-2 {
+  padding: 1em;
 }
 
 // Style specific for promote sponsor.
