@@ -1,6 +1,7 @@
 #site-wrapper {
   max-width: 1560px;
   margin: 0 auto;
+  margin-top: 1.5em;
 }
 
 body,
@@ -15,6 +16,7 @@ h1, h2, h3, h4 {
 
 p {
   font-family: $font-text;
+  font-size: 1em;
 }
 
 .menu-box {
@@ -31,6 +33,7 @@ p {
     font-size: 2em;
     text-align: center;
     line-height: 0.9em;
+    margin-bottom: 0;
   }
   p.subtitle {
     font-size: 1.4em;
