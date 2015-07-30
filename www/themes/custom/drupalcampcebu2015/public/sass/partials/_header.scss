@@ -1,0 +1,40 @@
+.header {
+  margin-top: 2.5em;
+}
+
+.img-responsive {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  height: 30em;
+}
+
+.header-info-top {
+  background-color: $color-blue;
+  padding: 1.5em;
+  text-align: center;
+  p,
+  h2,
+  h3 {
+    color: $color-white-text;
+    text-transform: uppercase;
+    font-family: $font-title;
+    font-size: 1.1em;
+  }
+  h2 {
+    font-size: 1.9em;
+  }
+}
+
+.content {
+  padding: 0.9em;
+    h1 {
+      font-weight: bold;
+      font-size: 1.8em;
+      color: $color-blue;
+    }
+  p {
+    color: $color-blue;
+    font-size: 1.3em;
+  }
+}

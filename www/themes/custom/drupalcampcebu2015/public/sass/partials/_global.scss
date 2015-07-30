@@ -1,0 +1,41 @@
+#site-wrapper {
+  max-width: 1560px;
+  margin: 0 auto;
+  margin-top: 1.5em;
+}
+
+body,
+html {
+  width: 100%;
+}
+
+h1, h2, h3, h4 {
+  font: $font-title;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: $font-text;
+  font-size: 1em;
+}
+
+.menu-box {
+  background-color: $color-orange;
+  padding: 1.6em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  text-align: left;
+  margin-bottom: 0;
+  p {
+    font-family: $font-title;
+    text-transform: uppercase;
+    color: $color-white-text;
+    font-size: 2em;
+    text-align: center;
+    line-height: 0.9em;
+    margin-bottom: 0;
+  }
+  p.subtitle {
+    font-size: 1.4em;
+  }
+}
