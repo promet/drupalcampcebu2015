@@ -1,0 +1,18 @@
+drupalcamp2015.mobile:
+  label: mobile
+  mediaQuery: ''
+  weight: 2
+  multipliers:
+    - 1x
+drupalcamp2015.narrow:
+  label: narrow
+  mediaQuery: 'all and (min-width: 420px) and (max-width: 1000px)'
+  weight: 1
+  multipliers:
+    - 1x
+drupalcamp2015.wide:
+  label: wide
+  mediaQuery: 'all and (min-width: 1250px)'
+  weight: 0
+  multipliers:
+    - 1x
