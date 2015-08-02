@@ -1,6 +1,6 @@
 uuid: 8f86172a-264f-4bb3-8d31-49b7be4704cf
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.tools
@@ -10,7 +10,7 @@ dependencies:
     - drupalcampcebu2015
 id: drupalcampcebu2015_tools
 theme: drupalcampcebu2015
-region: content
+region: '-1'
 weight: 0
 provider: null
 plugin: 'system_menu_block:tools'

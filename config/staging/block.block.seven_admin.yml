@@ -1,6 +1,6 @@
 uuid: 71b30a67-61b9-4b62-9400-e7941ee6226a
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.admin
@@ -10,7 +10,7 @@ dependencies:
     - seven
 id: seven_admin
 theme: seven
-region: content
+region: '-1'
 weight: 1
 provider: null
 plugin: 'system_menu_block:admin'
