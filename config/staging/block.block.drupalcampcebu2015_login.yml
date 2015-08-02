@@ -1,0 +1,22 @@
+uuid: 8731d28d-b9df-474d-9200-c60c0c2990a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - drupalcampcebu2015
+id: drupalcampcebu2015_login
+theme: drupalcampcebu2015
+region: content
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+  cache:
+    max_age: -1
+visibility: {  }
