@@ -113,10 +113,13 @@ class FinishResponseSubscriber implements EventSubscriberInterface {
     // XSS and other vulnerabilities.
     // https://www.owasp.org/index.php/List_of_useful_HTTP_headers
     $response->headers->set('X-Content-Type-Options', 'nosniff', FALSE);
+    $response->headers->set('X-Frame-Options', 'SAMEORIGIN', FALSE);
 
     // Expose the cache contexts and cache tags associated with this page in a
-    // X-Drupal-Cache-Contexts and X-Drupal-Cache-Tags header respectively.
-    if ($response instanceof CacheableResponseInterface) {
+    // X-Drupal-Cache-Contexts and X-Drupal-Cache-Tags header respectively, when
+    // either a reverse proxy is being used (so the reverse proxy or CDN can be
+    // invalidated when appropriate) or when developing/debugging.
+    if ((Settings::get('reverse_proxy', FALSE) || Settings::get('send_cacheability_headers', FALSE)) && $response instanceof CacheableResponseInterface) {
       $response_cacheability = $response->getCacheableMetadata();
       $response->headers->set('X-Drupal-Cache-Tags', implode(' ', $response_cacheability->getCacheTags()));
       $response->headers->set('X-Drupal-Cache-Contexts', implode(' ', $this->cacheContextsManager->optimizeTokens($response_cacheability->getCacheContexts())));
