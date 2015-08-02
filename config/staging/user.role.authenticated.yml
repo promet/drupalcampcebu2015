@@ -9,3 +9,4 @@ is_admin: false
 permissions:
   - 'use text format plain_text'
   - 'access content'
+  - 'use text format wysiwyg'

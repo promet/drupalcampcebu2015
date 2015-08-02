@@ -10,3 +10,4 @@ permissions:
   - 'create session content'
   - 'delete own session content'
   - 'edit own session content'
+  - 'use text format wysiwyg'

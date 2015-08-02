@@ -1,6 +1,6 @@
 uuid: c527db58-de17-40c3-ab50-8076e9d80519
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.admin
@@ -10,7 +10,7 @@ dependencies:
     - drupalcampcebu2015
 id: drupalcampcebu2015_admin
 theme: drupalcampcebu2015
-region: content
+region: '-1'
 weight: 1
 provider: null
 plugin: 'system_menu_block:admin'
