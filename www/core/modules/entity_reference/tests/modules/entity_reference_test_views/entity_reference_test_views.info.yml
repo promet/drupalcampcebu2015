@@ -8,8 +8,8 @@ dependencies:
  - entity_reference
  - views
 
-# Information added by Drupal.org packaging script on 2015-06-29
-version: '8.0.0-beta12'
+# Information added by Drupal.org packaging script on 2015-07-29
+version: '8.0.0-beta13'
 core: '8.x'
 project: 'drupal'
-datestamp: 1435602053
+datestamp: 1438194765
