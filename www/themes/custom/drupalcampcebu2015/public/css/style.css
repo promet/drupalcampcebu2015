@@ -44,11 +44,44 @@
   font-weight: bold;
   font-size: 1.8em;
   color: #1664a6;
+  margin-bottom: 1em;
 }
-/* line 36, ../sass/partials/_header.scss */
+/* line 37, ../sass/partials/_header.scss */
 .content p {
   color: #1664a6;
   font-size: 1.3em;
+}
+/* line 41, ../sass/partials/_header.scss */
+.content .field-item {
+  margin-top: 2em;
+}
+
+/* line 1, ../sass/partials/_menu.scss */
+ul {
+  padding-left: 0;
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid #1664a6;
+}
+/* line 5, ../sass/partials/_menu.scss */
+ul li {
+  display: inline;
+}
+/* line 8, ../sass/partials/_menu.scss */
+ul li a {
+  font-size: 1.25em;
+  color: #1664a6;
+  padding: 0.62em 0.93em;
+}
+/* line 14, ../sass/partials/_menu.scss */
+ul li a:hover {
+  border: 1px solid #1664a6;
+  border-radius: 4px 4px 0 0;
+}
+/* line 19, ../sass/partials/_menu.scss */
+ul li a.is-active {
+  background-color: #1664a6;
+  border-radius: 4px 4px 0 0;
+  color: white;
 }
 
 /* line 1, ../sass/partials/_newsletter.scss */
