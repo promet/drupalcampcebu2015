@@ -56,29 +56,29 @@
   margin-top: 2em;
 }
 
-/* line 1, ../sass/partials/_menu.scss */
-ul {
+/* line 2, ../sass/partials/_tabs.scss */
+.content ul {
   padding-left: 0;
   padding-bottom: 0.6em;
   border-bottom: 1px solid #1664a6;
 }
-/* line 5, ../sass/partials/_menu.scss */
-ul li {
+/* line 6, ../sass/partials/_tabs.scss */
+.content ul li {
   display: inline;
 }
-/* line 8, ../sass/partials/_menu.scss */
-ul li a {
+/* line 9, ../sass/partials/_tabs.scss */
+.content ul li a {
   font-size: 1.25em;
   color: #1664a6;
   padding: 0.62em 0.93em;
 }
-/* line 14, ../sass/partials/_menu.scss */
-ul li a:hover {
+/* line 15, ../sass/partials/_tabs.scss */
+.content ul li a:hover {
   border: 1px solid #1664a6;
   border-radius: 4px 4px 0 0;
 }
-/* line 19, ../sass/partials/_menu.scss */
-ul li a.is-active {
+/* line 20, ../sass/partials/_tabs.scss */
+.content ul li a.is-active {
   background-color: #1664a6;
   border-radius: 4px 4px 0 0;
   color: white;
