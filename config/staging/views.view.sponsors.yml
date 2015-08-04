@@ -1,0 +1,432 @@
+uuid: dcd208d3-dc16-4bb9-8f00-e98a2de062c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sponsor
+  module:
+    - node
+    - user
+id: sponsors
+label: Sponsors
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+core: 8.x
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        type: full
+        options:
+          items_per_page: 10
+          offset: 0
+          id: 0
+          total_pages: null
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          tags:
+            previous: '‹ previous'
+            next: 'next ›'
+            first: '« first'
+            last: 'last »'
+          quantity: 9
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: fields
+        options:
+          inline: {  }
+          separator: ''
+          hide_empty: false
+          default_field_elements: true
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          label: ''
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          settings:
+            link_to_entity: true
+          plugin_id: field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      filters:
+        status:
+          value: true
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            sponsor: sponsor
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-4\">\n     <div class=\"menu-box\" id=\"sponsor-ad\">\n         <p>Promote your business</p>\n     </div>\n</div>"
+            format: full_html
+          plugin_id: text
+      footer: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: " <div class=\"col-md-8 bronze-sponsor-logo\">\n    <div class=\"col-md-2\">\n        <a href=\"mailto:drupalcebu@gmail.com\"><div>Your logo here</div></a>\n    </div>\n <div class=\"col-md-2\">\n       <a href=\"mailto:drupalcebu@gmail.com\"><div>Or here!</div></a>\n       </div>\n  <div class=\"col-md-2\">\n       <a href=\"mailto:drupalcebu@gmail.com\"><div>Even here!</div></a>\n       </div>\n  </div>"
+            format: full_html
+          plugin_id: text
+      relationships: {  }
+      arguments: {  }
+      display_extenders: {  }
+    cache_metadata:
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      cacheable: false
+  block_1:
+    display_plugin: block
+    id: block_1
+    display_title: 'Gold Sponsors'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_description: 'Gold Sponsors'
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-8 gold-sponsor-logo\">\n    <div class=\"col-md-7\">\n      <a href=\"mailto:drupalcebu@gmail.com\">\n        <div>Your Logo Here</div>\n      </a>\n   </div>\n</div>"
+            format: full_html
+          plugin_id: text
+      defaults:
+        empty: false
+        header: false
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: " <div class=\"col-md-4\">\n     <div class=\"menu-box gold-sponsor\">\n         <p>Gold Sponsor</p>\n         <p class=\"subtitle\">Sponsor Now</p>\n      </div>\n </div>"
+            format: full_html
+          plugin_id: text
+    cache_metadata:
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      cacheable: false
+  block_2:
+    display_plugin: block
+    id: block_2
+    display_title: 'Silver Sponsor'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_description: 'Silver Sponsors'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-4\">\n    <div class=\"menu-box silver-sponsor\">\n        <p>Silver Sponsors</p>\n        <p class=\"subtitle\">Sponsor Now</p>\n    </div>\n</div>"
+            format: full_html
+          plugin_id: text
+      defaults:
+        header: false
+        empty: false
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-8 silver-sponsor-logo\">\n    <div class=\"col-md-3\">\n        <a href=\"mailto:drupalcebu@gmail.com\"><div>Your logo here</div></a>\n    </div>\n<div class=\"col-md-3\">\n       <a href=\"mailto:drupalcebu@gmail.com\"><div>Or here!</div></a>\n       </div>\n </div>"
+            format: full_html
+          plugin_id: text
+    cache_metadata:
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      cacheable: false
+  block_3:
+    display_plugin: block
+    id: block_3
+    display_title: 'Bronze Sponsors'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_description: 'Bronze Sponsors'
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: " <div class=\"col-md-8 bronze-sponsor-logo\">\n    <div class=\"col-md-2\">\n        <a href=\"mailto:drupalcebu@gmail.com\">\n             <div>Your logo here</div>\n        </a>\n    </div>\n    <div class=\"col-md-2\">\n       <a href=\"mailto:drupalcebu@gmail.com\">\n          <div>Or here!</div>\n       </a>\n    </div>\n    <div class=\"col-md-2\">\n       <a href=\"mailto:drupalcebu@gmail.com\">\n           <div>Even here!</div>\n       </a>\n    </div>\n </div>"
+            format: full_html
+          plugin_id: text
+      defaults:
+        empty: false
+        header: false
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-4\">\n    <div class=\"menu-box bronze-sponsor\">\n       <p>Bronze Sponsors</p>\n       <p class=\"subtitle\">Sponsor Now</p>\n    </div>\n</div>"
+            format: full_html
+          plugin_id: text
+    cache_metadata:
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      cacheable: false
+  block_4:
+    display_plugin: block
+    id: block_4
+    display_title: 'Promote Sponsors'
+    position: 4
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_description: 'Promote Sponsors'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-4\">\n     <div class=\"menu-box\" id=\"sponsor-ad\">\n         <p>Promote your business</p>\n     </div>\n</div>"
+            format: full_html
+          plugin_id: text
+      defaults:
+        header: false
+        empty: false
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: " <div class=\"col-md-3\">\n    <a href=\"mailto:drupalcebu@gmail.com\">\n      <div class=\"promote-sponsor-button\">Become a sponsor\n      </div>\n    </a>\n </div>"
+            format: full_html
+          plugin_id: text
+    cache_metadata:
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      cacheable: false
