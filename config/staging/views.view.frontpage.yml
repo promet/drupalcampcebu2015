@@ -2,6 +2,9 @@ uuid: b14a90c7-5d0d-4cb2-aa00-0e334fa83266
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.node.rss
+    - core.entity_view_mode.node.teaser
   module:
     - node
     - user

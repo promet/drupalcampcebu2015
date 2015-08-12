@@ -1,0 +1,14 @@
+uuid: 315f4c2f-b15d-4340-ad00-e51458c1787f
+langcode: en
+status: true
+dependencies: {  }
+name: drupalcampcebu2015
+label: drupalcampcebu2015
+effects:
+  9567a983-7d2b-42ef-8a00-c52a95202edd:
+    uuid: 9567a983-7d2b-42ef-8a00-c52a95202edd
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 150
+      height: 150
