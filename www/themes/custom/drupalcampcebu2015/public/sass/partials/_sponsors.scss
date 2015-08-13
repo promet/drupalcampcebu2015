@@ -2,7 +2,7 @@
   clear: both;
 }
 .views-field-field-logo {
-  margin-top: 1em;
+  padding-top: 0.5em;
   float: left;
   padding-left: 2em;
 }
@@ -37,23 +37,28 @@
 .menu-box.bronze-sponsor {
   text-align: center;
 }
+
 .menu-box.silver-sponsor,
 .menu-box.bronze-sponsor {
   margin-top: 2em;
-  height: 12em;
 }
 
 .menu-box.gold-sponsor {
   background-color: $color-orange;
   margin-top: 2.5em;
-  height: 12em;
+  height: 16em;
 }
+
 .menu-box.silver-sponsor {
   background-color: $color-blue;
+  height: 14em;
 }
+
 .menu-box.bronze-sponsor {
   background-color: $color-green;
+  height: 12em;
 }
+
 .menu-box#sponsor-ad {
   background-color: #fff;
   text-align: center;
