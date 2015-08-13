@@ -1,0 +1,28 @@
+uuid: cf357cda-045c-4706-bc55-8512a3c2d595
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponsor_type
+    - node.type.sponsor
+  module:
+    - entity_reference
+id: node.sponsor.field_sponsor_type
+field_name: field_sponsor_type
+entity_type: node
+bundle: sponsor
+label: 'Sponsor type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sponsor_type: sponsor_type
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

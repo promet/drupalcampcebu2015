@@ -2,6 +2,8 @@ uuid: 29db08db-a545-4779-ba04-4f1802c6c230
 langcode: en
 status: false
 dependencies:
+  config:
+    - system.menu.main
   module:
     - node
     - user
