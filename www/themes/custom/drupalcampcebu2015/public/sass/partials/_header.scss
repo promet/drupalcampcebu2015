@@ -28,13 +28,17 @@
 
 .content {
   padding: 0.9em;
-    h1 {
-      font-weight: bold;
-      font-size: 1.8em;
-      color: $color-blue;
-    }
+  h1 {
+    font-weight: bold;
+    font-size: 1.8em;
+    color: $color-blue;
+    margin-bottom: 1em;
+  }
   p {
     color: $color-blue;
     font-size: 1.3em;
+  }
+  .field-item {
+    margin-top: 2em;
   }
 }
