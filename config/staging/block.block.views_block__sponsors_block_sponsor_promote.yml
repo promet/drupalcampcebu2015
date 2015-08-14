@@ -1,4 +1,4 @@
-uuid: e73a89e5-0282-47f5-8b4d-7716b1935c86
+uuid: b05b39d1-9571-4ac9-9400-e51c1003cbc3
 langcode: en
 status: true
 dependencies:
@@ -8,19 +8,19 @@ dependencies:
     - views
   theme:
     - drupalcampcebu2015
-id: views_block__sponsors_block_3
+id: views_block__sponsors_block_sponsor_promote
 theme: drupalcampcebu2015
 region: sponsors
-weight: -2
+weight: -1
 provider: null
-plugin: 'views_block:sponsors-block_3'
+plugin: 'views_block:sponsors-block_sponsor_promote'
 settings:
-  id: 'views_block:sponsors-block_3'
+  id: 'views_block:sponsors-block_sponsor_promote'
   label: ''
   provider: views
-  label_display: visible
+  label_display: '0'
   cache:
-    max_age: -1
+    max_age: 3600
   views_label: ''
   items_per_page: none
 visibility: {  }
