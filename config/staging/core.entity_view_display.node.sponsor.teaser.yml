@@ -23,4 +23,6 @@ content:
     third_party_settings: {  }
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_logo: true
+  field_sponsor_type: true

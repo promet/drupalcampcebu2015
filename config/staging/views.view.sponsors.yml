@@ -782,7 +782,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: drupalcampcebu2015
+            image_style: drupalcampcebu2015_medium
             image_link: content
           group_column: ''
           group_columns: {  }
@@ -1046,7 +1046,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: drupalcampcebu2015
+            image_style: drupalcampcebu2015_small
             image_link: content
           group_column: ''
           group_columns: {  }
