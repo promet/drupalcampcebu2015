@@ -1,14 +1,17 @@
 .col-md-4 {
   clear: both;
 }
-.views-row {
+
+.logo-wrapper {
   padding-top: 0.5em;
   float: left;
   padding-left: 2em;
-  .gold-sponsor-logo-container {
-    margin-top: 1.5em;
-  }
 }
+
+.gold-sponsor-logo-container {
+  margin-top: 1.5em;
+}
+
 .sponsors {
   a {
     text-decoration: underline;
