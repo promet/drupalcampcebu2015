@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_link_url
     - field.storage.node.field_logo
     - node.type.sponsor
     - taxonomy.vocabulary.sponsor_type
@@ -97,53 +96,6 @@ display:
           id: title
           table: node_field_data
           field: title
-          entity_type: node
-          entity_field: title
-          label: ''
-          alter:
-            alter_text: false
-            make_link: false
-            absolute: false
-            trim: false
-            word_boundary: false
-            ellipsis: false
-            strip_tags: false
-            html: false
-          hide_empty: false
-          empty_zero: false
-          settings:
-            link_to_entity: true
-          plugin_id: field
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exclude: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_link_url:
-          id: field_link_url
-          table: node__field_link_url
-          field: field_link_url
           relationship: none
           group_type: group
           admin_label: ''
@@ -167,8 +119,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: true
-            ellipsis: true
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -191,7 +143,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: false
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -202,6 +154,8 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: node
+          entity_field: title
           plugin_id: field
         field_logo:
           id: field_logo
@@ -216,7 +170,7 @@ display:
             alter_text: false
             text: ''
             make_link: false
-            path: '{{ field_link_url }}'
+            path: ''
             absolute: false
             external: true
             replace_spaces: false
@@ -239,14 +193,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: '0'
           element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
+          element_wrapper_type: '0'
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -254,7 +208,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: drupalcampcebu2015_big
+            image_style: drupalcampcebu2015_medium
             image_link: ''
           group_column: ''
           group_columns: {  }
@@ -363,7 +317,7 @@ display:
         header: false
         filters: false
         filter_groups: false
-        fields: true
+        fields: false
       header:
         area:
           id: area
@@ -375,7 +329,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-4\">\n    <div class=\"menu-box bronze-sponsor\">\n       <p>Bronze Sponsors</p>\n       <p class=\"subtitle\">Sponsor Now</p>\n    </div>\n</div>"
+            value: "<div class=\"col-md-4\">\n    <div class=\"menu-box bronze-sponsor\">\n       <p>Bronze Sponsors</p>\n       <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n    </div>\n</div>"
             format: full_html
           plugin_id: text
       filters:
@@ -478,6 +432,136 @@ display:
         operator: AND
         groups:
           1: AND
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+        field_logo:
+          id: field_logo
+          table: node__field_logo
+          field: field_logo
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: '{{ field_link_url }}'
+            absolute: false
+            external: true
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: '0'
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: '0'
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: drupalcampcebu2015_small
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
     cache_metadata:
       contexts:
         - 'languages:language_content'
@@ -527,7 +611,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: " <div class=\"col-md-4\">\n     <div class=\"menu-box gold-sponsor\">\n         <p>Gold Sponsor</p>\n         <p class=\"subtitle\">Sponsor Now</p>\n      </div>\n </div>"
+            value: " <div class=\"col-md-4\">\n     <div class=\"menu-box gold-sponsor\">\n         <p>Gold Sponsor</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
             format: full_html
           plugin_id: text
       filters:
@@ -635,53 +719,6 @@ display:
           id: title
           table: node_field_data
           field: title
-          entity_type: node
-          entity_field: title
-          label: ''
-          alter:
-            alter_text: false
-            make_link: false
-            absolute: false
-            trim: false
-            word_boundary: false
-            ellipsis: false
-            strip_tags: false
-            html: false
-          hide_empty: false
-          empty_zero: false
-          settings:
-            link_to_entity: true
-          plugin_id: field
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exclude: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_link_url:
-          id: field_link_url
-          table: node__field_link_url
-          field: field_link_url
           relationship: none
           group_type: group
           admin_label: ''
@@ -705,8 +742,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: true
-            ellipsis: true
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -729,7 +766,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: false
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -740,6 +777,8 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: node
+          entity_field: title
           plugin_id: field
         field_logo:
           id: field_logo
@@ -777,14 +816,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: '0'
           element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
+          element_wrapper_type: '0'
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -985,7 +1024,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-4\">\n    <div class=\"menu-box silver-sponsor\">\n        <p>Silver Sponsors</p>\n        <p class=\"subtitle\">Sponsor Now</p>\n    </div>\n</div>"
+            value: "<div class=\"col-md-4\">\n    <div class=\"menu-box silver-sponsor\">\n        <p>Silver Sponsors</p>\n        <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a<</p>\n    </div>\n</div>"
             format: full_html
           plugin_id: text
       defaults:
