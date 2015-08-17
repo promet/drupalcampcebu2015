@@ -24,5 +24,6 @@ content:
   links:
     weight: 100
 hidden:
+  field_link: true
   field_logo: true
   field_sponsor_type: true
