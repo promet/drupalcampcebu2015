@@ -25,7 +25,8 @@
 // General styling for sponsor tabs (left) and logos (right).
 .silver-sponsor-logo,
 .bronze-sponsor-logo,
-.gold-sponsor-logo {
+.gold-sponsor-logo,
+.code-sprint-sponsor {
   div,
   p {
     color: $color-white-text;
@@ -40,12 +41,14 @@
 // Style specific for sponsor boxes.
 .menu-box.gold-sponsor,
 .menu-box.silver-sponsor,
-.menu-box.bronze-sponsor {
+.menu-box.bronze-sponsor
+.menu-box.code-sprint-sponsor {
   text-align: center;
 }
 
 .menu-box.silver-sponsor,
-.menu-box.bronze-sponsor {
+.menu-box.bronze-sponsor,
+.menu-box.code-sprint-sponsor {
   margin-top: 2em;
 }
 
@@ -60,7 +63,12 @@
   height: 14em;
 }
 
-.menu-box.bronze-sponsor {
+.menu-box.bronze-sponsor,
+.menu-box.code-sprint-sponsor,
+.menu-box.saturday-lunch-sponsor ,
+.menu-box.saturday-night-sponsor,
+.menu-box.coffee-and-snacks-sponsors,
+.menu-box.coffee-and-snacks-sponsors {
   background-color: $color-green;
   height: 12em;
 }
@@ -78,7 +86,8 @@
 // General styling for sponsor logos (right).
 .gold-sponsor-logo,
 .bronze-sponsor-logo,
-.silver-sponsor-logo {
+.silver-sponsor-logo,
+.code-sprint-sponsor {
   div:nth-child(1),
   div:nth-child(2),
   div:nth-child(3) {
@@ -126,7 +135,8 @@
   }
 }
 
-.bronze-sponsor-logo {
+.bronze-sponsor-logo,
+.code-sprint-sponsor {
   padding-left: 16px;
   padding-right: 16px;
   div:nth-child(1),
@@ -189,4 +199,57 @@ a .promote-sponsor-button {
 
 a:hover {
   text-decoration: none;
+}
+// Sponsor and partner page //
+
+#site-wrapper {
+  margin-top: 3em;
+}
+.region-content-bottom,
+#block-views-block-sponsors-and-partners-bronze-sponsor-2,
+#block-views-block-sponsors-and-partners-code-sprint-sponsor-2,
+#block-views-block-sponsors-and-partners-saturday-night-sponsor-2,
+#block-views-block-sponsors-and-partners-saturday-lunch-sponsor-2,
+#block-views-block-sponsors-and-partners-coffee-and-snacks-sponsor-2,
+#block-views-block-sponsors-and-partners-partners-2 {
+  clear: both;
+}
+
+#block-views-block-sponsors-and-partners-code-sprint-sponsor-2,
+#block-views-block-sponsors-and-partners-saturday-night-sponsor-2,
+#block-views-block-sponsors-and-partners-saturday-lunch-sponsor-2,
+#block-views-block-sponsors-and-partners-coffee-and-snacks-sponsor-2,
+#block-views-block-sponsors-and-partners-partners-2 {
+  padding-top: 1em;
+}
+.content h1 {
+  padding-left: 0.4em;
+  margin-top: 0;
+}
+.sponsor-page {
+  float: left;
+  padding-right: 1em;
+}
+.gold-sponsor-page {
+  margin-top: 2.5em;
+}
+.silver-sponsor-page,
+.bronze-sponsor-page,
+.coffee-snacks-sponsor {
+  padding-top: 0.4em;
+  padding-left: 0;
+}
+.code-sprint-sponsor-logo {
+  margin-top: 2.4em;
+}
+.silver-sponsor-page,
+.coffee-snacks-sponsor {
+  padding-left: 0;
+}
+.partners-sponsor {
+  margin-top: 0.4em;
+  padding-left: 0;
+}
+.gold-sponsor-page-wrapper {
+  margin-bottom: 5em;
 }
