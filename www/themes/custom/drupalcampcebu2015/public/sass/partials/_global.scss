@@ -1,7 +1,7 @@
 #site-wrapper {
   max-width: 1560px;
   margin: 0 auto;
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 
 body,
@@ -22,20 +22,23 @@ p {
 .menu-box {
   background-color: $color-orange;
   padding: 1.6em;
-  padding-top: 3em;
-  padding-bottom: 3em;
-  text-align: left;
-  margin-bottom: 0;
+  padding-top: 2em;
+  padding-bottom: 2em;
   p {
     font-family: $font-title;
     text-transform: uppercase;
     color: $color-white-text;
-    font-size: 2em;
+    font-size: 1.6em;
     text-align: center;
     line-height: 0.9em;
     margin-bottom: 0;
   }
   p.subtitle {
-    font-size: 1.4em;
+    font-size: 1.1em;
+    padding-top: 0.3em;
+    a {
+      text-decoration: underline;
+      color: $color-white-text;
+    }
   }
 }
