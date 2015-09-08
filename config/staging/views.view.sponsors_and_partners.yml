@@ -83,6 +83,10 @@ display:
           quantity: 9
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: false
       row:
         type: fields
         options:
@@ -128,13 +132,13 @@ display:
             preserve_tags: ''
             html: false
           element_type: div
-          element_class: 'sponsor-page silver-sponsor-page'
+          element_class: col-md-3
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
+          element_wrapper_type: div
+          element_wrapper_class: 'col-md-7 silver-sponsor-logo silver-sponsor-page-logo'
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -239,7 +243,12 @@ display:
             format: full_html
           plugin_id: text
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          plugin_id: text
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
@@ -266,6 +275,7 @@ display:
         filters: false
         filter_groups: false
         header: false
+        empty: false
       block_description: 'Bronze sponsor page'
       fields:
         field_logo:
@@ -305,13 +315,13 @@ display:
             preserve_tags: ''
             html: false
           element_type: div
-          element_class: 'sponsor-page bronze-sponsor-page'
+          element_class: 'col-md-2 bronze-sponsor-page-logo'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -443,7 +453,21 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-5\">\n     <div class=\"menu-box bronze-sponsor\">\n         <p>Bronze sponsors</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            value: "<div class=\"col-md-4\">\n     <div class=\"menu-box bronze-sponsor\">\n         <p>Bronze sponsors</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            format: full_html
+          plugin_id: text
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-2 bronze-sponsor-page-logo\">\n     <a href=\"mailto:drupalcebu@gmail.com\">\n           <div>Your logo here</div>\n     </a>\n</div>\n<div class=\"col-md-2 bronze-sponsor-page-logo\">\n    <a href=\"mailto:drupalcebu@gmail.com\">\n        <div>Or here!</div>\n    </a>\n </div>\n <div class=\"col-md-2 bronze-sponsor-page-logo\">\n     <a href=\"mailto:drupalcebu@gmail.com\">\n         <div>Even here!</div>\n    </a>\n </div>"
             format: full_html
           plugin_id: text
     cache_metadata:
@@ -470,6 +494,7 @@ display:
         filters: false
         filter_groups: false
         header: false
+        empty: false
       block_description: 'Code Sprint sponsor page'
       fields:
         field_logo:
@@ -509,13 +534,13 @@ display:
             preserve_tags: ''
             html: false
           element_type: div
-          element_class: 'sponsor-page code-sprint-sponsor-logo'
+          element_class: 'col-md-7 code-sprint-sponsor-logo'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -647,7 +672,21 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-5\">\n     <div class=\"menu-box code-sprint-sponsor\">\n         <p>Code Sprint sponsors</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            value: "<div class=\"col-md-4\">\n     <div class=\"menu-box code-sprint-sponsor\">\n         <p>Code Sprint sponsors</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            format: full_html
+          plugin_id: text
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-7 code-sprint-sponsor-logo\">\n      <a href=\"mailto:drupalcebu@gmail.com\">\n        <div>Your Logo Here</div>\n      </a>\n</div>\n"
             format: full_html
           plugin_id: text
     cache_metadata:
@@ -674,6 +713,7 @@ display:
         filters: false
         filter_groups: false
         header: false
+        empty: false
       block_description: 'Coffee and Snacks sponsor page'
       fields:
         field_logo:
@@ -713,13 +753,13 @@ display:
             preserve_tags: ''
             html: false
           element_type: div
-          element_class: 'sponsor-page coffee-snacks-sponsor'
+          element_class: 'col-md-7 coffee-snacks-sponsor-logo'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -851,7 +891,21 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-5\">\n     <div class=\"menu-box coffee-and-snacks-sponsors\">\n         <p>Coffee and Snacks sponsors</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            value: "<div class=\"col-md-4\">\n     <div class=\"menu-box coffee-and-snacks-sponsors\">\n         <p>Coffee and Snacks sponsors</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            format: full_html
+          plugin_id: text
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-7 coffee-snacks-sponsor-logo\">\n      <a href=\"mailto:drupalcebu@gmail.com\">\n        <div>Your Logo Here</div>\n      </a>\n</div>"
             format: full_html
           plugin_id: text
     cache_metadata:
@@ -878,6 +932,8 @@ display:
         title: false
         filters: false
         filter_groups: false
+        empty: false
+        css_class: false
       header:
         area:
           id: area
@@ -886,10 +942,10 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: false
+          empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-5\">\n     <div class=\"menu-box gold-sponsor\">\n         <p>Gold Sponsor</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            value: " <div class=\"col-md-4\">\n     <div class=\"menu-box gold-sponsor\">\n         <p>Gold Sponsor</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
             format: full_html
           plugin_id: text
       title: 'Sponsors and Partners'
@@ -1031,13 +1087,13 @@ display:
             preserve_tags: ''
             html: false
           element_type: div
-          element_class: 'sponsor-page gold-sponsor-page'
+          element_class: 'col-md-7 gold-sponsor-logo'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1058,6 +1114,21 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-7 gold-sponsor-logo\">\n    <a href=\"mailto:drupalcebu@gmail.com\">\n       <div>Your Logo Here</div>\n    </a>\n</div>\n"
+            format: full_html
+          plugin_id: text
+      css_class: ''
     cache_metadata:
       contexts:
         - 'languages:language_content'
@@ -1082,6 +1153,7 @@ display:
         filters: false
         filter_groups: false
         header: false
+        empty: false
       block_description: 'Partners page'
       fields:
         field_logo:
@@ -1121,13 +1193,13 @@ display:
             preserve_tags: ''
             html: false
           element_type: div
-          element_class: 'sponsor-page partners-sponsor'
+          element_class: 'col-md-2 partners-sponsor-logo'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1135,7 +1207,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: drupalcampcebu2015_medium
+            image_style: drupalcampcebu2015_small
             image_link: ''
           group_column: ''
           group_columns: {  }
@@ -1259,7 +1331,21 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-5\">\n     <div class=\"menu-box silver-sponsor gold-sponsor-page-wrapper\">\n         <p>Partners</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            value: "<div class=\"col-md-4\">\n     <div class=\"menu-box partners\">\n         <p>Our Partners</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            format: full_html
+          plugin_id: text
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-2 partners-sponsor-logo\">\n        <a href=\"mailto:drupalcebu@gmail.com\">\n             <div>Your logo here</div>\n        </a>\n</div>\n<div class=\"col-md-2 partners-sponsor-logo\">\n       <a href=\"mailto:drupalcebu@gmail.com\">\n          <div>Or here!</div>\n       </a>\n</div>"
             format: full_html
           plugin_id: text
     cache_metadata:
@@ -1382,6 +1468,7 @@ display:
         title: false
         header: false
         fields: false
+        empty: false
       filter_groups:
         operator: AND
         groups:
@@ -1398,7 +1485,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-5\">\n     <div class=\"menu-box saturday-lunch-sponsor\">\n         <p>Saturday Lunch sponsors</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            value: "<div class=\"col-md-4\">\n     <div class=\"menu-box saturday-lunch-sponsor\">\n         <p>Saturday Lunch sponsors</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
             format: full_html
           plugin_id: text
       fields:
@@ -1439,13 +1526,13 @@ display:
             preserve_tags: ''
             html: false
           element_type: div
-          element_class: 'sponsor-page silver-sponsor-page'
+          element_class: 'col-md-7 saturday-lunch-sponsor-logo'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1466,6 +1553,20 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-7 saturday-lunch-sponsor-logo\">\n      <a href=\"mailto:drupalcebu@gmail.com\">\n        <div>Your Logo Here</div>\n      </a>\n </div>"
+            format: full_html
+          plugin_id: text
     cache_metadata:
       contexts:
         - 'languages:language_content'
@@ -1490,6 +1591,7 @@ display:
         filters: false
         filter_groups: false
         header: false
+        empty: false
       block_description: 'Saturday Night sponsor page'
       fields:
         field_logo:
@@ -1528,14 +1630,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
+          element_type: div
+          element_class: 'col-md-7 saturday-night-sponsor-logo'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1667,7 +1769,21 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-5\">\n     <div class=\"menu-box saturday-night-sponsor\">\n         <p>Saturday Night sponsors</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            value: "<div class=\"col-md-4\">\n     <div class=\"menu-box saturday-night-sponsor\">\n         <p>Saturday Night sponsors</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            format: full_html
+          plugin_id: text
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-7 saturday-night-sponsor-logo\">\n      <a href=\"mailto:drupalcebu@gmail.com\">\n        <div>Your Logo Here</div>\n      </a>\n</div>"
             format: full_html
           plugin_id: text
     cache_metadata:
@@ -1690,10 +1806,11 @@ display:
       title: ''
       defaults:
         title: false
-        fields: true
+        fields: false
         filters: false
         filter_groups: false
         header: false
+        empty: false
       block_description: 'Silver sponsor page'
       filters:
         status:
@@ -1803,12 +1920,91 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: false
+          empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-5\">\n     <div class=\"menu-box silver-sponsor\">\n         <p>Silver sponsors</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            value: "<div class=\"col-md-4\">\n     <div class=\"menu-box silver-sponsor\">\n         <p>Silver sponsors</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
             format: full_html
           plugin_id: text
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<div class=\"col-md-3 silver-sponsor-logo\">\n        <a href=\"mailto:drupalcebu@gmail.com\"><div>Your logo here</div></a>\n </div>\n<div class=\"col-md-3 silver-sponsor-logo\">\n       <a href=\"mailto:drupalcebu@gmail.com\"><div>Or here!</div></a>\n </div>\n"
+            format: full_html
+          plugin_id: text
+      fields:
+        field_logo:
+          id: field_logo
+          table: node__field_logo
+          field: field_logo
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: 'col-md-3 silver-sponsor-logo'
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: drupalcampcebu2015_medium
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
     cache_metadata:
       contexts:
         - 'languages:language_content'
