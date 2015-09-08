@@ -294,19 +294,19 @@ p {
   font-size: 1.6em;
 }
 
-/* line 79, ../sass/partials/_sponsors.scss */
+/* line 56, ../sass/partials/_sponsors.scss */
 .col-md-7.gold-sponsor-logo div {
   background-color: #fcb040;
 }
 
-/* line 87, ../sass/partials/_sponsors.scss */
+/* line 64, ../sass/partials/_sponsors.scss */
 .col-md-2.silver-sponsor-logo div,
 .col-md-3.silver-sponsor-logo div,
 .col-md-2.partners-sponsor-logo div {
   background-color: #1664a6;
 }
 
-/* line 98, ../sass/partials/_sponsors.scss */
+/* line 75, ../sass/partials/_sponsors.scss */
 .col-md-2.bronze-sponsor-logo div,
 .col-md-2.bronze-sponsor-page-logo div,
 .col-md-7.code-sprint-sponsor-logo div,
@@ -316,7 +316,7 @@ p {
   background-color: #89caae;
 }
 
-/* line 112, ../sass/partials/_sponsors.scss */
+/* line 89, ../sass/partials/_sponsors.scss */
 .col-md-7.gold-sponsor-logo,
 .col-md-2.silver-sponsor-logo,
 .col-md-3.silver-sponsor-logo,
@@ -330,7 +330,7 @@ p {
   margin-top: 0.8em;
   text-align: center;
 }
-/* line 115, ../sass/partials/_sponsors.scss */
+/* line 92, ../sass/partials/_sponsors.scss */
 .col-md-7.gold-sponsor-logo div,
 .col-md-2.silver-sponsor-logo div,
 .col-md-3.silver-sponsor-logo div,
@@ -353,27 +353,27 @@ p {
   width: 82%;
 }
 
-/* line 160, ../sass/partials/_sponsors.scss */
+/* line 107, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab {
   padding-bottom: 0.6em;
   padding-top: 1.5em;
 }
-/* line 163, ../sass/partials/_sponsors.scss */
+/* line 110, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1) {
   font-size: 1.6em;
 }
-/* line 166, ../sass/partials/_sponsors.scss */
+/* line 113, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(2) {
   font-size: 1.5em;
 }
-/* line 170, ../sass/partials/_sponsors.scss */
+/* line 117, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1),
 .promote-sponsor-tab p:nth-child(2) {
   color: #1664a6;
   margin-bottom: 0;
 }
 
-/* line 176, ../sass/partials/_sponsors.scss */
+/* line 123, ../sass/partials/_sponsors.scss */
 .promote-sponsor-button {
   background-color: #fcb040;
   text-align: center;
@@ -384,12 +384,12 @@ p {
   padding: 1em;
 }
 
-/* line 186, ../sass/partials/_sponsors.scss */
+/* line 133, ../sass/partials/_sponsors.scss */
 a .promote-sponsor-button {
   text-decoration: underline;
 }
 
-/* line 190, ../sass/partials/_sponsors.scss */
+/* line 137, ../sass/partials/_sponsors.scss */
 a:hover {
   text-decoration: none;
 }
