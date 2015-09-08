@@ -2,11 +2,12 @@
   margin-top: 2.5em;
 }
 
-.img-responsive {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5em;
-  height: 31em;
+#site-wrapper {
+  .img-responsive {
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+    height: 31em;
+  }
 }
 
 .header-info-top {

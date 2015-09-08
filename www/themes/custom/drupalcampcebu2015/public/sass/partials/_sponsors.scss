@@ -29,7 +29,8 @@
   background-color: $color-orange;
 }
 
-.menu-box.silver-sponsor {
+.menu-box.silver-sponsor,
+.menu-box.partners {
   background-color: $color-blue;
 }
 
@@ -52,67 +53,108 @@
 }
 
 // General styling for sponsor logos (right).
-.gold-sponsor-logo,
-.bronze-sponsor-logo,
-.silver-sponsor-logo,
-.code-sprint-sponsor-logo,
-.saturday-night-sponsor-logo,
-.saturday-lunch-sponsor-logo,
-.coffee-snacks-sponsor-logo,
-.partners-sponsor-logo {
-  padding: 1em;
-  div:nth-child(1),
-  div:nth-child(2),
-  div:nth-child(3) {
-    div {
-     color: $color-white-text;
-     text-align: center;
-     padding-left: 2em;
-     padding-right: 2em;
-     font-size: 1.5em;
-     height: 4em;
-     font-family: $font-title;
-     padding: 1.2em;
-    }
-  }
-}
+// .code-sprint-sponsor-logo,
+// .saturday-night-sponsor-logo,
+// .saturday-lunch-sponsor-logo,
+// .coffee-snacks-sponsor-logo,
+// .partners-sponsor-logo {
+//   padding: 1em;
+//   div:nth-child(1),
+//   div:nth-child(2),
+//   div:nth-child(3) {
+//     div {
+//      color: $color-white-text;
+//      text-align: center;
+//      padding-left: 2em;
+//      padding-right: 2em;
+//      font-size: 1.5em;
+//      height: 4em;
+//      font-family: $font-title;
+//      padding: 1.2em;
+//     }
+//   }
+// }
 
-.gold-sponsor-logo .col-md-7 {
+.col-md-7.gold-sponsor-logo {
   div {
     background-color: $color-orange;
   }
 }
 
-.silver-sponsor-logo,
-.partners-sponsor-logo {
-  div:nth-child(1),
-  div:nth-child(2) {
-    div {
+.col-md-2.silver-sponsor-logo,
+.col-md-3.silver-sponsor-logo,
+.col-md-2.partners-sponsor-logo {
+  div {
     background-color: $color-blue;
-    }
-  }
-  div:nth-child(2) {
-    display: none;
   }
 }
 
-.bronze-sponsor-logo,
-.code-sprint-sponsor-logo,
-.saturday-night-sponsor-logo,
-.saturday-lunch-sponsor-logo,
-.coffee-snacks-sponsor-logo {
-  div:nth-child(1),
-  div:nth-child(2),
-  div:nth-child(3) {
-    div {
-      background-color: $color-green;
-    }
-  }
-  div:nth-child(2),
-  div:nth-child(3) {
-    display: none;
+.col-md-2.bronze-sponsor-logo,
+.col-md-2.bronze-sponsor-page-logo,
+.col-md-7.code-sprint-sponsor-logo,
+.col-md-7.saturday-lunch-sponsor-logo,
+.col-md-7.saturday-night-sponsor-logo,
+.col-md-7.coffee-snacks-sponsor-logo {
+  div {
+    background-color: $color-green;
   }
 }
+
+.col-md-7.gold-sponsor-logo,
+.col-md-2.silver-sponsor-logo,
+.col-md-3.silver-sponsor-logo,
+.col-md-2.bronze-sponsor-logo,
+.col-md-2.bronze-sponsor-page-logo,
+.col-md-7.code-sprint-sponsor-logo,
+.col-md-7.saturday-lunch-sponsor-logo,
+.col-md-7.saturday-night-sponsor-logo,
+.col-md-7.coffee-snacks-sponsor-logo,
+.col-md-2.partners-sponsor-logo {
+    margin-top: 0.8em;
+    text-align: center;
+   div {
+    height: 4em;
+    color: $color-white-text;
+    font-family: $font-title;
+    padding: 0.6em;
+    text-align: center;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    font-size: 1.5em;
+    margin: 0 auto;
+    width: 82%;
+  }
+}
+
+// .partners-sponsor-logo {
+//   div:nth-child(1),
+//   div:nth-child(2) {
+//     div {
+//     background-color: $color-blue;
+//     }
+//   }
+//   div:nth-child(2) {
+//     display: none;
+//   }
+// }
+
+// .bronze-sponsor-logo,
+// .code-sprint-sponsor-logo,
+// .saturday-night-sponsor-logo,
+// .saturday-lunch-sponsor-logo,
+// .coffee-snacks-sponsor-logo {
+//   div:nth-child(1),
+//   div:nth-child(2),
+//   div:nth-child(3) {
+//     div {
+//       background-color: $color-green;
+//     }
+//   }
+//   div:nth-child(2),
+//   div:nth-child(3) {
+//     display: none;
+//   }
+// }
 
 // Style specific for promote sponsor.
 .promote-sponsor-tab {
