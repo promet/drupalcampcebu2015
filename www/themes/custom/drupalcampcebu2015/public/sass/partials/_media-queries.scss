@@ -1,60 +1,70 @@
 // Tablet.
-@media only screen and (min-width: 420px) {
-  .img-responsive {
-    margin-bottom: 2.5em;
-  }
+@media only screen and (min-width:420px) {
+  #site-wrapper {
+    .img-responsive {
+      margin-bottom: 2.5em;
+      margin-top: 2.5em;
+    }
 
-  .header-info-top {
-   text-align: left;
-    h3,
-    p {
+    .header-info-top {
+     text-align: left;
+     margin-top: 2em;
+      h3,
+      p {
+        font-size: 1.5em;
+      }
+      h2 {
+        font-size: 2.1em;
+        margin-top: 0;
+      }
+      h3 {
+        margin-bottom: 0;
+      }
+      padding: 2.2em;
+      padding-top: 3.5em;
+      padding-bottom: 5.5em;
+    }
+
+    .content {
+      h1 {
+        margin-top: 1em;
+        font-size: 2.2em;
+        text-align: left;
+        padding-left: 0.4em;
+      }
+    }
+
+    .newsletter {
+      padding: 0;
+      h4 {
+        font-size: 2.1em;
+        margin-top: 1.5em;
+      }
+      .email-address,
+      .firstname {
+        font-size: 1.5em;
+      }
+    }
+
+    .mc-field-group {
+      clear: both;
+    }
+
+    .newsletter form #mc_embed_signup_scroll .mc-field-group {
+      margin-top: 1.5em;
+    }
+
+    .newsletter .button {
       font-size: 1.5em;
     }
-    h2 {
-      font-size: 2.1em;
-      margin-top: 0;
-    }
-    h3 {
-      margin-bottom: 0;
-    }
-    padding: 2.2em;
-    padding-top: 3.5em;
-    padding-bottom: 5.5em;
   }
 
-  .content {
-    h1 {
-      font-size: 2.2em;
-    }
-    p {
-      font-size: 2em;
-    }
+  .region-sponsors {
+    margin-top: 5em;
   }
 
-  .newsletter {
-    h4 {
-      font-size: 2.2em;
-    }
-    .email-address,
-    .firstname {
-      font-size: 1.5em;
-    }
-  }
-
-  .newsletter {
-    padding: 1em;
-  }
-
-  .newsletter form #mc_embed_signup_scroll .mc-field-group {
-    margin-top: 1.5em;
-  }
-
-  .newsletter form #mc_embed_signup_scroll .mc-field-group.col-md-8 .col-md-8 {
-    padding: 0;
-  }
-
-  .newsletter .button {
-    font-size: 1.5em;
+  .logo-wrapper {
+    margin-top: 0;
   }
 
   .menu-box {
@@ -71,67 +81,133 @@
       font-size: 1.3em;
     }
   }
-  .menu-box.silver-sponsor,
-  .menu-box.bronze-sponsor {
+
+  #block-views-block-sponsors-block-sponsor-bronze,
+  #block-views-block-sponsors-block-sponsor-silver,
+  #block-views-block-sponsors-and-partners-silver-sponsor,
+  #block-views-block-sponsors-and-partners-bronze-sponsor,
+  #block-views-block-sponsors-and-partners-code-sprint-sponsor,
+  #block-views-block-sponsors-and-partners-saturday-night-sponsor,
+  #block-views-block-sponsors-and-partners-saturday-lunch-sponsor,
+  #block-views-block-sponsors-and-partners-coffee-and-snacks-sponsor,
+  #block-views-block-sponsors-and-partners-partners,
+  #block-views-block-sponsors-block-sponsor-promote {
     margin-top: 0;
+    clear: both;
   }
 
-  .gold-sponsor {
-    margin-top: 5em;
+  .menu-box.gold-sponsor {
+    height: 16em;
   }
 
-  .gold-sponsor-logo .col-md-7 {
-    margin-left: 0;
-    margin-top: 0em;
-    div:nth-child(1) {
-      font-size: 1.7em;
-    }
+  .menu-box.silver-sponsor {
+    height: 15em;
   }
 
-  .gold-sponsor-logo {
+  .menu-box.code-sprint-sponsor {
+    margin-top: 3.5em;
+  }
+  .col-md-7.code-sprint-sponsor-logo {
+    margin-top: 4em;
+  }
+
+  .col-md-7.saturday-night-sponsor-logo,
+  .col-md-7.saturday-lunch-sponsor-logo,
+  .col-md-7.coffee-snacks-sponsor-logo,
+  .col-md-2.partners-sponsor-logo{
     margin-top: 2.5em;
   }
 
-  .silver-sponsor-logo .col-md-3 {
-    width: 37%;
+  .menu-box.saturday-night-sponsor,
+  .menu-box.saturday-lunch-sponsor,
+  .menu-box.coffee-and-snacks-sponsors,
+  .menu-box.partners {
+     margin-top: 2em;
   }
 
-  .silver-sponsor-logo div:nth-child(1) div, .silver-sponsor-logo div:nth-child(2) div {
-    margin-left: 0;
-    height: 5em;
-    padding-left: 2.5em;
-    padding-right: 2.5em;
+  .menu-box.partners {
+    margin-bottom: 2em;
   }
 
-  .silver-sponsor-logo div:nth-child(2) {
-    display: initial;
+  .menu-box.bronze-sponsor,
+  .menu-box.code-sprint-sponsor,
+  .menu-box.saturday-night-sponsor,
+  .menu-box.saturday-lunch-sponsor,
+  .menu-box.coffee-and-snacks-sponsors,
+  .menu-box.partners {
+    height: 12.5em;
   }
 
-  .bronze-sponsor-logo .col-md-2 {
-    margin-top: 1em;
-    width: 30%;
+  .col-md-7.gold-sponsor-logo {
+    text-align: left;
+    div {
+      height: 9.5em;
+      width: 60%;
+      margin: 0;
+      padding: 2em;
+    }
   }
 
-  .bronze-sponsor-logo div:nth-child(1) div,
-  .bronze-sponsor-logo div:nth-child(2) div,
-  .bronze-sponsor-logo div:nth-child(3) div {
-    margin-left: 0;
-    display: table-cell;
-    padding: 0.6em;
-    font-size: 1.3em;
+  .col-md-2.silver-sponsor-logo,
+  .col-md-3.silver-sponsor-logo {
+    text-align: left;
+    margin-top: 0.6em;
+    div {
+      height: 9.1em;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+  .col-md-2.silver-sponsor-logo {
+    width: 21%;
+  }
+  .col-md-3.silver-sponsor-logo {
+    width: 33%;
+  }
+
+  .col-md-2.bronze-sponsor-logo,
+  .col-md-2.bronze-sponsor-page-logo {
+    width: 18%;
+  }
+
+  .col-md-7.code-sprint-sponsor-logo,
+  .col-md-7.saturday-night-sponsor-logo,
+  .col-md-7.saturday-lunch-sponsor-logo,
+  .col-md-7.coffee-snacks-sponsor-logo,
+  .col-md-2.partners-sponsor-logo {
+    width: 28%;
+  }
+
+  .col-md-2.bronze-sponsor-logo,
+  .col-md-2.bronze-sponsor-page-logo,
+  .col-md-7.code-sprint-sponsor-logo,
+  .col-md-7.saturday-night-sponsor-logo,
+  .col-md-7.saturday-lunch-sponsor-logo,
+  .col-md-7.coffee-snacks-sponsor-logo,
+  .col-md-2.partners-sponsor-logo {
+    text-align: left;
+    div {
+      height: 7.6em;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+
+  .col-md-2.bronze-sponsor-page-logo,
+  .col-md-2.bronze-sponsor-page-logo,
+  .col-md-2.partners-sponsor-logo {
+    width: 28%;
   }
 
   .bronze-sponsor-logo div:nth-child(2), .bronze-sponsor-logo div:nth-child(3) {
     display: initial;
   }
-
-  .gold-sponsor-logo .col-md-7,
-  .silver-sponsor-logo .col-md-3,
-  .bronze-sponsor-logo .col-md-2 {
-    padding: 0.5em;
-    padding-top: 1em;
+  .col-md-2.bronze-sponsor-page-logo,
+  .col-md-2.bronze-sponsor-logo {
+    margin-top: 0.5em;
   }
-
   .promote-sponsor-tab {
     padding-top: 2.5em;
     padding: 1.6em;
@@ -142,7 +218,6 @@
 
   .promote-sponsor-button {
     margin-top: 1em;
-    margin-left: 0.5em;
   }
 
   .footer-container p {
@@ -151,8 +226,8 @@
   }
 }
 
-// Desktops.
-@media only screen and (min-width: 1250px) {
+// Desktops
+@media only screen and (min-width: 1290px) {
   .header-info-top {
     h3,
     p {
@@ -171,10 +246,42 @@
     margin-top: 2.5em;
   }
 
-  .gold-sponsor-logo .col-md-7 img {
-    margin-top: 3em;
+  .col-md-7.gold-sponsor-logo {
+    width: 43%;
   }
 
+  .col-md-3.silver-sponsor-logo {
+    width: 25%;
+  }
+
+  .col-md-2.silver-sponsor-logo {
+    width: 15%;
+  }
+
+  .col-md-2.bronze-sponsor-logo {
+    width: 13%;
+  }
+  .col-md-2.bronze-sponsor-page-logo,
+  .col-md-2.partners-sponsor-logo {
+    width: 20%;
+  }
+
+  .col-md-3.silver-sponsor-logo,
+  .col-md-7.code-sprint-sponsor-logo,
+  .col-md-7.saturday-night-sponsor-logo,
+  .col-md-7.saturday-lunch-sponsor-logo,
+  .col-md-7.coffee-snacks-sponsor-logo,
+  .col-md-2.partners-sponsor-logo {
+    width: 23%;
+  }
+
+  .col-md-2.bronze-sponsor-logo {
+    div {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
   .promote-sponsor-button a {
     a:hover {
       text-decoration: none;

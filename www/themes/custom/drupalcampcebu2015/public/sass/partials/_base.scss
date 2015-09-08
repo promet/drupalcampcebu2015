@@ -8,3 +8,30 @@ $color-white-text: #fff;
 
 $font-title: 'Montserrat', sans-serif;
 $font-text:'Open Sans', sans-serif;
+
+@media (min-width: 950px) {
+  .col-md-8 {
+    width: 66.66666667%;
+    float: left;
+  }
+  .col-md-7 {
+    width: 58.33333333%;
+    float: left;
+  }
+  .col-md-5 {
+    width: 41.66666667%;
+    float: left;
+  }
+  .col-md-4 {
+    width: 33.33333333%;
+    float: left;
+  }
+  .col-md-3 {
+    width: 25%;
+    float: left;
+  }
+  .col-md-2 {
+    width: 16.66666667%;
+    float: left;
+  }
+}

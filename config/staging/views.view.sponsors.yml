@@ -82,15 +82,15 @@ display:
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: true
-          uses_fields: false
+          default_row_class: false
       row:
         type: fields
         options:
-          inline: {  }
+          default_field_elements: true
+          inline:
+            field_logo: field_logo
           separator: ''
           hide_empty: false
-          default_field_elements: true
       fields:
         field_logo:
           id: field_logo
@@ -244,7 +244,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: " <div class=\"col-md-8 bronze-sponsor-logo\">\n    <div class=\"col-md-2\">\n        <a href=\"mailto:drupalcebu@gmail.com\">\n             <div>Your logo here</div>\n        </a>\n    </div>\n    <div class=\"col-md-2\">\n       <a href=\"mailto:drupalcebu@gmail.com\">\n          <div>Or here!</div>\n       </a>\n    </div>\n    <div class=\"col-md-2\">\n       <a href=\"mailto:drupalcebu@gmail.com\">\n           <div>Even here!</div>\n       </a>\n    </div>\n </div>"
+            value: "<div class=\"col-md-2 bronze-sponsor-logo\">\n     <a href=\"mailto:drupalcebu@gmail.com\">\n           <div>Your logo here</div>\n     </a>\n</div>\n<div class=\"col-md-2 bronze-sponsor-logo\">\n    <a href=\"mailto:drupalcebu@gmail.com\">\n        <div>Or here!</div>\n    </a>\n </div>\n <div class=\"col-md-2 bronze-sponsor-logo\">\n     <a href=\"mailto:drupalcebu@gmail.com\">\n         <div>Even here!</div>\n    </a>\n </div>"
             format: full_html
           plugin_id: text
       defaults:
@@ -405,7 +405,7 @@ display:
             preserve_tags: ''
             html: false
           element_type: div
-          element_class: logo-wrapper
+          element_class: 'col-md-2 bronze-sponsor-logo'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -461,7 +461,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-8 gold-sponsor-logo\">\n    <div class=\"col-md-7\">\n      <a href=\"mailto:drupalcebu@gmail.com\">\n        <div>Your Logo Here</div>\n      </a>\n   </div>\n</div>"
+            value: "<div class=\"col-md-7 gold-sponsor-logo\">\n    <a href=\"mailto:drupalcebu@gmail.com\">\n        <div>Your Logo Here</div>\n     </a>\n </div>"
             format: full_html
           plugin_id: text
       defaults:
@@ -622,11 +622,11 @@ display:
             preserve_tags: ''
             html: false
           element_type: div
-          element_class: 'gold-sponsor-logo-container logo-wrapper'
+          element_class: 'col-md-7 gold-sponsor-logo'
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: '0'
+          element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: false
           empty: ''
@@ -837,7 +837,8 @@ display:
         empty: false
         filters: false
         filter_groups: false
-        fields: true
+        fields: false
+        css_class: false
       empty:
         area:
           id: area
@@ -849,7 +850,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-8 silver-sponsor-logo\">\n    <div class=\"col-md-3\">\n        <a href=\"mailto:drupalcebu@gmail.com\"><div>Your logo here</div></a>\n    </div>\n<div class=\"col-md-3\">\n       <a href=\"mailto:drupalcebu@gmail.com\"><div>Or here!</div></a>\n       </div>\n </div>"
+            value: "<div class=\"col-md-2 silver-sponsor-logo\">\n        <a href=\"mailto:drupalcebu@gmail.com\"><div>Your logo here</div></a>\n </div>\n<div class=\"col-md-2 silver-sponsor-logo\">\n       <a href=\"mailto:drupalcebu@gmail.com\"><div>Or here!</div></a>\n </div>"
             format: full_html
           plugin_id: text
       filters:
@@ -952,6 +953,72 @@ display:
         operator: AND
         groups:
           1: AND
+      fields:
+        field_logo:
+          id: field_logo
+          table: node__field_logo
+          field: field_logo
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: true
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: 'col-md-2 silver-sponsor-logo'
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: drupalcampcebu2015_medium
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      css_class: ''
     cache_metadata:
       contexts:
         - 'languages:language_content'

@@ -2,17 +2,19 @@
   margin-top: 2.5em;
 }
 
-.img-responsive {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5em;
-  height: 30em;
+#site-wrapper {
+  .img-responsive {
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+    height: 31em;
+  }
 }
 
 .header-info-top {
   background-color: $color-blue;
   padding: 1.5em;
   text-align: center;
+  margin-top: 1em;
   p,
   h2,
   h3 {
@@ -27,12 +29,13 @@
 }
 
 .content {
-  padding: 0.9em;
   h1 {
     font-weight: bold;
     font-size: 1.8em;
     color: $color-blue;
     margin-bottom: 1em;
+    margin-top: 2em;
+    text-align: center;
   }
   p {
     color: $color-blue;

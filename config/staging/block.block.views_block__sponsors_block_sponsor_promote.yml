@@ -5,6 +5,7 @@ dependencies:
   config:
     - views.view.sponsors
   module:
+    - system
     - views
   theme:
     - drupalcampcebu2015
@@ -23,4 +24,9 @@ settings:
     max_age: 3600
   views_label: ''
   items_per_page: none
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /sponsors
+    negate: true
+    context_mapping: {  }

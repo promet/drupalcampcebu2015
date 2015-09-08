@@ -9,5 +9,6 @@ libraries:
 regions:
   sidebar: 'Sidebar'
   content: 'Main Content'
+  content_bottom: 'Content Bottom'
   sponsors: 'Sponsors'
   footer: 'Footer'
