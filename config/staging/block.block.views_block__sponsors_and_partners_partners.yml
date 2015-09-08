@@ -1,6 +1,6 @@
 uuid: 2089a73a-2061-40bd-b516-229b5dd0e048
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - views.view.sponsors_and_partners
@@ -11,7 +11,7 @@ dependencies:
     - drupalcampcebu2015
 id: views_block__sponsors_and_partners_partners
 theme: drupalcampcebu2015
-region: '-1'
+region: content_bottom
 weight: -2
 provider: null
 plugin: 'views_block:sponsors_and_partners-partners'

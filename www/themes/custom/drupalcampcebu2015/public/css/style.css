@@ -512,13 +512,13 @@ a:hover {
   /* line 94, ../sass/partials/_media-queries.scss */
   #block-views-block-sponsors-block-sponsor-bronze,
   #block-views-block-sponsors-block-sponsor-silver,
-  #block-views-block-sponsors-and-partners-silver-sponsor-2,
-  #block-views-block-sponsors-and-partners-bronze-sponsor-2,
-  #block-views-block-sponsors-and-partners-code-sprint-sponsor-2,
-  #block-views-block-sponsors-and-partners-saturday-night-sponsor-2,
-  #block-views-block-sponsors-and-partners-saturday-lunch-sponsor-2,
-  #block-views-block-sponsors-and-partners-coffee-and-snacks-sponsor-2,
-  #block-views-block-sponsors-and-partners-partners-2,
+  #block-views-block-sponsors-and-partners-silver-sponsor,
+  #block-views-block-sponsors-and-partners-bronze-sponsor,
+  #block-views-block-sponsors-and-partners-code-sprint-sponsor,
+  #block-views-block-sponsors-and-partners-saturday-night-sponsor,
+  #block-views-block-sponsors-and-partners-saturday-lunch-sponsor,
+  #block-views-block-sponsors-and-partners-coffee-and-snacks-sponsor,
+  #block-views-block-sponsors-and-partners-partners,
   #block-views-block-sponsors-block-sponsor-promote {
     margin-top: 0;
     clear: both;

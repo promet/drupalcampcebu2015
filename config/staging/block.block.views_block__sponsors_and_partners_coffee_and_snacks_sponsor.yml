@@ -1,6 +1,6 @@
 uuid: 09596446-d179-4ad0-b300-f876d797ee34
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - views.view.sponsors_and_partners
@@ -11,7 +11,7 @@ dependencies:
     - drupalcampcebu2015
 id: views_block__sponsors_and_partners_coffee_and_snacks_sponsor
 theme: drupalcampcebu2015
-region: '-1'
+region: content_bottom
 weight: -3
 provider: null
 plugin: 'views_block:sponsors_and_partners-coffee_and_snacks_sponsor'

@@ -1,6 +1,6 @@
 uuid: 9385f517-d651-4fdc-8b5d-93d7d7487484
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - views.view.sponsors_and_partners
@@ -11,7 +11,7 @@ dependencies:
     - drupalcampcebu2015
 id: views_block__sponsors_and_partners_code_sprint_sponsor
 theme: drupalcampcebu2015
-region: '-1'
+region: content_bottom
 weight: -6
 provider: null
 plugin: 'views_block:sponsors_and_partners-code_sprint_sponsor'
