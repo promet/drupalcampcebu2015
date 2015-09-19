@@ -140,18 +140,13 @@
       </div>
     {% endif %}
   </div>
-</div>
 
-
-<section class="sponsors">
-  {% if is_front %}
-    <div class="col-md-12">
-      {% if page.sponsors %}
-        {{ page.sponsors }}
-      {% endif %}
-    </div>
+  {% if page.sponsors %}
+    <section class="sponsors">
+      {{ page.sponsors }}
+    </section>
   {% endif %}
-</section>
+</div>
 
 <section class="footer-container">
   <div class="footer-top-text">

@@ -48,7 +48,7 @@
 #site-wrapper .img-responsive {
   margin: 0 auto;
   margin-bottom: 1.5em;
-  height: 31em;
+  height: 30em;
 }
 
 /* line 13, ../sass/partials/_header.scss */
@@ -56,23 +56,22 @@
   background-color: #1664a6;
   padding: 1.5em;
   text-align: center;
-  margin-top: 1em;
 }
-/* line 20, ../sass/partials/_header.scss */
+/* line 17, ../sass/partials/_header.scss */
 .header-info-top p,
 .header-info-top h2,
 .header-info-top h3 {
-  color: white;
+  color: #fff;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-size: 1.1em;
 }
-/* line 26, ../sass/partials/_header.scss */
+/* line 25, ../sass/partials/_header.scss */
 .header-info-top h2 {
   font-size: 1.9em;
 }
 
-/* line 32, ../sass/partials/_header.scss */
+/* line 31, ../sass/partials/_header.scss */
 .content h1 {
   font-weight: bold;
   font-size: 1.8em;
@@ -81,12 +80,12 @@
   margin-top: 2em;
   text-align: center;
 }
-/* line 40, ../sass/partials/_header.scss */
+/* line 39, ../sass/partials/_header.scss */
 .content p {
   color: #1664a6;
   font-size: 1.3em;
 }
-/* line 44, ../sass/partials/_header.scss */
+/* line 43, ../sass/partials/_header.scss */
 .content .field-item {
   margin-top: 2em;
 }
@@ -116,7 +115,7 @@
 .content ul li a.is-active {
   background-color: #1664a6;
   border-radius: 4px 4px 0 0;
-  color: white;
+  color: #fff;
 }
 
 /* line 1, ../sass/partials/_newsletter.scss */
@@ -141,7 +140,7 @@
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-4 {
   padding: 0;
 }
-/* line 21, ../sass/partials/_newsletter.scss */
+/* line 20, ../sass/partials/_newsletter.scss */
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-3,
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 {
   padding-left: 0;
@@ -152,7 +151,7 @@
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 label {
   font-weight: normal;
 }
-/* line 33, ../sass/partials/_newsletter.scss */
+/* line 32, ../sass/partials/_newsletter.scss */
 .newsletter .email-address,
 .newsletter .firstname {
   color: #fcb040;
@@ -172,7 +171,7 @@
   padding: 0.3em;
   width: 100%;
   margin-top: 0.5em;
-  color: white;
+  color: #fff;
   background-color: #fcb040;
   border: none;
   text-transform: uppercase;
@@ -183,10 +182,10 @@
 /* line 1, ../sass/partials/_global.scss */
 #site-wrapper {
   max-width: 1560px;
-  margin-top: 1em;
+  margin: 1.5em auto 0;
 }
 
-/* line 7, ../sass/partials/_global.scss */
+/* line 6, ../sass/partials/_global.scss */
 body,
 html {
   width: 100%;
@@ -215,7 +214,7 @@ p {
 .menu-box p {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
-  color: white;
+  color: #fff;
   font-size: 1.6em;
   text-align: center;
   line-height: 0.9em;
@@ -229,17 +228,17 @@ p {
 /* line 38, ../sass/partials/_global.scss */
 .menu-box p.subtitle a {
   text-decoration: underline;
-  color: white;
+  color: #fff;
 }
 
-/* line 2, ../sass/partials/_sponsors.scss */
+/* line 1, ../sass/partials/_sponsors.scss */
 .logo-wrapper,
 .sponsor-page {
   text-align: center;
   margin-top: 1em;
 }
 
-/* line 15, ../sass/partials/_sponsors.scss */
+/* line 7, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-bronze,
 #block-views-block-sponsors-block-sponsor-silver,
 #block-views-block-sponsors-and-partners-silver-sponsor-2,
@@ -267,13 +266,13 @@ p {
   background-color: #fcb040;
 }
 
-/* line 33, ../sass/partials/_sponsors.scss */
+/* line 32, ../sass/partials/_sponsors.scss */
 .menu-box.silver-sponsor,
 .menu-box.partners {
   background-color: #1664a6;
 }
 
-/* line 41, ../sass/partials/_sponsors.scss */
+/* line 37, ../sass/partials/_sponsors.scss */
 .menu-box.bronze-sponsor,
 .menu-box.code-sprint-sponsor,
 .menu-box.saturday-lunch-sponsor,
@@ -316,7 +315,7 @@ p {
   background-color: #89caae;
 }
 
-/* line 89, ../sass/partials/_sponsors.scss */
+/* line 80, ../sass/partials/_sponsors.scss */
 .col-md-7.gold-sponsor-logo,
 .col-md-2.silver-sponsor-logo,
 .col-md-3.silver-sponsor-logo,
@@ -342,7 +341,7 @@ p {
 .col-md-7.coffee-snacks-sponsor-logo div,
 .col-md-2.partners-sponsor-logo div {
   height: 4em;
-  color: white;
+  color: #fff;
   font-family: "Montserrat", sans-serif;
   padding: 0.6em;
   text-align: center;
@@ -366,7 +365,7 @@ p {
 .promote-sponsor-tab p:nth-child(2) {
   font-size: 1.5em;
 }
-/* line 117, ../sass/partials/_sponsors.scss */
+/* line 116, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1),
 .promote-sponsor-tab p:nth-child(2) {
   color: #1664a6;
@@ -379,7 +378,7 @@ p {
   text-align: center;
   margin-bottom: 2em;
   width: 100%;
-  color: white;
+  color: #fff;
   font-size: 1.5em;
   padding: 1em;
 }
@@ -404,12 +403,12 @@ a:hover {
   padding-right: 0.8em;
   width: 100%;
 }
-/* line 10, ../sass/partials/_footer.scss */
+/* line 9, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1),
 .footer-container div:nth-child(2) {
   text-align: center;
   font-size: 0.8em;
-  color: white;
+  color: #fff;
   font-family: "Open Sans", sans-serif;
   padding-bottom: 0.5em;
   font-weight: 300;
@@ -417,7 +416,7 @@ a:hover {
 /* line 17, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1) p a,
 .footer-container div:nth-child(2) p a {
-  color: white;
+  color: #fff;
   text-decoration: underline;
 }
 
@@ -425,91 +424,89 @@ a:hover {
   /* line 4, ../sass/partials/_media-queries.scss */
   #site-wrapper .img-responsive {
     margin-bottom: 2.5em;
-    margin-top: 2.5em;
   }
-  /* line 9, ../sass/partials/_media-queries.scss */
+  /* line 7, ../sass/partials/_media-queries.scss */
   #site-wrapper .header-info-top {
     text-align: left;
-    margin-top: 2em;
     padding: 2.2em;
     padding-top: 3.5em;
     padding-bottom: 5.5em;
   }
-  /* line 13, ../sass/partials/_media-queries.scss */
+  /* line 9, ../sass/partials/_media-queries.scss */
   #site-wrapper .header-info-top h3,
   #site-wrapper .header-info-top p {
     font-size: 1.5em;
   }
-  /* line 16, ../sass/partials/_media-queries.scss */
+  /* line 13, ../sass/partials/_media-queries.scss */
   #site-wrapper .header-info-top h2 {
     font-size: 2.1em;
     margin-top: 0;
   }
-  /* line 20, ../sass/partials/_media-queries.scss */
+  /* line 17, ../sass/partials/_media-queries.scss */
   #site-wrapper .header-info-top h3 {
     margin-bottom: 0;
   }
-  /* line 29, ../sass/partials/_media-queries.scss */
+  /* line 26, ../sass/partials/_media-queries.scss */
   #site-wrapper .content h1 {
     margin-top: 1em;
     font-size: 2.2em;
     text-align: left;
     padding-left: 0.4em;
   }
-  /* line 37, ../sass/partials/_media-queries.scss */
+  /* line 34, ../sass/partials/_media-queries.scss */
   #site-wrapper .newsletter {
     padding: 0;
   }
-  /* line 39, ../sass/partials/_media-queries.scss */
+  /* line 36, ../sass/partials/_media-queries.scss */
   #site-wrapper .newsletter h4 {
     font-size: 2.1em;
     margin-top: 1.5em;
   }
-  /* line 44, ../sass/partials/_media-queries.scss */
+  /* line 40, ../sass/partials/_media-queries.scss */
   #site-wrapper .newsletter .email-address,
   #site-wrapper .newsletter .firstname {
     font-size: 1.5em;
   }
-  /* line 49, ../sass/partials/_media-queries.scss */
+  /* line 46, ../sass/partials/_media-queries.scss */
   #site-wrapper .mc-field-group {
     clear: both;
   }
-  /* line 53, ../sass/partials/_media-queries.scss */
+  /* line 50, ../sass/partials/_media-queries.scss */
   #site-wrapper .newsletter form #mc_embed_signup_scroll .mc-field-group {
     margin-top: 1.5em;
   }
-  /* line 57, ../sass/partials/_media-queries.scss */
+  /* line 54, ../sass/partials/_media-queries.scss */
   #site-wrapper .newsletter .button {
     font-size: 1.5em;
   }
 
-  /* line 62, ../sass/partials/_media-queries.scss */
+  /* line 59, ../sass/partials/_media-queries.scss */
   .region-sponsors {
     margin-top: 5em;
   }
 
-  /* line 66, ../sass/partials/_media-queries.scss */
+  /* line 63, ../sass/partials/_media-queries.scss */
   .logo-wrapper {
     margin-top: 0;
   }
 
-  /* line 72, ../sass/partials/_media-queries.scss */
+  /* line 68, ../sass/partials/_media-queries.scss */
   .menu-box p:nth-child(1),
   .menu-box p:nth-child(2) {
     text-align: left;
   }
-  /* line 75, ../sass/partials/_media-queries.scss */
+  /* line 72, ../sass/partials/_media-queries.scss */
   .menu-box p:nth-child(1) {
     font-size: 1.8em;
     padding-bottom: 0.2em;
     font-weight: 700;
   }
-  /* line 80, ../sass/partials/_media-queries.scss */
+  /* line 77, ../sass/partials/_media-queries.scss */
   .menu-box p:nth-child(2) {
     font-size: 1.3em;
   }
 
-  /* line 94, ../sass/partials/_media-queries.scss */
+  /* line 82, ../sass/partials/_media-queries.scss */
   #block-views-block-sponsors-block-sponsor-bronze,
   #block-views-block-sponsors-block-sponsor-silver,
   #block-views-block-sponsors-and-partners-silver-sponsor,
@@ -524,27 +521,27 @@ a:hover {
     clear: both;
   }
 
-  /* line 99, ../sass/partials/_media-queries.scss */
+  /* line 96, ../sass/partials/_media-queries.scss */
   .menu-box.gold-sponsor {
     height: 16em;
   }
 
-  /* line 103, ../sass/partials/_media-queries.scss */
+  /* line 100, ../sass/partials/_media-queries.scss */
   .menu-box.silver-sponsor {
     height: 15em;
   }
 
-  /* line 107, ../sass/partials/_media-queries.scss */
+  /* line 104, ../sass/partials/_media-queries.scss */
   .menu-box.code-sprint-sponsor {
     margin-top: 3.5em;
   }
 
-  /* line 110, ../sass/partials/_media-queries.scss */
+  /* line 107, ../sass/partials/_media-queries.scss */
   .col-md-7.code-sprint-sponsor-logo {
     margin-top: 4em;
   }
 
-  /* line 117, ../sass/partials/_media-queries.scss */
+  /* line 111, ../sass/partials/_media-queries.scss */
   .col-md-7.saturday-night-sponsor-logo,
   .col-md-7.saturday-lunch-sponsor-logo,
   .col-md-7.coffee-snacks-sponsor-logo,
@@ -552,7 +549,7 @@ a:hover {
     margin-top: 2.5em;
   }
 
-  /* line 124, ../sass/partials/_media-queries.scss */
+  /* line 118, ../sass/partials/_media-queries.scss */
   .menu-box.saturday-night-sponsor,
   .menu-box.saturday-lunch-sponsor,
   .menu-box.coffee-and-snacks-sponsors,
@@ -560,12 +557,12 @@ a:hover {
     margin-top: 2em;
   }
 
-  /* line 128, ../sass/partials/_media-queries.scss */
+  /* line 125, ../sass/partials/_media-queries.scss */
   .menu-box.partners {
     margin-bottom: 2em;
   }
 
-  /* line 137, ../sass/partials/_media-queries.scss */
+  /* line 129, ../sass/partials/_media-queries.scss */
   .menu-box.bronze-sponsor,
   .menu-box.code-sprint-sponsor,
   .menu-box.saturday-night-sponsor,
@@ -575,11 +572,11 @@ a:hover {
     height: 12.5em;
   }
 
-  /* line 141, ../sass/partials/_media-queries.scss */
+  /* line 138, ../sass/partials/_media-queries.scss */
   .col-md-7.gold-sponsor-logo {
     text-align: left;
   }
-  /* line 143, ../sass/partials/_media-queries.scss */
+  /* line 140, ../sass/partials/_media-queries.scss */
   .col-md-7.gold-sponsor-logo div {
     height: 9.5em;
     width: 60%;
@@ -587,13 +584,13 @@ a:hover {
     padding: 2em;
   }
 
-  /* line 152, ../sass/partials/_media-queries.scss */
+  /* line 148, ../sass/partials/_media-queries.scss */
   .col-md-2.silver-sponsor-logo,
   .col-md-3.silver-sponsor-logo {
     text-align: left;
     margin-top: 0.6em;
   }
-  /* line 155, ../sass/partials/_media-queries.scss */
+  /* line 152, ../sass/partials/_media-queries.scss */
   .col-md-2.silver-sponsor-logo div,
   .col-md-3.silver-sponsor-logo div {
     height: 9.1em;
@@ -602,23 +599,23 @@ a:hover {
     width: 100%;
   }
 
-  /* line 162, ../sass/partials/_media-queries.scss */
+  /* line 159, ../sass/partials/_media-queries.scss */
   .col-md-2.silver-sponsor-logo {
     width: 21%;
   }
 
-  /* line 165, ../sass/partials/_media-queries.scss */
+  /* line 162, ../sass/partials/_media-queries.scss */
   .col-md-3.silver-sponsor-logo {
     width: 33%;
   }
 
-  /* line 170, ../sass/partials/_media-queries.scss */
+  /* line 166, ../sass/partials/_media-queries.scss */
   .col-md-2.bronze-sponsor-logo,
   .col-md-2.bronze-sponsor-page-logo {
     width: 18%;
   }
 
-  /* line 178, ../sass/partials/_media-queries.scss */
+  /* line 171, ../sass/partials/_media-queries.scss */
   .col-md-7.code-sprint-sponsor-logo,
   .col-md-7.saturday-night-sponsor-logo,
   .col-md-7.saturday-lunch-sponsor-logo,
@@ -627,7 +624,7 @@ a:hover {
     width: 28%;
   }
 
-  /* line 188, ../sass/partials/_media-queries.scss */
+  /* line 179, ../sass/partials/_media-queries.scss */
   .col-md-2.bronze-sponsor-logo,
   .col-md-2.bronze-sponsor-page-logo,
   .col-md-7.code-sprint-sponsor-logo,
@@ -637,7 +634,7 @@ a:hover {
   .col-md-2.partners-sponsor-logo {
     text-align: left;
   }
-  /* line 190, ../sass/partials/_media-queries.scss */
+  /* line 187, ../sass/partials/_media-queries.scss */
   .col-md-2.bronze-sponsor-logo div,
   .col-md-2.bronze-sponsor-page-logo div,
   .col-md-7.code-sprint-sponsor-logo div,
@@ -651,93 +648,93 @@ a:hover {
     width: 100%;
   }
 
-  /* line 200, ../sass/partials/_media-queries.scss */
+  /* line 195, ../sass/partials/_media-queries.scss */
   .col-md-2.bronze-sponsor-page-logo,
   .col-md-2.bronze-sponsor-page-logo,
   .col-md-2.partners-sponsor-logo {
     width: 28%;
   }
 
-  /* line 204, ../sass/partials/_media-queries.scss */
+  /* line 201, ../sass/partials/_media-queries.scss */
   .bronze-sponsor-logo div:nth-child(2), .bronze-sponsor-logo div:nth-child(3) {
     display: initial;
   }
 
-  /* line 208, ../sass/partials/_media-queries.scss */
+  /* line 204, ../sass/partials/_media-queries.scss */
   .col-md-2.bronze-sponsor-page-logo,
   .col-md-2.bronze-sponsor-logo {
     margin-top: 0.5em;
   }
 
-  /* line 211, ../sass/partials/_media-queries.scss */
+  /* line 208, ../sass/partials/_media-queries.scss */
   .promote-sponsor-tab {
     padding-top: 2.5em;
     padding: 1.6em;
   }
-  /* line 214, ../sass/partials/_media-queries.scss */
+  /* line 211, ../sass/partials/_media-queries.scss */
   .promote-sponsor-tab p:nth-child(1) {
     font-size: 1.8em;
   }
 
-  /* line 219, ../sass/partials/_media-queries.scss */
+  /* line 216, ../sass/partials/_media-queries.scss */
   .promote-sponsor-button {
     margin-top: 1em;
   }
 
-  /* line 223, ../sass/partials/_media-queries.scss */
+  /* line 220, ../sass/partials/_media-queries.scss */
   .footer-container p {
     font-size: 1.5em;
     margin-bottom: 0;
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 233, ../sass/partials/_media-queries.scss */
+  /* line 229, ../sass/partials/_media-queries.scss */
   .header-info-top h3,
   .header-info-top p {
     font-size: 1.2em;
   }
-  /* line 236, ../sass/partials/_media-queries.scss */
+  /* line 233, ../sass/partials/_media-queries.scss */
   .header-info-top h2 {
     font-size: 2.2em;
   }
 
-  /* line 241, ../sass/partials/_media-queries.scss */
+  /* line 238, ../sass/partials/_media-queries.scss */
   .content p {
     font-size: 1.8em;
   }
 
-  /* line 245, ../sass/partials/_media-queries.scss */
+  /* line 242, ../sass/partials/_media-queries.scss */
   .gold-sponsor-logo {
     margin-top: 2.5em;
   }
 
-  /* line 249, ../sass/partials/_media-queries.scss */
+  /* line 246, ../sass/partials/_media-queries.scss */
   .col-md-7.gold-sponsor-logo {
     width: 43%;
   }
 
-  /* line 253, ../sass/partials/_media-queries.scss */
+  /* line 250, ../sass/partials/_media-queries.scss */
   .col-md-3.silver-sponsor-logo {
     width: 25%;
   }
 
-  /* line 257, ../sass/partials/_media-queries.scss */
+  /* line 254, ../sass/partials/_media-queries.scss */
   .col-md-2.silver-sponsor-logo {
     width: 15%;
   }
 
-  /* line 261, ../sass/partials/_media-queries.scss */
+  /* line 258, ../sass/partials/_media-queries.scss */
   .col-md-2.bronze-sponsor-logo {
     width: 13%;
   }
 
-  /* line 265, ../sass/partials/_media-queries.scss */
+  /* line 261, ../sass/partials/_media-queries.scss */
   .col-md-2.bronze-sponsor-page-logo,
   .col-md-2.partners-sponsor-logo {
     width: 20%;
   }
 
-  /* line 274, ../sass/partials/_media-queries.scss */
+  /* line 266, ../sass/partials/_media-queries.scss */
   .col-md-3.silver-sponsor-logo,
   .col-md-7.code-sprint-sponsor-logo,
   .col-md-7.saturday-night-sponsor-logo,
@@ -747,19 +744,19 @@ a:hover {
     width: 23%;
   }
 
-  /* line 279, ../sass/partials/_media-queries.scss */
+  /* line 276, ../sass/partials/_media-queries.scss */
   .col-md-2.bronze-sponsor-logo div {
     margin-left: 0;
     margin-right: 0;
     width: 100%;
   }
 
-  /* line 286, ../sass/partials/_media-queries.scss */
+  /* line 283, ../sass/partials/_media-queries.scss */
   .promote-sponsor-button a a:hover {
     text-decoration: none;
   }
 
-  /* line 291, ../sass/partials/_media-queries.scss */
+  /* line 288, ../sass/partials/_media-queries.scss */
   .footer-container {
     padding-top: 3em;
     padding-bottom: 5em;
