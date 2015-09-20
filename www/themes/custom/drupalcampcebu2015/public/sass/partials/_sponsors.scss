@@ -1,108 +1,3 @@
-.logo-wrapper,
-.sponsor-page {
-  text-align: center;
-  margin-top: 1em;
-}
-
-#block-views-block-sponsors-block-sponsor-bronze,
-#block-views-block-sponsors-block-sponsor-silver,
-#block-views-block-sponsors-and-partners-silver-sponsor-2,
-#block-views-block-sponsors-and-partners-bronze-sponsor-2,
-#block-views-block-sponsors-and-partners-code-sprint-sponsor-2,
-#block-views-block-sponsors-and-partners-saturday-night-sponsor-2,
-#block-views-block-sponsors-and-partners-saturday-lunch-sponsor-2,
-#block-views-block-sponsors-and-partners-coffee-and-snacks-sponsor-2,
-#block-views-block-sponsors-and-partners-partners-2 {
-  margin-top: 2.5em;
-}
-
-#block-views-block-sponsors-and-partners-partners-2 {
-  margin-bottom: 4em;
-}
-
-.menu-box {
-  vertical-align: middle;
-}
-
-// Sponsor tabs (left)
-.menu-box.gold-sponsor {
-  background-color: $color-orange;
-}
-
-.menu-box.silver-sponsor,
-.menu-box.partners {
-  background-color: $color-blue;
-}
-
-.menu-box.bronze-sponsor,
-.menu-box.code-sprint-sponsor,
-.menu-box.saturday-lunch-sponsor ,
-.menu-box.saturday-night-sponsor,
-.menu-box.coffee-and-snacks-sponsors {
-  background-color: $color-green;
-}
-
-.menu-box#sponsor-ad {
-  background-color: #fff;
-  text-align: center;
-  padding-bottom: 0.5em;
-  p {
-    color: $color-blue;
-    font-size: 1.6em;
-  }
-}
-
-.col-md-7.gold-sponsor-logo {
-  div {
-    background-color: $color-orange;
-  }
-}
-
-.col-md-2.silver-sponsor-logo,
-.col-md-3.silver-sponsor-logo,
-.col-md-2.partners-sponsor-logo {
-  div {
-    background-color: $color-blue;
-  }
-}
-
-.col-md-2.bronze-sponsor-logo,
-.col-md-2.bronze-sponsor-page-logo,
-.col-md-7.code-sprint-sponsor-logo,
-.col-md-7.saturday-lunch-sponsor-logo,
-.col-md-7.saturday-night-sponsor-logo,
-.col-md-7.coffee-snacks-sponsor-logo {
-  div {
-    background-color: $color-green;
-  }
-}
-
-.col-md-7.gold-sponsor-logo,
-.col-md-2.silver-sponsor-logo,
-.col-md-3.silver-sponsor-logo,
-.col-md-2.bronze-sponsor-logo,
-.col-md-2.bronze-sponsor-page-logo,
-.col-md-7.code-sprint-sponsor-logo,
-.col-md-7.saturday-lunch-sponsor-logo,
-.col-md-7.saturday-night-sponsor-logo,
-.col-md-7.coffee-snacks-sponsor-logo,
-.col-md-2.partners-sponsor-logo {
-    margin-top: 0.8em;
-    text-align: center;
-   div {
-    height: 4em;
-    color: $color-white-text;
-    font-family: $font-title;
-    padding: 0.6em;
-    text-align: center;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-    font-size: 1.5em;
-    margin: 0 auto;
-    width: 82%;
-  }
-}
-
 // Style specific for promote sponsor.
 .promote-sponsor-tab {
   padding-bottom: 0.6em;
@@ -120,20 +15,108 @@
   }
 }
 
-.promote-sponsor-button {
+#block-views-block-sponsors-block-sponsor-promote h3 {
+  color: #1664a6;
+}
+
+.region-sponsors .view-sponsors {
+  @include clearfix();
+}
+
+/* Sponsor header background */
+#block-views-block-sponsors-block-sponsor-gold .sponsor-header {
   background-color: $color-orange;
+}
+
+#block-views-block-sponsors-block-sponsor-silver .sponsor-header {
+  background-color: $color-blue;
+}
+
+#block-views-block-sponsors-block-sponsor-bronze .sponsor-header {
+  background-color: $color-green;
+}
+
+#block-views-block-sponsors-block-sponsor-promote .sponsor-header {
+  padding: 3em 1.6em 1em;
+}
+
+/* Sponsor header text */
+.region-sponsors .sponsor-header {
+  padding: 3em 1.6em;
+  overflow: hidden;
+  a,
+  h3 {
+    color: #fff;
+  }
+  h3 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0;
+  }
+  a {
+    font-size: 1.3em;
+    text-transform: uppercase;
+  }
+}
+
+.region-sponsors .view-empty a {
+  color: #fff;
+  display: block;
+  height: 110px;
+  padding: 40px 10px;
   text-align: center;
-  margin-bottom: 2em;
-  width: 100%;
+  text-transform: uppercase;
+  margin: 15px 0;
+}
+
+#block-views-block-sponsors-block-sponsor-gold .view-empty a {
+  background-color: $color-orange;
+  font-size: 1.6em;
+}
+
+#block-views-block-sponsors-block-sponsor-silver .view-empty a {
+  background-color: $color-blue;
+  font-size: 1.4em;
+}
+
+#block-views-block-sponsors-block-sponsor-bronze .view-empty a {
+  background-color: $color-green;
+  font-size: 1.3em;
+}
+
+#block-views-block-sponsors-block-sponsor-promote .view-empty a {
+  background-color: $color-orange;
   color: $color-white-text;
   font-size: 1.5em;
-  padding: 1em;
+  height: auto;
+  padding: 20px;
+  text-align: center;
 }
 
-a .promote-sponsor-button {
-  text-decoration: underline;
-}
+/* Sponsor override float into table display to center items */
+@media (min-width: 992px) {
+  .region-sponsors .view-sponsors {
+    display: table;
+    width: 100%;
+  }
 
-a:hover {
-  text-decoration: none;
+  .region-sponsors .view-sponsors .view-header,
+  .region-sponsors .view-sponsors .view-empty,
+  .region-sponsors .view-sponsors .view-content {
+    display: table-cell;
+    float: none;
+  }
+
+  .region-sponsors .view-sponsors .view-empty,
+  .region-sponsors .view-sponsors .view-content {
+    vertical-align: middle;
+  }
+
+  #block-views-block-sponsors-block-sponsor-promote .view-empty a {
+    display: inline-block;
+  }
+
+  #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
+    padding: 3em 1.6em;
+  }
 }

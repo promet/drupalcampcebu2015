@@ -13,7 +13,7 @@
 .header-info-top {
   background-color: $color-blue;
   padding: 1.5em;
-  text-align: center;
+
   p,
   h2,
   h3 {
@@ -22,6 +22,7 @@
     font-family: $font-title;
     font-size: 1.1em;
   }
+
   h2 {
     font-size: 1.9em;
   }

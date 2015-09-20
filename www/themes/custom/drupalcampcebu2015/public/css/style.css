@@ -2,43 +2,6 @@
  * style.scss
  ******************************************************************************/
 /* Colors */
-@media (min-width: 950px) {
-  /* line 13, ../sass/partials/_base.scss */
-  .col-md-8 {
-    width: 66.66666667%;
-    float: left;
-  }
-
-  /* line 17, ../sass/partials/_base.scss */
-  .col-md-7 {
-    width: 58.33333333%;
-    float: left;
-  }
-
-  /* line 21, ../sass/partials/_base.scss */
-  .col-md-5 {
-    width: 41.66666667%;
-    float: left;
-  }
-
-  /* line 25, ../sass/partials/_base.scss */
-  .col-md-4 {
-    width: 33.33333333%;
-    float: left;
-  }
-
-  /* line 29, ../sass/partials/_base.scss */
-  .col-md-3 {
-    width: 25%;
-    float: left;
-  }
-
-  /* line 33, ../sass/partials/_base.scss */
-  .col-md-2 {
-    width: 16.66666667%;
-    float: left;
-  }
-}
 /* line 1, ../sass/partials/_header.scss */
 .header {
   margin-top: 2.5em;
@@ -55,7 +18,6 @@
 .header-info-top {
   background-color: #1664a6;
   padding: 1.5em;
-  text-align: center;
 }
 /* line 17, ../sass/partials/_header.scss */
 .header-info-top p,
@@ -66,12 +28,12 @@
   font-family: "Montserrat", sans-serif;
   font-size: 1.1em;
 }
-/* line 25, ../sass/partials/_header.scss */
+/* line 26, ../sass/partials/_header.scss */
 .header-info-top h2 {
   font-size: 1.9em;
 }
 
-/* line 31, ../sass/partials/_header.scss */
+/* line 32, ../sass/partials/_header.scss */
 .content h1 {
   font-weight: bold;
   font-size: 1.8em;
@@ -80,39 +42,40 @@
   margin-top: 2em;
   text-align: center;
 }
-/* line 39, ../sass/partials/_header.scss */
+/* line 40, ../sass/partials/_header.scss */
 .content p {
   color: #1664a6;
   font-size: 1.3em;
 }
-/* line 43, ../sass/partials/_header.scss */
+/* line 44, ../sass/partials/_header.scss */
 .content .field-item {
   margin-top: 2em;
 }
 
-/* line 2, ../sass/partials/_tabs.scss */
-.content ul {
+/* line 1, ../sass/partials/_tabs.scss */
+.nav-tabs {
   padding-left: 0;
   padding-bottom: 0.6em;
   border-bottom: 1px solid #1664a6;
 }
-/* line 6, ../sass/partials/_tabs.scss */
-.content ul li {
+/* line 5, ../sass/partials/_tabs.scss */
+.nav-tabs li {
   display: inline;
 }
-/* line 9, ../sass/partials/_tabs.scss */
-.content ul li a {
+/* line 8, ../sass/partials/_tabs.scss */
+.nav-tabs li a {
   font-size: 1.25em;
   color: #1664a6;
   padding: 0.62em 0.93em;
 }
-/* line 15, ../sass/partials/_tabs.scss */
-.content ul li a:hover {
+/* line 14, ../sass/partials/_tabs.scss */
+.nav-tabs li a:hover {
   border: 1px solid #1664a6;
   border-radius: 4px 4px 0 0;
+  background-color: #fff;
 }
 /* line 20, ../sass/partials/_tabs.scss */
-.content ul li a.is-active {
+.nav-tabs li a.is-active {
   background-color: #1664a6;
   border-radius: 4px 4px 0 0;
   color: #fff;
@@ -186,213 +149,190 @@
 }
 
 /* line 6, ../sass/partials/_global.scss */
-body,
-html {
-  width: 100%;
-}
-
-/* line 11, ../sass/partials/_global.scss */
-h1, h2, h3, h4 {
-  font: "Montserrat", sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
 }
 
-/* line 16, ../sass/partials/_global.scss */
+/* line 11, ../sass/partials/_global.scss */
 p {
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
 }
 
-/* line 21, ../sass/partials/_global.scss */
+/* line 16, ../sass/partials/_global.scss */
 .menu-box {
   background-color: #fcb040;
   padding: 1.6em;
   padding-top: 2em;
   padding-bottom: 2em;
 }
-/* line 26, ../sass/partials/_global.scss */
+/* line 21, ../sass/partials/_global.scss */
 .menu-box p {
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
   color: #fff;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.6em;
-  text-align: center;
   line-height: 0.9em;
   margin-bottom: 0;
+  text-transform: uppercase;
 }
-/* line 35, ../sass/partials/_global.scss */
+/* line 29, ../sass/partials/_global.scss */
 .menu-box p.subtitle {
   font-size: 1.1em;
   padding-top: 0.3em;
 }
-/* line 38, ../sass/partials/_global.scss */
+/* line 32, ../sass/partials/_global.scss */
 .menu-box p.subtitle a {
+  color: #fff;
   text-decoration: underline;
-  color: #fff;
 }
 
-/* line 1, ../sass/partials/_sponsors.scss */
-.logo-wrapper,
-.sponsor-page {
-  text-align: center;
-  margin-top: 1em;
-}
-
-/* line 7, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-bronze,
-#block-views-block-sponsors-block-sponsor-silver,
-#block-views-block-sponsors-and-partners-silver-sponsor-2,
-#block-views-block-sponsors-and-partners-bronze-sponsor-2,
-#block-views-block-sponsors-and-partners-code-sprint-sponsor-2,
-#block-views-block-sponsors-and-partners-saturday-night-sponsor-2,
-#block-views-block-sponsors-and-partners-saturday-lunch-sponsor-2,
-#block-views-block-sponsors-and-partners-coffee-and-snacks-sponsor-2,
-#block-views-block-sponsors-and-partners-partners-2 {
-  margin-top: 2.5em;
-}
-
-/* line 19, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-and-partners-partners-2 {
-  margin-bottom: 4em;
-}
-
-/* line 23, ../sass/partials/_sponsors.scss */
-.menu-box {
-  vertical-align: middle;
-}
-
-/* line 28, ../sass/partials/_sponsors.scss */
-.menu-box.gold-sponsor {
-  background-color: #fcb040;
-}
-
-/* line 32, ../sass/partials/_sponsors.scss */
-.menu-box.silver-sponsor,
-.menu-box.partners {
-  background-color: #1664a6;
-}
-
-/* line 37, ../sass/partials/_sponsors.scss */
-.menu-box.bronze-sponsor,
-.menu-box.code-sprint-sponsor,
-.menu-box.saturday-lunch-sponsor,
-.menu-box.saturday-night-sponsor,
-.menu-box.coffee-and-snacks-sponsors {
-  background-color: #89caae;
-}
-
-/* line 45, ../sass/partials/_sponsors.scss */
-.menu-box#sponsor-ad {
-  background-color: #fff;
-  text-align: center;
-  padding-bottom: 0.5em;
-}
-/* line 49, ../sass/partials/_sponsors.scss */
-.menu-box#sponsor-ad p {
-  color: #1664a6;
-  font-size: 1.6em;
-}
-
-/* line 56, ../sass/partials/_sponsors.scss */
-.col-md-7.gold-sponsor-logo div {
-  background-color: #fcb040;
-}
-
-/* line 64, ../sass/partials/_sponsors.scss */
-.col-md-2.silver-sponsor-logo div,
-.col-md-3.silver-sponsor-logo div,
-.col-md-2.partners-sponsor-logo div {
-  background-color: #1664a6;
-}
-
-/* line 75, ../sass/partials/_sponsors.scss */
-.col-md-2.bronze-sponsor-logo div,
-.col-md-2.bronze-sponsor-page-logo div,
-.col-md-7.code-sprint-sponsor-logo div,
-.col-md-7.saturday-lunch-sponsor-logo div,
-.col-md-7.saturday-night-sponsor-logo div,
-.col-md-7.coffee-snacks-sponsor-logo div {
-  background-color: #89caae;
-}
-
-/* line 80, ../sass/partials/_sponsors.scss */
-.col-md-7.gold-sponsor-logo,
-.col-md-2.silver-sponsor-logo,
-.col-md-3.silver-sponsor-logo,
-.col-md-2.bronze-sponsor-logo,
-.col-md-2.bronze-sponsor-page-logo,
-.col-md-7.code-sprint-sponsor-logo,
-.col-md-7.saturday-lunch-sponsor-logo,
-.col-md-7.saturday-night-sponsor-logo,
-.col-md-7.coffee-snacks-sponsor-logo,
-.col-md-2.partners-sponsor-logo {
-  margin-top: 0.8em;
-  text-align: center;
-}
-/* line 92, ../sass/partials/_sponsors.scss */
-.col-md-7.gold-sponsor-logo div,
-.col-md-2.silver-sponsor-logo div,
-.col-md-3.silver-sponsor-logo div,
-.col-md-2.bronze-sponsor-logo div,
-.col-md-2.bronze-sponsor-page-logo div,
-.col-md-7.code-sprint-sponsor-logo div,
-.col-md-7.saturday-lunch-sponsor-logo div,
-.col-md-7.saturday-night-sponsor-logo div,
-.col-md-7.coffee-snacks-sponsor-logo div,
-.col-md-2.partners-sponsor-logo div {
-  height: 4em;
-  color: #fff;
-  font-family: "Montserrat", sans-serif;
-  padding: 0.6em;
-  text-align: center;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  font-size: 1.5em;
-  margin: 0 auto;
-  width: 82%;
-}
-
-/* line 107, ../sass/partials/_sponsors.scss */
+/* line 2, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab {
   padding-bottom: 0.6em;
   padding-top: 1.5em;
 }
-/* line 110, ../sass/partials/_sponsors.scss */
+/* line 5, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1) {
   font-size: 1.6em;
 }
-/* line 113, ../sass/partials/_sponsors.scss */
+/* line 8, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(2) {
   font-size: 1.5em;
 }
-/* line 116, ../sass/partials/_sponsors.scss */
+/* line 11, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1),
 .promote-sponsor-tab p:nth-child(2) {
   color: #1664a6;
   margin-bottom: 0;
 }
 
-/* line 123, ../sass/partials/_sponsors.scss */
-.promote-sponsor-button {
+/* line 18, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-promote h3 {
+  color: #1664a6;
+}
+
+/* line 22, ../sass/partials/_sponsors.scss */
+.region-sponsors .view-sponsors {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* Sponsor header background */
+/* line 27, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-gold .sponsor-header {
   background-color: #fcb040;
+}
+
+/* line 31, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-silver .sponsor-header {
+  background-color: #1664a6;
+}
+
+/* line 35, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-bronze .sponsor-header {
+  background-color: #89caae;
+}
+
+/* line 39, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-promote .sponsor-header {
+  padding: 3em 1.6em 1em;
+}
+
+/* Sponsor header text */
+/* line 44, ../sass/partials/_sponsors.scss */
+.region-sponsors .sponsor-header {
+  padding: 3em 1.6em;
+  overflow: hidden;
+}
+/* line 47, ../sass/partials/_sponsors.scss */
+.region-sponsors .sponsor-header a,
+.region-sponsors .sponsor-header h3 {
+  color: #fff;
+}
+/* line 51, ../sass/partials/_sponsors.scss */
+.region-sponsors .sponsor-header h3 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 0;
+}
+/* line 56, ../sass/partials/_sponsors.scss */
+.region-sponsors .sponsor-header a {
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+
+/* line 62, ../sass/partials/_sponsors.scss */
+.region-sponsors .view-empty a {
+  color: #fff;
+  display: block;
+  height: 110px;
+  padding: 40px 10px;
   text-align: center;
-  margin-bottom: 2em;
-  width: 100%;
+  text-transform: uppercase;
+  margin: 15px 0;
+}
+
+/* line 72, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-gold .view-empty a {
+  background-color: #fcb040;
+  font-size: 1.6em;
+}
+
+/* line 77, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-silver .view-empty a {
+  background-color: #1664a6;
+  font-size: 1.4em;
+}
+
+/* line 82, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-bronze .view-empty a {
+  background-color: #89caae;
+  font-size: 1.3em;
+}
+
+/* line 87, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-promote .view-empty a {
+  background-color: #fcb040;
   color: #fff;
   font-size: 1.5em;
-  padding: 1em;
+  height: auto;
+  padding: 20px;
+  text-align: center;
 }
 
-/* line 133, ../sass/partials/_sponsors.scss */
-a .promote-sponsor-button {
-  text-decoration: underline;
-}
+/* Sponsor override float into table display to center items */
+@media (min-width: 992px) {
+  /* line 98, ../sass/partials/_sponsors.scss */
+  .region-sponsors .view-sponsors {
+    display: table;
+    width: 100%;
+  }
 
-/* line 137, ../sass/partials/_sponsors.scss */
-a:hover {
-  text-decoration: none;
-}
+  /* line 103, ../sass/partials/_sponsors.scss */
+  .region-sponsors .view-sponsors .view-header,
+  .region-sponsors .view-sponsors .view-empty,
+  .region-sponsors .view-sponsors .view-content {
+    display: table-cell;
+    float: none;
+  }
 
+  /* line 110, ../sass/partials/_sponsors.scss */
+  .region-sponsors .view-sponsors .view-empty,
+  .region-sponsors .view-sponsors .view-content {
+    vertical-align: middle;
+  }
+
+  /* line 115, ../sass/partials/_sponsors.scss */
+  #block-views-block-sponsors-block-sponsor-promote .view-empty a {
+    display: inline-block;
+  }
+
+  /* line 119, ../sass/partials/_sponsors.scss */
+  #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
+    padding: 3em 1.6em;
+  }
+}
 /* line 1, ../sass/partials/_footer.scss */
 .footer-container {
   clear: both;
@@ -490,273 +430,44 @@ a:hover {
     margin-top: 0;
   }
 
-  /* line 68, ../sass/partials/_media-queries.scss */
-  .menu-box p:nth-child(1),
-  .menu-box p:nth-child(2) {
-    text-align: left;
-  }
-  /* line 72, ../sass/partials/_media-queries.scss */
-  .menu-box p:nth-child(1) {
-    font-size: 1.8em;
-    padding-bottom: 0.2em;
-    font-weight: 700;
-  }
-  /* line 77, ../sass/partials/_media-queries.scss */
-  .menu-box p:nth-child(2) {
-    font-size: 1.3em;
-  }
-
-  /* line 82, ../sass/partials/_media-queries.scss */
-  #block-views-block-sponsors-block-sponsor-bronze,
-  #block-views-block-sponsors-block-sponsor-silver,
-  #block-views-block-sponsors-and-partners-silver-sponsor,
-  #block-views-block-sponsors-and-partners-bronze-sponsor,
-  #block-views-block-sponsors-and-partners-code-sprint-sponsor,
-  #block-views-block-sponsors-and-partners-saturday-night-sponsor,
-  #block-views-block-sponsors-and-partners-saturday-lunch-sponsor,
-  #block-views-block-sponsors-and-partners-coffee-and-snacks-sponsor,
-  #block-views-block-sponsors-and-partners-partners,
-  #block-views-block-sponsors-block-sponsor-promote {
-    margin-top: 0;
-    clear: both;
-  }
-
-  /* line 96, ../sass/partials/_media-queries.scss */
-  .menu-box.gold-sponsor {
-    height: 16em;
-  }
-
-  /* line 100, ../sass/partials/_media-queries.scss */
-  .menu-box.silver-sponsor {
-    height: 15em;
-  }
-
-  /* line 104, ../sass/partials/_media-queries.scss */
-  .menu-box.code-sprint-sponsor {
-    margin-top: 3.5em;
-  }
-
-  /* line 107, ../sass/partials/_media-queries.scss */
-  .col-md-7.code-sprint-sponsor-logo {
-    margin-top: 4em;
-  }
-
-  /* line 111, ../sass/partials/_media-queries.scss */
-  .col-md-7.saturday-night-sponsor-logo,
-  .col-md-7.saturday-lunch-sponsor-logo,
-  .col-md-7.coffee-snacks-sponsor-logo,
-  .col-md-2.partners-sponsor-logo {
-    margin-top: 2.5em;
-  }
-
-  /* line 118, ../sass/partials/_media-queries.scss */
-  .menu-box.saturday-night-sponsor,
-  .menu-box.saturday-lunch-sponsor,
-  .menu-box.coffee-and-snacks-sponsors,
-  .menu-box.partners {
-    margin-top: 2em;
-  }
-
-  /* line 125, ../sass/partials/_media-queries.scss */
-  .menu-box.partners {
-    margin-bottom: 2em;
-  }
-
-  /* line 129, ../sass/partials/_media-queries.scss */
-  .menu-box.bronze-sponsor,
-  .menu-box.code-sprint-sponsor,
-  .menu-box.saturday-night-sponsor,
-  .menu-box.saturday-lunch-sponsor,
-  .menu-box.coffee-and-snacks-sponsors,
-  .menu-box.partners {
-    height: 12.5em;
-  }
-
-  /* line 138, ../sass/partials/_media-queries.scss */
-  .col-md-7.gold-sponsor-logo {
-    text-align: left;
-  }
-  /* line 140, ../sass/partials/_media-queries.scss */
-  .col-md-7.gold-sponsor-logo div {
-    height: 9.5em;
-    width: 60%;
-    margin: 0;
-    padding: 2em;
-  }
-
-  /* line 148, ../sass/partials/_media-queries.scss */
-  .col-md-2.silver-sponsor-logo,
-  .col-md-3.silver-sponsor-logo {
-    text-align: left;
-    margin-top: 0.6em;
-  }
-  /* line 152, ../sass/partials/_media-queries.scss */
-  .col-md-2.silver-sponsor-logo div,
-  .col-md-3.silver-sponsor-logo div {
-    height: 9.1em;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-  }
-
-  /* line 159, ../sass/partials/_media-queries.scss */
-  .col-md-2.silver-sponsor-logo {
-    width: 21%;
-  }
-
-  /* line 162, ../sass/partials/_media-queries.scss */
-  .col-md-3.silver-sponsor-logo {
-    width: 33%;
-  }
-
-  /* line 166, ../sass/partials/_media-queries.scss */
-  .col-md-2.bronze-sponsor-logo,
-  .col-md-2.bronze-sponsor-page-logo {
-    width: 18%;
-  }
-
-  /* line 171, ../sass/partials/_media-queries.scss */
-  .col-md-7.code-sprint-sponsor-logo,
-  .col-md-7.saturday-night-sponsor-logo,
-  .col-md-7.saturday-lunch-sponsor-logo,
-  .col-md-7.coffee-snacks-sponsor-logo,
-  .col-md-2.partners-sponsor-logo {
-    width: 28%;
-  }
-
-  /* line 179, ../sass/partials/_media-queries.scss */
-  .col-md-2.bronze-sponsor-logo,
-  .col-md-2.bronze-sponsor-page-logo,
-  .col-md-7.code-sprint-sponsor-logo,
-  .col-md-7.saturday-night-sponsor-logo,
-  .col-md-7.saturday-lunch-sponsor-logo,
-  .col-md-7.coffee-snacks-sponsor-logo,
-  .col-md-2.partners-sponsor-logo {
-    text-align: left;
-  }
-  /* line 187, ../sass/partials/_media-queries.scss */
-  .col-md-2.bronze-sponsor-logo div,
-  .col-md-2.bronze-sponsor-page-logo div,
-  .col-md-7.code-sprint-sponsor-logo div,
-  .col-md-7.saturday-night-sponsor-logo div,
-  .col-md-7.saturday-lunch-sponsor-logo div,
-  .col-md-7.coffee-snacks-sponsor-logo div,
-  .col-md-2.partners-sponsor-logo div {
-    height: 7.6em;
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-  }
-
-  /* line 195, ../sass/partials/_media-queries.scss */
-  .col-md-2.bronze-sponsor-page-logo,
-  .col-md-2.bronze-sponsor-page-logo,
-  .col-md-2.partners-sponsor-logo {
-    width: 28%;
-  }
-
-  /* line 201, ../sass/partials/_media-queries.scss */
-  .bronze-sponsor-logo div:nth-child(2), .bronze-sponsor-logo div:nth-child(3) {
-    display: initial;
-  }
-
-  /* line 204, ../sass/partials/_media-queries.scss */
-  .col-md-2.bronze-sponsor-page-logo,
-  .col-md-2.bronze-sponsor-logo {
-    margin-top: 0.5em;
-  }
-
-  /* line 208, ../sass/partials/_media-queries.scss */
+  /* line 67, ../sass/partials/_media-queries.scss */
   .promote-sponsor-tab {
     padding-top: 2.5em;
     padding: 1.6em;
   }
-  /* line 211, ../sass/partials/_media-queries.scss */
+  /* line 70, ../sass/partials/_media-queries.scss */
   .promote-sponsor-tab p:nth-child(1) {
     font-size: 1.8em;
   }
 
-  /* line 216, ../sass/partials/_media-queries.scss */
+  /* line 75, ../sass/partials/_media-queries.scss */
   .promote-sponsor-button {
     margin-top: 1em;
   }
 
-  /* line 220, ../sass/partials/_media-queries.scss */
+  /* line 79, ../sass/partials/_media-queries.scss */
   .footer-container p {
     font-size: 1.5em;
     margin-bottom: 0;
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 229, ../sass/partials/_media-queries.scss */
+  /* line 88, ../sass/partials/_media-queries.scss */
   .header-info-top h3,
   .header-info-top p {
     font-size: 1.2em;
   }
-  /* line 233, ../sass/partials/_media-queries.scss */
+  /* line 92, ../sass/partials/_media-queries.scss */
   .header-info-top h2 {
     font-size: 2.2em;
   }
 
-  /* line 238, ../sass/partials/_media-queries.scss */
+  /* line 97, ../sass/partials/_media-queries.scss */
   .content p {
     font-size: 1.8em;
   }
 
-  /* line 242, ../sass/partials/_media-queries.scss */
-  .gold-sponsor-logo {
-    margin-top: 2.5em;
-  }
-
-  /* line 246, ../sass/partials/_media-queries.scss */
-  .col-md-7.gold-sponsor-logo {
-    width: 43%;
-  }
-
-  /* line 250, ../sass/partials/_media-queries.scss */
-  .col-md-3.silver-sponsor-logo {
-    width: 25%;
-  }
-
-  /* line 254, ../sass/partials/_media-queries.scss */
-  .col-md-2.silver-sponsor-logo {
-    width: 15%;
-  }
-
-  /* line 258, ../sass/partials/_media-queries.scss */
-  .col-md-2.bronze-sponsor-logo {
-    width: 13%;
-  }
-
-  /* line 261, ../sass/partials/_media-queries.scss */
-  .col-md-2.bronze-sponsor-page-logo,
-  .col-md-2.partners-sponsor-logo {
-    width: 20%;
-  }
-
-  /* line 266, ../sass/partials/_media-queries.scss */
-  .col-md-3.silver-sponsor-logo,
-  .col-md-7.code-sprint-sponsor-logo,
-  .col-md-7.saturday-night-sponsor-logo,
-  .col-md-7.saturday-lunch-sponsor-logo,
-  .col-md-7.coffee-snacks-sponsor-logo,
-  .col-md-2.partners-sponsor-logo {
-    width: 23%;
-  }
-
-  /* line 276, ../sass/partials/_media-queries.scss */
-  .col-md-2.bronze-sponsor-logo div {
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-  }
-
-  /* line 283, ../sass/partials/_media-queries.scss */
-  .promote-sponsor-button a a:hover {
-    text-decoration: none;
-  }
-
-  /* line 288, ../sass/partials/_media-queries.scss */
+  /* line 101, ../sass/partials/_media-queries.scss */
   .footer-container {
     padding-top: 3em;
     padding-bottom: 5em;

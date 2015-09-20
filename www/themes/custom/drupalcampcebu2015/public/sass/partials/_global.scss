@@ -1,15 +1,10 @@
 #site-wrapper {
-  max-width: 1560px;
+  max-width: $container-width;
   margin: 1.5em auto 0;
 }
 
-body,
-html {
-  width: 100%;
-}
-
-h1, h2, h3, h4 {
-  font: $font-title;
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-title;
   text-transform: uppercase;
 }
 
@@ -24,20 +19,19 @@ p {
   padding-top: 2em;
   padding-bottom: 2em;
   p {
-    font-family: $font-title;
-    text-transform: uppercase;
     color: $color-white-text;
+    font-family: $font-title;
     font-size: 1.6em;
-    text-align: center;
     line-height: 0.9em;
     margin-bottom: 0;
+    text-transform: uppercase;
   }
   p.subtitle {
     font-size: 1.1em;
     padding-top: 0.3em;
     a {
-      text-decoration: underline;
       color: $color-white-text;
+      text-decoration: underline;
     }
   }
 }
