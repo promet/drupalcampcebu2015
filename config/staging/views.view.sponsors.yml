@@ -7,10 +7,10 @@ dependencies:
     - node.type.sponsor
     - taxonomy.vocabulary.sponsor_type
   content:
-    - 'taxonomy_term:sponsor_type:2e98874d-f00a-4e76-a626-38ed9db62ed6'
-    - 'taxonomy_term:sponsor_type:722641d4-b77b-4314-ad2f-476d12754e39'
-    - 'taxonomy_term:sponsor_type:a8f7e9a4-7d82-44fb-b00a-104b86d5a17f'
-    - 'taxonomy_term:sponsor_type:df1223bd-2ece-4958-915f-959a6846c258'
+    - 'taxonomy_term:sponsor_type:b5e573e1-2f00-4171-bd33-51917a4779a9'
+    - 'taxonomy_term:sponsor_type:de1103cb-04d0-4444-9900-0ebdfd934028'
+    - 'taxonomy_term:sponsor_type:f7c68113-260f-4d0a-9125-37f78780043d'
+    - 'taxonomy_term:sponsor_type:fc51a09f-a3b5-4669-8214-209af9cba401'
   module:
     - image
     - node
@@ -244,7 +244,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-2 bronze-sponsor-logo\">\n     <a href=\"mailto:drupalcebu@gmail.com\">\n           <div>Your logo here</div>\n     </a>\n</div>\n<div class=\"col-md-2 bronze-sponsor-logo\">\n    <a href=\"mailto:drupalcebu@gmail.com\">\n        <div>Or here!</div>\n    </a>\n </div>\n <div class=\"col-md-2 bronze-sponsor-logo\">\n     <a href=\"mailto:drupalcebu@gmail.com\">\n         <div>Even here!</div>\n    </a>\n </div>"
+            value: "<div class=\"row\">\n<div class=\"col-md-4\"><a href=\"mailto:drupalcebu@gmail.com\">Your logo here</a></div>\n<div class=\"col-md-4\"><a href=\"mailto:drupalcebu@gmail.com\">Or here!</a></div>\n<div class=\"col-md-4\"><a href=\"mailto:drupalcebu@gmail.com\">Even here!</a></div>\n</div>"
             format: full_html
           plugin_id: text
       defaults:
@@ -264,7 +264,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-4\">\n    <div class=\"menu-box bronze-sponsor\">\n       <p>Bronze Sponsors</p>\n       <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n    </div>\n</div>"
+            value: "<div class=\"sponsor-header\">\n<h3>Bronze Sponsors</h3>\n<p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
             format: full_html
           plugin_id: text
       filters:
@@ -461,7 +461,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-7 gold-sponsor-logo\">\n    <a href=\"mailto:drupalcebu@gmail.com\">\n        <div>Your Logo Here</div>\n     </a>\n </div>"
+            value: "<div class=\"row\">\n<div class=\"col-md-12\"><a href=\"mailto:drupalcebu@gmail.com\">Your Logo Here</a></div>\n</div>"
             format: full_html
           plugin_id: text
       defaults:
@@ -481,7 +481,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: " <div class=\"col-md-4\">\n     <div class=\"menu-box gold-sponsor\">\n         <p>Gold Sponsor</p>\n         <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n      </div>\n </div>"
+            value: "<div class=\"sponsor-header\">\n<h3>Gold Sponsor</h3><p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
             format: full_html
           plugin_id: text
       filters:
@@ -678,7 +678,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-4\">\n     <div class=\"menu-box\" id=\"sponsor-ad\">\n         <p>Promote your business</p>\n     </div>\n</div>"
+            value: "<div class=\"sponsor-header\">\n<h3>Promote your business</h3>\n</div>"
             format: full_html
           plugin_id: text
       defaults:
@@ -697,7 +697,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: " <div class=\"col-md-3\">\n    <a href=\"mailto:drupalcebu@gmail.com\">\n      <div class=\"promote-sponsor-button\">Become a sponsor\n      </div>\n    </a>\n </div>"
+            value: '<a href="mailto:drupalcebu@gmail.com" class="promote-sponsor-button">Become a sponsor</a>'
             format: full_html
           plugin_id: text
       filters:
@@ -829,7 +829,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-4\">\n    <div class=\"menu-box silver-sponsor\">\n        <p>Silver Sponsors</p>\n        <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n    </div>\n</div>"
+            value: "<div class=\"sponsor-header\">\n<h3>Silver Sponsors</h3>\n<p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
             format: full_html
           plugin_id: text
       defaults:
@@ -850,7 +850,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<div class=\"col-md-2 silver-sponsor-logo\">\n        <a href=\"mailto:drupalcebu@gmail.com\"><div>Your logo here</div></a>\n </div>\n<div class=\"col-md-2 silver-sponsor-logo\">\n       <a href=\"mailto:drupalcebu@gmail.com\"><div>Or here!</div></a>\n </div>"
+            value: "<div class=\"row\">\n<div class=\"col-md-6\"><a href=\"mailto:drupalcebu@gmail.com\">Your logo here</a></div>\n<div class=\"col-md-6\"><a href=\"mailto:drupalcebu@gmail.com\">Or here!</a></div>\n</div>"
             format: full_html
           plugin_id: text
       filters:
