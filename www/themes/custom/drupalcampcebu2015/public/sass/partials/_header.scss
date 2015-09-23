@@ -6,15 +6,14 @@
   .img-responsive {
     margin: 0 auto;
     margin-bottom: 1.5em;
-    height: 31em;
+    height: 30em;
   }
 }
 
 .header-info-top {
   background-color: $color-blue;
   padding: 1.5em;
-  text-align: center;
-  margin-top: 1em;
+
   p,
   h2,
   h3 {
@@ -23,6 +22,7 @@
     font-family: $font-title;
     font-size: 1.1em;
   }
+
   h2 {
     font-size: 1.9em;
   }
