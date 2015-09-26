@@ -63,7 +63,9 @@
 
   {% if rows %}
     <div class="view-content col-md-8">
-      {{ rows }}
+      <div class="row">
+        {{ rows }}
+      </div>
     </div>
   {% elseif empty %}
     <div class="view-empty col-md-8">

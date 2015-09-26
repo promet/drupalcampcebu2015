@@ -3,10 +3,13 @@
 }
 
 #site-wrapper {
-  .img-responsive {
-    margin: 0 auto;
+  .site-logo {
     margin-bottom: 1.5em;
-    height: 30em;
+    text-align: center;
+
+    img {
+      height: 30em;
+    }
   }
 }
 
