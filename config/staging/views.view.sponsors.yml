@@ -82,7 +82,7 @@ display:
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: false
+          default_row_class: true
       row:
         type: fields
         options:
@@ -253,6 +253,8 @@ display:
         filters: false
         filter_groups: false
         fields: false
+        style: false
+        row: false
       header:
         area:
           id: area
@@ -404,14 +406,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: div
-          element_class: 'col-md-2 bronze-sponsor-logo'
+          element_type: ''
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: '0'
+          element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -432,6 +434,20 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: 'col-md-3 col-sm-4 col-xs-12'
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline:
+            field_logo: field_logo
+          separator: ''
+          hide_empty: false
     cache_metadata:
       contexts:
         - 'languages:language_content'
@@ -470,6 +486,8 @@ display:
         filters: false
         filter_groups: false
         fields: false
+        style: false
+        row: false
       header:
         area:
           id: area
@@ -621,14 +639,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: div
-          element_class: 'col-md-7 gold-sponsor-logo'
+          element_type: ''
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -649,6 +667,20 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: col-md-7
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline:
+            field_logo: field_logo
+          separator: ''
+          hide_empty: false
     cache_metadata:
       contexts:
         - 'languages:language_content'
@@ -839,6 +871,8 @@ display:
         filter_groups: false
         fields: false
         css_class: false
+        style: false
+        row: false
       empty:
         area:
           id: area
@@ -990,14 +1024,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: div
-          element_class: 'col-md-2 silver-sponsor-logo'
+          element_type: ''
+          element_class: ''
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1019,6 +1053,20 @@ display:
           field_api_classes: false
           plugin_id: field
       css_class: ''
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: 'col-md-4 col-sm-6 col-sx-12'
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline:
+            field_logo: field_logo
+          separator: ''
+          hide_empty: false
     cache_metadata:
       contexts:
         - 'languages:language_content'
