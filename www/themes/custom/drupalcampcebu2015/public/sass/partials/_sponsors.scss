@@ -21,6 +21,12 @@
 
 .region-sponsors .view-sponsors {
   @include clearfix();
+
+  .views-row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
 }
 
 /* Sponsor header background */
@@ -56,6 +62,16 @@
   a {
     font-size: 1.3em;
     text-transform: uppercase;
+  }
+  &:before {
+    background-color: inherit;
+    bottom: 0;
+    content: "";
+    left: 15px;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    z-index: -1;
   }
 }
 
@@ -98,6 +114,10 @@
   .region-sponsors .view-sponsors {
     display: table;
     width: 100%;
+
+    .views-row {
+      text-align: unset;
+    }
   }
 
   .region-sponsors .view-sponsors .view-header,

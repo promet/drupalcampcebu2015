@@ -8,18 +8,21 @@
 }
 
 /* line 6, ../sass/partials/_header.scss */
-#site-wrapper .img-responsive {
-  margin: 0 auto;
+#site-wrapper .site-logo {
   margin-bottom: 1.5em;
+  text-align: center;
+}
+/* line 10, ../sass/partials/_header.scss */
+#site-wrapper .site-logo img {
   height: 30em;
 }
 
-/* line 13, ../sass/partials/_header.scss */
+/* line 16, ../sass/partials/_header.scss */
 .header-info-top {
   background-color: #1664a6;
   padding: 1.5em;
 }
-/* line 17, ../sass/partials/_header.scss */
+/* line 20, ../sass/partials/_header.scss */
 .header-info-top p,
 .header-info-top h2,
 .header-info-top h3 {
@@ -28,12 +31,12 @@
   font-family: "Montserrat", sans-serif;
   font-size: 1.1em;
 }
-/* line 26, ../sass/partials/_header.scss */
+/* line 29, ../sass/partials/_header.scss */
 .header-info-top h2 {
   font-size: 1.9em;
 }
 
-/* line 32, ../sass/partials/_header.scss */
+/* line 35, ../sass/partials/_header.scss */
 .content h1 {
   font-weight: bold;
   font-size: 1.8em;
@@ -42,12 +45,12 @@
   margin-top: 2em;
   text-align: center;
 }
-/* line 40, ../sass/partials/_header.scss */
+/* line 43, ../sass/partials/_header.scss */
 .content p {
   color: #1664a6;
   font-size: 1.3em;
 }
-/* line 44, ../sass/partials/_header.scss */
+/* line 47, ../sass/partials/_header.scss */
 .content .field-item {
   margin-top: 2em;
 }
@@ -187,6 +190,12 @@ p {
   text-decoration: underline;
 }
 
+/* line 39, ../sass/partials/_global.scss */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* line 2, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab {
   padding-bottom: 0.6em;
@@ -217,52 +226,69 @@ p {
   overflow: hidden;
   *zoom: 1;
 }
+/* line 25, ../sass/partials/_sponsors.scss */
+.region-sponsors .view-sponsors .views-row {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
 
 /* Sponsor header background */
-/* line 27, ../sass/partials/_sponsors.scss */
+/* line 33, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold .sponsor-header {
   background-color: #fcb040;
 }
 
-/* line 31, ../sass/partials/_sponsors.scss */
+/* line 37, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-silver .sponsor-header {
   background-color: #1664a6;
 }
 
-/* line 35, ../sass/partials/_sponsors.scss */
+/* line 41, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-bronze .sponsor-header {
   background-color: #89caae;
 }
 
-/* line 39, ../sass/partials/_sponsors.scss */
+/* line 45, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
   padding: 3em 1.6em 1em;
 }
 
 /* Sponsor header text */
-/* line 44, ../sass/partials/_sponsors.scss */
+/* line 50, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header {
   padding: 3em 1.6em;
   overflow: hidden;
 }
-/* line 47, ../sass/partials/_sponsors.scss */
+/* line 53, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header a,
 .region-sponsors .sponsor-header h3 {
   color: #fff;
 }
-/* line 51, ../sass/partials/_sponsors.scss */
+/* line 57, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header h3 {
   font-size: 1.8em;
   font-weight: 700;
   margin: 0;
 }
-/* line 56, ../sass/partials/_sponsors.scss */
+/* line 62, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header a {
   font-size: 1.3em;
   text-transform: uppercase;
 }
+/* line 66, ../sass/partials/_sponsors.scss */
+.region-sponsors .sponsor-header:before {
+  background-color: inherit;
+  bottom: 0;
+  content: "";
+  left: 15px;
+  position: absolute;
+  right: 15px;
+  top: 0;
+  z-index: -1;
+}
 
-/* line 62, ../sass/partials/_sponsors.scss */
+/* line 78, ../sass/partials/_sponsors.scss */
 .region-sponsors .view-empty a {
   color: #fff;
   display: block;
@@ -273,25 +299,25 @@ p {
   margin: 15px 0;
 }
 
-/* line 72, ../sass/partials/_sponsors.scss */
+/* line 88, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold .view-empty a {
   background-color: #fcb040;
   font-size: 1.6em;
 }
 
-/* line 77, ../sass/partials/_sponsors.scss */
+/* line 93, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-silver .view-empty a {
   background-color: #1664a6;
   font-size: 1.4em;
 }
 
-/* line 82, ../sass/partials/_sponsors.scss */
+/* line 98, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-bronze .view-empty a {
   background-color: #89caae;
   font-size: 1.3em;
 }
 
-/* line 87, ../sass/partials/_sponsors.scss */
+/* line 103, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
   background-color: #fcb040;
   color: #fff;
@@ -303,13 +329,17 @@ p {
 
 /* Sponsor override float into table display to center items */
 @media (min-width: 992px) {
-  /* line 98, ../sass/partials/_sponsors.scss */
+  /* line 114, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors {
     display: table;
     width: 100%;
   }
+  /* line 118, ../sass/partials/_sponsors.scss */
+  .region-sponsors .view-sponsors .views-row {
+    text-align: unset;
+  }
 
-  /* line 103, ../sass/partials/_sponsors.scss */
+  /* line 123, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-header,
   .region-sponsors .view-sponsors .view-empty,
   .region-sponsors .view-sponsors .view-content {
@@ -317,18 +347,18 @@ p {
     float: none;
   }
 
-  /* line 110, ../sass/partials/_sponsors.scss */
+  /* line 130, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-empty,
   .region-sponsors .view-sponsors .view-content {
     vertical-align: middle;
   }
 
-  /* line 115, ../sass/partials/_sponsors.scss */
+  /* line 135, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .view-empty a {
     display: inline-block;
   }
 
-  /* line 119, ../sass/partials/_sponsors.scss */
+  /* line 139, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
     padding: 3em 1.6em;
   }
@@ -362,7 +392,7 @@ p {
 
 @media only screen and (min-width: 420px) {
   /* line 4, ../sass/partials/_media-queries.scss */
-  #site-wrapper .img-responsive {
+  #site-wrapper .site-logo {
     margin-bottom: 2.5em;
   }
   /* line 7, ../sass/partials/_media-queries.scss */
