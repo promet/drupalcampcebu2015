@@ -8,8 +8,8 @@ dependencies:
     - drupalcampcebu2015
 id: drupalcampcebu2015_messages
 theme: drupalcampcebu2015
-region: sidebar
-weight: 0
+region: content
+weight: -8
 provider: null
 plugin: system_messages_block
 settings:
