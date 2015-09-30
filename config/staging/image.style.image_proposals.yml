@@ -1,0 +1,14 @@
+uuid: deb44078-b4eb-483f-b200-ea9a4fb0f7ce
+langcode: en
+status: true
+dependencies: {  }
+name: image_proposals
+label: image-proposals
+effects:
+  d7c9d892-ff28-43fb-8a03-3a65a00112e5:
+    uuid: d7c9d892-ff28-43fb-8a03-3a65a00112e5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200
