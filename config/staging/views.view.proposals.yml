@@ -121,7 +121,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: div
-          element_wrapper_class: img-speaker
+          element_wrapper_class: 'col-md-3 img-speaker'
           element_default_classes: false
           empty: ''
           hide_empty: false
@@ -130,7 +130,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: drupalcampcebu2015_small
+            image_style: image_proposals
             image_link: content
           group_column: ''
           group_columns: {  }
@@ -185,7 +185,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: p
-          element_wrapper_class: speaker-drupalcamp-topic
+          element_wrapper_class: 'col-md-8 speaker-drupalcamp-topic'
           element_default_classes: false
           empty: ''
           hide_empty: false
@@ -284,7 +284,7 @@ display:
             alter_text: true
             text: 'by {{ field_user_first_name }} {{ field_user_last_name }}'
             make_link: false
-            path: ''
+            path: /user/%
             absolute: false
             external: false
             replace_spaces: false
@@ -313,7 +313,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: p
-          element_wrapper_class: drupalcamp-speaker
+          element_wrapper_class: 'col-md-8 drupalcamp-speaker'
           element_default_classes: false
           empty: ''
           hide_empty: false
@@ -360,14 +360,14 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
+            max_length: 400
             word_boundary: true
             ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
             strip_tags: false
-            trim: false
+            trim: true
             preserve_tags: ''
             html: false
           element_type: '0'
@@ -376,7 +376,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: p
-          element_wrapper_class: topic-summary
+          element_wrapper_class: 'col-md-8 topic-summary'
           element_default_classes: false
           empty: ''
           hide_empty: false
@@ -412,11 +412,80 @@ display:
           id: type
           table: node_field_data
           field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
           value:
             session: session
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
           entity_type: node
           entity_field: type
           plugin_id: bundle
+        status_1:
+          id: status_1
+          table: users_field_data
+          field: status
+          relationship: uid
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: true
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: user
+          entity_field: status
+          plugin_id: boolean
       sorts:
         created:
           id: created
@@ -434,9 +503,35 @@ display:
             label: ''
           granularity: second
       title: Proposals
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<p class=\"col-md-12 speaker-description\">Here are some proposed sessions submitted for the event. You can help by choosing the ones you like.</p>\n<p class=\"col-md-12 speaker-announcement\">If you can't see any you are interested in, please <a href=\"/node/add/session\">submit a session.</a></p>"
+            format: full_html
+          plugin_id: text
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<h6 class=\"speaker-description\">The site is now open for submissions of proposed sessions.</h6>\n<p class=\"speaker-announcement\"> If interested, <a href=\"/node/add/session\">submit a proposal</a>.</p>"
+            format: full_html
+          plugin_id: text
       relationships:
         uid:
           id: uid
