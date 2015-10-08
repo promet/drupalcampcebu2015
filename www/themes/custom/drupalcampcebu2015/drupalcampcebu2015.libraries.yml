@@ -1,6 +1,0 @@
-global-styling:
-  version: 1.x
-  css:
-    theme:
-      lib/bootstrap/css/bootstrap.css: {}
-      public/css/style.css: {}

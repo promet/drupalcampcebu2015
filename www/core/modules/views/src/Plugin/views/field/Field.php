@@ -7,7 +7,9 @@
 
 namespace Drupal\views\Plugin\views\field;
 
-use Drupal\Component\Utility\Xss as CoreXss;
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Cache\CacheableDependencyInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
@@ -22,7 +24,6 @@ use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\views\FieldAPIHandlerTrait;
 use Drupal\views\Entity\Render\EntityFieldRenderer;
-use Drupal\views\Plugin\CacheablePluginInterface;
 use Drupal\views\Plugin\views\display\DisplayPluginBase;
 use Drupal\views\ResultRow;
 use Drupal\views\ViewExecutable;
@@ -37,7 +38,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @ViewsField("field")
  */
-class Field extends FieldPluginBase implements CacheablePluginInterface, MultiItemsFieldHandlerInterface {
+class Field extends FieldPluginBase implements CacheableDependencyInterface, MultiItemsFieldHandlerInterface {
   use FieldAPIHandlerTrait;
 
   /**
@@ -670,7 +671,7 @@ class Field extends FieldPluginBase implements CacheablePluginInterface, MultiIt
     if (!empty($items)) {
       $items = $this->prepareItemsByDelta($items);
       if ($this->options['multi_type'] == 'separator' || !$this->options['group_rows']) {
-        $separator = $this->options['multi_type'] == 'separator' ? CoreXss::filterAdmin($this->options['separator']) : '';
+        $separator = $this->options['multi_type'] == 'separator' ? Xss::filterAdmin($this->options['separator']) : '';
         $build = [
           '#type' => 'inline_template',
           '#template' => '{{ items | safe_join(separator) }}',
@@ -903,7 +904,7 @@ class Field extends FieldPluginBase implements CacheablePluginInterface, MultiIt
   protected function documentSelfTokens(&$tokens) {
     $field = $this->getFieldDefinition();
     foreach ($field->getColumns() as $id => $column) {
-      $tokens['{{ ' . $this->options['id'] . '-' . $id . ' }}'] = $this->t('Raw @column', array('@column' => $id));
+      $tokens['{{ ' . $this->options['id'] . '__' . $id . ' }}'] = $this->t('Raw @column', array('@column' => $id));
     }
   }
 
@@ -913,19 +914,29 @@ class Field extends FieldPluginBase implements CacheablePluginInterface, MultiIt
       // Use \Drupal\Component\Utility\Xss::filterAdmin() because it's user data
       // and we can't be sure it is safe. We know nothing about the data,
       // though, so we can't really do much else.
-
       if (isset($item['raw'])) {
-        // If $item['raw'] is an array then we can use as is, if it's an object
-        // we cast it to an array, if it's neither, we can't use it.
-        $raw = is_array($item['raw']) ? $item['raw'] :
-               (is_object($item['raw']) ? (array)$item['raw'] : NULL);
-      }
-      if (isset($raw) && isset($raw[$id]) && is_scalar($raw[$id])) {
-        $tokens['{{ ' . $this->options['id'] . '-' . $id . ' }}'] = CoreXss::filterAdmin($raw[$id]);
-      }
-      else {
-        // Make sure that empty values are replaced as well.
-        $tokens['{{ ' . $this->options['id'] . '-' . $id . ' }}'] = '';
+        $raw = $item['raw'];
+
+        if (is_array($raw)) {
+          if (isset($raw[$id]) && is_scalar($raw[$id])) {
+            $tokens['{{ ' . $this->options['id'] . '__' . $id . ' }}'] = Xss::filterAdmin($raw[$id]);
+          }
+          else {
+            // Make sure that empty values are replaced as well.
+            $tokens['{{ ' . $this->options['id'] . '__' . $id . ' }}'] = '';
+          }
+        }
+
+        if (is_object($raw)) {
+          $property = $raw->get($id);
+          if (!empty($property)) {
+            $tokens['{{ ' . $this->options['id'] . '__' . $id . ' }}'] = Xss::filterAdmin($property->getValue());
+          }
+          else {
+            // Make sure that empty values are replaced as well.
+            $tokens['{{ ' . $this->options['id'] . '__' . $id . ' }}'] = '';
+          }
+        }
       }
     }
   }
@@ -951,8 +962,8 @@ class Field extends FieldPluginBase implements CacheablePluginInterface, MultiIt
   /**
    * {@inheritdoc}
    */
-  public function isCacheable() {
-    return FALSE;
+  public function getCacheMaxAge() {
+    return Cache::PERMANENT;
   }
 
   /**
@@ -960,6 +971,18 @@ class Field extends FieldPluginBase implements CacheablePluginInterface, MultiIt
    */
   public function getCacheContexts() {
     return $this->getEntityFieldRenderer()->getCacheContexts();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheTags() {
+    $field_definition = $this->getFieldDefinition();
+    $field_storage_definition = $this->getFieldStorageDefinition();
+    return Cache::mergeTags(
+      $field_definition instanceof CacheableDependencyInterface ? $field_definition->getCacheTags() : [],
+      $field_storage_definition instanceof CacheableDependencyInterface ? $field_storage_definition->getCacheTags() : []
+    );
   }
 
   /**

@@ -32,7 +32,7 @@ class StyleUnformattedTest extends StyleTestBase {
     $output = $view->preview();
     $this->storeViewPreview(\Drupal::service('renderer')->renderRoot($output));
 
-    $rows = $this->elements->body->div->div->div;
+    $rows = $this->elements->body->div->div;
     $count = 0;
     $count_result = count($view->result);
     foreach ($rows as $row) {
@@ -41,6 +41,7 @@ class StyleUnformattedTest extends StyleTestBase {
       $class = (string) $attributes['class'][0];
       $this->assertTrue(strpos($class, 'views-row') !== FALSE, 'Make sure that the views row class is set right.');
     }
+    $this->assertIdentical($count, $count_result);
   }
 
 }

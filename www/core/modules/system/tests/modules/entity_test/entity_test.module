@@ -12,6 +12,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Entity\Entity\EntityFormDisplay;
@@ -119,13 +120,24 @@ function entity_test_entity_base_field_info(EntityTypeInterface $entity_type) {
  * Implements hook_entity_base_field_info_alter().
  */
 function entity_test_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
-  if ($entity_type->id() == 'entity_test_mulrev' && ($names = \Drupal::state()->get('entity_test.field_definitions.translatable'))) {
+  $state = \Drupal::state();
+  if ($entity_type->id() == 'entity_test_mulrev' && ($names = $state->get('entity_test.field_definitions.translatable'))) {
     foreach ($names as $name => $value) {
       $fields[$name]->setTranslatable($value);
     }
   }
-  if ($entity_type->id() == 'node' && Drupal::state()->get('entity_test.node_remove_status_field')) {
+  if ($entity_type->id() == 'node' && $state->get('entity_test.node_remove_status_field')) {
     unset($fields['status']);
+  }
+  if ($entity_type->id() == 'entity_test' && $state->get('entity_test.remove_name_field')) {
+    unset($fields['name']);
+  }
+  // In 8001 we are assuming that a new definition with multiple cardinality has
+  // been deployed.
+  // @todo Remove this if we end up using state definitions at runtime. See
+  //    https://www.drupal.org/node/2554235.
+  if ($entity_type->id() == 'entity_test' && $state->get('entity_test.db_updates.entity_definition_updates') == 8001) {
+    $fields['user_id']->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED);
   }
 }
 
@@ -156,26 +168,6 @@ function entity_test_create_bundle($bundle, $text = NULL, $entity_type = 'entity
   \Drupal::state()->set($entity_type . '.bundles', $bundles);
 
   \Drupal::entityManager()->onBundleCreate($bundle, $entity_type);
-}
-
-/**
- * Renames a bundle for entity_test entities.
- *
- * @param string $bundle_old
- *   The machine-readable name of the bundle to rename.
- * @param string $bundle_new
- *   The new machine-readable name of the bundle.
- * @param string $entity_type
- *   (optional) The entity type for which the bundle is renamed. Defaults to
- *   'entity_test'.
- */
-function entity_test_rename_bundle($bundle_old, $bundle_new, $entity_type = 'entity_test') {
-  $bundles = \Drupal::state()->get($entity_type . '.bundles') ?: array($entity_type => array('label' => 'Entity Test Bundle'));
-  $bundles[$bundle_new] = $bundles[$bundle_old];
-  unset($bundles[$bundle_old]);
-  \Drupal::state()->set($entity_type . '.bundles', $bundles);
-
-  \Drupal::entityManager()->onBundleRename($bundle_old, $bundle_new, $entity_type);
 }
 
 /**
@@ -600,7 +592,7 @@ function entity_test_field_default_value(FieldableEntityInterface $entity, Field
  * @param string $hook
  *   The hook name.
  * @param mixed $data
- *   Arbitrary data associated to the hook invocation.
+ *   Arbitrary data associated with the hook invocation.
  */
 function _entity_test_record_hooks($hook, $data) {
   $state = \Drupal::state();
@@ -629,7 +621,11 @@ function entity_test_entity_prepare_view($entity_type, array $entities, array $d
 /**
  * Implements hook_entity_access().
  */
-function entity_test_entity_access(EntityInterface $entity, $operation, AccountInterface $account, $langcode) {
+function entity_test_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  // Only apply to the 'entity_test' entities.
+  if ($entity->getEntityType()->getProvider() != 'entity_test') {
+    return AccessResult::neutral();
+  }
   \Drupal::state()->set('entity_test_entity_access', TRUE);
 
   // Attempt to allow access to entities with the title forbid_access,
@@ -648,7 +644,7 @@ function entity_test_entity_access(EntityInterface $entity, $operation, AccountI
 /**
  * Implements hook_ENTITY_TYPE_access() for 'entity_test'.
  */
-function entity_test_entity_test_access(EntityInterface $entity, $operation, AccountInterface $account, $langcode) {
+function entity_test_entity_test_access(EntityInterface $entity, $operation, AccountInterface $account) {
   \Drupal::state()->set('entity_test_entity_test_access', TRUE);
 
   // No opinion.

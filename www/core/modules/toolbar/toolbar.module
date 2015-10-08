@@ -13,7 +13,6 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Template\Attribute;
 use Drupal\Component\Datetime\DateTimePlus;
 use Drupal\Component\Utility\Crypt;
-use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Core\Url;
 
 /**
@@ -23,7 +22,7 @@ function toolbar_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
     case 'help.page.toolbar':
       $output = '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('The Toolbar module provides a toolbar for site administrators, which displays tabs and trays provided by the Toolbar module itself and other modules. For more information, see the <a href="!toolbar_docs">online documentation for the Toolbar module</a>.', array('!toolbar_docs' => 'https://www.drupal.org/documentation/modules/toolbar')) . '</p>';
+      $output .= '<p>' . t('The Toolbar module provides a toolbar for site administrators, which displays tabs and trays provided by the Toolbar module itself and other modules. For more information, see the <a href=":toolbar_docs">online documentation for the Toolbar module</a>.', array(':toolbar_docs' => 'https://www.drupal.org/documentation/modules/toolbar')) . '</p>';
       $output .= '<h4>' . t('Terminology') . '</h4>';
       $output .= '<dl>';
       $output .= '<dt>' . t('Tabs') . '</dt>';
@@ -265,7 +264,7 @@ function toolbar_menu_navigation_links(array $tree) {
     $element->options['attributes']['id'] = 'toolbar-link-' . $id;
     $element->options['attributes']['class'][] = 'toolbar-icon';
     $element->options['attributes']['class'][] = 'toolbar-icon-' . strtolower(str_replace(array('.', ' ', '_'), array('-', '-', '-'), $definition['id']));
-    $element->options['attributes']['title'] = SafeMarkup::checkPlain($link->getDescription());
+    $element->options['attributes']['title'] = $link->getDescription();
   }
   return $tree;
 }

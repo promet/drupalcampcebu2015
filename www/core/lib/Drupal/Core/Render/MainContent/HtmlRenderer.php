@@ -8,9 +8,12 @@
 namespace Drupal\Core\Render\MainContent;
 
 use Drupal\Component\Plugin\PluginManagerInterface;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Controller\TitleResolverInterface;
 use Drupal\Core\Display\PageVariantInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\Core\Display\ContextAwareVariantInterface;
+use Drupal\Core\Render\BubbleableMetadata;
 use Drupal\Core\Render\HtmlResponse;
 use Drupal\Core\Render\PageDisplayVariantSelectionEvent;
 use Drupal\Core\Render\RenderCacheInterface;
@@ -75,6 +78,15 @@ class HtmlRenderer implements MainContentRendererInterface {
   protected $renderCache;
 
   /**
+   * The renderer configuration array.
+   *
+   * @see sites/default/default.services.yml
+   *
+   * @var array
+   */
+  protected $rendererConfig;
+
+  /**
    * Constructs a new HtmlRenderer.
    *
    * @param \Drupal\Core\Controller\TitleResolverInterface $title_resolver
@@ -89,14 +101,17 @@ class HtmlRenderer implements MainContentRendererInterface {
    *   The renderer service.
    * @param \Drupal\Core\Render\RenderCacheInterface $render_cache
    *   The render cache service.
+   * @param array $renderer_config
+   *   The renderer configuration array.
    */
-  public function __construct(TitleResolverInterface $title_resolver, PluginManagerInterface $display_variant_manager, EventDispatcherInterface $event_dispatcher, ModuleHandlerInterface $module_handler, RendererInterface $renderer, RenderCacheInterface $render_cache) {
+  public function __construct(TitleResolverInterface $title_resolver, PluginManagerInterface $display_variant_manager, EventDispatcherInterface $event_dispatcher, ModuleHandlerInterface $module_handler, RendererInterface $renderer, RenderCacheInterface $render_cache, array $renderer_config) {
     $this->titleResolver = $title_resolver;
     $this->displayVariantManager = $display_variant_manager;
     $this->eventDispatcher = $event_dispatcher;
     $this->moduleHandler = $module_handler;
     $this->renderer = $renderer;
     $this->renderCache = $render_cache;
+    $this->rendererConfig = $renderer_config;
   }
 
   /**
@@ -125,10 +140,28 @@ class HtmlRenderer implements MainContentRendererInterface {
     // page.html.twig, hence add them here, just before rendering html.html.twig.
     $this->buildPageTopAndBottom($html);
 
-    // @todo https://www.drupal.org/node/2495001 Make renderRoot return a
-    //       cacheable render array directly.
-    $this->renderer->renderRoot($html);
+    // Render, but don't replace placeholders yet, because that happens later in
+    // the render pipeline. To not replace placeholders yet, we use
+    // RendererInterface::render() instead of RendererInterface::renderRoot().
+    // @see \Drupal\Core\Render\HtmlResponseAttachmentsProcessor.
+    $render_context = new RenderContext();
+    $this->renderer->executeInRenderContext($render_context, function() use (&$html) {
+      // RendererInterface::render() renders the $html render array and updates
+      // it in place. We don't care about the return value (which is just
+      // $html['#markup']), but about the resulting render array.
+      // @todo Simplify this when https://www.drupal.org/node/2495001 lands.
+      $this->renderer->render($html);
+    });
+    // RendererInterface::render() always causes bubbleable metadata to be
+    // stored in the render context, no need to check it conditionally.
+    $bubbleable_metadata = $render_context->pop();
+    $bubbleable_metadata->applyTo($html);
     $content = $this->renderCache->getCacheableRenderArray($html);
+
+    // Also associate the required cache contexts.
+    // (Because we use ::render() above and not ::renderRoot(), we manually must
+    // ensure the HTML response varies by the required cache contexts.)
+    $content['#cache']['contexts'] = Cache::mergeContexts($content['#cache']['contexts'], $this->rendererConfig['required_cache_contexts']);
 
     // Also associate the "rendered" cache tag. This allows us to invalidate the
     // entire render cache, regardless of the cache bin.
@@ -160,11 +193,18 @@ class HtmlRenderer implements MainContentRendererInterface {
    *   If the selected display variant does not implement PageVariantInterface.
    */
   protected function prepare(array $main_content, Request $request, RouteMatchInterface $route_match) {
+    // Determine the title: use the title provided by the main content if any,
+    // otherwise get it from the routing information.
+    $get_title = function (array $main_content) use ($request, $route_match) {
+      return isset($main_content['#title']) ? $main_content['#title'] : $this->titleResolver->getTitle($request, $route_match->getRouteObject());
+    };
+
     // If the _controller result already is #type => page,
     // we have no work to do: The "main content" already is an entire "page"
     // (see html.html.twig).
     if (isset($main_content['#type']) && $main_content['#type'] === 'page') {
       $page = $main_content;
+      $title = $get_title($page);
     }
     // Otherwise, render it as the main content of a #type => page, by selecting
     // page display variant to do that and building that page display variant.
@@ -196,6 +236,8 @@ class HtmlRenderer implements MainContentRendererInterface {
         ];
       }
 
+      $title = $get_title($main_content);
+
       // Instantiate the page display, and give it the main content.
       $page_display = $this->displayVariantManager->createInstance($variant_id);
       if (!$page_display instanceof PageVariantInterface) {
@@ -203,7 +245,17 @@ class HtmlRenderer implements MainContentRendererInterface {
       }
       $page_display
         ->setMainContent($main_content)
+        ->setTitle($title)
+        ->addCacheableDependency($event)
         ->setConfiguration($event->getPluginConfiguration());
+      // Some display variants need to be passed an array of contexts with
+      // values because they can't get all their contexts globally. For example,
+      // in Page Manager, you can create a Page which has a specific static
+      // context (e.g. a context that refers to the Node with nid 6), if any
+      // such contexts were added to the $event, pass them to the $page_display.
+      if ($page_display instanceof ContextAwareVariantInterface) {
+        $page_display->setContexts($event->getContexts());
+      }
 
       // Generate a #type => page render array using the page display variant,
       // the page display will build the content for the various page regions.
@@ -225,10 +277,6 @@ class HtmlRenderer implements MainContentRendererInterface {
 
     // Allow hooks to add attachments to $page['#attached'].
     $this->invokePageAttachmentHooks($page);
-
-    // Determine the title: use the title provided by the main content if any,
-    // otherwise get it from the routing information.
-    $title = isset($main_content['#title']) ? $main_content['#title'] : $this->titleResolver->getTitle($request, $route_match->getRouteObject());
 
     return [$page, $title];
   }

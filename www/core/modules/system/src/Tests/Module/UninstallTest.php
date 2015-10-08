@@ -51,7 +51,7 @@ class UninstallTest extends WebTestBase {
     $node_type->setThirdPartySetting('module_test', 'key', 'value');
     $node_type->save();
     // Add a node to prevent node from being uninstalled.
-    $node = entity_create('node', array('type' => 'uninstall_blocker'));
+    $node = entity_create('node', array('type' => 'uninstall_blocker', 'title' => $this->randomString()));
     $node->save();
 
     $this->drupalGet('admin/modules/uninstall');
@@ -72,7 +72,7 @@ class UninstallTest extends WebTestBase {
     $this->drupalPostForm('admin/modules/uninstall', $edit, t('Uninstall'));
     $this->assertNoText(\Drupal::translation()->translate('Configuration deletions'), 'No configuration deletions listed on the module install confirmation page.');
     $this->assertText(\Drupal::translation()->translate('Configuration updates'), 'Configuration updates listed on the module install confirmation page.');
-    $this->assertText($node_type->label(), SafeMarkup::format('The entity label "!label" found.', array('!label' => $node_type->label())));
+    $this->assertText($node_type->label());
     $this->drupalPostForm(NULL, NULL, t('Uninstall'));
     $this->assertText(t('The selected modules have been uninstalled.'), 'Modules status has been updated.');
 
@@ -88,7 +88,7 @@ class UninstallTest extends WebTestBase {
     $entity_types = array();
     foreach ($node_dependencies as $entity) {
       $label = $entity->label() ?: $entity->id();
-      $this->assertText($label, SafeMarkup::format('The entity label "!label" found.', array('!label' => $label)));
+      $this->assertText($label);
       $entity_types[] = $entity->getEntityTypeId();
     }
     $entity_types = array_unique($entity_types);

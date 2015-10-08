@@ -83,6 +83,7 @@ class ForumTest extends WebTestBase {
   protected function setUp() {
     parent::setUp();
     $this->drupalPlaceBlock('system_breadcrumb_block');
+    $this->drupalPlaceBlock('page_title_block');
 
     // Create users.
     $this->adminUser = $this->drupalCreateUser(array(
@@ -115,6 +116,7 @@ class ForumTest extends WebTestBase {
       'access comments',
     ));
     $this->drupalPlaceBlock('help_block', array('region' => 'help'));
+    $this->drupalPlaceBlock('local_actions_block');
   }
 
   /**
@@ -235,6 +237,7 @@ class ForumTest extends WebTestBase {
 
     // Test the root forum page title change.
     $this->drupalGet('forum');
+    $this->assertCacheTag('config:taxonomy.vocabulary.' . $this->forum['vid']);
     $this->assertTitle(t('Forums | Drupal'));
     $vocabulary = Vocabulary::load($this->forum['vid']);
     $vocabulary->set('name', 'Discussions');

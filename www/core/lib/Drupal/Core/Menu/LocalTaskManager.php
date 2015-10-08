@@ -10,7 +10,9 @@ namespace Drupal\Core\Menu;
 use Drupal\Component\Plugin\Exception\PluginException;
 use Drupal\Core\Access\AccessManagerInterface;
 use Drupal\Core\Cache\Cache;
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 use Drupal\Core\Controller\ControllerResolverInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
@@ -80,6 +82,13 @@ class LocalTaskManager extends DefaultPluginManager implements LocalTaskManagerI
    * @var array
    */
   protected $instances = array();
+
+  /**
+   * The local task render arrays for the current route.
+   *
+   * @var array
+   */
+  protected $taskData;
 
   /**
    * The route provider to load routes by name.
@@ -258,15 +267,16 @@ class LocalTaskManager extends DefaultPluginManager implements LocalTaskManagerI
           foreach ($children[$parent] as $plugin_id => $task_info) {
             $plugin = $this->createInstance($plugin_id);
             $this->instances[$route_name][$level][$plugin_id] = $plugin;
-            // Normally, _l() compares the href of every link with the current
-            // path and sets the active class accordingly. But the parents of
-            // the current local task may be on a different route in which
-            // case we have to set the class manually by flagging it active.
+            // Normally, the link generator compares the href of every link with
+            // the current path and sets the active class accordingly. But the
+            // parents of the current local task may be on a different route in
+            // which case we have to set the class manually by flagging it
+            // active.
             if (!empty($parents[$plugin_id]) && $route_name != $task_info['route_name']) {
               $plugin->setActive();
             }
             if (isset($children[$plugin_id])) {
-              // This tab has visible children
+              // This tab has visible children.
               $next_parent = $plugin_id;
             }
           }
@@ -281,7 +291,7 @@ class LocalTaskManager extends DefaultPluginManager implements LocalTaskManagerI
   /**
    * {@inheritdoc}
    */
-  public function getTasksBuild($current_route_name) {
+  public function getTasksBuild($current_route_name, RefinableCacheableDependencyInterface &$cacheability) {
     $tree = $this->getLocalTasksForRoute($current_route_name);
     $build = array();
 
@@ -302,32 +312,76 @@ class LocalTaskManager extends DefaultPluginManager implements LocalTaskManagerI
         $route_name = $child->getRouteName();
         $route_parameters = $child->getRouteParameters($this->routeMatch);
 
-        // Find out whether the user has access to the task.
-        $access = $this->accessManager->checkNamedRoute($route_name, $route_parameters, $this->account);
-        if ($access) {
-          $active = $this->isRouteActive($current_route_name, $route_name, $route_parameters);
+        // Given that the active flag depends on the route we have to add the
+        // route cache context.
+        $cacheability->addCacheContexts(['route']);
+        $active = $this->isRouteActive($current_route_name, $route_name, $route_parameters);
 
-          // The plugin may have been set active in getLocalTasksForRoute() if
-          // one of its child tabs is the active tab.
-          $active = $active || $child->getActive();
-          // @todo It might make sense to use link render elements instead.
+        // The plugin may have been set active in getLocalTasksForRoute() if
+        // one of its child tabs is the active tab.
+        $active = $active || $child->getActive();
+        // @todo It might make sense to use link render elements instead.
 
-          $link = array(
-            'title' => $this->getTitle($child),
-            'url' => Url::fromRoute($route_name, $route_parameters),
-            'localized_options' => $child->getOptions($this->routeMatch),
-          );
-          $build[$level][$plugin_id] = array(
-            '#theme' => 'menu_local_task',
-            '#link' => $link,
-            '#active' => $active,
-            '#weight' => $child->getWeight(),
-            '#access' => $access,
-          );
-        }
+        $link = [
+          'title' => $this->getTitle($child),
+          'url' => Url::fromRoute($route_name, $route_parameters),
+          'localized_options' => $child->getOptions($this->routeMatch),
+        ];
+        $access = $this->accessManager->checkNamedRoute($route_name, $route_parameters, $this->account, TRUE);
+        $build[$level][$plugin_id] = [
+          '#theme' => 'menu_local_task',
+          '#link' => $link,
+          '#active' => $active,
+          '#weight' => $child->getWeight(),
+          '#access' => $access,
+        ];
+        $cacheability->addCacheableDependency($access)->addCacheableDependency($child);
       }
     }
+
     return $build;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getLocalTasks($route_name, $level = 0) {
+    if (!isset($this->taskData[$route_name])) {
+      $cacheability = new CacheableMetadata();
+      $cacheability->addCacheContexts(['route']);
+      // Look for route-based tabs.
+      $this->taskData[$route_name] = [
+        'tabs' => [],
+        'cacheability' => $cacheability,
+      ];
+
+      if (!$this->requestStack->getCurrentRequest()->attributes->has('exception')) {
+        // Safe to build tasks only when no exceptions raised.
+        $data = [];
+        $local_tasks = $this->getTasksBuild($route_name, $cacheability);
+        foreach ($local_tasks as $tab_level => $items) {
+          $data[$tab_level] = empty($data[$tab_level]) ? $items : array_merge($data[$tab_level], $items);
+        }
+        $this->taskData[$route_name]['tabs'] = $data;
+        // Allow modules to alter local tasks.
+        $this->moduleHandler->alter('menu_local_tasks', $this->taskData[$route_name], $route_name, $cacheability);
+        $this->taskData[$route_name]['cacheability'] = $cacheability;
+      }
+    }
+
+    if (isset($this->taskData[$route_name]['tabs'][$level])) {
+      return [
+        'tabs' => $this->taskData[$route_name]['tabs'][$level],
+        'route_name' => $route_name,
+        'cacheability' => $this->taskData[$route_name]['cacheability'],
+      ];
+    }
+
+    return [
+      'tabs' => [],
+      'route_name' => $route_name,
+      'cacheability' => $this->taskData[$route_name]['cacheability'],
+    ];
   }
 
   /**

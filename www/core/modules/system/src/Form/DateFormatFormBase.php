@@ -8,7 +8,7 @@
 namespace Drupal\system\Form;
 
 use Drupal\Core\Config\Entity\ConfigEntityStorageInterface;
-use Drupal\Core\Datetime\DateFormatter;
+use Drupal\Core\Datetime\DateFormatterInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -23,7 +23,7 @@ abstract class DateFormatFormBase extends EntityForm {
   /**
    * The date formatter service.
    *
-   * @var \Drupal\Core\Datetime\DateFormatter
+   * @var \Drupal\Core\Datetime\DateFormatterInterface
    */
   protected $dateFormatter;
 
@@ -37,12 +37,12 @@ abstract class DateFormatFormBase extends EntityForm {
   /**
    * Constructs a new date format form.
    *
-   * @param \Drupal\Core\Datetime\DateFormatter $date_formatter
+   * @param \Drupal\Core\Datetime\DateFormatterInterface $date_formatter
    *   The date service.
    * @param \Drupal\Core\Config\Entity\ConfigEntityStorageInterface $date_format_storage
    *   The date format storage.
    */
-  public function __construct(DateFormatter $date_formatter, ConfigEntityStorageInterface $date_format_storage) {
+  public function __construct(DateFormatterInterface $date_formatter, ConfigEntityStorageInterface $date_format_storage) {
     $date = new DrupalDateTime();
 
     $this->dateFormatter = $date_formatter;
@@ -104,7 +104,7 @@ abstract class DateFormatFormBase extends EntityForm {
       '#type' => 'textfield',
       '#title' => t('Format string'),
       '#maxlength' => 100,
-      '#description' => $this->t('A user-defined date format. See the <a href="@url">PHP manual</a> for available options.', array('@url' => 'http://php.net/manual/function.date.php')),
+      '#description' => $this->t('A user-defined date format. See the <a href=":url">PHP manual</a> for available options.', array(':url' => 'http://php.net/manual/function.date.php')),
       '#required' => TRUE,
       '#attributes' => [
         'data-drupal-date-formatter' => 'source',
@@ -130,12 +130,11 @@ abstract class DateFormatFormBase extends EntityForm {
     parent::validateForm($form, $form_state);
 
     // The machine name field should already check to see if the requested
-    // machine name is available. Regardless of machine_name or human readable
-    // name, check to see if the provided pattern exists.
+    // machine name is available.
     $pattern = trim($form_state->getValue('date_format_pattern'));
     foreach ($this->dateFormatStorage->loadMultiple() as $format) {
-      if ($format->getPattern() == $pattern && ($this->entity->isNew() || $format->id() != $this->entity->id())) {
-        $form_state->setErrorByName('date_format_pattern', $this->t('This format already exists. Enter a unique format string.'));
+      if ($format->getPattern() == $pattern && ($format->id() == $this->entity->id())) {
+        drupal_set_message(t('The existing format/name combination has not been altered.'));
         continue;
       }
     }

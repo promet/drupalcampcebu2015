@@ -21,14 +21,6 @@ use Drupal\simpletest\KernelTestBase;
 abstract class MigrateTestBase extends KernelTestBase implements MigrateMessageInterface {
 
   /**
-   * The file path(s) to the dumped database(s) to load into the child site.
-   *
-   * @var array
-   */
-  public $databaseDumpFiles = array();
-
-
-  /**
    * TRUE to collect messages instead of displaying them.
    *
    * @var bool
@@ -52,6 +44,13 @@ abstract class MigrateTestBase extends KernelTestBase implements MigrateMessageI
    */
   protected $migration;
 
+  /**
+   * The source database connection.
+   *
+   * @var \Drupal\Core\Database\Connection
+   */
+  protected $sourceDatabase;
+
   public static $modules = array('migrate');
 
   /**
@@ -59,7 +58,29 @@ abstract class MigrateTestBase extends KernelTestBase implements MigrateMessageI
    */
   protected function setUp() {
     parent::setUp();
+    $this->createMigrationConnection();
+    $this->sourceDatabase = Database::getConnection('default', 'migrate');
+  }
 
+  /**
+   * Changes the database connection to the prefixed one.
+   *
+   * @todo Remove when we don't use global. https://www.drupal.org/node/2552791
+   */
+  private function createMigrationConnection() {
+    // If the backup already exists, something went terribly wrong.
+    // This case is possible, because database connection info is a static
+    // global state construct on the Database class, which at least persists
+    // for all test methods executed in one PHP process.
+    if (Database::getConnectionInfo('simpletest_original_migrate')) {
+      throw new \RuntimeException("Bad Database connection state: 'simpletest_original_migrate' connection key already exists. Broken test?");
+    }
+
+    // Clone the current connection and replace the current prefix.
+    $connection_info = Database::getConnectionInfo('migrate');
+    if ($connection_info) {
+      Database::renameConnection('migrate', 'simpletest_original_migrate');
+    }
     $connection_info = Database::getConnectionInfo('default');
     foreach ($connection_info as $target => $value) {
       $prefix = is_array($value['prefix']) ? $value['prefix']['default'] : $value['prefix'];
@@ -78,29 +99,23 @@ abstract class MigrateTestBase extends KernelTestBase implements MigrateMessageI
    * {@inheritdoc}
    */
   protected function tearDown() {
-    Database::removeConnection('migrate');
+    $this->cleanupMigrateConnection();
     parent::tearDown();
+    $this->databaseDumpFiles = [];
+    $this->collectMessages = FALSE;
+    unset($this->migration, $this->migrateMessages);
   }
 
   /**
-   * Load Drupal 6 database dumps to be used.
+   * Cleans up the test migrate connection.
    *
-   * @param array $files
-   *   An array of files.
-   * @param string $method
-   *   The name of the method in the dump class to use. Defaults to load.
+   * @todo Remove when we don't use global. https://www.drupal.org/node/2552791
    */
-  protected function loadDumps(array $files, $method = 'load') {
-    // Load the database from the portable PHP dump.
-    // The files may be gzipped.
-    foreach ($files as $file) {
-      if (substr($file, -3) == '.gz') {
-        $file = "compress.zlib://$file";
-        require $file;
-      }
-      preg_match('/^namespace (.*);$/m', file_get_contents($file), $matches);
-      $class = $matches[1] . '\\' . basename($file, '.php');
-      (new $class(Database::getConnection('default', 'migrate')))->$method();
+  private function cleanupMigrateConnection() {
+    Database::removeConnection('migrate');
+    $original_connection_info = Database::getConnectionInfo('simpletest_original_migrate');
+    if ($original_connection_info) {
+      Database::renameConnection('simpletest_original_migrate', 'migrate');
     }
   }
 
@@ -113,20 +128,16 @@ abstract class MigrateTestBase extends KernelTestBase implements MigrateMessageI
    *   ids.
    */
   protected function prepareMigrations(array $id_mappings) {
-    /** @var \Drupal\migrate\Entity\MigrationInterface[] $migrations */
-    $migrations = entity_load_multiple('migration', array_keys($id_mappings));
     foreach ($id_mappings as $migration_id => $data) {
-      $migration = $migrations[$migration_id];
-
-      // Mark the dependent migrations as complete.
-      $migration->setMigrationResult(MigrationInterface::RESULT_COMPLETED);
-
-      $id_map = $migration->getIdMap();
-      $id_map->setMessage($this);
-      $source_ids = $migration->getSourcePlugin()->getIds();
-      foreach ($data as $id_mapping) {
-        $row = new Row(array_combine(array_keys($source_ids), $id_mapping[0]), $source_ids);
-        $id_map->saveIdMapping($row, $id_mapping[1]);
+      // Use loadMultiple() here in order to load all variants.
+      foreach (Migration::loadMultiple([$migration_id]) as $migration) {
+        $id_map = $migration->getIdMap();
+        $id_map->setMessage($this);
+        $source_ids = $migration->getSourcePlugin()->getIds();
+        foreach ($data as $id_mapping) {
+          $row = new Row(array_combine(array_keys($source_ids), $id_mapping[0]), $source_ids);
+          $id_map->saveIdMapping($row, $id_mapping[1]);
+        }
       }
     }
   }
@@ -148,6 +159,17 @@ abstract class MigrateTestBase extends KernelTestBase implements MigrateMessageI
       static::migrateDumpAlter($this);
     }
     (new MigrateExecutable($this->migration, $this))->import();
+  }
+
+  /**
+   * Executes a set of migrations in dependency order.
+   *
+   * @param string[] $ids
+   *   Array of migration IDs, in any order.
+   */
+  protected function executeMigrations(array $ids) {
+    $migrations = Migration::loadMultiple($ids);
+    array_walk($migrations, [$this, 'executeMigration']);
   }
 
   /**

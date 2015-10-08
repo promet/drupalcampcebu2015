@@ -7,7 +7,7 @@
 
 namespace Drupal\Tests\filter\Unit;
 
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\simpletest\AssertHelperTrait;
 use Drupal\Tests\UnitTestCase;
 
 /**
@@ -15,6 +15,8 @@ use Drupal\Tests\UnitTestCase;
  * @group filter
  */
 class FilterUninstallValidatorTest extends UnitTestCase {
+
+  use AssertHelperTrait;
 
   /**
    * @var \Drupal\filter\FilterUninstallValidator|\PHPUnit_Framework_MockObject_MockObject
@@ -46,7 +48,7 @@ class FilterUninstallValidatorTest extends UnitTestCase {
     $module = $this->randomMachineName();
     $expected = [];
     $reasons = $this->filterUninstallValidator->validate($module);
-    $this->assertSame($expected, $reasons);
+    $this->assertSame($expected, $this->castSafeStrings($reasons));
   }
 
   /**
@@ -68,7 +70,7 @@ class FilterUninstallValidatorTest extends UnitTestCase {
     $module = $this->randomMachineName();
     $expected = [];
     $reasons = $this->filterUninstallValidator->validate($module);
-    $this->assertSame($expected, $reasons);
+    $this->assertSame($expected, $this->castSafeStrings($reasons));
   }
 
   /**
@@ -160,13 +162,10 @@ class FilterUninstallValidatorTest extends UnitTestCase {
       ]);
 
     $expected = [
-      SafeMarkup::format('Provides a filter plugin that is in use in the following filter formats: %formats', ['%formats' => implode(', ', [
-        'Filter Format 1 Label',
-        'Filter Format 2 Label',
-      ])]),
+      'Provides a filter plugin that is in use in the following filter formats: <em class="placeholder">Filter Format 1 Label, Filter Format 2 Label</em>'
     ];
     $reasons = $this->filterUninstallValidator->validate($this->randomMachineName());
-    $this->assertSame($expected, $reasons);
+    $this->assertSame($expected, $this->castSafeStrings($reasons));
   }
 
 }

@@ -13,25 +13,22 @@ use Drupal\migrate_drupal\Tests\d6\MigrateDrupal6TestBase;
 /**
  * Upgrade variables to aggregator.settings.yml.
  *
- * @group aggregator
+ * @group migrate_drupal_6
  */
 class MigrateAggregatorConfigsTest extends MigrateDrupal6TestBase {
 
   use SchemaCheckTestTrait;
 
   /**
-   * Modules to enable.
-   *
-   * @var array
+   * {@inheritdoc}
    */
-  public static $modules = array('aggregator');
+  public static $modules = ['aggregator'];
 
   /**
    * {@inheritdoc}
    */
   protected function setUp() {
     parent::setUp();
-    $this->loadDumps(['Variable.php']);
     $this->executeMigration('d6_aggregator_settings');
   }
 

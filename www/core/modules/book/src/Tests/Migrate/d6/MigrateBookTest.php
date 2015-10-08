@@ -13,37 +13,23 @@ use Drupal\node\Entity\Node;
 /**
  * Upgrade book structure.
  *
- * @group book
+ * @group migrate_drupal_6
  */
 class MigrateBookTest extends MigrateDrupal6TestBase {
 
-  public static $modules = array('book', 'system', 'node', 'field', 'text', 'entity_reference', 'user');
+  /**
+   * {@inheritdoc}
+   */
+  public static $modules = ['book'];
 
   /**
    * {@inheritdoc}
    */
   protected function setUp() {
     parent::setUp();
-
-    $this->installEntitySchema('node');
-    $this->installSchema('book', array('book'));
-    $this->installSchema('node', array('node_access'));
-
-    $id_mappings = array();
-    for ($i = 4; $i <= 8; $i++) {
-      $entity = entity_create('node', array(
-        'type' => 'story',
-        'title' => "Node $i",
-        'nid' => $i,
-        'status' => TRUE,
-      ));
-      $entity->enforceIsNew();
-      $entity->save();
-      $id_mappings['d6_node'][] = array(array($i), array($i));
-    }
-    $this->prepareMigrations($id_mappings);
-    // Load database dumps to provide source data.
-    $this->loadDumps(['Book.php', 'MenuLinks.php']);
+    $this->installSchema('book', ['book']);
+    $this->installSchema('node', ['node_access']);
+    $this->migrateContent();
     $this->executeMigration('d6_book');
   }
 

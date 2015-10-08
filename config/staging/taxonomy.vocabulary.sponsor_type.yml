@@ -1,9 +1,0 @@
-uuid: 6edf0060-b43f-4b47-a445-692aa4a62432
-langcode: en
-status: true
-dependencies: {  }
-name: 'Sponsor type'
-vid: sponsor_type
-description: ''
-hierarchy: 0
-weight: 0

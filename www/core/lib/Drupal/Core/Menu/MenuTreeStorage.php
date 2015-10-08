@@ -94,8 +94,6 @@ class MenuTreeStorage implements MenuTreeStorageInterface {
     'route_parameters',
     'url',
     'title',
-    'title_arguments',
-    'title_context',
     'description',
     'parent',
     'weight',
@@ -159,6 +157,9 @@ class MenuTreeStorage implements MenuTreeStorageInterface {
       foreach ($definitions as $id => $link) {
         // Flag this link as discovered, i.e. saved via rebuild().
         $link['discovered'] = 1;
+        // Note: The parent we set here might be just stored in the {menu_tree}
+        // table, so it will not end up in $top_links. Therefore the later loop
+        // on the orphan links, will handle those cases.
         if (!empty($link['parent'])) {
           $children[$link['parent']][$id] = $id;
         }
@@ -176,8 +177,18 @@ class MenuTreeStorage implements MenuTreeStorageInterface {
     // Handle any children we didn't find starting from top-level links.
     foreach ($children as $orphan_links) {
       foreach ($orphan_links as $id) {
-        // Force it to the top level.
-        $links[$id]['parent'] = '';
+        // Check for a parent that is not loaded above since only internal links
+        // are loaded above.
+        $parent = $this->loadFull($links[$id]['parent']);
+        // If there is a parent add it to the links to be used in
+        // ::saveRecursive().
+        if ($parent) {
+          $links[$links[$id]['parent']] = $parent;
+        }
+        else {
+          // Force it to the top level.
+          $links[$id]['parent'] = '';
+        }
         $this->saveRecursive($id, $children, $links);
       }
     }
@@ -366,7 +377,9 @@ class MenuTreeStorage implements MenuTreeStorageInterface {
     $fields['route_param_key'] = $fields['route_parameters'] ? UrlHelper::buildQuery($fields['route_parameters']) : '';
 
     foreach ($this->serializedFields() as $name) {
-      $fields[$name] = serialize($fields[$name]);
+      if (isset($fields[$name])) {
+        $fields[$name] = serialize($fields[$name]);
+      }
     }
     $this->setParents($fields, $parent, $original);
 
@@ -618,7 +631,9 @@ class MenuTreeStorage implements MenuTreeStorageInterface {
    */
   protected function prepareLink(array $link, $intersect = FALSE) {
     foreach ($this->serializedFields() as $name) {
-      $link[$name] = unserialize($link[$name]);
+      if (isset($link[$name])) {
+        $link[$name] = unserialize($link[$name]);
+      }
     }
     if ($intersect) {
       $link = array_intersect_key($link, array_flip($this->definitionFields()));
@@ -735,7 +750,9 @@ class MenuTreeStorage implements MenuTreeStorageInterface {
     $loaded = $this->safeExecuteSelect($query)->fetchAllAssoc('id', \PDO::FETCH_ASSOC);
     foreach ($loaded as &$link) {
       foreach ($this->serializedFields() as $name) {
-        $link[$name] = unserialize($link[$name]);
+        if (isset($link[$name])) {
+          $link[$name] = unserialize($link[$name]);
+        }
       }
     }
     return $loaded;
@@ -926,15 +943,19 @@ class MenuTreeStorage implements MenuTreeStorageInterface {
     if (!empty($parameters->conditions)) {
       // Only allow conditions that are testing definition fields.
       $parameters->conditions = array_intersect_key($parameters->conditions, array_flip($this->definitionFields()));
+      $serialized_fields = $this->serializedFields();
       foreach ($parameters->conditions as $column => $value) {
-        if (!is_array($value)) {
-          $query->condition($column, $value);
-        }
-        else {
+        if (is_array($value)) {
           $operator = $value[1];
           $value = $value[0];
-          $query->condition($column, $value, $operator);
         }
+        else {
+          $operator = '=';
+        }
+        if (in_array($column, $serialized_fields)) {
+          $value = serialize($value);
+        }
+        $query->condition($column, $value, $operator);
       }
     }
 
@@ -1241,30 +1262,18 @@ class MenuTreeStorage implements MenuTreeStorageInterface {
           'default' => '',
         ),
         'title' => array(
-          'description' => 'The text displayed for the link.',
-          'type' => 'varchar',
-          'length' => 255,
-          'not null' => TRUE,
-          'default' => '',
-        ),
-        'title_arguments' => array(
-          'description' => 'A serialized array of arguments to be passed to t() (if this plugin uses it).',
+          'description' => 'The serialized title for the link. May be a TranslatableMarkup.',
           'type' => 'blob',
           'size' => 'big',
           'not null' => FALSE,
           'serialize' => TRUE,
         ),
-        'title_context' => array(
-          'description' => 'The translation context for the link title.',
-          'type' => 'varchar',
-          'length' => 255,
-          'not null' => TRUE,
-          'default' => '',
-        ),
         'description' => array(
-          'description' => 'The description of this link - used for admin pages and title attribute.',
-          'type' => 'text',
+          'description' => 'The serialized description of this link - used for admin pages and title attribute. May be a TranslatableMarkup.',
+          'type' => 'blob',
+          'size' => 'big',
           'not null' => FALSE,
+          'serialize' => TRUE,
         ),
         'class' => array(
           'description' => 'The class for this link plugin.',

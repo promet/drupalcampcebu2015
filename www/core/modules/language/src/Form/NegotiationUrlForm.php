@@ -111,8 +111,8 @@ class NegotiationUrlForm extends ConfigFormBase {
     );
 
     $languages = $this->languageManager->getLanguages();
-    $prefixes = language_negotiation_url_prefixes();
-    $domains = language_negotiation_url_domains();
+    $prefixes = $config->get('url.prefixes');
+    $domains = $config->get('url.domains');
     foreach ($languages as $langcode => $language) {
       $t_args = array('%language' => $language->getName(), '%langcode' => $language->getId());
       $form['prefix'][$langcode] = array(
@@ -153,8 +153,8 @@ class NegotiationUrlForm extends ConfigFormBase {
         if (!($default_langcode == $langcode) && $form_state->getValue('language_negotiation_url_part') == LanguageNegotiationUrl::CONFIG_PATH_PREFIX) {
           // Throw a form error if the prefix is blank for a non-default language,
           // although it is required for selected negotiation type.
-          $form_state->setErrorByName("prefix][$langcode", $this->t('The prefix may only be left blank for the <a href="@url">selected detection fallback language.</a>', [
-            '@url' => $this->getUrlGenerator()->generate('language.negotiation_selected'),
+          $form_state->setErrorByName("prefix][$langcode", $this->t('The prefix may only be left blank for the <a href=":url">selected detection fallback language.</a>', [
+            ':url' => $this->getUrlGenerator()->generate('language.negotiation_selected'),
           ]));
         }
       }
@@ -211,11 +211,10 @@ class NegotiationUrlForm extends ConfigFormBase {
     // Save selected format (prefix or domain).
     $this->config('language.negotiation')
       ->set('url.source', $form_state->getValue('language_negotiation_url_part'))
+      // Save new domain and prefix values.
+      ->set('url.prefixes', $form_state->getValue('prefix'))
+      ->set('url.domains', $form_state->getValue('domain'))
       ->save();
-
-    // Save new domain and prefix values.
-    language_negotiation_url_prefixes_save($form_state->getValue('prefix'));
-    language_negotiation_url_domains_save($form_state->getValue('domain'));
 
     parent::submitForm($form, $form_state);
   }

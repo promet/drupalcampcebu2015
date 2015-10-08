@@ -7,12 +7,12 @@
 
 namespace Drupal\user\Plugin\views\access;
 
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Cache\CacheableDependencyInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\user\PermissionHandlerInterface;
-use Drupal\views\Plugin\CacheablePluginInterface;
 use Drupal\views\Plugin\views\access\AccessPluginBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Routing\Route;
@@ -28,7 +28,7 @@ use Symfony\Component\Routing\Route;
  *   help = @Translation("Access will be granted to users with the specified permission string.")
  * )
  */
-class Permission extends AccessPluginBase implements CacheablePluginInterface {
+class Permission extends AccessPluginBase implements CacheableDependencyInterface {
 
   /**
    * Overrides Drupal\views\Plugin\Plugin::$usesOptions.
@@ -121,7 +121,7 @@ class Permission extends AccessPluginBase implements CacheablePluginInterface {
     foreach ($permissions as $perm => $perm_item) {
       $provider = $perm_item['provider'];
       $display_name = $this->moduleHandler->getName($provider);
-      $perms[$display_name][$perm] = SafeMarkup::checkPlain(strip_tags($perm_item['title']));
+      $perms[$display_name][$perm] = strip_tags($perm_item['title']);
     }
 
     $form['perm'] = array(
@@ -136,8 +136,8 @@ class Permission extends AccessPluginBase implements CacheablePluginInterface {
   /**
    * {@inheritdoc}
    */
-  public function isCacheable() {
-    return TRUE;
+  public function getCacheMaxAge() {
+    return Cache::PERMANENT;
   }
 
   /**
@@ -145,6 +145,13 @@ class Permission extends AccessPluginBase implements CacheablePluginInterface {
    */
   public function getCacheContexts() {
     return ['user.permissions'];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheTags() {
+    return [];
   }
 
 }

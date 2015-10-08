@@ -24,7 +24,6 @@ use Drupal\Component\Utility\NestedArray;
  * @ConfigEntityType(
  *   id = "migration",
  *   label = @Translation("Migration"),
- *   module = "migrate",
  *   handlers = {
  *     "storage" = "Drupal\migrate\MigrationStorage"
  *   },
@@ -83,13 +82,6 @@ class Migration extends ConfigEntityBase implements MigrationInterface, Requirem
    * @var array
    */
   protected $process;
-
-  /**
-   * The configuration describing the load plugins.
-   *
-   * @var array
-   */
-  protected $load;
 
   /**
    * The cached process plugins.
@@ -233,11 +225,31 @@ class Migration extends ConfigEntityBase implements MigrationInterface, Requirem
   protected $dependencies = [];
 
   /**
+   * The ID of the template from which this migration was derived, if any.
+   *
+   * @var string|NULL
+   */
+  protected $template;
+
+  /**
    * The entity manager.
    *
    * @var \Drupal\Core\Entity\EntityManagerInterface
    */
   protected $entityManager;
+
+  /**
+   * Labels corresponding to each defined status.
+   *
+   * @var array
+   */
+  protected $statusLabels = [
+    self::STATUS_IDLE => 'Idle',
+    self::STATUS_IMPORTING => 'Importing',
+    self::STATUS_ROLLING_BACK => 'Rolling back',
+    self::STATUS_STOPPING => 'Stopping',
+    self::STATUS_DISABLED => 'Disabled',
+  ];
 
   /**
    * {@inheritdoc}
@@ -375,7 +387,7 @@ class Migration extends ConfigEntityBase implements MigrationInterface, Requirem
     $missing_migrations = array_diff($this->requirements, array_keys($required_migrations));
     // Check if the dependencies are in good shape.
     foreach ($required_migrations as $migration_id => $required_migration) {
-      if (!$required_migration->isComplete()) {
+      if (!$required_migration->allRowsProcessed()) {
         $missing_migrations[] = $migration_id;
       }
     }
@@ -400,24 +412,67 @@ class Migration extends ConfigEntityBase implements MigrationInterface, Requirem
   /**
    * {@inheritdoc}
    */
-  public function setMigrationResult($result) {
-    $migrate_result_store = \Drupal::keyValue('migrate_result');
-    $migrate_result_store->set($this->id(), $result);
+  public function setStatus($status) {
+    \Drupal::keyValue('migrate_status')->set($this->id(), $status);
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getMigrationResult() {
-    $migrate_result_store = \Drupal::keyValue('migrate_result');
-    return $migrate_result_store->get($this->id(), static::RESULT_INCOMPLETE);
+  public function getStatus() {
+    return \Drupal::keyValue('migrate_status')->get($this->id(), static::STATUS_IDLE);
   }
 
   /**
    * {@inheritdoc}
    */
-  public function isComplete() {
-    return $this->getMigrationResult() === static::RESULT_COMPLETED;
+  public function getStatusLabel() {
+    $status = $this->getStatus();
+    if (isset($this->statusLabels[$status])) {
+      return $this->statusLabels[$status];
+    }
+    else {
+      return '';
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getInterruptionResult() {
+    return \Drupal::keyValue('migrate_interruption_result')->get($this->id(), static::RESULT_INCOMPLETE);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function clearInterruptionResult() {
+    \Drupal::keyValue('migrate_interruption_result')->delete($this->id());
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function interruptMigration($result) {
+    $this->setStatus(MigrationInterface::STATUS_STOPPING);
+    \Drupal::keyValue('migrate_interruption_result')->set($this->id(), $result);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function allRowsProcessed() {
+    $source_count = $this->getSourcePlugin()->count();
+    // If the source is uncountable, we have no way of knowing if it's
+    // complete, so stipulate that it is.
+    if ($source_count < 0) {
+      return TRUE;
+    }
+    $processed_count = $this->getIdMap()->processedCount();
+    // We don't use == because in some circumstances (like unresolved stubs
+    // being created), the processed count may be higher than the available
+    // source rows.
+    return $source_count <= $processed_count;
   }
 
   /**
@@ -427,6 +482,10 @@ class Migration extends ConfigEntityBase implements MigrationInterface, Requirem
     if ($property_name == 'source') {
       // Invalidate the source plugin.
       unset($this->sourcePlugin);
+    }
+    elseif ($property_name === 'destination') {
+      // Invalidate the destination plugin.
+      unset($this->destinationPlugin);
     }
     return parent::set($property_name, $value);
   }
@@ -531,6 +590,6 @@ class Migration extends ConfigEntityBase implements MigrationInterface, Requirem
       $this->addDependency('config', $this->getEntityType()->getConfigPrefix() . '.' . $dependency);
     }
 
-    return $this->dependencies;
+    return $this;
   }
 }

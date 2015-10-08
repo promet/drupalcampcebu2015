@@ -27,7 +27,7 @@ interface RendererInterface {
    * @param array $elements
    *   The structured array describing the data to be rendered.
    *
-   * @return \Drupal\Component\Utility\SafeStringInterface
+   * @return \Drupal\Component\Render\MarkupInterface
    *   The rendered HTML.
    *
    * @see ::render()
@@ -42,7 +42,7 @@ interface RendererInterface {
    *
    * Calls ::render() in such a way that placeholders are replaced.
    *
-   * Useful for e.g. rendering the values of tokens or e-mails, which need a
+   * Useful for e.g. rendering the values of tokens or emails, which need a
    * render array being turned into a string, but don't need any of the
    * bubbleable metadata (the attached assets the cache tags).
    *
@@ -58,7 +58,7 @@ interface RendererInterface {
    * @param array $elements
    *   The structured array describing the data to be rendered.
    *
-   * @return \Drupal\Component\Utility\SafeStringInterface
+   * @return \Drupal\Component\Render\MarkupInterface
    *   The rendered HTML.
    *
    * @see ::renderRoot()
@@ -148,7 +148,7 @@ interface RendererInterface {
    *     $pre_bubbling_cid.
    *   - If this element has #type defined and the default attributes for this
    *     element have not already been merged in (#defaults_loaded = TRUE) then
-   *     the defaults for this type of element, defined in hook_element_info(),
+   *     the defaults for this type of element, defined by an element plugin,
    *     are merged into the array. #defaults_loaded is set by functions that
    *     process render arrays and call the element info service before passing
    *     the array to Renderer::render(), such as form_builder() in the Form
@@ -209,7 +209,7 @@ interface RendererInterface {
    *     drupal_process_states().
    *   - If this element has #attached defined then any required libraries,
    *     JavaScript, CSS, or other custom data are added to the current page by
-   *     drupal_process_attached().
+   *     \Drupal\Core\Render\AttachmentsResponseProcessorInterface::processAttachments().
    *   - If this element has an array of #theme_wrappers defined and
    *     #render_children is not set, #children is then re-rendered by passing
    *     the element in its current state to ThemeManagerInterface::render()
@@ -302,7 +302,7 @@ interface RendererInterface {
    *   (Internal use only.) Whether this is a recursive call or not. See
    *   ::renderRoot().
    *
-   * @return \Drupal\Component\Utility\SafeStringInterface
+   * @return \Drupal\Component\Render\MarkupInterface
    *   The rendered HTML.
    *
    * @throws \LogicException
@@ -316,7 +316,7 @@ interface RendererInterface {
    * @see \Drupal\Core\Render\ElementInfoManagerInterface::getInfo()
    * @see \Drupal\Core\Theme\ThemeManagerInterface::render()
    * @see drupal_process_states()
-   * @see drupal_process_attached()
+   * @see \Drupal\Core\Render\AttachmentsResponseProcessorInterface::processAttachments()
    * @see ::renderRoot()
    */
   public function render(&$elements, $is_root_call = FALSE);

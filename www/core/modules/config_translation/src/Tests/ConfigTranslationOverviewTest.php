@@ -7,7 +7,7 @@
 
 namespace Drupal\config_translation\Tests;
 
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Utility\Html;
 use Drupal\language\Entity\ConfigurableLanguage;
 use Drupal\simpletest\WebTestBase;
 
@@ -24,6 +24,7 @@ class ConfigTranslationOverviewTest extends WebTestBase {
    * @var array
    */
   public static $modules = [
+    'block',
     'config_test',
     'config_translation',
     'config_translation_test',
@@ -67,6 +68,8 @@ class ConfigTranslationOverviewTest extends WebTestBase {
       ConfigurableLanguage::createFromLangcode($langcode)->save();
     }
     $this->localeStorage = $this->container->get('locale.storage');
+    $this->drupalPlaceBlock('local_tasks_block');
+    $this->drupalPlaceBlock('page_title_block');
   }
 
   /**
@@ -101,7 +104,7 @@ class ConfigTranslationOverviewTest extends WebTestBase {
       $base_url = 'admin/structure/config_test/manage/' . $test_entity->id();
       $this->drupalGet('admin/config/regional/config-translation/config_test');
       $this->assertLinkByHref($base_url . '/translate');
-      $this->assertText(SafeMarkup::checkPlain($test_entity->label()));
+      $this->assertEscaped($test_entity->label());
 
       // Make sure there is only a single 'Translate' operation for each
       // dropbutton.
@@ -115,8 +118,8 @@ class ConfigTranslationOverviewTest extends WebTestBase {
       $entity_type = \Drupal::entityManager()->getDefinition($test_entity->getEntityTypeId());
       $this->drupalGet($base_url . '/translate');
 
-      $title = t('!label !entity_type', array('!label' => $test_entity->label(), '!entity_type' => $entity_type->getLowercaseLabel()));
-      $title = t('Translations for %label', array('%label' => $title));
+      $title = $test_entity->label() . ' ' . $entity_type->getLowercaseLabel();
+      $title = 'Translations for <em class="placeholder">' . Html::escape($title) . '</em>';
       $this->assertRaw($title);
       $this->assertRaw('<th>' . t('Language') . '</th>');
 

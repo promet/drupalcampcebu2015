@@ -78,12 +78,24 @@ class Html {
   public static function cleanCssIdentifier($identifier, array $filter = array(
     ' ' => '-',
     '_' => '-',
-    '__' => '__',
     '/' => '-',
     '[' => '-',
-    ']' => ''
+    ']' => '',
   )) {
-    $identifier = strtr($identifier, $filter);
+    // We could also use strtr() here but its much slower than str_replace(). In
+    // order to keep '__' to stay '__' we first replace it with a different
+    // placeholder after checking that it is not defined as a filter.
+    $double_underscore_replacements = 0;
+    if (!isset($filter['__'])) {
+      $identifier = str_replace('__', '##', $identifier, $double_underscore_replacements);
+    }
+    $identifier = str_replace(array_keys($filter), array_values($filter), $identifier);
+    // Replace temporary placeholder '##' with '__' only if the original
+    // $identifier contained '__'.
+    if ($double_underscore_replacements > 0) {
+      $identifier = str_replace('##', '__', $identifier);
+    }
+
     // Valid characters in a CSS identifier are:
     // - the hyphen (U+002D)
     // - a-z (U+0030 - U+0039)
@@ -250,9 +262,9 @@ class Html {
 <body>!html</body>
 </html>
 EOD;
-    // PHP's \DOMDocument serialization adds straw whitespace in case the markup
-    // of the wrapping document contains newlines, so ensure to remove all
-    // newlines before injecting the actual HTML body to process.
+    // PHP's \DOMDocument serialization adds extra whitespace when the markup
+    // of the wrapping document contains newlines, so ensure we remove all
+    // newlines before injecting the actual HTML body to be processed.
     $document = strtr($document, array("\n" => '', '!html' => $html));
 
     $dom = new \DOMDocument();
@@ -280,14 +292,16 @@ EOD;
     $body_node = $document->getElementsByTagName('body')->item(0);
     $html = '';
 
-    foreach ($body_node->getElementsByTagName('script') as $node) {
-      static::escapeCdataElement($node);
-    }
-    foreach ($body_node->getElementsByTagName('style') as $node) {
-      static::escapeCdataElement($node, '/*', '*/');
-    }
-    foreach ($body_node->childNodes as $node) {
-      $html .= $document->saveXML($node);
+    if ($body_node !== NULL) {
+      foreach ($body_node->getElementsByTagName('script') as $node) {
+        static::escapeCdataElement($node);
+      }
+      foreach ($body_node->getElementsByTagName('style') as $node) {
+        static::escapeCdataElement($node, '/*', '*/');
+      }
+      foreach ($body_node->childNodes as $node) {
+        $html .= $document->saveXML($node);
+      }
     }
     return $html;
   }
@@ -338,14 +352,59 @@ EOD;
    * "&lt;", not "<"). Be careful when using this function, as it will revert
    * previous sanitization efforts (&lt;script&gt; will become <script>).
    *
+   * This method is not the opposite of Html::escape(). For example, this method
+   * will convert "&eacute;" to "é", whereas Html::escape() will not convert "é"
+   * to "&eacute;".
+   *
    * @param string $text
    *   The text to decode entities in.
    *
    * @return string
    *   The input $text, with all HTML entities decoded once.
+   *
+   * @see html_entity_decode()
+   * @see \Drupal\Component\Utility\Html::escape()
    */
   public static function decodeEntities($text) {
     return html_entity_decode($text, ENT_QUOTES, 'UTF-8');
+  }
+
+  /**
+   * Escapes text by converting special characters to HTML entities.
+   *
+   * This method escapes HTML for sanitization purposes by replacing the
+   * following special characters with their HTML entity equivalents:
+   * - & (ampersand) becomes &amp;
+   * - " (double quote) becomes &quot;
+   * - ' (single quote) becomes &#039;
+   * - < (less than) becomes &lt;
+   * - > (greater than) becomes &gt;
+   * Special characters that have already been escaped will be double-escaped
+   * (for example, "&lt;" becomes "&amp;lt;"), and invalid UTF-8 encoding
+   * will be converted to the Unicode replacement character ("�").
+   *
+   * This method is not the opposite of Html::decodeEntities(). For example,
+   * this method will not encode "é" to "&eacute;", whereas
+   * Html::decodeEntities() will convert all HTML entities to UTF-8 bytes,
+   * including "&eacute;" and "&lt;" to "é" and "<".
+   *
+   * When constructing @link theme_render render arrays @endlink passing the output of Html::escape() to
+   * '#markup' is not recommended. Use the '#plain_text' key instead and the
+   * renderer will autoescape the text.
+   *
+   * @param string $text
+   *   The input text.
+   *
+   * @return string
+   *   The text with all HTML special characters converted.
+   *
+   * @see htmlspecialchars()
+   * @see \Drupal\Component\Utility\Html::decodeEntities()
+   *
+   * @ingroup sanitization
+   */
+  public static function escape($text) {
+    return htmlspecialchars($text, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
   }
 
 }

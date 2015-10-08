@@ -130,7 +130,7 @@ class EntityQueryTest extends EntityUnitTestBase {
       ));
       // Make sure the name is set for every language that we might create.
       foreach (array('tr', 'pl') as $langcode) {
-        $entity->getTranslation($langcode)->name = $this->randomMachineName();
+        $entity->addTranslation($langcode)->name = $this->randomMachineName();
       }
       foreach (array_reverse(str_split(decbin($i))) as $key => $bit) {
         if ($bit) {
@@ -222,7 +222,7 @@ class EntityQueryTest extends EntityUnitTestBase {
     $query = $this->factory->get('entity_test_mulrev');
     $group_blue = $query->andConditionGroup()->condition("$figures.color", array('blue'), 'IN');
     $group_red = $query->andConditionGroup()->condition("$figures.color", array('red'), 'IN');
-    $query
+    $this->queryResults = $query
       ->condition($group_blue)
       ->condition($group_red)
       ->sort('id')
@@ -554,7 +554,7 @@ class EntityQueryTest extends EntityUnitTestBase {
           }
         }
       }
-      $this->assertTrue($ok, format_string("$i is after all entities in bundle2"));
+      $this->assertTrue($ok, "$i is after all entities in bundle2");
     }
   }
 

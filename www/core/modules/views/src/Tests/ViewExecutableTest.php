@@ -31,11 +31,11 @@ use Symfony\Component\HttpFoundation\Response;
  * @group views
  * @see \Drupal\views\ViewExecutable
  */
-class ViewExecutableTest extends ViewUnitTestBase {
+class ViewExecutableTest extends ViewKernelTestBase {
 
   use CommentTestTrait;
 
-  public static $modules = array('system', 'node', 'comment', 'user', 'filter', 'field', 'text', 'entity_reference');
+  public static $modules = ['system', 'node', 'comment', 'user', 'filter', 'field', 'text'];
 
   /**
    * Views used by this test.

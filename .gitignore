@@ -1,3 +1,13 @@
+# Ignore active configuration.
 config/active/
 
-.sass-cache/
+# Ignore cache for sass.
+*/.sass-cache/
+
+# Ignore configuration files that may contain sensitive information.
+www/sites/*/settings*.php
+www/sites/*/services*.yml
+
+# Ignore paths that contain user-generated content.
+www/sites/*/files
+www/sites/*/private

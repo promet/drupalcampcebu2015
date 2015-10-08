@@ -7,11 +7,13 @@
 use Drupal\Component\Datetime\DateTimePlus;
 use Drupal\Component\Utility\Crypt;
 use Drupal\Component\Utility\Environment;
+use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Component\Utility\Unicode;
 use Drupal\Core\DrupalKernel;
 use Drupal\Core\Extension\ExtensionDiscovery;
 use Drupal\Core\Logger\RfcLogLevel;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Utility\Error;
@@ -100,13 +102,27 @@ const DRUPAL_PHP_FUNCTION_PATTERN = '[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*';
  * $config_directories key for active directory.
  *
  * @see config_get_config_directory()
+ *
+ * @deprecated in Drupal 8.0.x and will be removed before 9.0.0. Drupal core no
+ *   longer creates an active directory.
  */
 const CONFIG_ACTIVE_DIRECTORY = 'active';
+
+/**
+ * $config_directories key for sync directory.
+ *
+ * @see config_get_config_directory()
+ */
+const CONFIG_SYNC_DIRECTORY = 'sync';
 
 /**
  * $config_directories key for staging directory.
  *
  * @see config_get_config_directory()
+ * @see CONFIG_SYNC_DIRECTORY
+ *
+ * @deprecated in Drupal 8.0.x and will be removed before 9.0.0. The staging
+ *   directory was renamed to sync.
  */
 const CONFIG_STAGING_DIRECTORY = 'staging';
 
@@ -118,58 +134,27 @@ const CONFIG_STAGING_DIRECTORY = 'staging';
 define('DRUPAL_ROOT', dirname(dirname(__DIR__)));
 
 /**
- * Returns the appropriate configuration directory.
- *
- * @param bool $require_settings
- *   Only configuration directories with an existing settings.php file
- *   will be recognized. Defaults to TRUE. During initial installation,
- *   this is set to FALSE so that Drupal can detect a matching directory,
- *   then create a new settings.php file in it.
- * @param bool $reset
- *   Force a full search for matching directories even if one had been
- *   found previously. Defaults to FALSE.
- * @param \Symfony\Component\HttpFoundation\Request $request
- *   (optional) The current request. Defaults to \Drupal::request() or a new
- *   request created from globals.
- *
- * @return string
- *   The path of the matching directory.@see default.settings.php
- *
- * @deprecated in Drupal 8.x-dev, will be removed before Drupal 8.0.
- *   Use \Drupal\Core\DrupalKernel::getSitePath() instead. If the kernel is
- *   unavailable or the site path needs to be recalculated then
- *   Drupal\Core\DrupalKernel::findSitePath() can be used.
- */
-function conf_path($require_settings = TRUE, $reset = FALSE, Request $request = NULL) {
-  if (!isset($request)) {
-    if (\Drupal::hasRequest()) {
-      $request = \Drupal::request();
-    }
-    // @todo Remove once external CLI scripts (Drush) are updated.
-    else {
-      $request = Request::createFromGlobals();
-    }
-  }
-  if (\Drupal::hasService('kernel')) {
-    $site_path = \Drupal::service('kernel')->getSitePath();
-  }
-  if (!isset($site_path) || empty($site_path)) {
-    $site_path = DrupalKernel::findSitePath($request, $require_settings);
-  }
-  return $site_path;
-}
-/**
  * Returns the path of a configuration directory.
  *
+ * Configuration directories are configured using $config_directories in
+ * settings.php.
+ *
  * @param string $type
- *   (optional) The type of config directory to return. Drupal core provides
- *   'active' and 'staging'. Defaults to CONFIG_ACTIVE_DIRECTORY.
+ *   The type of config directory to return. Drupal core provides the
+ *   CONFIG_SYNC_DIRECTORY constant to access the sync directory.
  *
  * @return string
  *   The configuration directory path.
+ *
+ * @throws \Exception
  */
-function config_get_config_directory($type = CONFIG_ACTIVE_DIRECTORY) {
+function config_get_config_directory($type) {
   global $config_directories;
+
+  // @todo Remove fallback in Drupal 9. https://www.drupal.org/node/2574943
+  if ($type == CONFIG_SYNC_DIRECTORY && !isset($config_directories[CONFIG_SYNC_DIRECTORY]) && isset($config_directories[CONFIG_STAGING_DIRECTORY])) {
+    $type = CONFIG_STAGING_DIRECTORY;
+  }
 
   if (!empty($config_directories[$type])) {
     return $config_directories[$type];
@@ -279,89 +264,6 @@ function drupal_get_path($type, $name) {
 }
 
 /**
- * Sets an HTTP response header for the current page.
- *
- * Note: When sending a Content-Type header, always include a 'charset' type,
- * too. This is necessary to avoid security bugs (e.g. UTF-7 XSS).
- *
- * @param $name
- *   The HTTP header name, or the special 'Status' header name.
- * @param $value
- *   The HTTP header value; if equal to FALSE, the specified header is unset.
- *   If $name is 'Status', this is expected to be a status code followed by a
- *   reason phrase, e.g. "404 Not Found".
- * @param $append
- *   Whether to append the value to an existing header or to replace it.
- *
- * @deprecated in Drupal 8.x-dev, will be removed before Drupal 8.0.
- *   Use \Symfony\Component\HttpFoundation\Response->headers->set().
- *   See https://www.drupal.org/node/2181523.
- */
-function _drupal_add_http_header($name, $value, $append = FALSE) {
-  // The headers as name/value pairs.
-  $headers = &drupal_static('drupal_http_headers', array());
-
-  $name_lower = strtolower($name);
-  _drupal_set_preferred_header_name($name);
-
-  if ($value === FALSE) {
-    $headers[$name_lower] = FALSE;
-  }
-  elseif (isset($headers[$name_lower]) && $append) {
-    // Multiple headers with identical names may be combined using comma (RFC
-    // 2616, section 4.2).
-    $headers[$name_lower] .= ',' . $value;
-  }
-  else {
-    $headers[$name_lower] = $value;
-  }
-}
-
-/**
- * Gets the HTTP response headers for the current page.
- *
- * @param $name
- *   An HTTP header name. If omitted, all headers are returned as name/value
- *   pairs. If an array value is FALSE, the header has been unset.
- *
- * @return
- *   A string containing the header value, or FALSE if the header has been set,
- *   or NULL if the header has not been set.
- *
- * @deprecated in Drupal 8.x-dev, will be removed before Drupal 8.0.
- *   Use \Symfony\Component\HttpFoundation\Response->headers->get().
- *   See https://www.drupal.org/node/2181523.
- */
-function drupal_get_http_header($name = NULL) {
-  $headers = &drupal_static('drupal_http_headers', array());
-  if (isset($name)) {
-    $name = strtolower($name);
-    return isset($headers[$name]) ? $headers[$name] : NULL;
-  }
-  else {
-    return $headers;
-  }
-}
-
-/**
- * Sets the preferred name for the HTTP header.
- *
- * Header names are case-insensitive, but for maximum compatibility they should
- * follow "common form" (see RFC 2616, section 4.2).
- *
- * @deprecated in Drupal 8.x-dev, will be removed before Drupal 8.0.
- *   See https://www.drupal.org/node/2181523.
- */
-function _drupal_set_preferred_header_name($name = NULL) {
-  static $header_names = array();
-
-  if (!isset($name)) {
-    return $header_names;
-  }
-  $header_names[strtolower($name)] = $name;
-}
-
-/**
  * Translates a string to the current language or to a given language.
  *
  * The t() function serves two purposes. First, at run-time it translates
@@ -387,7 +289,7 @@ function _drupal_set_preferred_header_name($name = NULL) {
  * names or link URLs into translated text. Variable substitution looks like
  * this:
  * @code
- * $text = t("@name's blog", array('@name' => user_format_name($account)));
+ * $text = t("@name's blog", array('@name' => $account->getDisplayName()));
  * @endcode
  * Basically, you can put variables like @name into your string, and t() will
  * substitute their sanitized values at translation time. (See the
@@ -426,8 +328,11 @@ function t($string, array $args = array(), array $options = array()) {
  * @see \Drupal\Component\Utility\SafeMarkup::format()
  * @see t()
  * @ingroup sanitization
+ *
+ * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0.
+ *   Use \Drupal\Component\Utility\SafeMarkup::format().
  */
-function format_string($string, array $args = array()) {
+function format_string($string, array $args) {
   return SafeMarkup::format($string, $args);
 }
 
@@ -456,6 +361,9 @@ function format_string($string, array $args = array()) {
  *   TRUE if the text is valid UTF-8, FALSE if not.
  *
  * @see \Drupal\Component\Utility\Unicode::validateUtf8()
+ *
+ * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0.
+ *   Use \Drupal\Component\Utility\Unicode::validateUtf8().
  */
 function drupal_validate_utf8($text) {
   return Unicode::validateUtf8($text);
@@ -488,10 +396,7 @@ function watchdog_exception($type, Exception $exception, $message = NULL, $varia
 
   // Use a default value if $message is not set.
   if (empty($message)) {
-    // The exception message is run through
-    // \Drupal\Component\Utility\SafeMarkup::checkPlain() by
-    // \Drupal\Core\Utility\Error:decodeException().
-    $message = '%type: !message in %function (line %line of %file).';
+    $message = '%type: @message in %function (line %line of %file).';
   }
 
   if ($link) {
@@ -514,7 +419,7 @@ function watchdog_exception($type, Exception $exception, $message = NULL, $varia
  * drupal_set_message(t('An error occurred and processing did not complete.'), 'error');
  * @endcode
  *
- * @param string $message
+ * @param string|\Drupal\Component\Render\MarkupInterface $message
  *   (optional) The translated message to be displayed to the user. For
  *   consistency with other messages, it should begin with a capital letter and
  *   end with a period.
@@ -561,12 +466,15 @@ function drupal_set_message($message = NULL, $type = 'status', $repeat = FALSE) 
       $_SESSION['messages'][$type] = array();
     }
 
-    $new = array(
-      'safe' => SafeMarkup::isSafe($message),
-      'message' => (string) $message,
-    );
-    if ($repeat || !in_array($new, $_SESSION['messages'][$type])) {
-      $_SESSION['messages'][$type][] = $new;
+    // Convert strings which are safe to the simplest Markup objects.
+    if (!($message instanceof Markup) && SafeMarkup::isSafe($message)) {
+      $message = Markup::create((string) $message);
+    }
+
+    // Do not use strict type checking so that equivalent string and
+    // MarkupInterface objects are detected.
+    if ($repeat || !in_array($message, $_SESSION['messages'][$type])) {
+      $_SESSION['messages'][$type][] = $message;
     }
 
     // Mark this page as being uncacheable.
@@ -604,18 +512,6 @@ function drupal_set_message($message = NULL, $type = 'status', $repeat = FALSE) 
  */
 function drupal_get_messages($type = NULL, $clear_queue = TRUE) {
   if ($messages = drupal_set_message()) {
-    foreach ($messages as $message_type => $message_typed_messages) {
-      foreach ($message_typed_messages as $key => $message) {
-        // Because the messages are stored in the session, the safe status of
-        // the messages also needs to be stored in the session. We retrieve the
-        // safe status here and determine whether to mark the string as safe or
-        // let autoescape do its thing. See drupal_set_message().
-        if ($message['safe']) {
-          $message['message'] = SafeMarkup::set($message['message']);
-        }
-        $messages[$message_type][$key] = $message['message'];
-      }
-    }
     if ($type) {
       if ($clear_queue) {
         unset($_SESSION['messages'][$type]);
@@ -1042,10 +938,16 @@ function drupal_static_reset($name = NULL) {
 /**
  * Formats text for emphasized display in a placeholder inside a sentence.
  *
- * @see \Drupal\Component\Utility\SafeMarkup::placeholder()
+ * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0. Use
+ *   \Drupal\Component\Utility\SafeMarkup::format() or Twig's "placeholder"
+ *   filter instead. Note this method should not be used to simply emphasize a
+ *   string and therefore has few valid use-cases. Note also, that this method
+ *   does not mark the string as safe.
+ *
+ * @see \Drupal\Component\Utility\SafeMarkup::format()
  */
 function drupal_placeholder($text) {
-  return SafeMarkup::placeholder($text);
+  return '<em class="placeholder">' . Html::escape($text) . '</em>';
 }
 
 /**

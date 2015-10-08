@@ -13,30 +13,29 @@ use Drupal\migrate_drupal\Tests\d6\MigrateDrupal6TestBase;
 /**
  * Upgrade custom blocks.
  *
- * @group block_content
+ * @group migrate_drupal_6
  */
 class MigrateBlockContentTest extends MigrateDrupal6TestBase {
 
-  static $modules = array('block', 'block_content', 'filter', 'text');
+  /**
+   * {@inheritdoc}
+   */
+  public static $modules = ['block', 'block_content'];
 
   /**
    * {@inheritdoc}
    */
   protected function setUp() {
     parent::setUp();
-    $this->installConfig(array('block_content'));
+    $this->installConfig(['block_content']);
     $this->installEntitySchema('block_content');
 
-    $this->executeMigration('d6_block_content_type');
-    $this->executeMigration('d6_block_content_body_field');
-
-    $this->prepareMigrations(array(
-      'd6_filter_format' => array(
-        array(array(2), array('full_html'))
-      )
-    ));
-    $this->loadDumps(['Boxes.php']);
-    $this->executeMigration('d6_custom_block');
+    $this->executeMigrations([
+      'd6_filter_format',
+      'block_content_type',
+      'block_content_body_field',
+      'd6_custom_block',
+    ]);
   }
 
   /**

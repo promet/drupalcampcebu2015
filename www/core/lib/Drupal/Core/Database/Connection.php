@@ -139,6 +139,13 @@ abstract class Connection {
   protected $prefixReplace = array();
 
   /**
+   * List of un-prefixed table names, keyed by prefixed table names.
+   *
+   * @var array
+   */
+  protected $unprefixedTablesMap = [];
+
+  /**
    * Constructs a Connection object.
    *
    * @param \PDO $connection
@@ -185,7 +192,9 @@ abstract class Connection {
     // Destroy all references to this connection by setting them to NULL.
     // The Statement class attribute only accepts a new value that presents a
     // proper callable, so we reset it to PDOStatement.
-    $this->connection->setAttribute(\PDO::ATTR_STATEMENT_CLASS, array('PDOStatement', array()));
+    if (!empty($this->statementClass)) {
+      $this->connection->setAttribute(\PDO::ATTR_STATEMENT_CLASS, array('PDOStatement', array()));
+    }
     $this->schema = NULL;
   }
 
@@ -230,6 +239,12 @@ abstract class Connection {
    *   further up the call chain can take an appropriate action. To suppress
    *   that behavior and simply return NULL on failure, set this option to
    *   FALSE.
+   * - allow_delimiter_in_query: By default, queries which have the ; delimiter
+   *   any place in them will cause an exception. This reduces the chance of SQL
+   *   injection attacks that terminate the original query and add one or more
+   *   additional queries (such as inserting new user accounts). In rare cases,
+   *   such as creating an SQL function, a ; is needed and can be allowed by
+   *   changing this option to TRUE.
    *
    * @return array
    *   An array of default query options.
@@ -240,6 +255,7 @@ abstract class Connection {
       'fetch' => \PDO::FETCH_OBJ,
       'return' => Database::RETURN_STATEMENT,
       'throw_exception' => TRUE,
+      'allow_delimiter_in_query' => FALSE,
     );
   }
 
@@ -289,6 +305,13 @@ abstract class Connection {
     $this->prefixReplace[] = $this->prefixes['default'];
     $this->prefixSearch[] = '}';
     $this->prefixReplace[] = '';
+
+    // Set up a map of prefixed => un-prefixed tables.
+    foreach ($this->prefixes as $table_name => $prefix) {
+      if ($table_name !== 'default') {
+        $this->unprefixedTablesMap[$prefix . $table_name] = $table_name;
+      }
+    }
   }
 
   /**
@@ -325,6 +348,17 @@ abstract class Connection {
     else {
       return $this->prefixes['default'];
     }
+  }
+
+  /**
+   * Gets a list of individually prefixed table names.
+   *
+   * @return array
+   *   An array of un-prefixed table names, keyed by their fully qualified table
+   *   names (i.e. prefix + table_name).
+   */
+  public function getUnprefixedTablesMap() {
+    return $this->unprefixedTablesMap;
   }
 
   /**
@@ -464,7 +498,7 @@ abstract class Connection {
       return '';
 
     // Flatten the array of comments.
-    $comment = implode('; ', $comments);
+    $comment = implode('. ', $comments);
 
     // Sanitize the comment string so as to avoid SQL injection attacks.
     return '/* ' . $this->filterComment($comment) . ' */ ';
@@ -489,7 +523,7 @@ abstract class Connection {
    *
    * Would result in the following SQL statement being generated:
    * @code
-   * "/ * Exploit * / DROP TABLE node; -- * / UPDATE example SET field2=..."
+   * "/ * Exploit * / DROP TABLE node. -- * / UPDATE example SET field2=..."
    * @endcode
    *
    * Unless the comment is sanitised first, the SQL server would drop the
@@ -502,7 +536,8 @@ abstract class Connection {
    *   A sanitized version of the query comment string.
    */
   protected function filterComment($comment = '') {
-    return preg_replace('/(\/\*\s*)|(\s*\*\/)/', '', $comment);
+    // Change semicolons to period to avoid triggering multi-statement check.
+    return strtr($comment, ['*' => ' * ', ';' => '.']);
   }
 
   /**
@@ -566,6 +601,16 @@ abstract class Connection {
       }
       else {
         $this->expandArguments($query, $args);
+        // To protect against SQL injection, Drupal only supports executing one
+        // statement at a time.  Thus, the presence of a SQL delimiter (the
+        // semicolon) is not allowed unless the option is set.  Allowing
+        // semicolons should only be needed for special cases like defining a
+        // function or stored procedure in SQL. Trim any trailing delimiter to
+        // minimize false positives.
+        $query = rtrim($query, ";  \t\n\r\0\x0B");
+        if (strpos($query, ';') !== FALSE && empty($options['allow_delimiter_in_query'])) {
+          throw new \InvalidArgumentException('; is not supported in SQL strings. Use only one statement at a time.');
+        }
         $stmt = $this->prepareQuery($query);
         $stmt->execute($args, $options);
       }
@@ -786,6 +831,23 @@ abstract class Connection {
     return new $class($this, $table, $options);
   }
 
+  /**
+   * Prepares and returns an UPSERT query object.
+   *
+   * @param string $table
+   *   The table to use for the upsert query.
+   * @param array $options
+   *   (optional) An array of options on the query.
+   *
+   * @return \Drupal\Core\Database\Query\Upsert
+   *   A new Upsert query object.
+   *
+   * @see \Drupal\Core\Database\Query\Upsert
+   */
+  public function upsert($table, array $options = array()) {
+    $class = $this->getDriverClass('Upsert');
+    return new $class($this, $table, $options);
+  }
 
   /**
    * Prepares and returns an UPDATE query object.
@@ -1214,6 +1276,13 @@ abstract class Connection {
    */
   public function version() {
     return $this->connection->getAttribute(\PDO::ATTR_SERVER_VERSION);
+  }
+
+  /**
+   * Returns the version of the database client.
+   */
+  public function clientVersion() {
+    return $this->connection->getAttribute(\PDO::ATTR_CLIENT_VERSION);
   }
 
   /**

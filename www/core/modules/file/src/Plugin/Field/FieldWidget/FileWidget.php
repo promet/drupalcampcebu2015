@@ -7,9 +7,9 @@
 
 namespace Drupal\file\Plugin\Field\FieldWidget;
 
-use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldFilteredMarkup;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Field\WidgetBase;
@@ -118,8 +118,8 @@ class FileWidget extends WidgetBase implements ContainerFactoryPluginInterface {
         break;
     }
 
-    $title = SafeMarkup::checkPlain($this->fieldDefinition->getLabel());
-    $description = $this->fieldFilterXss($this->fieldDefinition->getDescription());
+    $title = $this->fieldDefinition->getLabel();
+    $description = FieldFilteredMarkup::create($this->fieldDefinition->getDescription());
 
     $elements = array();
 
@@ -370,7 +370,10 @@ class FileWidget extends WidgetBase implements ContainerFactoryPluginInterface {
     $item = $element['#value'];
     $item['fids'] = $element['fids']['#value'];
 
-    $element['#theme'] = 'file_widget';
+    // Prevent the file widget from overriding the image widget.
+    if (!isset($element['#theme'])) {
+      $element['#theme'] = 'file_widget';
+    }
 
     // Add the display field if enabled.
     if ($element['#display_field']) {
