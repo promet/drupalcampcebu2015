@@ -1,0 +1,58 @@
+.newsletter {
+  padding: 0.9em;
+  padding-bottom: 3em;
+  h4 {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: $color-orange;
+    margin: 0;
+  }
+
+  form {
+    #mc_embed_signup_scroll {
+      .mc-field-group {
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 0.9em;
+        .col-md-4 {
+          padding: 0;
+        }
+        .col-md-3,
+        .col-md-8 {
+          padding-left: 0;
+          padding-right: 0;
+          label {
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+
+  .email-address,
+  .firstname {
+    color: $color-orange;
+    font-size: 1.2em;;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .required {
+    border: 1px solid $color-orange;
+    width: 100%;
+    font-size: 1.3em;
+  }
+
+  .button {
+    padding: 0.3em;
+    width: 100%;
+    margin-top: 0.5em;
+    color: $color-white-text;
+    background-color: $color-orange;
+    border: none;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+  }
+}

@@ -1,0 +1,22 @@
+.footer-container {
+  clear: both;
+  background: $color-blue;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  width: 100%;
+  div:nth-child(1),
+  div:nth-child(2) {
+    text-align: center;
+    font-size: 0.8em;
+    color: $color-white-text;
+    font-family: $font-text;
+    padding-bottom: 0.5em;
+    font-weight: 300;
+    p a {
+      color: $color-white-text;
+      text-decoration: underline;
+    }
+  }
+}

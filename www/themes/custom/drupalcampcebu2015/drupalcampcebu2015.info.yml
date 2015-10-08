@@ -1,0 +1,17 @@
+name: Drupalcamp Cebu 2015
+type: theme
+description: This is Drupalcampcebu2015 subtheme of classy
+core: 8.x
+screenshot: screenshot.jpg
+# Defines the base theme.
+base theme: classy
+# Defines libraries group in which we can add css/js.
+libraries:
+  - drupalcampcebu2015/global-styling
+# Regions
+regions:
+  sidebar: Sidebar
+  content: Main Content
+  content_bottom: Content Bottom
+  sponsors: Sponsors
+  footer: Footer

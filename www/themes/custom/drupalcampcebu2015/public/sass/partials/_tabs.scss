@@ -1,0 +1,27 @@
+.nav-tabs {
+  padding-left: 0;
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid $color-blue;
+  li {
+    display: inline;
+
+    a {
+      font-size: 1.25em;
+      color: $color-blue;
+      padding: 0.62em 0.93em;
+    }
+
+    a:hover {
+      border: 1px solid $color-blue;
+      border-radius: 4px 4px 0 0;
+      background-color: #fff;
+    }
+
+    a.is-active {
+      background-color: $color-blue;
+      border-radius: 4px 4px 0 0;
+      color: $color-white-text;
+    }
+  }
+
+}
