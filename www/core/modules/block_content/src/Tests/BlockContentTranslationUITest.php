@@ -31,6 +31,19 @@ class BlockContentTranslationUITest extends ContentTranslationUITestBase {
   );
 
   /**
+   * {@inheritdoc}
+   */
+  protected $defaultCacheContexts = [
+    'languages:language_interface',
+    'session',
+    'theme',
+    'url.path',
+    'url.query_args',
+    'user.permissions',
+    'user.roles:authenticated',
+  ];
+
+  /**
    * Overrides \Drupal\simpletest\WebTestBase::setUp().
    */
   protected function setUp() {
@@ -38,6 +51,8 @@ class BlockContentTranslationUITest extends ContentTranslationUITestBase {
     $this->bundle = 'basic';
     $this->testLanguageSelector = FALSE;
     parent::setUp();
+
+    $this->drupalPlaceBlock('page_title_block');
   }
 
   /**

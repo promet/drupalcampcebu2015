@@ -13,16 +13,14 @@ use Drupal\migrate_drupal\Tests\d6\MigrateDrupal6TestBase;
 /**
  * Upgrade variables to update.settings.yml.
  *
- * @group update
+ * @group migrate_drupal_6
  */
 class MigrateUpdateConfigsTest extends MigrateDrupal6TestBase {
 
   use SchemaCheckTestTrait;
 
   /**
-   * Modules to enable.
-   *
-   * @var array
+   * {@inheritdoc}
    */
   public static $modules = array('update');
 
@@ -31,7 +29,6 @@ class MigrateUpdateConfigsTest extends MigrateDrupal6TestBase {
    */
   protected function setUp() {
     parent::setUp();
-    $this->loadDumps(['Variable.php']);
     $this->executeMigration('d6_update_settings');
   }
 

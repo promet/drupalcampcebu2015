@@ -38,6 +38,7 @@ class AccessResultTest extends UnitTestCase {
       ->disableOriginalConstructor()
       ->getMock();
 
+    $this->cacheContextsManager->method('assertValidTokens')->willReturn(TRUE);
     $container = new ContainerBuilder();
     $container->set('cache_contexts_manager', $this->cacheContextsManager);
     \Drupal::setContainer($container);
@@ -52,7 +53,6 @@ class AccessResultTest extends UnitTestCase {
   /**
    * Tests the construction of an AccessResult object.
    *
-   * @covers ::__construct
    * @covers ::neutral
    */
   public function testConstruction() {
@@ -852,8 +852,15 @@ class AccessResultTest extends UnitTestCase {
    * @covers ::allowedIfHasPermissions
    *
    * @dataProvider providerTestAllowedIfHasPermissions
+   *
+   * @param string[] $permissions
+   *   The permissions to check for.
+   * @param string $conjunction
+   *   The conjunction to use when checking for permission. 'AND' or 'OR'.
+   * @param \Drupal\Core\Access\AccessResult $expected_access
+   *   The expected access check result.
    */
-  public function testAllowedIfHasPermissions($permissions, $conjunction, $expected_access) {
+  public function testAllowedIfHasPermissions($permissions, $conjunction, AccessResult $expected_access) {
     $account = $this->getMock('\Drupal\Core\Session\AccountInterface');
     $account->expects($this->any())
       ->method('hasPermission')
@@ -861,6 +868,10 @@ class AccessResultTest extends UnitTestCase {
         ['allowed', TRUE],
         ['denied', FALSE],
       ]);
+
+    if ($permissions) {
+      $expected_access->cachePerPermissions();
+    }
 
     $access_result = AccessResult::allowedIfHasPermissions($account, $permissions, $conjunction);
     $this->assertEquals($expected_access, $access_result);
@@ -875,14 +886,14 @@ class AccessResultTest extends UnitTestCase {
     return [
       [[], 'AND', AccessResult::allowedIf(FALSE)],
       [[], 'OR', AccessResult::allowedIf(FALSE)],
-      [['allowed'], 'OR', AccessResult::allowedIf(TRUE)->addCacheContexts(['user.permissions'])],
-      [['allowed'], 'AND', AccessResult::allowedIf(TRUE)->addCacheContexts(['user.permissions'])],
-      [['denied'], 'OR', AccessResult::allowedIf(FALSE)->addCacheContexts(['user.permissions'])],
-      [['denied'], 'AND', AccessResult::allowedIf(FALSE)->addCacheContexts(['user.permissions'])],
-      [['allowed', 'denied'], 'OR', AccessResult::allowedIf(TRUE)->addCacheContexts(['user.permissions'])],
-      [['denied', 'allowed'], 'OR', AccessResult::allowedIf(TRUE)->addCacheContexts(['user.permissions'])],
-      [['allowed', 'denied', 'other'], 'OR', AccessResult::allowedIf(TRUE)->addCacheContexts(['user.permissions'])],
-      [['allowed', 'denied'], 'AND', AccessResult::allowedIf(FALSE)->addCacheContexts(['user.permissions'])],
+      [['allowed'], 'OR', AccessResult::allowedIf(TRUE)],
+      [['allowed'], 'AND', AccessResult::allowedIf(TRUE)],
+      [['denied'], 'OR', AccessResult::allowedIf(FALSE)],
+      [['denied'], 'AND', AccessResult::allowedIf(FALSE)],
+      [['allowed', 'denied'], 'OR', AccessResult::allowedIf(TRUE)],
+      [['denied', 'allowed'], 'OR', AccessResult::allowedIf(TRUE)],
+      [['allowed', 'denied', 'other'], 'OR', AccessResult::allowedIf(TRUE)],
+      [['allowed', 'denied'], 'AND', AccessResult::allowedIf(FALSE)],
     ];
   }
 

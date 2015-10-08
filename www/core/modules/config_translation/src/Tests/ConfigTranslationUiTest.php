@@ -31,6 +31,7 @@ class ConfigTranslationUiTest extends WebTestBase {
    * @var array
    */
   public static $modules = [
+    'block',
     'config_translation',
     'config_translation_test',
     'contact',
@@ -117,6 +118,8 @@ class ConfigTranslationUiTest extends WebTestBase {
       ConfigurableLanguage::createFromLangcode($langcode)->save();
     }
     $this->localeStorage = $this->container->get('locale.storage');
+    $this->drupalPlaceBlock('local_tasks_block');
+    $this->drupalPlaceBlock('page_title_block');
   }
 
   /**
@@ -173,6 +176,9 @@ class ConfigTranslationUiTest extends WebTestBase {
     $this->drupalGet("$translation_base_url/fr/edit");
     $this->assertFieldByName('translation[config_names][system.site][name]', $fr_site_name);
     $this->assertFieldByName('translation[config_names][system.site][slogan]', $fr_site_slogan);
+
+    // Place branding block with site name and slogan into header region.
+    $this->drupalPlaceBlock('system_branding_block', ['region' => 'header']);
 
     // Check French translation of site name and slogan are in place.
     $this->drupalGet('fr');
@@ -365,7 +371,7 @@ class ConfigTranslationUiTest extends WebTestBase {
 
     // Test that delete links work and operations perform properly.
     foreach ($this->langcodes as $langcode) {
-      $replacements = array('%label' => t('!label !entity_type', array('!label' => $label, '!entity_type' => Unicode::strtolower(t('Contact form')))), '@language' => \Drupal::languageManager()->getLanguage($langcode)->getName());
+      $replacements = array('%label' => t('@label @entity_type', array('@label' => $label, '@entity_type' => Unicode::strtolower(t('Contact form')))), '@language' => \Drupal::languageManager()->getLanguage($langcode)->getName());
 
       $this->drupalGet("$translation_base_url/$langcode/delete");
       $this->assertRaw(t('Are you sure you want to delete the @language translation of %label?', $replacements));
@@ -396,34 +402,6 @@ class ConfigTranslationUiTest extends WebTestBase {
 
     // Check 'Add' link for French.
     $this->assertLinkByHref("$translation_base_url/fr/add");
-  }
-
-  /**
-   * Tests the node type translation.
-   */
-  public function testNodeTypeTranslation() {
-    $type = Unicode::strtolower($this->randomMachineName(16));
-    $name = $this->randomString();
-    $this->drupalLogin($this->adminUser);
-    $this->drupalCreateContentType(array('type' => $type, 'name' => $name));
-
-    // Translate the node type name.
-    $langcode = $this->langcodes[0];
-    $translated_name = $langcode . '-' . $name;
-    $edit = array(
-      "translation[config_names][node.type.$type][name]" => $translated_name,
-    );
-    $this->drupalPostForm("admin/structure/types/manage/$type/translate/$langcode/add", $edit, t('Save translation'));
-
-    // Check the name is translated without admin theme for editing.
-    $this->drupalPostForm('admin/appearance', array('use_admin_theme' => '0'), t('Save configuration'));
-    $this->drupalGet("$langcode/node/add/$type");
-    $this->assertRaw(t('Create @name', array('@name' => $translated_name)));
-
-    // Check the name is translated with admin theme for editing.
-    $this->drupalPostForm('admin/appearance', array('use_admin_theme' => '1'), t('Save configuration'));
-    $this->drupalGet("$langcode/node/add/$type");
-    $this->assertRaw(t('Create @name', array('@name' => $translated_name)));
   }
 
   /**
@@ -485,7 +463,7 @@ class ConfigTranslationUiTest extends WebTestBase {
 
       // Formatting the date 8 / 27 / 1985 @ 13:37 EST with pattern D should
       // display "Tue".
-      $formatted_date = format_date(494015820, $id, NULL, NULL, 'fr');
+      $formatted_date = format_date(494015820, $id, NULL, 'America/New_York', 'fr');
       $this->assertEqual($formatted_date, 'Tue', 'Got the right formatted date using the date format translation pattern.');
     }
   }
@@ -585,7 +563,7 @@ class ConfigTranslationUiTest extends WebTestBase {
     $response = $this->renderContextualLinks($ids, 'node');
     $this->assertResponse(200);
     $json = Json::decode($response);
-    $this->assertTrue(strpos($json[$ids[0]], t('Translate view')), 'Translate view contextual link added.');
+    $this->assertTrue(strpos($json[$ids[0]], 'Translate view'), 'Translate view contextual link added.');
 
     $description = 'All content promoted to the front page.';
     $human_readable_name = 'Frontpage';
@@ -654,7 +632,7 @@ class ConfigTranslationUiTest extends WebTestBase {
       $config->save();
 
       // Go to the translation page of the 'files' view.
-      $translation_url = 'admin/structure/views/view/files/translate/' . $langcode . '/add';
+      $translation_url = 'admin/structure/views/view/files/translate/en/add';
       $this->drupalGet($translation_url);
 
       // Check if the expected number of source elements are present.
@@ -751,9 +729,9 @@ class ConfigTranslationUiTest extends WebTestBase {
     $this->clickLink('Add');
 
     $this->assertText('Translatable field setting');
-    $this->assertRaw(SafeMarkup::checkPlain($translatable_field_setting));
+    $this->assertEscaped($translatable_field_setting);
     $this->assertText('Translatable storage setting');
-    $this->assertRaw(SafeMarkup::checkPlain($translatable_storage_setting));
+    $this->assertEscaped($translatable_storage_setting);
   }
 
   /**

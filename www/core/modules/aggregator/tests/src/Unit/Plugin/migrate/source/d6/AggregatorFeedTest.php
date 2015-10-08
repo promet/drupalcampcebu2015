@@ -16,11 +16,10 @@ use Drupal\Tests\migrate\Unit\MigrateSqlSourceTestCase;
  */
 class AggregatorFeedTest extends MigrateSqlSourceTestCase {
 
-  const PLUGIN_CLASS = 'Drupal\aggregator\Plugin\migrate\source\d6\AggregatorFeed';
+  const PLUGIN_CLASS = 'Drupal\aggregator\Plugin\migrate\source\AggregatorFeed';
 
   protected $migrationConfiguration = array(
     'id' => 'test',
-    'idlist' => array(),
     'source' => array(
       'plugin' => 'd6_aggregator_feed',
     ),
@@ -59,9 +58,7 @@ class AggregatorFeedTest extends MigrateSqlSourceTestCase {
   * {@inheritdoc}
   */
   protected function setUp() {
-    foreach ($this->expectedResults as $k => $row) {
-      $this->databaseContents['aggregator_feed'][$k] = $row;
-    }
+    $this->databaseContents['aggregator_feed'] = $this->expectedResults;
     parent::setUp();
   }
 

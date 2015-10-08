@@ -13,24 +13,21 @@ use Drupal\migrate_drupal\Tests\d6\MigrateDrupal6TestBase;
 /**
  * Migrate contact categories to contact.form.*.yml.
  *
- * @group contact
+ * @group migrate_drupal_6
  */
 class MigrateContactCategoryTest extends MigrateDrupal6TestBase {
 
   /**
-   * Modules to enable.
-   *
-   * @var array
+   * {@inheritdoc}
    */
-  public static $modules = array('contact');
+  public static $modules = ['contact'];
 
   /**
    * {@inheritdoc}
    */
   protected function setUp() {
     parent::setUp();
-    $this->loadDumps(['Contact.php']);
-    $this->executeMigration('d6_contact_category');
+    $this->executeMigration('contact_category');
   }
 
   /**

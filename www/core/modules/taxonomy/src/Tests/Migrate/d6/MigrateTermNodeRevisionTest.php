@@ -7,35 +7,29 @@
 
 namespace Drupal\taxonomy\Tests\Migrate\d6;
 
-use Drupal\migrate\MigrateExecutable;
+use Drupal\migrate_drupal\Tests\d6\MigrateDrupal6TestBase;
 
 /**
  * Upgrade taxonomy term node associations.
  *
- * @group taxonomy
+ * @group migrate_drupal_6
  */
-class MigrateTermNodeRevisionTest extends MigrateTermNodeTestBase {
+class MigrateTermNodeRevisionTest extends MigrateDrupal6TestBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public static $modules = ['taxonomy'];
 
   /**
    * {@inheritdoc}
    */
   protected function setUp() {
     parent::setUp();
-    $id_mappings = array(
-      'd6_term_node' => array(
-        array(array(2), array(1)),
-      ),
-      'd6_node_revision' => array(
-        array(array(2), array(2)),
-      ),
-    );
-    $this->prepareMigrations($id_mappings);
-    /** @var \Drupal\migrate\entity\Migration $migration */
-    $migrations = entity_load_multiple('migration', array('d6_term_node_revision:*'));
-    foreach ($migrations as $migration) {
-      $executable = new MigrateExecutable($migration, $this);
-      $executable->import();
-    }
+    $this->installSchema('node', ['node_access']);
+    $this->migrateContent(TRUE);
+    $this->migrateTaxonomy();
+    $this->executeMigrations(['d6_term_node:*', 'd6_term_node_revision:*']);
   }
 
   /**

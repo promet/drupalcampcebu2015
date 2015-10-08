@@ -21,27 +21,28 @@ class FormErrorHandlerTest extends UnitTestCase {
    * @covers ::displayErrorMessages
    */
   public function testDisplayErrorMessages() {
-    $link_generator = $this->getMock('Drupal\Core\Utility\LinkGeneratorInterface');
-    $link_generator->expects($this->any())
-      ->method('generate')
-      ->willReturnArgument(0);
     $form_error_handler = $this->getMockBuilder('Drupal\Core\Form\FormErrorHandler')
-      ->setConstructorArgs([$this->getStringTranslationStub(), $link_generator])
       ->setMethods(['drupalSetMessage'])
       ->getMock();
 
     $form_error_handler->expects($this->at(0))
       ->method('drupalSetMessage')
-      ->with('no title given', 'error');
+      ->with('invalid', 'error');
     $form_error_handler->expects($this->at(1))
       ->method('drupalSetMessage')
-      ->with('element is invisible', 'error');
+      ->with('invalid', 'error');
     $form_error_handler->expects($this->at(2))
       ->method('drupalSetMessage')
-      ->with('this missing element is invalid', 'error');
+      ->with('invalid', 'error');
     $form_error_handler->expects($this->at(3))
       ->method('drupalSetMessage')
-      ->with('3 errors have been found: Test 1, Test 2 &amp; a half, Test 3', 'error');
+      ->with('no title given', 'error');
+    $form_error_handler->expects($this->at(4))
+      ->method('drupalSetMessage')
+      ->with('element is invisible', 'error');
+    $form_error_handler->expects($this->at(5))
+      ->method('drupalSetMessage')
+      ->with('this missing element is invalid', 'error');
 
     $form = [
       '#parents' => [],
@@ -67,13 +68,6 @@ class FormErrorHandlerTest extends UnitTestCase {
         '#id' => 'edit-test3',
       ],
     ];
-    $form['test4'] = [
-      '#type' => 'textfield',
-      '#title' => 'Test 4',
-      '#parents' => ['test4'],
-      '#id' => 'edit-test4',
-      '#error_no_message' => TRUE,
-    ];
     $form['test5'] = [
       '#type' => 'textfield',
       '#parents' => ['test5'],
@@ -89,7 +83,6 @@ class FormErrorHandlerTest extends UnitTestCase {
     $form_state->setErrorByName('test1', 'invalid');
     $form_state->setErrorByName('test2', 'invalid');
     $form_state->setErrorByName('fieldset][test3', 'invalid');
-    $form_state->setErrorByName('test4', 'no error message');
     $form_state->setErrorByName('test5', 'no title given');
     $form_state->setErrorByName('test6', 'element is invisible');
     $form_state->setErrorByName('missing_element', 'this missing element is invalid');
@@ -103,7 +96,6 @@ class FormErrorHandlerTest extends UnitTestCase {
    */
   public function testSetElementErrorsFromFormState() {
     $form_error_handler = $this->getMockBuilder('Drupal\Core\Form\FormErrorHandler')
-      ->setConstructorArgs([$this->getStringTranslationStub(), $this->getMock('Drupal\Core\Utility\LinkGeneratorInterface')])
       ->setMethods(['drupalSetMessage'])
       ->getMock();
 

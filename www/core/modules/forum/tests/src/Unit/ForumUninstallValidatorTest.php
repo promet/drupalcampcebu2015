@@ -7,7 +7,7 @@
 
 namespace Drupal\Tests\forum\Unit;
 
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\simpletest\AssertHelperTrait;
 use Drupal\Tests\UnitTestCase;
 
 /**
@@ -15,6 +15,8 @@ use Drupal\Tests\UnitTestCase;
  * @group forum
  */
 class ForumUninstallValidatorTest extends UnitTestCase {
+
+  use AssertHelperTrait;
 
   /**
    * @var \Drupal\forum\ForumUninstallValidator|\PHPUnit_Framework_MockObject_MockObject
@@ -47,7 +49,7 @@ class ForumUninstallValidatorTest extends UnitTestCase {
     $module = 'not_forum';
     $expected = [];
     $reasons = $this->forumUninstallValidator->validate($module);
-    $this->assertSame($expected, $reasons);
+    $this->assertSame($expected, $this->castSafeStrings($reasons));
   }
 
   /**
@@ -70,7 +72,7 @@ class ForumUninstallValidatorTest extends UnitTestCase {
     $module = 'forum';
     $expected = [];
     $reasons = $this->forumUninstallValidator->validate($module);
-    $this->assertSame($expected, $reasons);
+    $this->assertSame($expected, $this->castSafeStrings($reasons));
   }
 
   /**
@@ -95,7 +97,7 @@ class ForumUninstallValidatorTest extends UnitTestCase {
       'To uninstall Forum, first delete all <em>Forum</em> content',
     ];
     $reasons = $this->forumUninstallValidator->validate($module);
-    $this->assertSame($expected, $reasons);
+    $this->assertSame($expected, $this->castSafeStrings($reasons));
   }
 
   /**
@@ -127,13 +129,10 @@ class ForumUninstallValidatorTest extends UnitTestCase {
     $module = 'forum';
     $expected = [
       'To uninstall Forum, first delete all <em>Forum</em> content',
-      SafeMarkup::format('To uninstall Forum, first delete all <a href="@url">%vocabulary</a> terms', [
-        '@url' => '/path/to/vocabulary/overview',
-        '%vocabulary' => 'Vocabulary label',
-      ]),
+      'To uninstall Forum, first delete all <a href="/path/to/vocabulary/overview"><em class="placeholder">Vocabulary label</em></a> terms',
     ];
     $reasons = $this->forumUninstallValidator->validate($module);
-    $this->assertSame($expected, $reasons);
+    $this->assertSame($expected, $this->castSafeStrings($reasons));
   }
 
   /**
@@ -164,12 +163,10 @@ class ForumUninstallValidatorTest extends UnitTestCase {
     $module = 'forum';
     $expected = [
       'To uninstall Forum, first delete all <em>Forum</em> content',
-      SafeMarkup::format('To uninstall Forum, first delete all %vocabulary terms', [
-        '%vocabulary' => 'Vocabulary label',
-      ]),
+      'To uninstall Forum, first delete all <em class="placeholder">Vocabulary label</em> terms',
     ];
     $reasons = $this->forumUninstallValidator->validate($module);
-    $this->assertSame($expected, $reasons);
+    $this->assertSame($expected, $this->castSafeStrings($reasons));
   }
 
   /**
@@ -200,13 +197,10 @@ class ForumUninstallValidatorTest extends UnitTestCase {
 
     $module = 'forum';
     $expected = [
-      SafeMarkup::format('To uninstall Forum, first delete all <a href="@url">%vocabulary</a> terms', [
-        '@url' => '/path/to/vocabulary/overview',
-        '%vocabulary' => 'Vocabulary label',
-      ]),
+      'To uninstall Forum, first delete all <a href="/path/to/vocabulary/overview"><em class="placeholder">Vocabulary label</em></a> terms',
     ];
     $reasons = $this->forumUninstallValidator->validate($module);
-    $this->assertSame($expected, $reasons);
+    $this->assertSame($expected, $this->castSafeStrings($reasons));
   }
 
   /**
@@ -236,12 +230,10 @@ class ForumUninstallValidatorTest extends UnitTestCase {
 
     $module = 'forum';
     $expected = [
-      SafeMarkup::format('To uninstall Forum, first delete all %vocabulary terms', [
-        '%vocabulary' => 'Vocabulary label',
-      ]),
+      'To uninstall Forum, first delete all <em class="placeholder">Vocabulary label</em> terms',
     ];
     $reasons = $this->forumUninstallValidator->validate($module);
-    $this->assertSame($expected, $reasons);
+    $this->assertSame($expected, $this->castSafeStrings($reasons));
   }
 
 }

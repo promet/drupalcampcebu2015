@@ -35,7 +35,7 @@ class NodeTypeListBuilder extends ConfigEntityListBuilder {
    */
   public function buildRow(EntityInterface $entity) {
     $row['title'] = array(
-      'data' => $this->getLabel($entity),
+      'data' => $entity->label(),
       'class' => array('menu-label'),
     );
     $row['description']['data'] = ['#markup' => $entity->getDescription()];
@@ -60,8 +60,8 @@ class NodeTypeListBuilder extends ConfigEntityListBuilder {
    */
   public function render() {
     $build = parent::render();
-    $build['table']['#empty'] = $this->t('No content types available. <a href="@link">Add content type</a>.', [
-        '@link' => Url::fromRoute('node.type_add')->toString()
+    $build['table']['#empty'] = $this->t('No content types available. <a href=":link">Add content type</a>.', [
+        ':link' => Url::fromRoute('node.type_add')->toString()
       ]);
     return $build;
   }

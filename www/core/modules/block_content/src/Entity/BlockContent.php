@@ -189,7 +189,9 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
         'type' => 'string_textfield',
         'weight' => -5,
       ))
-      ->setDisplayConfigurable('form', TRUE);
+      ->setDisplayConfigurable('form', TRUE)
+      ->addConstraint('UniqueField', []);
+
 
     $fields['type'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Block type'))
@@ -215,13 +217,6 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
       ->setTranslatable(TRUE);
 
     return $fields;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getChangedTime() {
-    return $this->get('changed')->value;
   }
 
   /**

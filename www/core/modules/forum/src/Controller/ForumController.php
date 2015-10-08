@@ -190,6 +190,7 @@ class ForumController extends ControllerBase {
     else {
       // Set the page title to forum's vocabulary name.
       $build['#title'] = $vocabulary->label();
+      $this->renderer->addCacheableDependency($build, $vocabulary);
     }
     return $build;
   }
@@ -223,7 +224,6 @@ class ForumController extends ControllerBase {
       '#sortby' => $config->get('topics.order'),
       '#forums_per_page' => $config->get('topics.page_limit'),
     );
-    $build['#attached']['library'][] = 'forum/forum.index';
     if (empty($term->forum_container->value)) {
       $build['#attached']['feed'][] = array('taxonomy/term/' . $term->id() . '/feed', 'RSS - ' . $term->getName());
     }

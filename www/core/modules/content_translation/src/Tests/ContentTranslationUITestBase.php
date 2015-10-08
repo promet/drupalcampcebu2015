@@ -38,13 +38,21 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
   protected $testLanguageSelector = TRUE;
 
   /**
+   * Flag that tells whether the HTML escaping of all languages works or not
+   * after SafeMarkup change.
+   *
+   * @var bool
+   */
+  protected $testHTMLEscapeForAllLanguages = FALSE;
+
+  /**
    * Default cache contexts expected on a non-translated entity.
    *
    * Cache contexts will not be checked if this list is empty.
    *
    * @var string[]
    */
-  protected $defaultCacheContexts = ['languages:language_interface', 'theme', 'user.permissions'];
+  protected $defaultCacheContexts = ['languages:language_interface', 'theme', 'url.query_args:_wrapper_format', 'user.permissions'];
 
   /**
    * Tests the basic translation UI.
@@ -57,6 +65,7 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
     $this->doTestAuthoringInfo();
     $this->doTestTranslationEdit();
     $this->doTestTranslationChanged();
+    $this->doTestChangedTimeAfterSaveWithoutChanges();
     $this->doTestTranslationDeletion();
   }
 
@@ -104,6 +113,13 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
       'target' => $langcode
     ], array('language' => $language));
     $this->drupalPostForm($add_url, $this->getEditValues($values, $langcode), $this->getFormSubmitActionForNewTranslation($entity, $langcode));
+
+    // Assert that HTML is escaped in "all languages" in UI after SafeMarkup
+    // change.
+    if ($this->testHTMLEscapeForAllLanguages) {
+      $this->assertNoRaw('&lt;span class=&quot;translation-entity-all-languages&quot;&gt;(all languages)&lt;/span&gt;');
+      $this->assertRaw('<span class="translation-entity-all-languages">(all languages)</span>');
+    }
 
     // Ensure that the content language cache context is not yet added to the
     // page.
@@ -301,7 +317,7 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
       'content_translation[created]' => '19/11/1978',
     );
     $this->drupalPostForm($entity->urlInfo('edit-form'), $edit, $this->getFormSubmitAction($entity, $langcode));
-    $this->assertTrue($this->xpath('//div[contains(concat(" ", normalize-space(@class), " "), :class)]', array(':class' => ' messages--error ')), 'Invalid values generate a form error message.');
+    $this->assertTrue($this->xpath('//div[contains(@class, "error")]//ul'), 'Invalid values generate a list of form errors.');
     $metadata = $this->manager->getTranslationMetadata($entity->getTranslation($langcode));
     $this->assertEqual($metadata->getAuthor()->id(), $values[$langcode]['uid'], 'Translation author correctly kept.');
     $this->assertEqual($metadata->getCreatedTime(), $values[$langcode]['created'], 'Translation date correctly kept.');
@@ -528,6 +544,32 @@ abstract class ContentTranslationUITestBase extends ContentTranslationTestBase {
           'All timestamps from all languages are identical.'
         );
       }
+    }
+  }
+
+  /**
+   * Test the changed time after API and FORM save without changes.
+   */
+  public function doTestChangedTimeAfterSaveWithoutChanges() {
+    $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+    // Test only entities, which implement the EntityChangedInterface.
+    if ($entity->getEntityType()->isSubclassOf('Drupal\Core\Entity\EntityChangedInterface')) {
+      $changed_timestamp = $entity->getChangedTime();
+
+      $entity->save();
+      $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+      $this->assertEqual($changed_timestamp, $entity->getChangedTime(), 'The entity\'s changed time wasn\'t updated after API save without changes.');
+
+      // Ensure different save timestamps.
+      sleep(1);
+
+      // Save the entity on the regular edit form.
+      $language = $entity->language();
+      $edit_path = $entity->urlInfo('edit-form', array('language' => $language));
+      $this->drupalPostForm($edit_path, [], $this->getFormSubmitAction($entity, $language->getId()));
+
+      $entity = entity_load($this->entityTypeId, $this->entityId, TRUE);
+      $this->assertNotEqual($changed_timestamp, $entity->getChangedTime(), 'The entity\'s changed time was updated after form save without changes.');
     }
   }
 

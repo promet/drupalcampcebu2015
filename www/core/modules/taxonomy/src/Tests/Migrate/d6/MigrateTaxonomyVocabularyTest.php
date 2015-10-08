@@ -7,20 +7,19 @@
 
 namespace Drupal\taxonomy\Tests\Migrate\d6;
 
+use Drupal\migrate\Entity\Migration;
 use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\migrate_drupal\Tests\d6\MigrateDrupal6TestBase;
 
 /**
  * Migrate taxonomy vocabularies to taxonomy.vocabulary.*.yml.
  *
- * @group taxonomy
+ * @group migrate_drupal_6
  */
 class MigrateTaxonomyVocabularyTest extends MigrateDrupal6TestBase {
 
   /**
-   * Modules to enable.
-   *
-   * @var array
+   * {@inheritdoc}
    */
   public static $modules = array('taxonomy');
 
@@ -29,7 +28,6 @@ class MigrateTaxonomyVocabularyTest extends MigrateDrupal6TestBase {
    */
   protected function setUp() {
     parent::setUp();
-    $this->loadDumps(['Vocabulary.php', 'VocabularyNodeTypes.php']);
     $this->executeMigration('d6_taxonomy_vocabulary');
   }
 
@@ -40,7 +38,7 @@ class MigrateTaxonomyVocabularyTest extends MigrateDrupal6TestBase {
     for ($i = 0; $i < 3; $i++) {
       $j = $i + 1;
       $vocabulary = Vocabulary::load("vocabulary_{$j}_i_{$i}_");
-      $this->assertIdentical(entity_load('migration', 'd6_taxonomy_vocabulary')->getIdMap()->lookupDestinationID(array($j)), array($vocabulary->id()));
+      $this->assertIdentical(Migration::load('d6_taxonomy_vocabulary')->getIdMap()->lookupDestinationID(array($j)), array($vocabulary->id()));
       $this->assertIdentical("vocabulary $j (i=$i)", $vocabulary->label());
       $this->assertIdentical("description of vocabulary $j (i=$i)", $vocabulary->getDescription());
       $this->assertIdentical($i, $vocabulary->getHierarchy());

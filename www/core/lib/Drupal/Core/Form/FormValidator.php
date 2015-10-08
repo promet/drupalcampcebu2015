@@ -105,13 +105,12 @@ class FormValidator implements FormValidatorInterface {
     }
 
     // If the session token was set by self::prepareForm(), ensure that it
-    // matches the current user's session.
+    // matches the current user's session. This is duplicate to code in
+    // FormBuilder::doBuildForm() but left to protect any custom form handling
+    // code.
     if (isset($form['#token'])) {
-      if (!$this->csrfToken->validate($form_state->getValue('form_token'), $form['#token'])) {
-        $url = $this->requestStack->getCurrentRequest()->getRequestUri();
-
-        // Setting this error will cause the form to fail validation.
-        $form_state->setErrorByName('form_token', $this->t('The form has become outdated. Copy any unsaved work in the form below and then <a href="@link">reload this page</a>.', array('@link' => $url)));
+      if (!$this->csrfToken->validate($form_state->getValue('form_token'), $form['#token']) || $form_state->hasInvalidToken()) {
+        $this->setInvalidTokenError($form_state);
 
         // Stop here and don't run any further validation handlers, because they
         // could invoke non-safe operations which opens the door for CSRF
@@ -125,6 +124,16 @@ class FormValidator implements FormValidatorInterface {
     $this->doValidateForm($form, $form_state, $form_id);
     $this->finalizeValidation($form, $form_state, $form_id);
     $this->handleErrorsWithLimitedValidation($form, $form_state, $form_id);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setInvalidTokenError(FormStateInterface $form_state) {
+    $url = $this->requestStack->getCurrentRequest()->getRequestUri();
+
+    // Setting this error will cause the form to fail validation.
+    $form_state->setErrorByName('form_token', $this->t('The form has become outdated. Copy any unsaved work in the form below and then <a href=":link">reload this page</a>.', array(':link' => $url)));
   }
 
   /**
@@ -287,7 +296,7 @@ class FormValidator implements FormValidatorInterface {
         // form constructors are encouraged to set #title anyway, and then set
         // #title_display to 'invisible'. This improves accessibility.
         elseif (isset($elements['#title'])) {
-          $form_state->setError($elements, $this->t('!name field is required.', array('!name' => $elements['#title'])));
+          $form_state->setError($elements, $this->t('@name field is required.', array('@name' => $elements['#title'])));
         }
         else {
           $form_state->setError($elements);
@@ -322,7 +331,7 @@ class FormValidator implements FormValidatorInterface {
   protected function performRequiredValidation(&$elements, FormStateInterface &$form_state) {
     // Verify that the value is not longer than #maxlength.
     if (isset($elements['#maxlength']) && Unicode::strlen($elements['#value']) > $elements['#maxlength']) {
-      $form_state->setError($elements, $this->t('!name cannot be longer than %max characters but is currently %length characters long.', array('!name' => empty($elements['#title']) ? $elements['#parents'][0] : $elements['#title'], '%max' => $elements['#maxlength'], '%length' => Unicode::strlen($elements['#value']))));
+      $form_state->setError($elements, $this->t('@name cannot be longer than %max characters but is currently %length characters long.', array('@name' => empty($elements['#title']) ? $elements['#parents'][0] : $elements['#title'], '%max' => $elements['#maxlength'], '%length' => Unicode::strlen($elements['#value']))));
     }
 
     if (isset($elements['#options']) && isset($elements['#value'])) {

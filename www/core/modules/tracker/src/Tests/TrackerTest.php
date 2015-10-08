@@ -10,6 +10,7 @@ namespace Drupal\tracker\Tests;
 use Drupal\comment\CommentInterface;
 use Drupal\comment\Tests\CommentTestTrait;
 use Drupal\Core\Cache\Cache;
+use Drupal\Core\EventSubscriber\MainContentViewSubscriber;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\node\Entity\Node;
@@ -31,7 +32,7 @@ class TrackerTest extends WebTestBase {
    *
    * @var array
    */
-  public static $modules = array('comment', 'tracker', 'history', 'node_test');
+  public static $modules = ['block', 'comment', 'tracker', 'history', 'node_test'];
 
   /**
    * The main user for testing.
@@ -60,6 +61,8 @@ class TrackerTest extends WebTestBase {
       'access content',
       'access user profiles',
     ));
+    $this->drupalPlaceBlock('local_tasks_block', ['id' => 'page_tabs_block']);
+    $this->drupalPlaceBlock('local_actions_block', ['id' => 'page_actions_block']);
   }
 
   /**
@@ -83,10 +86,28 @@ class TrackerTest extends WebTestBase {
     $this->assertLink(t('My recent content'), 0, 'User tab shows up on the global tracker page.');
 
     // Assert cache contexts, specifically the pager and node access contexts.
-    $this->assertCacheContexts(['languages:language_interface', 'theme', 'url.query_args.pagers:0', 'user.node_grants:view', 'user.permissions']);
-    // Assert cache tags for the visible node and node list cache tag.
+    $this->assertCacheContexts(['languages:language_interface', 'route', 'theme', 'url.query_args:' . MainContentViewSubscriber::WRAPPER_FORMAT, 'url.query_args.pagers:0', 'user.node_grants:view', 'user']);
+    // Assert cache tags for the action/tabs blocks, visible node, and node list
+    // cache tag.
     $expected_tags = Cache::mergeTags($published->getCacheTags(), $published->getOwner()->getCacheTags());
-    $expected_tags = Cache::mergeTags($expected_tags, ['node_list', 'rendered']);
+    // Because the 'user.permissions' cache context is being optimized away.
+    $role_tags = [];
+    foreach ($this->user->getRoles() as $rid) {
+      $role_tags[] = "config:user.role.$rid";
+    }
+    $expected_tags = Cache::mergeTags($expected_tags, $role_tags);
+    $block_tags = [
+      'block_view',
+      'config:block.block.page_actions_block',
+      'config:block.block.page_tabs_block',
+      'config:block_list',
+    ];
+    $expected_tags = Cache::mergeTags($expected_tags, $block_tags);
+    $additional_tags = [
+      'node_list',
+      'rendered',
+    ];
+    $expected_tags = Cache::mergeTags($expected_tags, $additional_tags);
     $this->assertCacheTags($expected_tags);
 
     // Delete a node and ensure it no longer appears on the tracker.
@@ -149,16 +170,33 @@ class TrackerTest extends WebTestBase {
     $this->assertText($other_published_my_comment->label(), "Nodes that the user has commented on appear in the user's tracker listing.");
 
     // Assert cache contexts.
-    $this->assertCacheContexts(['languages:language_interface', 'theme', 'url.query_args.pagers:0', 'user', 'user.node_grants:view']);
+    $this->assertCacheContexts(['languages:language_interface', 'route', 'theme', 'url.query_args:' . MainContentViewSubscriber::WRAPPER_FORMAT, 'url.query_args.pagers:0', 'user', 'user.node_grants:view']);
     // Assert cache tags for the visible nodes (including owners) and node list
     // cache tag.
     $expected_tags = Cache::mergeTags($my_published->getCacheTags(), $my_published->getOwner()->getCacheTags());
     $expected_tags = Cache::mergeTags($expected_tags, $other_published_my_comment->getCacheTags());
     $expected_tags = Cache::mergeTags($expected_tags, $other_published_my_comment->getOwner()->getCacheTags());
-    $expected_tags = Cache::mergeTags($expected_tags, ['node_list', 'rendered']);
+    // Because the 'user.permissions' cache context is being optimized away.
+    $role_tags = [];
+    foreach ($this->user->getRoles() as $rid) {
+      $role_tags[] = "config:user.role.$rid";
+    }
+    $expected_tags = Cache::mergeTags($expected_tags, $role_tags);
+    $block_tags = [
+      'block_view',
+      'config:block.block.page_actions_block',
+      'config:block.block.page_tabs_block',
+      'config:block_list',
+    ];
+    $expected_tags = Cache::mergeTags($expected_tags, $block_tags);
+    $additional_tags = [
+      'node_list',
+      'rendered',
+    ];
+    $expected_tags = Cache::mergeTags($expected_tags, $additional_tags);
 
     $this->assertCacheTags($expected_tags);
-    $this->assertCacheContexts(['languages:language_interface', 'theme', 'url.query_args.pagers:0', 'user', 'user.node_grants:view']);
+    $this->assertCacheContexts(['languages:language_interface', 'route', 'theme', 'url.query_args:' . MainContentViewSubscriber::WRAPPER_FORMAT, 'url.query_args.pagers:0', 'user', 'user.node_grants:view']);
 
     $this->assertLink($my_published->label());
     $this->assertNoLink($unpublished->label());
@@ -172,6 +210,19 @@ class TrackerTest extends WebTestBase {
     $this->drupalPostForm('comment/1/edit', array('status' => CommentInterface::NOT_PUBLISHED), t('Save'));
     $this->drupalGet('user/' . $this->user->id() . '/activity');
     $this->assertNoText($other_published_my_comment->label(), 'Unpublished comments are not counted on the tracker listing.');
+
+    // Test escaping of title on user's tracker tab.
+    \Drupal::service('module_installer')->install(['user_hooks_test']);
+    Cache::invalidateTags(['rendered']);
+    \Drupal::state()->set('user_hooks_test_user_format_name_alter', TRUE);
+    $this->drupalGet('user/' . $this->user->id() . '/activity');
+    $this->assertEscaped('<em>' . $this->user->id() . '</em>');
+
+    \Drupal::state()->set('user_hooks_test_user_format_name_alter_safe', TRUE);
+    Cache::invalidateTags(['rendered']);
+    $this->drupalGet('user/' . $this->user->id() . '/activity');
+    $this->assertNoEscaped('<em>' . $this->user->id() . '</em>');
+    $this->assertRaw('<em>' . $this->user->id() . '</em>');
   }
 
   /**

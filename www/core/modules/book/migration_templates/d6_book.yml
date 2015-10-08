@@ -1,5 +1,5 @@
 id: d6_book
-label: Drupal 6 books
+label: Books
 migration_tags:
   - Drupal 6
 source:
@@ -20,4 +20,4 @@ destination:
   plugin: book
 migration_dependencies:
   required:
-    - d6_node
+    - d6_node:*

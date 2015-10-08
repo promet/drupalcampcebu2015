@@ -7,7 +7,6 @@
 
 namespace Drupal\taxonomy\Plugin\migrate\source\d6;
 
-use Drupal\migrate\Plugin\SourceEntityInterface;
 use Drupal\migrate\Row;
 use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
 
@@ -19,9 +18,9 @@ use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
  *   source_provider = "taxonomy"
  * )
  */
-class TermNode extends DrupalSqlBase implements SourceEntityInterface {
+class TermNode extends DrupalSqlBase {
 
-    /**
+  /**
    * The join options between the node and the term node table.
    */
   const JOIN = 'tn.vid = n.vid';
@@ -31,7 +30,6 @@ class TermNode extends DrupalSqlBase implements SourceEntityInterface {
    */
   public function query() {
     $query = $this->select('term_node', 'tn')
-      // @todo: working, but not is there support for distinct() in FakeSelect?
       ->distinct()
       ->fields('tn', array('nid', 'vid'))
       ->fields('n', array('type'));
@@ -39,7 +37,6 @@ class TermNode extends DrupalSqlBase implements SourceEntityInterface {
     $query->innerJoin('term_data', 'td', 'td.tid = tn.tid AND td.vid = :vid', array(':vid' => $this->configuration['vid']));
     $query->innerJoin('node', 'n', static::JOIN);
     return $query;
-
   }
 
   /**
@@ -74,20 +71,6 @@ class TermNode extends DrupalSqlBase implements SourceEntityInterface {
     $ids['vid']['type'] = 'integer';
     $ids['vid']['alias'] = 'tn';
     return $ids;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function bundleMigrationRequired() {
-    return TRUE;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function entityTypeId() {
-    return 'taxonomy_term';
   }
 
 }

@@ -7,26 +7,21 @@
 
 namespace Drupal\filter\Tests\Migrate\d6;
 
+use Drupal\filter\Entity\FilterFormat;
 use Drupal\migrate_drupal\Tests\d6\MigrateDrupal6TestBase;
 
 /**
  * Upgrade variables to filter.formats.*.yml.
  *
- * @group filter
+ * @group migrate_drupal_6
  */
 class MigrateFilterFormatTest extends MigrateDrupal6TestBase {
 
   /**
    * {@inheritdoc}
    */
-  static $modules = array('filter');
-
-  /**
-   * {@inheritdoc}
-   */
   protected function setUp() {
     parent::setUp();
-    $this->loadDumps(['Filters.php', 'FilterFormats.php', 'Variable.php']);
     $this->executeMigration('d6_filter_format');
   }
 
@@ -34,7 +29,7 @@ class MigrateFilterFormatTest extends MigrateDrupal6TestBase {
    * Tests the Drupal 6 filter format to Drupal 8 migration.
    */
   public function testFilterFormat() {
-    $filter_format = entity_load('filter_format', 'filtered_html');
+    $filter_format = FilterFormat::load('filtered_html');
 
     // Check filter status.
     $filters = $filter_format->get('filters');
@@ -49,10 +44,14 @@ class MigrateFilterFormatTest extends MigrateDrupal6TestBase {
     $this->assertFalse(isset($filters['filter_html_image_secure']));
 
     // Check variables migrated into filter.
-    $this->assertIdentical('<a> <em> <strong> <cite> <code> <ul> <ol> <li> <dl> <dt> <dd>', $filters['filter_html']['settings']['allowed_html']);
+    $this->assertIdentical('<a href hreflang> <em> <strong> <cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd>', $filters['filter_html']['settings']['allowed_html']);
     $this->assertIdentical(TRUE, $filters['filter_html']['settings']['filter_html_help']);
     $this->assertIdentical(FALSE, $filters['filter_html']['settings']['filter_html_nofollow']);
     $this->assertIdentical(72, $filters['filter_url']['settings']['filter_url_length']);
+
+    // Check that the PHP code filter is converted to filter_null.
+    $filters = FilterFormat::load('php_code')->get('filters');
+    $this->assertTrue(isset($filters['filter_null']));
   }
 
 }

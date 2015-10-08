@@ -11,6 +11,9 @@ use Drupal\Core\Cache\Cache;
 use Drupal\Core\Session\UserSession;
 use Drupal\comment\CommentInterface;
 use Drupal\system\Tests\Entity\EntityUnitTestBase;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Tests the bubbling up of comment cache tags when using the Comment list
@@ -34,6 +37,16 @@ class CommentDefaultFormatterCacheTagsTest extends EntityUnitTestBase {
    */
   protected function setUp() {
     parent::setUp();
+
+    $session = new Session();
+
+    $request = Request::create('/');
+    $request->setSession($session);
+
+    /** @var RequestStack $stack */
+    $stack = $this->container->get('request_stack');
+    $stack->pop();
+    $stack->push($request);
 
     // Set the current user to one that can access comments. Specifically, this
     // user does not have access to the 'administer comments' permission, to
@@ -70,17 +83,15 @@ class CommentDefaultFormatterCacheTagsTest extends EntityUnitTestBase {
       ->getViewBuilder('entity_test')
       ->view($commented_entity);
     $renderer->renderRoot($build);
-    $cache_context_tags = \Drupal::service('cache_contexts_manager')->convertTokensToKeys($build['#cache']['contexts'])->getCacheTags();
-    $expected_cache_tags = Cache::mergeTags($cache_context_tags, [
+    $expected_cache_tags = [
       'entity_test_view',
       'entity_test:'  . $commented_entity->id(),
-      'comment_list',
       'config:core.entity_form_display.comment.comment.default',
       'config:field.field.comment.comment.comment_body',
       'config:field.field.entity_test.entity_test.comment',
       'config:field.storage.comment.comment_body',
       'config:user.settings',
-    ]);
+    ];
     sort($expected_cache_tags);
     $this->assertEqual($build['#cache']['tags'], $expected_cache_tags);
 
@@ -113,11 +124,9 @@ class CommentDefaultFormatterCacheTagsTest extends EntityUnitTestBase {
       ->getViewBuilder('entity_test')
       ->view($commented_entity);
     $renderer->renderRoot($build);
-    $cache_context_tags = \Drupal::service('cache_contexts_manager')->convertTokensToKeys($build['#cache']['contexts'])->getCacheTags();
-    $expected_cache_tags = Cache::mergeTags($cache_context_tags, [
+    $expected_cache_tags = [
       'entity_test_view',
       'entity_test:' . $commented_entity->id(),
-      'comment_list',
       'comment_view',
       'comment:' . $comment->id(),
       'config:filter.format.plain_text',
@@ -128,9 +137,27 @@ class CommentDefaultFormatterCacheTagsTest extends EntityUnitTestBase {
       'config:field.field.entity_test.entity_test.comment',
       'config:field.storage.comment.comment_body',
       'config:user.settings',
-    ]);
+    ];
     sort($expected_cache_tags);
     $this->assertEqual($build['#cache']['tags'], $expected_cache_tags);
+
+    // Build a render array with the entity in a sub-element so that lazy
+    // builder elements bubble up outside of the entity and we can check that
+    // it got the correct cache max age.
+    $build = ['#type' => 'container'];
+    $build['entity'] = \Drupal::entityManager()
+      ->getViewBuilder('entity_test')
+      ->view($commented_entity);
+    $renderer->renderRoot($build);
+
+    // The entity itself was cached but the top-level element is max-age 0 due
+    // to the bubbled up max age due to the lazy-built comment form.
+    $this->assertIdentical(Cache::PERMANENT, $build['entity']['#cache']['max-age']);
+    $this->assertIdentical(0, $build['#cache']['max-age'], 'Top level render array has max-age 0');
+
+    // The children (fields) of the entity render array are only built in case
+    // of a cache miss.
+    $this->assertFalse(isset($build['entity']['comment']), 'Cache hit');
   }
 
 }

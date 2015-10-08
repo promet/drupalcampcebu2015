@@ -127,7 +127,6 @@ class AssetResolver implements AssetResolverInterface {
       'type' => 'file',
       'group' => CSS_AGGREGATE_DEFAULT,
       'weight' => 0,
-      'every_page' => FALSE,
       'media' => 'all',
       'preprocess' => TRUE,
       'browsers' => [],
@@ -167,6 +166,7 @@ class AssetResolver implements AssetResolverInterface {
     uasort($css, 'static::sort');
 
     // Allow themes to remove CSS files by CSS files full path and file name.
+    // @todo Remove in Drupal 9.0.x.
     if ($stylesheet_remove = $theme_info->getStyleSheetsRemove()) {
       foreach ($css as $key => $options) {
         if (isset($stylesheet_remove[$key])) {
@@ -221,7 +221,7 @@ class AssetResolver implements AssetResolverInterface {
     // Add the theme name to the cache key since themes may implement
     // hook_js_alter(). Additionally add the current language to support
     // translation of JavaScript files.
-    $cid = 'js:' . $theme_info->getName() . ':' . $this->languageManager->getCurrentLanguage()->getId() . ':' .  Crypt::hashBase64(serialize($assets));
+    $cid = 'js:' . $theme_info->getName() . ':' . $this->languageManager->getCurrentLanguage()->getId() . ':' .  Crypt::hashBase64(serialize($assets)) . (int) $optimize;
 
     if ($cached = $this->cache->get($cid)) {
       list($js_assets_header, $js_assets_footer, $settings, $settings_in_header) = $cached->data;
@@ -231,7 +231,6 @@ class AssetResolver implements AssetResolverInterface {
       $default_options = [
         'type' => 'file',
         'group' => JS_DEFAULT,
-        'every_page' => FALSE,
         'weight' => 0,
         'cache' => TRUE,
         'preprocess' => TRUE,
@@ -338,7 +337,6 @@ class AssetResolver implements AssetResolverInterface {
       $settings_as_inline_javascript = [
         'type' => 'setting',
         'group' => JS_SETTING,
-        'every_page' => TRUE,
         'weight' => 0,
         'browsers' => [],
         'data' => $settings,
@@ -382,16 +380,6 @@ class AssetResolver implements AssetResolverInterface {
       return -1;
     }
     elseif ($a['group'] > $b['group']) {
-      return 1;
-    }
-    // Within a group, order all infrequently needed, page-specific files after
-    // common files needed throughout the website. Separating this way allows
-    // for the aggregate file generated for all of the common files to be reused
-    // across a site visit without being cut by a page using a less common file.
-    elseif ($a['every_page'] && !$b['every_page']) {
-      return -1;
-    }
-    elseif (!$a['every_page'] && $b['every_page']) {
       return 1;
     }
     // Finally, order by weight.

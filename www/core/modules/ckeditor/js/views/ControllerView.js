@@ -179,17 +179,24 @@
             CKEFeatureRulesMap[name].push(rule);
           }
 
-          // Now convert these to Drupal.EditorFeature objects.
+          // Now convert these to Drupal.EditorFeature objects. And track which
+          // buttons are mapped to which features.
+          // @see getFeatureForButton()
           var features = {};
+          var buttonsToFeatures = {};
           for (var featureName in CKEFeatureRulesMap) {
             if (CKEFeatureRulesMap.hasOwnProperty(featureName)) {
               var feature = new Drupal.EditorFeature(featureName);
               convertCKERulesToEditorFeature(feature, CKEFeatureRulesMap[featureName]);
               features[featureName] = feature;
+              var command = e.editor.getCommand(featureName);
+              if (command) {
+                buttonsToFeatures[command.uiItems[0].name] = featureName;
+              }
             }
           }
 
-          callback(features);
+          callback(features, buttonsToFeatures);
         }
       });
     },
@@ -213,7 +220,12 @@
       // Get a Drupal.editorFeature object that contains all metadata for
       // the feature that was just added or removed. Not every feature has
       // such metadata.
-      var featureName = button.toLowerCase();
+      var featureName = this.model.get('buttonsToFeatures')[button.toLowerCase()];
+      // Features without an associated command do not have a 'feature name' by
+      // default, so we use the lowercased button name instead.
+      if (!featureName) {
+        featureName = button.toLowerCase();
+      }
       var featuresMetadata = this.model.get('featuresMetadata');
       if (!featuresMetadata[featureName]) {
         featuresMetadata[featureName] = new Drupal.EditorFeature(featureName);
@@ -227,9 +239,18 @@
      *
      * @param {object} features
      *   A map of {@link Drupal.EditorFeature} objects.
+     * @param {object} buttonsToFeatures
+     *   Object containing the button-to-feature mapping.
+     *
+     * @see Drupal.ckeditor.ControllerView#getFeatureForButton
      */
-    disableFeaturesDisallowedByFilters: function (features) {
+    disableFeaturesDisallowedByFilters: function (features, buttonsToFeatures) {
       this.model.set('featuresMetadata', features);
+      // Store the button-to-feature mapping. Needs to happen only once, because
+      // the same buttons continue to have the same features; only the rules for
+      // specific features may change.
+      // @see getFeatureForButton()
+      this.model.set('buttonsToFeatures', buttonsToFeatures);
 
       // Ensure that toolbar configuration changes are broadcast.
       this.broadcastConfigurationChanges(this.$el);
@@ -271,7 +292,7 @@
             .detach()
             .appendTo('.ckeditor-toolbar-disabled > .ckeditor-toolbar-available > ul');
           // Update the toolbar value field.
-          this.model.set({'isDirty': true}, {broadcast: false});
+          this.model.set({isDirty: true}, {broadcast: false});
         }
       }
     },
@@ -285,7 +306,6 @@
     broadcastConfigurationChanges: function ($ckeditorToolbar) {
       var view = this;
       var hiddenEditorConfig = this.model.get('hiddenEditorConfig');
-      var featuresMetadata = this.model.get('featuresMetadata');
       var getFeatureForButton = this.getFeatureForButton.bind(this);
       var getCKEditorFeatures = this.getCKEditorFeatures.bind(this);
       $ckeditorToolbar
@@ -319,6 +339,7 @@
           getCKEditorFeatures(hiddenEditorConfig, function (features) {
             // Trigger a standardized text editor configuration event for each
             // feature that was modified by the configuration changes.
+            var featuresMetadata = view.model.get('featuresMetadata');
             for (var name in features) {
               if (features.hasOwnProperty(name)) {
                 var feature = features[name];

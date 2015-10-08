@@ -291,12 +291,13 @@ class ToolbarAdminMenuTest extends WebTestBase {
     $this->assertTrue($original_subtree_hash, 'A valid hash value for the admin menu subtrees was created.');
     $this->drupalLogout();
 
-    // Translate the string 'Menus' in the xx language. This string appears in
-    // a link in the admin menu subtrees. Changing the string should create a
-    // new menu hash if the toolbar subtrees cache is properly cleared.
+    // Translate the string 'Search and metadata' in the xx language. This
+    // string appears in a link in the admin menu subtrees. Changing the string
+    // should create a new menu hash if the toolbar subtrees cache is correctly
+    // invalidated.
     $this->drupalLogin($translate_user);
     $search = array(
-      'string' => 'Menus',
+      'string' => 'Search and metadata',
       'langcode' => $langcode,
       'translation' => 'untranslated',
     );
@@ -388,6 +389,7 @@ class ToolbarAdminMenuTest extends WebTestBase {
       'title[0][value]' => 'External URL',
       'link[0][uri]' => 'http://example.org',
       'menu_parent' => 'admin:system.admin',
+      'description[0][value]' => 'External URL & escaped',
     ];
     $this->drupalPostForm('admin/structure/menu/manage/admin/add', $edit, 'Save');
 
@@ -398,6 +400,8 @@ class ToolbarAdminMenuTest extends WebTestBase {
     // Assert that the new menu link is shown in the toolbar on a regular page.
     $this->drupalGet(Url::fromRoute('<front>'));
     $this->assertText('External URL');
+    // Ensure the description is escaped as expected.
+    $this->assertRaw('title="External URL &amp; escaped"');
   }
 
   /**

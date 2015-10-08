@@ -90,7 +90,7 @@ class FinishResponseSubscriber implements EventSubscriberInterface {
   /**
    * Sets extra headers on successful responses.
    *
-   * @param Symfony\Component\HttpKernel\Event\FilterResponseEvent $event
+   * @param \Symfony\Component\HttpKernel\Event\FilterResponseEvent $event
    *   The event to process.
    */
   public function onRespond(FilterResponseEvent $event) {
@@ -115,15 +115,30 @@ class FinishResponseSubscriber implements EventSubscriberInterface {
     $response->headers->set('X-Content-Type-Options', 'nosniff', FALSE);
     $response->headers->set('X-Frame-Options', 'SAMEORIGIN', FALSE);
 
-    // Expose the cache contexts and cache tags associated with this page in a
-    // X-Drupal-Cache-Contexts and X-Drupal-Cache-Tags header respectively, when
-    // either a reverse proxy is being used (so the reverse proxy or CDN can be
-    // invalidated when appropriate) or when developing/debugging.
-    if ((Settings::get('reverse_proxy', FALSE) || Settings::get('send_cacheability_headers', FALSE)) && $response instanceof CacheableResponseInterface) {
-      $response_cacheability = $response->getCacheableMetadata();
-      $response->headers->set('X-Drupal-Cache-Tags', implode(' ', $response_cacheability->getCacheTags()));
-      $response->headers->set('X-Drupal-Cache-Contexts', implode(' ', $this->cacheContextsManager->optimizeTokens($response_cacheability->getCacheContexts())));
+    // If the current response isn't an implementation of the
+    // CacheableResponseInterface, we assume that a Response is either
+    // explicitly not cacheable or that caching headers are already set in
+    // another place.
+    if (!$response instanceof CacheableResponseInterface) {
+      if (!$this->isCacheControlCustomized($response)) {
+        $this->setResponseNotCacheable($response, $request);
+      }
+
+      // HTTP/1.0 proxies do not support the Vary header, so prevent any caching
+      // by sending an Expires date in the past. HTTP/1.1 clients ignore the
+      // Expires header if a Cache-Control: max-age directive is specified (see
+      // RFC 2616, section 14.9.3).
+      if (!$response->headers->has('Expires')) {
+        $this->setExpiresNoCache($response);
+      }
+      return;
     }
+
+    // Expose the cache contexts and cache tags associated with this page in a
+    // X-Drupal-Cache-Contexts and X-Drupal-Cache-Tags header respectively.
+    $response_cacheability = $response->getCacheableMetadata();
+    $response->headers->set('X-Drupal-Cache-Tags', implode(' ', $response_cacheability->getCacheTags()));
+    $response->headers->set('X-Drupal-Cache-Contexts', implode(' ', $this->cacheContextsManager->optimizeTokens($response_cacheability->getCacheContexts())));
 
     $is_cacheable = ($this->requestPolicy->check($request) === RequestPolicyInterface::ALLOW) && ($this->responsePolicy->check($response, $request) !== ResponsePolicyInterface::DENY);
 

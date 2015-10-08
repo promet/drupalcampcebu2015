@@ -9,7 +9,7 @@ namespace Drupal\views\Tests\Entity;
 
 use Drupal\language\Entity\ConfigurableLanguage;
 use Drupal\node\Entity\NodeType;
-use Drupal\views\Tests\ViewUnitTestBase;
+use Drupal\views\Tests\ViewKernelTestBase;
 use Drupal\views\Views;
 
 /**
@@ -18,14 +18,14 @@ use Drupal\views\Views;
  * @group views
  * @see \Drupal\views\Entity\Render\RendererBase
  */
-class RowEntityRenderersTest extends ViewUnitTestBase {
+class RowEntityRenderersTest extends ViewKernelTestBase {
 
   /**
    * Modules to enable.
    *
    * @var array
    */
-  public static $modules = array('field', 'filter', 'text', 'node', 'user', 'language', 'entity_reference', 'views_test_language');
+  public static $modules = ['field', 'filter', 'text', 'node', 'user', 'language', 'views_test_language'];
 
   /**
    * Views used by this test.

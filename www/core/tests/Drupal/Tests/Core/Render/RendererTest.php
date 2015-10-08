@@ -13,7 +13,7 @@ use Drupal\Core\Access\AccessResultInterface;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Cache\CacheableDependencyInterface;
 use Drupal\Core\Render\Element;
-use Drupal\Core\Render\SafeString;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Template\Attribute;
 
 /**
@@ -47,7 +47,15 @@ class RendererTest extends RendererTestBase {
       $setup_code();
     }
 
-    $this->assertSame($expected, (string) $this->renderer->renderRoot($build));
+    if (isset($build['#markup'])) {
+      $this->assertFalse(SafeMarkup::isSafe($build['#markup']), 'The #markup value is not marked safe before rendering.');
+    }
+    $render_output = $this->renderer->renderRoot($build);
+    $this->assertSame($expected, (string) $render_output);
+    if ($render_output !== '') {
+      $this->assertTrue(SafeMarkup::isSafe($render_output), 'Output of render is marked safe.');
+      $this->assertTrue(SafeMarkup::isSafe($build['#markup']), 'The #markup value is marked safe after rendering.');
+    }
   }
 
   /**
@@ -80,6 +88,19 @@ class RendererTest extends RendererTestBase {
     $data[] = [[
       '#markup' => 'foo',
     ], 'foo'];
+    // Basic #plain_text based renderable array.
+    $data[] = [[
+      '#plain_text' => 'foo',
+    ], 'foo'];
+    // Mixing #plain_text and #markup based renderable array.
+    $data[] = [[
+      '#plain_text' => '<em>foo</em>',
+      '#markup' => 'bar',
+    ], '&lt;em&gt;foo&lt;/em&gt;'];
+    // Safe strings in #plain_text are are still escaped.
+    $data[] = [[
+      '#plain_text' => Markup::create('<em>foo</em>'),
+    ], '&lt;em&gt;foo&lt;/em&gt;'];
     // Renderable child element.
     $data[] = [[
       'child' => ['#markup' => 'bar'],
@@ -88,6 +109,22 @@ class RendererTest extends RendererTestBase {
     $data[] = [[
       'child' => ['#markup' => "This is <script>alert('XSS')</script> test"],
     ], "This is alert('XSS') test"];
+    // XSS filtering test.
+    $data[] = [[
+      'child' => ['#markup' => "This is <script>alert('XSS')</script> test", '#allowed_tags' => ['script']],
+    ], "This is <script>alert('XSS')</script> test"];
+    // XSS filtering test.
+    $data[] = [[
+      'child' => ['#markup' => "This is <script><em>alert('XSS')</em></script> <strong>test</strong>", '#allowed_tags' => ['em', 'strong']],
+    ], "This is <em>alert('XSS')</em> <strong>test</strong>"];
+    // Html escaping test.
+    $data[] = [[
+      'child' => ['#plain_text' => "This is <script><em>alert('XSS')</em></script> <strong>test</strong>"],
+    ], "This is &lt;script&gt;&lt;em&gt;alert(&#039;XSS&#039;)&lt;/em&gt;&lt;/script&gt; &lt;strong&gt;test&lt;/strong&gt;"];
+    // XSS filtering by default test.
+    $data[] = [[
+      'child' => ['#markup' => "This is <script><em>alert('XSS')</em></script> <strong>test</strong>"],
+    ], "This is <em>alert('XSS')</em> <strong>test</strong>"];
     // Ensure non-XSS tags are not filtered out.
     $data[] = [[
       'child' => ['#markup' => "This is <strong><script>alert('not a giraffe')</script></strong> test"],
@@ -150,10 +187,6 @@ class RendererTest extends RendererTestBase {
           $attributes = new Attribute(['href' => $vars['#url']] + (isset($vars['#attributes']) ? $vars['#attributes'] : []));
           return '<a' . (string) $attributes . '>' . $vars['#title'] . '</a>';
         });
-      $this->elementInfo->expects($this->atLeastOnce())
-        ->method('getInfo')
-        ->with('link')
-        ->willReturn(['#theme' => 'link']);
     };
     $data[] = [$build, '<div class="baz"><a href="https://www.drupal.org" id="foo">bar</a></div>' . "\n", $setup_code_type_link];
 
@@ -692,10 +725,10 @@ class RendererTest extends RendererTestBase {
       ],
       // Collect expected property names.
       '#cache_properties' => array_keys(array_filter($expected_results)),
-      'child1' => ['#markup' => SafeString::create('1')],
-      'child2' => ['#markup' => SafeString::create('2')],
+      'child1' => ['#markup' => Markup::create('1')],
+      'child2' => ['#markup' => Markup::create('2')],
       // Mark the value as safe.
-      '#custom_property' => SafeMarkup::checkPlain('custom_value'),
+      '#custom_property' => Markup::create('custom_value'),
       '#custom_property_array' => ['custom value'],
     ];
 

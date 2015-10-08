@@ -16,6 +16,9 @@
    * Improve the user experience of the views edit interface.
    *
    * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Attaches toggling of SQL rewrite warning on the corresponding checkbox.
    */
   Drupal.behaviors.viewsUiEditView = {
     attach: function () {
@@ -32,6 +35,10 @@
    * as page title and menu link.
    *
    * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Attaches behavior for prepopulating page title and menu links, based on
+   *   view name.
    */
   Drupal.behaviors.viewsUiAddView = {
     attach: function (context) {
@@ -142,14 +149,18 @@
     var self = this;
 
     /**
+     * Populate the target form field with the altered source field value.
      *
      * @return {*}
+     *   The result of the _populate call, which should be undefined.
      */
     this.populate = function () { return self._populate.call(self); };
 
     /**
+     * Stop prepopulating the form fields.
      *
      * @return {*}
+     *   The result of the _unbind call, which should be undefined.
      */
     this.unbind = function () { return self._unbind.call(self); };
 
@@ -174,6 +185,7 @@
      * Get the source form field value as altered by the passed-in parameters.
      *
      * @return {string}
+     *   The source form field value.
      */
     getTransliterated: function () {
       var from = this.source.val();
@@ -208,6 +220,7 @@
      * Bind event handlers to new form fields, after they're replaced via Ajax.
      *
      * @param {jQuery} $fields
+     *   Fields to rebind functionality to.
      */
     rebind: function ($fields) {
       this.target = $fields;
@@ -216,8 +229,13 @@
   });
 
   /**
+   * Adds functionality for the add item form.
    *
    * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Attaches the functionality in {@link Drupal.viewsUi.AddItemForm} to the
+   *   forms in question.
    */
   Drupal.behaviors.addItemForm = {
     attach: function (context) {
@@ -236,10 +254,12 @@
   };
 
   /**
+   * Constructs a new AddItemForm.
    *
    * @constructor
    *
    * @param {jQuery} $form
+   *   The form element used.
    */
   Drupal.viewsUi.AddItemForm = function ($form) {
 
@@ -264,12 +284,14 @@
   };
 
   /**
+   * Handles a checkbox check.
    *
    * @param {jQuery.Event} event
+   *   The event triggered.
    */
   Drupal.viewsUi.AddItemForm.prototype.handleCheck = function (event) {
     var $target = $(event.target);
-    var label = $.trim($target.next().text());
+    var label = $.trim($target.closest('td').next().html());
     // Add/remove the checked item to the list.
     if ($target.is(':checked')) {
       this.$selected_div.show().css('display', 'block');
@@ -311,6 +333,9 @@
    * tabs.
    *
    * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Fixes the input elements needed.
    */
   Drupal.behaviors.viewsUiRenderAddViewButton = {
     attach: function (context) {
@@ -359,7 +384,10 @@
   };
 
   /**
+   * Toggle menu visibility.
+   *
    * @param {jQuery} $trigger
+   *   The element where the toggle was triggered.
    *
    *
    * @note [@jessebeach] I feel like the following should be a more generic
@@ -372,8 +400,13 @@
   };
 
   /**
+   * Add search options to the views ui.
    *
    * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Attaches {@link Drupal.viewsUi.OptionsSearch} to the views ui filter
+   *   options.
    */
   Drupal.behaviors.viewsUiSearchOptions = {
     attach: function (context) {
@@ -400,6 +433,7 @@
    * @constructor
    *
    * @param {jQuery} $form
+   *   The form element.
    */
   Drupal.viewsUi.OptionsSearch = function ($form) {
 
@@ -409,11 +443,18 @@
      */
     this.$form = $form;
 
-    /**
-     * Add a keyup handler to the search box.
-     */
-    this.$searchBox = this.$form.find('[data-drupal-selector="edit-override-controls-options-search"]');
-    this.$searchBox.on('keyup', $.proxy(this.handleKeyup, this));
+    // Click on the title checks the box.
+    this.$form.on('click', 'td.title', function (event) {
+      var $target = $(event.currentTarget);
+      $target.closest('tr').find('input').trigger('click');
+    });
+
+    var searchBoxSelector = '[data-drupal-selector="edit-override-controls-options-search"]';
+    var controlGroupSelector = '[data-drupal-selector="edit-override-controls-group"]';
+    this.$form.on('formUpdated', searchBoxSelector + ',' + controlGroupSelector, $.proxy(this.handleFilter, this));
+
+    this.$searchBox = this.$form.find(searchBoxSelector);
+    this.$controlGroup = this.$form.find(controlGroupSelector);
 
     /**
      * Get a list of option labels and their corresponding divs and maintain it
@@ -421,8 +462,6 @@
      */
     this.options = this.getOptions(this.$form.find('.filterable-option'));
 
-    // Restripe on initial loading.
-    this.handleKeyup();
     // Trap the ENTER key in the search box so that it doesn't submit the form.
     this.$searchBox.on('keypress', function (event) {
       if (event.which === 13) {
@@ -441,6 +480,7 @@
      *   shown and hidden depending on the user's search terms.
      *
      * @return {Array}
+     *   An array of all the filterable options.
      */
     getOptions: function ($allOptions) {
       var $label;
@@ -451,71 +491,65 @@
       for (var i = 0; i < length; i++) {
         $option = $($allOptions[i]);
         $label = $option.find('label');
-        $description = $option.find('div.description');
+        $description = $option.find('.description');
         options[i] = {
           // Search on the lowercase version of the label text + description.
-          'searchText': $label.text().toLowerCase() + " " + $description.text().toLowerCase(),
+          searchText: $label.text().toLowerCase() + " " + $description.text().toLowerCase(),
           // Maintain a reference to the jQuery object for each row, so we don't
           // have to create a new object inside the performance-sensitive keyup
           // handler.
-          '$div': $option
+          $div: $option
         };
       }
       return options;
     },
 
     /**
-     * Keyup handler for the search box that hides or shows the relevant
+     * Filter handler for the search box and type select that hides or shows the relevant
      * options.
      *
      * @param {jQuery.Event} event
+     *   The formUpdated event.
      */
-    handleKeyup: function (event) {
-      var found;
-      var option;
-      var zebraClass;
-
+    handleFilter: function (event) {
       // Determine the user's search query. The search text has been converted
       // to lowercase.
       var search = this.$searchBox.val().toLowerCase();
       var words = search.split(' ');
-      var wordsLength = words.length;
-
-      // Start the counter for restriping rows.
-      var zebraCounter = 0;
+      // Get selected Group
+      var group = this.$controlGroup.val();
 
       // Search through the search texts in the form for matching text.
-      var length = this.options.length;
-      for (var i = 0; i < length; i++) {
-        // Use a local variable for the option being searched, for performance.
-        option = this.options[i];
-        found = true;
+      this.options.forEach(function (option) {
+        function hasWord(word) {
+          return option.searchText.indexOf(word) !== -1;
+        }
+
+        var found = true;
         // Each word in the search string has to match the item in order for the
         // item to be shown.
-        for (var j = 0; j < wordsLength; j++) {
-          if (option.searchText.indexOf(words[j]) === -1) {
-            found = false;
-          }
+        if (search) {
+          found = words.every(hasWord);
         }
-        if (found) {
-          zebraClass = (zebraCounter % 2) ? 'odd' : 'even';
-          // Show the checkbox row, and restripe it.
-          option.$div.removeClass('even odd');
-          option.$div.addClass(zebraClass);
-          option.$div.show();
-          zebraCounter++;
+        if (found && group !== 'all') {
+          found = option.$div.hasClass(group);
         }
-        else {
-          // The search string wasn't found; hide this item.
-          option.$div.hide();
-        }
-      }
+
+        option.$div.toggle(found);
+      });
+
+      // Adapt dialog to content size.
+      $(event.target).trigger('dialogContentResize');
     }
   });
 
   /**
+   * Preview functionality in the views edit form.
    *
    * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Attaches the preview functionality to the view edit form.
    */
   Drupal.behaviors.viewsUiPreview = {
     attach: function (context) {
@@ -544,8 +578,14 @@
   };
 
   /**
+   * Rearranges the filters.
    *
    * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Attach handlers to make it possible to rearange the filters in the form
+   *   in question.
+   *   @see Drupal.viewsUi.RearrangeFilterHandler
    */
   Drupal.behaviors.viewsUiRearrangeFilter = {
     attach: function (context) {
@@ -555,7 +595,7 @@
       }
       var $context = $(context);
       var $table = $context.find('#views-rearrange-filters').once('views-rearrange-filters');
-      var $operator = $context.find('.form-item-filter-groups-operator').once('views-rearrange-filters');
+      var $operator = $context.find('.js-form-item-filter-groups-operator').once('views-rearrange-filters');
       if ($table.length) {
         new Drupal.viewsUi.RearrangeFilterHandler($table, $operator);
       }
@@ -568,7 +608,9 @@
    * @constructor
    *
    * @param {jQuery} $table
+   *   The table in the filter form.
    * @param {jQuery} $operator
+   *   The filter groups operator element.
    */
   Drupal.viewsUi.RearrangeFilterHandler = function ($table, $operator) {
 
@@ -688,6 +730,7 @@
      * Dynamically click the button that adds a new filter group.
      *
      * @param {jQuery.Event} event
+     *   The event triggered.
      */
     clickAddGroupButton: function (event) {
       // Due to conflicts between Drupal core's AJAX system and the Views AJAX
@@ -716,6 +759,7 @@
      * duplicate it between any subsequent groups.
      *
      * @return {jQuery}
+     *   An operator element.
      */
     duplicateGroupsOperator: function () {
       var dropdowns;
@@ -778,6 +822,7 @@
      * Forces all operator dropdowns to have the same value.
      *
      * @param {jQuery.Event} event
+     *   The event triggered.
      */
     operatorChangeHandler: function (event) {
       var $target = $(event.target);
@@ -804,15 +849,13 @@
        * - The operator cells that span multiple rows need their rowspan
        * attributes updated to reflect the number of rows in each group.
        * - The operator labels that are displayed next to each filter need to
-       * be
-       *   redrawn, to account for the row's new location.
+       * be redrawn, to account for the row's new location.
        */
       tableDrag.row.prototype.onSwap = function () {
         if (filterHandler.hasGroupOperator) {
           // Make sure the row that just got moved (this.group) is inside one
-          // of
-          // the filter groups (i.e. below an empty marker row or a draggable).
-          // If it isn't, move it down one.
+          // of the filter groups (i.e. below an empty marker row or a
+          // draggable). If it isn't, move it down one.
           var thisRow = $(this.group);
           var previousRow = thisRow.prev('tr');
           if (previousRow.length && !previousRow.hasClass('group-message') && !previousRow.hasClass('draggable')) {
@@ -947,14 +990,17 @@
    * Add a select all checkbox, which checks each checkbox at once.
    *
    * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Attaches select all functionality to the views filter form.
    */
   Drupal.behaviors.viewsFilterConfigSelectAll = {
     attach: function (context) {
       var $context = $(context);
 
-      var $selectAll = $context.find('.form-item-options-value-all').once('filterConfigSelectAll');
+      var $selectAll = $context.find('.js-form-item-options-value-all').once('filterConfigSelectAll');
       var $selectAllCheckbox = $selectAll.find('input[type=checkbox]');
-      var $checkboxes = $selectAll.closest('.form-checkboxes').find('.js-form-type-checkbox:not(.form-item-options-value-all) input[type="checkbox"]');
+      var $checkboxes = $selectAll.closest('.form-checkboxes').find('.js-form-type-checkbox:not(.js-form-item-options-value-all) input[type="checkbox"]');
 
       if ($selectAll.length) {
          // Show the select all checkbox.
@@ -978,6 +1024,9 @@
    * Remove icon class from elements that are themed as buttons or dropbuttons.
    *
    * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Removes the icon class from certain views elements.
    */
   Drupal.behaviors.viewsRemoveIconClass = {
     attach: function (context) {
@@ -989,6 +1038,9 @@
    * Change "Expose filter" buttons into checkboxes.
    *
    * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Changes buttons into checkboxes via {@link Drupal.viewsUi.Checkboxifier}.
    */
   Drupal.behaviors.viewsUiCheckboxify = {
     attach: function (context, settings) {
@@ -1006,6 +1058,9 @@
    * selected widget for the exposed group.
    *
    * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Changes the default widget based on user input.
    */
   Drupal.behaviors.viewsUiChangeDefaultWidget = {
     attach: function (context) {
@@ -1056,6 +1111,7 @@
    * When the checkbox is checked or unchecked, simulate a button press.
    *
    * @param {jQuery.Event} e
+   *   The event triggered.
    */
   Drupal.viewsUi.Checkboxifier.prototype.clickHandler = function (e) {
     this.$button
@@ -1067,6 +1123,10 @@
    * Change the Apply button text based upon the override select state.
    *
    * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Attaches behavior to change the Apply button according to the current
+   *   state.
    */
   Drupal.behaviors.viewsUiOverrideSelect = {
     attach: function (context) {
@@ -1103,8 +1163,12 @@
   };
 
   /**
+   * Functionality for the remove link in the views UI.
    *
    * @type {Drupal~behavior}
+   *
+   * @prop {Drupal~behaviorAttach} attach
+   *   Attaches behavior for the remove view and remove display links.
    */
   Drupal.behaviors.viewsUiHandlerRemoveLink = {
     attach: function (context) {

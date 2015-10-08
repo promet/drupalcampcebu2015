@@ -21,7 +21,6 @@ class VariableTest extends MigrateSqlSourceTestCase {
   protected $migrationConfiguration = array(
     'id' => 'test',
     'highWaterProperty' => array('field' => 'test'),
-    'idlist' => array(),
     'source' => array(
       'plugin' => 'd6_variable',
       'variables' => array(
@@ -33,6 +32,7 @@ class VariableTest extends MigrateSqlSourceTestCase {
 
   protected $expectedResults = array(
     array(
+      'id' => 'foo',
       'foo' => 1,
       'bar' => FALSE,
     ),

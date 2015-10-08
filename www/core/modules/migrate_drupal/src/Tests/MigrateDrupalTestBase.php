@@ -7,11 +7,9 @@
 
 namespace Drupal\migrate_drupal\Tests;
 
+use Drupal\Core\Database\Database;
 use Drupal\migrate\Tests\MigrateTestBase;
-use Drupal\migrate\Entity\Migration;
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
-use Drupal\migrate\Plugin\migrate\source\SqlBase;
-use Drupal\Core\Database\Query\SelectInterface;
 
 /**
  * Base class for Drupal migration tests.
@@ -23,35 +21,33 @@ abstract class MigrateDrupalTestBase extends MigrateTestBase {
    *
    * @var array
    */
-  public static $modules = array('system', 'user', 'field', 'migrate_drupal', 'options');
+  public static $modules = array('system', 'user', 'field', 'migrate_drupal', 'options', 'file');
 
   /**
    * {@inheritdoc}
    */
   protected function setUp() {
     parent::setUp();
-    $this->loadDumps(['System.php']);
-
     $this->installEntitySchema('user');
     $this->installConfig(['migrate_drupal', 'system']);
   }
 
   /**
-   * Returns the path to the dump directory.
+   * Loads a database fixture into the source database connection.
    *
-   * @return string
-   *   A string that represents the dump directory path.
+   * @param string $path
+   *   Path to the dump file.
    */
-  protected function getDumpDirectory() {
-    return __DIR__ . '/Table';
-  }
+  protected function loadFixture($path) {
+    $default_db = Database::getConnection()->getKey();
+    Database::setActiveConnection($this->sourceDatabase->getKey());
 
-  /**
-   * {@inheritdoc}
-   */
-  protected function loadDumps(array $files, $method = 'load') {
-    $files = array_map(function($file) { return $this->getDumpDirectory() . '/' . $file; }, $files);
-    parent::loadDumps($files, $method);
+    if (substr($path, -3) == '.gz') {
+      $path = 'compress.zlib://' . $path;
+    }
+    require $path;
+
+    Database::setActiveConnection($default_db);
   }
 
   /**
@@ -63,9 +59,9 @@ abstract class MigrateDrupalTestBase extends MigrateTestBase {
    */
   protected function installMigrations($version) {
     $migration_templates = \Drupal::service('migrate.template_storage')->findTemplatesByTag($version);
-    foreach ($migration_templates as $template) {
+    $migrations = \Drupal::service('migrate.migration_builder')->createMigrations($migration_templates);
+    foreach ($migrations as $migration) {
       try {
-        $migration = Migration::create($template);
         $migration->save();
       }
       catch (PluginNotFoundException $e) {
@@ -74,22 +70,6 @@ abstract class MigrateDrupalTestBase extends MigrateTestBase {
         // optional subdirectory - the migrations we require for the test will
         // be successfully saved.
       }
-    }
-  }
-
-  /**
-   * Test that the source plugin provides a valid query and a valid count.
-   */
-  public function testSourcePlugin() {
-    if (isset($this->migration)) {
-      $source = $this->migration->getSourcePlugin();
-      // Make sure a SqlBase source has a valid query.
-      if ($source instanceof SqlBase) {
-        /** @var SqlBase $source */
-        $this->assertTrue($source->query() instanceof SelectInterface, 'SQL source plugin has valid query');
-      }
-      // Validate that any source returns a valid count.
-      $this->assertTrue(is_numeric($source->count()), 'Source plugin returns valid count');
     }
   }
 

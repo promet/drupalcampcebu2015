@@ -10,6 +10,8 @@ namespace Drupal\Core\Entity\Sql;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Database\Database;
+use Drupal\Core\Database\DatabaseExceptionWrapper;
+use Drupal\Core\Database\SchemaException;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\ContentEntityStorageBase;
 use Drupal\Core\Entity\EntityBundleListenerInterface;
@@ -256,8 +258,8 @@ class SqlContentEntityStorage extends ContentEntityStorageBase implements SqlEnt
    * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
    *   The update entity type.
    *
-   * @deprecated in Drupal 8.x-dev, will be removed before Drupal 8.0.
-   *   See https://www.drupal.org/node/2274017.
+   * @internal Only to be used internally by Entity API. Expected to be
+   *   removed by https://www.drupal.org/node/2274017.
    */
   public function setEntityType(EntityTypeInterface $entity_type) {
     if ($this->entityType->id() == $entity_type->id()) {
@@ -1351,7 +1353,9 @@ class SqlContentEntityStorage extends ContentEntityStorageBase implements SqlEnt
    * {@inheritdoc}
    */
   public function onEntityTypeCreate(EntityTypeInterface $entity_type) {
-    $this->getStorageSchema()->onEntityTypeCreate($entity_type);
+    $this->wrapSchemaException(function () use ($entity_type) {
+      $this->getStorageSchema()->onEntityTypeCreate($entity_type);
+    });
   }
 
   /**
@@ -1364,14 +1368,18 @@ class SqlContentEntityStorage extends ContentEntityStorageBase implements SqlEnt
     // definition.
     $this->initTableLayout();
     // Let the schema handler adapt to possible table layout changes.
-    $this->getStorageSchema()->onEntityTypeUpdate($entity_type, $original);
+    $this->wrapSchemaException(function () use ($entity_type, $original) {
+      $this->getStorageSchema()->onEntityTypeUpdate($entity_type, $original);
+    });
   }
 
   /**
    * {@inheritdoc}
    */
   public function onEntityTypeDelete(EntityTypeInterface $entity_type) {
-    $this->getStorageSchema()->onEntityTypeDelete($entity_type);
+    $this->wrapSchemaException(function () use ($entity_type) {
+      $this->getStorageSchema()->onEntityTypeDelete($entity_type);
+    });
   }
 
   /**
@@ -1386,14 +1394,18 @@ class SqlContentEntityStorage extends ContentEntityStorageBase implements SqlEnt
     if ($this->getTableMapping()->allowsSharedTableStorage($storage_definition)) {
       $this->tableMapping = NULL;
     }
-    $this->getStorageSchema()->onFieldStorageDefinitionCreate($storage_definition);
+    $this->wrapSchemaException(function () use ($storage_definition) {
+      $this->getStorageSchema()->onFieldStorageDefinitionCreate($storage_definition);
+    });
   }
 
   /**
    * {@inheritdoc}
    */
   public function onFieldStorageDefinitionUpdate(FieldStorageDefinitionInterface $storage_definition, FieldStorageDefinitionInterface $original) {
-    $this->getStorageSchema()->onFieldStorageDefinitionUpdate($storage_definition, $original);
+    $this->wrapSchemaException(function () use ($storage_definition, $original) {
+      $this->getStorageSchema()->onFieldStorageDefinitionUpdate($storage_definition, $original);
+    });
   }
 
   /**
@@ -1421,7 +1433,31 @@ class SqlContentEntityStorage extends ContentEntityStorageBase implements SqlEnt
     }
 
     // Update the field schema.
-    $this->getStorageSchema()->onFieldStorageDefinitionDelete($storage_definition);
+    $this->wrapSchemaException(function () use ($storage_definition) {
+      $this->getStorageSchema()->onFieldStorageDefinitionDelete($storage_definition);
+    });
+  }
+
+  /**
+   * Wraps a database schema exception into an entity storage exception.
+   *
+   * @param callable $callback
+   *   The callback to be executed.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   *   When a database schema exception is thrown.
+   */
+  protected function wrapSchemaException(callable $callback) {
+    $message = 'Exception thrown while performing a schema update.';
+    try {
+      $callback();
+    }
+    catch (SchemaException $e) {
+      throw new EntityStorageException($message, 0, $e);
+    }
+    catch (DatabaseExceptionWrapper $e) {
+      throw new EntityStorageException($message, 0, $e);
+    }
   }
 
   /**
@@ -1456,40 +1492,6 @@ class SqlContentEntityStorage extends ContentEntityStorageBase implements SqlEnt
    * {@inheritdoc}
    */
   public function onBundleDelete($bundle, $entity_type_id) { }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function onBundleRename($bundle, $bundle_new, $entity_type_id) {
-    // The method runs before the field definitions are updated, so we use the
-    // old bundle name.
-    $field_definitions = $this->entityManager->getFieldDefinitions($this->entityTypeId, $bundle);
-    // We need to handle deleted fields too. For now, this only makes sense for
-    // configurable fields, so we use the specific API.
-    // @todo Use the unified store of deleted field definitions instead in
-    //   https://www.drupal.org/node/2282119
-    $field_definitions += entity_load_multiple_by_properties('field_config', array('entity_type' => $this->entityTypeId, 'bundle' => $bundle, 'deleted' => TRUE, 'include_deleted' => TRUE));
-    $table_mapping = $this->getTableMapping();
-
-    foreach ($field_definitions as $field_definition) {
-      $storage_definition = $field_definition->getFieldStorageDefinition();
-      if ($table_mapping->requiresDedicatedTableStorage($storage_definition)) {
-        $is_deleted = $this->storageDefinitionIsDeleted($storage_definition);
-        $table_name = $table_mapping->getDedicatedDataTableName($storage_definition, $is_deleted);
-        $revision_name = $table_mapping->getDedicatedRevisionTableName($storage_definition, $is_deleted);
-        $this->database->update($table_name)
-          ->fields(array('bundle' => $bundle_new))
-          ->condition('bundle', $bundle)
-          ->execute();
-        if ($this->entityType->isRevisionable()) {
-          $this->database->update($revision_name)
-            ->fields(array('bundle' => $bundle_new))
-            ->condition('bundle', $bundle)
-            ->execute();
-        }
-      }
-    }
-  }
 
   /**
    * {@inheritdoc}
@@ -1598,10 +1600,12 @@ class SqlContentEntityStorage extends ContentEntityStorageBase implements SqlEnt
       foreach ($storage_definition->getColumns() as $column_name => $data) {
         $or->isNotNull($table_mapping->getFieldColumnName($storage_definition, $column_name));
       }
-      $query
-        ->condition($or)
-        ->fields('t', array('entity_id'))
-        ->distinct(TRUE);
+      $query->condition($or);
+      if (!$as_bool) {
+        $query
+          ->fields('t', array('entity_id'))
+          ->distinct(TRUE);
+      }
     }
     elseif ($table_mapping->allowsSharedTableStorage($storage_definition)) {
       // Ascertain the table this field is mapped too.

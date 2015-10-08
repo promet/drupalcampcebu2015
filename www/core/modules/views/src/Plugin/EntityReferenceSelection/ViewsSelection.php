@@ -9,9 +9,9 @@ namespace Drupal\views\Plugin\EntityReferenceSelection;
 
 use Drupal\Core\Database\Query\SelectInterface;
 use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Entity\EntityReferenceSelection\SelectionInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Entity\EntityReferenceSelection\SelectionInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Plugin\PluginBase;
 use Drupal\Core\Session\AccountInterface;
@@ -53,14 +53,7 @@ class ViewsSelection extends PluginBase implements SelectionInterface, Container
   protected $currentUser;
 
   /**
-   * The loaded View object.
-   *
-   * @var \Drupal\views\ViewExecutable;
-   */
-  protected $view;
-
-  /**
-   * Constructs a new ViewsSelection object.
+   * Constructs a new SelectionBase object.
    *
    * @param array $configuration
    *   A configuration array containing information about the plugin instance.
@@ -96,6 +89,13 @@ class ViewsSelection extends PluginBase implements SelectionInterface, Container
       $container->get('current_user')
     );
   }
+
+  /**
+   * The loaded View object.
+   *
+   * @var \Drupal\views\ViewExecutable;
+   */
+  protected $view;
 
   /**
    * {@inheritdoc}
@@ -148,9 +148,9 @@ class ViewsSelection extends PluginBase implements SelectionInterface, Container
     else {
       if ($this->currentUser->hasPermission('administer views') && $this->moduleHandler->moduleExists('views_ui')) {
         $form['view']['no_view_help'] = array(
-          '#markup' => '<p>' . $this->t('No eligible views were found. <a href="@create">Create a view</a> with an <em>Entity Reference</em> display, or add such a display to an <a href="@existing">existing view</a>.', array(
-            '@create' => Url::fromRoute('views_ui.add')->toString(),
-            '@existing' => Url::fromRoute('entity.view.collection')->toString(),
+          '#markup' => '<p>' . $this->t('No eligible views were found. <a href=":create">Create a view</a> with an <em>Entity Reference</em> display, or add such a display to an <a href=":existing">existing view</a>.', array(
+            ':create' => Url::fromRoute('views_ui.add')->toString(),
+            ':existing' => Url::fromRoute('entity.view.collection')->toString(),
           )) . '</p>',
         );
       }
@@ -227,7 +227,7 @@ class ViewsSelection extends PluginBase implements SelectionInterface, Container
 
     $return = array();
     if ($result) {
-      foreach($this->view->result as $row) {
+      foreach ($this->view->result as $row) {
         $entity = $row->_entity;
         $return[$entity->bundle()][$entity->id()] = $entity->label();
       }
@@ -260,18 +260,6 @@ class ViewsSelection extends PluginBase implements SelectionInterface, Container
   }
 
   /**
-   * {@inheritdoc}
-   */
-  public function validateAutocompleteInput($input, &$element, FormStateInterface $form_state, $form, $strict = TRUE) {
-    return NULL;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function entityQueryAlter(SelectInterface $query) {}
-
-  /**
    * Element validate; Check View is valid.
    */
   public static function settingsFormValidate($element, FormStateInterface $form_state, $form) {
@@ -299,5 +287,10 @@ class ViewsSelection extends PluginBase implements SelectionInterface, Container
     $value = array('view_name' => $view, 'display_name' => $display, 'arguments' => $arguments);
     $form_state->setValueForElement($element, $value);
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function entityQueryAlter(SelectInterface $query) { }
 
 }
