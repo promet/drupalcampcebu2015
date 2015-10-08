@@ -1,5 +1,0 @@
-default_form: general_contact_form
-flood:
-  limit: 5
-  interval: 3600
-user_default_enabled: true

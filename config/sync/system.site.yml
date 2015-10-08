@@ -1,0 +1,12 @@
+uuid: 8a42ec40-0c16-485d-9205-5aa590b6ff35
+name: 'Drupalcamp Cebu 2015'
+mail: luc@webizat.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /user/login
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
