@@ -1,0 +1,21 @@
+uuid: 24b9a218-030c-454e-9602-2f3ddf16aceb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_approved_checkbox
+    - node.type.sessions
+  module:
+    - options
+id: node.sessions.field_approved_checkbox
+field_name: field_approved_checkbox
+entity_type: node
+bundle: sessions
+label: 'Approved checkbox'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

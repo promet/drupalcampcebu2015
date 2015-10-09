@@ -1,11 +1,11 @@
-uuid: c0f87be5-4fd6-4c7c-a15d-93f2f7bc2bf0
+uuid: 1008aba6-3080-42b4-9550-8073dec8300a
 langcode: en
 status: true
 dependencies: {  }
-name: Sponsors
-type: sponsors
+name: Sessions
+type: sessions
 description: ''
 help: ''
 new_revision: false
 preview_mode: 0
-display_submitted: false
+display_submitted: true

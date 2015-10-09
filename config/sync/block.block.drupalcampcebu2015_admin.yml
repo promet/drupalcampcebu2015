@@ -11,7 +11,7 @@ dependencies:
 id: drupalcampcebu2015_admin
 theme: drupalcampcebu2015
 region: '-1'
-weight: 0
+weight: -6
 provider: null
 plugin: 'system_menu_block:admin'
 settings:

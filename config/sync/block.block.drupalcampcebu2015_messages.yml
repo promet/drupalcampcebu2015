@@ -9,7 +9,7 @@ dependencies:
 id: drupalcampcebu2015_messages
 theme: drupalcampcebu2015
 region: '-1'
-weight: -2
+weight: -4
 provider: null
 plugin: system_messages_block
 settings:

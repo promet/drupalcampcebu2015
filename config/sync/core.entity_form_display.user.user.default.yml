@@ -1,0 +1,28 @@
+uuid: 77d9e0b7-cd6d-420e-a306-6e992aef11b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_image
+  module:
+    - image
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: -10
+  field_image:
+    weight: 7
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  language:
+    weight: 0
+  timezone:
+    weight: 6
+hidden: {  }

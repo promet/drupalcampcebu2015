@@ -1,0 +1,19 @@
+uuid: 168a048f-47ed-4682-ae22-34dd6d95d850
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_url_to_slides
+    - node.type.sessions
+id: node.sessions.field_url_to_slides
+field_name: field_url_to_slides
+entity_type: node
+bundle: sessions
+label: 'URL to slides'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

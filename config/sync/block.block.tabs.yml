@@ -1,0 +1,20 @@
+uuid: a845467d-8fd2-45fb-b101-1c8a3b752b2c
+langcode: en
+status: false
+dependencies:
+  theme:
+    - drupalcampcebu2015
+id: tabs
+theme: drupalcampcebu2015
+region: '-1'
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

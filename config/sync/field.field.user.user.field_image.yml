@@ -1,19 +1,19 @@
-uuid: 1982f838-b22f-4108-8a00-c7c6512fe5a8
+uuid: ecf94268-817e-47fb-bc01-1e03e6e63dd4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_sponsor_logo
-    - node.type.sponsors
+    - field.storage.user.field_image
   module:
     - image
-id: node.sponsors.field_sponsor_logo
-field_name: field_sponsor_logo
-entity_type: node
-bundle: sponsors
-label: sponsor-logo
+    - user
+id: user.user.field_image
+field_name: field_image
+entity_type: user
+bundle: user
+label: Image
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

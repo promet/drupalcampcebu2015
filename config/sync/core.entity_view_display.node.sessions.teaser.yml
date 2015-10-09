@@ -1,0 +1,17 @@
+uuid: 8d31462a-eca1-4cbc-ab08-8c7df4264e4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.sessions
+  module:
+    - user
+id: node.sessions.teaser
+targetEntityType: node
+bundle: sessions
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden: {  }
