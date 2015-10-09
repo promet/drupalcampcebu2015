@@ -1,0 +1,24 @@
+uuid: aa7e375b-4b8d-4dc9-8100-ca3a1763719f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sponsors
+  module:
+    - views
+  theme:
+    - drupalcampcebu2015
+id: views_block__sponsors_block_sponsor_gold
+theme: drupalcampcebu2015
+region: sponsors
+weight: -5
+provider: null
+plugin: 'views_block:sponsors-block_sponsor_gold'
+settings:
+  id: 'views_block:sponsors-block_sponsor_gold'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

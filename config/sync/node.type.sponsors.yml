@@ -1,0 +1,11 @@
+uuid: c0f87be5-4fd6-4c7c-a15d-93f2f7bc2bf0
+langcode: en
+status: true
+dependencies: {  }
+name: Sponsors
+type: sponsors
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

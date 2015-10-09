@@ -1,0 +1,18 @@
+uuid: cbd52181-8149-4ca8-bf00-0bf5992b945a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drupalcampcebu2015
+id: drupalcampcebu2015_local_actions
+theme: drupalcampcebu2015
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,9 @@
+uuid: f0228415-eff6-4546-8800-fcd2e9720b81
+langcode: en
+status: true
+dependencies: {  }
+name: 'Sponsor type'
+vid: sponsor_type
+description: 'Type of sponsors for Drupalcamp Cebu 2015'
+hierarchy: 0
+weight: 0

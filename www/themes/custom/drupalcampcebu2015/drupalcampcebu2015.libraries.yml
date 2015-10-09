@@ -1,0 +1,5 @@
+global-styling:
+  css:
+    theme:
+      lib/bootstrap/css/bootstrap.css: {}
+      public/css/style.css: {}
