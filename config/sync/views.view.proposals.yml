@@ -473,7 +473,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<h6 class=\"speaker-description\">The site is now open for submissions of proposed sessions.</h6>\n<p class=\"speaker-announcement\"> If interested, <a href=\"/node/add/session\">submit a proposal</a>.</p>"
+          content: "<p class=\"speaker-description\">The site is now open for submissions of proposed sessions.</p>\n<p class=\"speaker-announcement\"> If interested, <a href=\"/node/add/session\">submit a proposal</a>.</p>"
           plugin_id: text_custom
       relationships: {  }
       arguments: {  }

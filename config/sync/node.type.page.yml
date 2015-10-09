@@ -1,9 +1,9 @@
-uuid: 1008aba6-3080-42b4-9550-8073dec8300a
+uuid: 52e5824d-872a-4ef2-bd3d-61fcea9a6704
 langcode: en
 status: true
 dependencies: {  }
-name: Sessions
-type: sessions
+name: Page
+type: page
 description: ''
 help: ''
 new_revision: false
