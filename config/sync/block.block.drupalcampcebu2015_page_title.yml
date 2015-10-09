@@ -1,0 +1,18 @@
+uuid: e956e9bc-89a7-4f01-b900-bc79d5ccf193
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drupalcampcebu2015
+id: drupalcampcebu2015_page_title
+theme: drupalcampcebu2015
+region: content
+weight: -4
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

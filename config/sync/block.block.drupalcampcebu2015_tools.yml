@@ -1,0 +1,24 @@
+uuid: ac08b52a-f8a4-49b9-b700-a7516dec8058
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - drupalcampcebu2015
+id: drupalcampcebu2015_tools
+theme: drupalcampcebu2015
+region: '-1'
+weight: -1
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 405de176-d307-4bff-b601-01f05046c35f
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - drupalcampcebu2015
+id: drupalcampcebu2015_messages
+theme: drupalcampcebu2015
+region: '-1'
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }
