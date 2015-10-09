@@ -1,0 +1,14 @@
+uuid: 93dbfc29-f5cd-4014-9110-16238e3c59ea
+langcode: en
+status: true
+dependencies: {  }
+name: image_proposal
+label: 'Image proposal'
+effects:
+  df4a7011-9126-4bc4-9700-0fe4e8fcadda:
+    uuid: df4a7011-9126-4bc4-9700-0fe4e8fcadda
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200

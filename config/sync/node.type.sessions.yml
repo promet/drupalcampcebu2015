@@ -1,0 +1,11 @@
+uuid: 1008aba6-3080-42b4-9550-8073dec8300a
+langcode: en
+status: true
+dependencies: {  }
+name: Sessions
+type: sessions
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

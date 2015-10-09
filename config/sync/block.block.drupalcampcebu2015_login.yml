@@ -9,7 +9,7 @@ dependencies:
 id: drupalcampcebu2015_login
 theme: drupalcampcebu2015
 region: '-1'
-weight: 1
+weight: 0
 provider: null
 plugin: user_login_block
 settings:

@@ -1,0 +1,56 @@
+uuid: 9625dc71-1608-466d-b800-ac62ab4be63d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sessions.field_approved_checkbox
+    - field.field.node.sessions.field_text
+    - field.field.node.sessions.field_time
+    - field.field.node.sessions.field_url_to_slides
+    - field.field.node.sessions.field_url_to_video
+    - node.type.sessions
+  module:
+    - options
+    - user
+id: node.sessions.default
+targetEntityType: node
+bundle: sessions
+mode: default
+content:
+  field_approved_checkbox:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_text:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_time:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_url_to_slides:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_url_to_video:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  links:
+    weight: 100
+hidden: {  }
