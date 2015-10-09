@@ -1,19 +1,21 @@
-uuid: 94a469ac-69e6-4994-b605-5c39d4082625
+uuid: f58ca9e9-0903-484c-b432-500bda4e2632
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_text
     - node.type.sessions
+  module:
+    - text
 id: node.sessions.field_text
 field_name: field_text
 entity_type: node
 bundle: sessions
-label: Body
+label: Text
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: text_long

@@ -1,0 +1,30 @@
+uuid: 67c02831-574b-4bdd-8900-b45285608112
+langcode: en
+status: false
+dependencies:
+  config:
+    - filter.format.formatted
+  module:
+    - ckeditor
+format: formatted
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Underline
+            - Format
+  plugins:
+    stylescombo:
+      styles: ''
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null
