@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Helps to secure some of the field for sessions approvals.
+ */
+
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Access\AccessResult;
+
+/**
+ * Implements hook_entity_field_access().
+ *
+ * Limit access to few fields for non admin.
+ */
+function cebucamp15_sessions_entity_field_access($operation, \Drupal\Core\Field\FieldDefinitionInterface $field_definition, \Drupal\Core\Session\AccountInterface $account, \Drupal\Core\Field\FieldItemListInterface $items = NULL) {
+  // For view.
+  $fields_names_view = array(
+    'field_time',
+    'field_am_pm',
+    'field_room',
+  );
+  if (in_array($field_definition->getName(), $fields_names_view) && $operation == 'view') {
+    $account = \Drupal::currentUser();
+    if (!in_array('admin', $account->getRoles())) {
+      return AccessResult::forbidden();
+    }
+  }
+
+  // For edit.
+  $fields_names_edit = array(
+    'field_approved',
+    'field_time',
+    'field_am_pm',
+    'field_room',
+  );
+  if (in_array($field_definition->getName(), $fields_names_edit) && $operation == 'edit') {
+    $account = \Drupal::currentUser();
+    if (!in_array('admin', $account->getRoles())) {
+      return AccessResult::forbidden();
+    }
+  }
+  return AccessResult::neutral();
+}
