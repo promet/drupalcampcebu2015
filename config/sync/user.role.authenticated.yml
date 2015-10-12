@@ -9,3 +9,5 @@ is_admin: false
 permissions:
   - 'access content'
   - 'use text format full_html'
+  - 'create sessions content'
+  - 'delete own sessions content'
