@@ -1,17 +1,17 @@
-uuid: 24b9a218-030c-454e-9602-2f3ddf16aceb
+uuid: f40aab0b-d1ab-44d6-8d00-ad050e889c53
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_approved_checkbox
+    - field.storage.node.field_am_pm
     - node.type.sessions
   module:
     - options
-id: node.sessions.field_approved_checkbox
-field_name: field_approved_checkbox
+id: node.sessions.field_am_pm
+field_name: field_am_pm
 entity_type: node
 bundle: sessions
-label: 'Approved checkbox'
+label: 'AM / PM'
 description: ''
 required: false
 translatable: false

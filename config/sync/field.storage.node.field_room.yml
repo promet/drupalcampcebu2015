@@ -1,16 +1,16 @@
-uuid: 285a26bc-7736-4d9f-a504-045391446448
+uuid: d8fb1bf0-c63c-4211-bf00-db03e6c65b2a
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_time
-field_name: field_time
+    - taxonomy
+id: node.field_room
+field_name: field_room
 entity_type: node
-type: integer
+type: entity_reference
 settings:
-  unsigned: false
-  size: normal
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: 1

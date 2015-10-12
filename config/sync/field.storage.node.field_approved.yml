@@ -1,16 +1,14 @@
-uuid: 285a26bc-7736-4d9f-a504-045391446448
+uuid: 504014a1-9547-442d-a900-e7e4da80b90d
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_time
-field_name: field_time
+id: node.field_approved
+field_name: field_approved
 entity_type: node
-type: integer
-settings:
-  unsigned: false
-  size: normal
+type: boolean
+settings: {  }
 module: core
 locked: false
 cardinality: 1

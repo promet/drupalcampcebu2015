@@ -1,5 +1,4 @@
-{#
-/**
+{#/**
  * @file
  * Default theme implementation to display a single page.
  *
@@ -69,17 +68,17 @@
           </a>
         </div>
 
-        {% if page.sidebar %}
-          {{ page.sidebar }}
-        {% endif %}
-
         <div class="menu-box">
           <p>In progress</p>
           <p class="subtitle">More updates here soon</p>
         </div>
+        {% if page.sidebar %}
+          {{ page.sidebar }}
+        {% endif %}
       </div>
 
       <div class="col-md-8">
+        {% if is_front %}
         <div class="header-info-top">
           <h3>University of the Philippines Cebu, Saturday November 7 2015</h3>
           <h2>DrupalCamp Cebu 2015</h2>
@@ -87,6 +86,7 @@
           <p>Join Drupal's largest event in Visayas & Mindanao</p>
           <p>+ Code sprint on Sunday November 8 2015</p>
         </div>
+        {% endif %}
 
         <div class="content">
           {{ title_prefix }}
@@ -101,7 +101,7 @@
           {{ page.content_bottom }}
         </div>
 
-
+        {% if is_front %}
         <div id="mc_embed_signup" class="newsletter">
           <h4>Join Drupal Cebu Newsletter</h4>
           <form action="//drupalcebu.us8.list-manage.com/subscribe/post?u=d7c17f85aa93351e7a79703df&amp;id=1be4349981" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -136,7 +136,9 @@
               </div>
             </div>
           </form>
-        </div>
+        </div><!-- mailchimp end -->
+        {% endif %}
+
       </div>
     </div><!-- row end -->
   </div><!-- container end -->
