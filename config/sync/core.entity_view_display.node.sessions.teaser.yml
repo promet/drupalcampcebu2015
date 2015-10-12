@@ -19,7 +19,10 @@ content:
   links:
     weight: 100
 hidden:
+  field_am_pm: true
   field_approved: true
+  field_room: true
   field_text: true
+  field_time: true
   field_url_to_slides: true
   field_url_to_video: true

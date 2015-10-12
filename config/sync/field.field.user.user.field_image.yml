@@ -11,7 +11,7 @@ id: user.user.field_image
 field_name: field_image
 entity_type: user
 bundle: user
-label: Image
+label: 'Profile Image'
 description: ''
 required: false
 translatable: false
