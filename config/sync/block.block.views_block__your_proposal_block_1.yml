@@ -1,0 +1,40 @@
+uuid: 4c958997-804a-4125-8242-66cf3ab4e9eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.your_proposal
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - drupalcampcebu2015
+id: views_block__your_proposal_block_1
+theme: drupalcampcebu2015
+region: header_info_top
+weight: -8
+provider: null
+plugin: 'views_block:your_proposal-block_1'
+settings:
+  id: 'views_block:your_proposal-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      admin: admin
+      speaker: speaker
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

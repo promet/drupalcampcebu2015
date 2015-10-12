@@ -1,0 +1,31 @@
+uuid: f71936f0-e63b-49ef-9b0e-14532da5c73c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:information:a2f4d9ca-d16d-4312-8400-a041e922bc3d'
+  module:
+    - block_content
+    - system
+  theme:
+    - drupalcampcebu2015
+id: eventdescription
+theme: drupalcampcebu2015
+region: header_info_top
+weight: -8
+provider: null
+plugin: 'block_content:a2f4d9ca-d16d-4312-8400-a041e922bc3d'
+settings:
+  id: 'block_content:a2f4d9ca-d16d-4312-8400-a041e922bc3d'
+  label: 'Event description'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
