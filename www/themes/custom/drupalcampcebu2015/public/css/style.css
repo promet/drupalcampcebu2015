@@ -521,49 +521,46 @@ img {
   color: #1664a6;
   font-family: "Open Sans", sans-serif;
   font-size: 1.3em;
-  padding-left: 15px;
   text-align: left;
 }
-/* line 19, ../sass/partials/_proposals.scss */
+/* line 18, ../sass/partials/_proposals.scss */
 .col-md-8 .content .speaker-announcement {
   margin-bottom: 2em;
-  text-align: left;
-  padding-left: 15px;
 }
-/* line 24, ../sass/partials/_proposals.scss */
+/* line 21, ../sass/partials/_proposals.scss */
 .col-md-8 .content a {
   color: #fcb040;
 }
-/* line 27, ../sass/partials/_proposals.scss */
+/* line 24, ../sass/partials/_proposals.scss */
 .col-md-8 .content a:hover {
   text-decoration: underline;
 }
 
-/* line 34, ../sass/partials/_proposals.scss */
+/* line 31, ../sass/partials/_proposals.scss */
 .views-row {
   float: left;
   margin-bottom: 1.5em;
 }
 
-/* line 38, ../sass/partials/_proposals.scss */
+/* line 35, ../sass/partials/_proposals.scss */
 .col-md-4.img-speaker {
   padding: 0;
   margin: 0;
   width: 21%;
 }
 
-/* line 44, ../sass/partials/_proposals.scss */
+/* line 41, ../sass/partials/_proposals.scss */
 .col-md-8.topic-summary,
 .col-md-8.drupalcamp-speaker {
   font-size: 1.1em;
 }
 
-/* line 47, ../sass/partials/_proposals.scss */
+/* line 44, ../sass/partials/_proposals.scss */
 .col-md-8.speaker-drupalcamp-topic {
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
-/* line 50, ../sass/partials/_proposals.scss */
+/* line 47, ../sass/partials/_proposals.scss */
 .col-md-8.speaker-drupalcamp-topic a {
   color: #1664a6;
 }

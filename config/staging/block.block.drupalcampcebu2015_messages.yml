@@ -1,0 +1,22 @@
+uuid: 462c56a9-bd8a-40ca-9300-d856e28f3682
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - drupalcampcebu2015
+id: drupalcampcebu2015_messages
+theme: drupalcampcebu2015
+region: content
+weight: -8
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+  cache:
+    max_age: -1
+visibility: {  }

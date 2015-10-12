@@ -1,0 +1,32 @@
+uuid: 75119a3d-ae68-4270-9051-813906eb5c2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sponsors
+  module:
+    - system
+    - views
+  theme:
+    - drupalcampcebu2015
+id: views_block__sponsors_block_sponsor_silver
+theme: drupalcampcebu2015
+region: sponsors
+weight: -3
+provider: null
+plugin: 'views_block:sponsors-block_sponsor_silver'
+settings:
+  id: 'views_block:sponsors-block_sponsor_silver'
+  label: ''
+  provider: views
+  label_display: '0'
+  cache:
+    max_age: 3600
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /sponsors
+    negate: true
+    context_mapping: {  }

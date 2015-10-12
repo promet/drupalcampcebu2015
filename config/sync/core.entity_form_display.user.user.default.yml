@@ -3,7 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_first_name
     - field.field.user.user.field_image
+    - field.field.user.user.field_last
   module:
     - image
     - user
@@ -14,6 +16,13 @@ mode: default
 content:
   account:
     weight: -10
+  field_first_name:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_image:
     weight: 7
     settings:
@@ -21,6 +30,13 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+  field_last:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   language:
     weight: 0
   timezone:

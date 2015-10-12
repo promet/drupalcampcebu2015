@@ -1,0 +1,12 @@
+uuid: d6608e9b-9ec1-4372-8806-6ea9c96853df
+langcode: en
+status: true
+dependencies: {  }
+id: general_contact_form
+label: 'General contact form'
+recipients:
+  - drupalcebu@gmail.com
+  - luc@webizat.com
+  - jinky@prometsource.com
+reply: ''
+weight: 0
