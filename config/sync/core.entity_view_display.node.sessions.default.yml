@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.sessions.field_am_pm
-    - field.field.node.sessions.field_approved
     - field.field.node.sessions.field_room
     - field.field.node.sessions.field_text
     - field.field.node.sessions.field_time
@@ -35,7 +34,7 @@ content:
     type: entity_reference_label
   field_text:
     weight: 0
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
@@ -65,5 +64,4 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_approved: true
+hidden: {  }
