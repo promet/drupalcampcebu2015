@@ -4,9 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.sessions.field_approved_checkbox
+    - field.field.node.sessions.field_approved
     - field.field.node.sessions.field_text
-    - field.field.node.sessions.field_time
     - field.field.node.sessions.field_url_to_slides
     - field.field.node.sessions.field_url_to_video
     - node.type.sessions
@@ -20,8 +19,7 @@ content:
   links:
     weight: 100
 hidden:
-  field_approved_checkbox: true
+  field_approved: true
   field_text: true
-  field_time: true
   field_url_to_slides: true
   field_url_to_video: true

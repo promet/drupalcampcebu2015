@@ -3,13 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.sessions.field_approved_checkbox
+    - field.field.node.sessions.field_am_pm
+    - field.field.node.sessions.field_approved
+    - field.field.node.sessions.field_room
     - field.field.node.sessions.field_text
     - field.field.node.sessions.field_time
     - field.field.node.sessions.field_url_to_slides
     - field.field.node.sessions.field_url_to_video
     - node.type.sessions
   module:
+    - path
     - text
 id: node.sessions.default
 targetEntityType: node
@@ -21,11 +24,25 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
-  field_approved_checkbox:
-    weight: 6
+  field_am_pm:
+    weight: 33
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_approved:
+    weight: 31
+    settings:
+      display_label: false
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_room:
+    weight: 34
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_text:
     weight: 1
     settings:
@@ -34,12 +51,11 @@ content:
     third_party_settings: {  }
     type: text_textarea
   field_time:
-    weight: 7
+    weight: 32
     settings:
-      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: number
   field_url_to_slides:
     weight: 8
     settings:
@@ -54,6 +70,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:

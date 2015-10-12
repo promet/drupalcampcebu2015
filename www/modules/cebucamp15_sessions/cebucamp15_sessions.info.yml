@@ -1,0 +1,5 @@
+name: Cebu Camp 2015 Sessions
+description: Validation security for sessions.
+package: Drupalcamp Cebu 2015
+type: module
+core: 8.x

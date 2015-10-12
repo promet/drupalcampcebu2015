@@ -1,0 +1,12 @@
+uuid: f8089680-3aca-49cd-9d41-654c14ef1500
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.information
+id: block_content.information.default
+targetEntityType: block_content
+bundle: information
+mode: default
+content: {  }
+hidden: {  }
