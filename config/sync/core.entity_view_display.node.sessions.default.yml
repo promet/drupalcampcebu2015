@@ -26,6 +26,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
+  field_approved:
+    weight: 9
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   field_room:
     weight: 8
     label: above
@@ -65,5 +71,4 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
-hidden:
-  field_approved: true
+hidden: {  }
