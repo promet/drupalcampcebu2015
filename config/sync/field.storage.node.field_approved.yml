@@ -1,15 +1,24 @@
-uuid: 504014a1-9547-442d-a900-e7e4da80b90d
+uuid: 3d7d9d4f-874a-4483-9600-adeb024a889a
 langcode: en
 status: true
 dependencies:
   module:
     - node
+    - options
 id: node.field_approved
 field_name: field_approved
 entity_type: node
-type: boolean
-settings: {  }
-module: core
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: 'Not approved'
+    -
+      value: '1'
+      label: Approved
+  allowed_values_function: ''
+module: options
 locked: false
 cardinality: 1
 translatable: true
