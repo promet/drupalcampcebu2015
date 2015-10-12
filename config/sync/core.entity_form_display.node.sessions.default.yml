@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.sessions.field_am_pm
-    - field.field.node.sessions.field_approved
     - field.field.node.sessions.field_room
     - field.field.node.sessions.field_text
     - field.field.node.sessions.field_time
@@ -29,12 +28,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_approved:
-    weight: 31
-    settings:
-      display_label: false
-    third_party_settings: {  }
-    type: boolean_checkbox
   field_room:
     weight: 34
     settings:
