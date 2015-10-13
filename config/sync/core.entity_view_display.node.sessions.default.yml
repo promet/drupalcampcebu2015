@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.sessions.field_am_pm
     - field.field.node.sessions.field_approved
     - field.field.node.sessions.field_room
+    - field.field.node.sessions.field_session_level
     - field.field.node.sessions.field_session_type
     - field.field.node.sessions.field_text
     - field.field.node.sessions.field_time
@@ -40,6 +41,12 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_session_level:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   field_session_type:
     weight: 12
     label: above
