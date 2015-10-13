@@ -1,10 +1,12 @@
-uuid: dcd83f6d-61b8-479c-9b00-eb2505f59f86
+uuid: 8a2026d1-b206-4091-8540-640e6b2a8004
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_approved
     - node.type.sessions
+  module:
+    - options
 id: node.sessions.field_approved
 field_name: field_approved
 entity_type: node
@@ -13,11 +15,7 @@ label: Approved
 description: ''
 required: false
 translatable: false
-default_value:
-  -
-    value: 0
+default_value: {  }
 default_value_callback: ''
-settings:
-  on_label: Approved
-  off_label: Approved
-field_type: boolean
+settings: {  }
+field_type: list_string
