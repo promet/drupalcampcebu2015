@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.sessions.field_url_to_video
     - node.type.sessions
   module:
+    - image
     - path
     - text
 id: node.sessions.default
@@ -39,10 +40,10 @@ content:
   field_profile_image:
     weight: 39
     settings:
-      size: 60
-      placeholder: ''
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
-    type: string_textfield
+    type: image_image
   field_room:
     weight: 34
     settings:
