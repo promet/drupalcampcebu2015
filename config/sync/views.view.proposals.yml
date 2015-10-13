@@ -853,7 +853,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<p class=\"speaker-description\">The site is now open for submissions of proposed sessions.</p>\n<p class=\"speaker-announcement\"> If interested, <a href=\"/node/add/sessions\">submit a proposal</a>.</p>"
+          content: "<p class=\"speaker-description\">No sessions announced yet? The site is now open for submissions of proposed sessions. They will be reviewed and some will be selected to be at Drupalcamp Cebu 2015.</p>\n<p>Here are the categories for sessions: Drupal, Front end, UI / UX, DevOps, Business. </p>\n<p class=\"speaker-announcement\">If you already have an account, <a href=\"/node/add/sessions\">submit a proposal</a>.<br>\nNo account yet? <a href=\"/user/register\"> Click here</a>.</p>"
           plugin_id: text_custom
       relationships:
         uid:

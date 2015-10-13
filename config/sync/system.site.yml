@@ -1,6 +1,6 @@
 uuid: 53df211c-b482-4e33-bf00-e1582f9ee1a7
 name: 'Drupalcamp Cebu 2015'
-mail: luc@webizat.com
+mail: drupalcebu@gmail.com
 slogan: ''
 page:
   403: ''
@@ -10,3 +10,4 @@ admin_compact_mode: false
 weight_select_max: 100
 langcode: en
 default_langcode: en
+mail_notification: ''
