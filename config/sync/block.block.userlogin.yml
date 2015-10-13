@@ -1,6 +1,6 @@
 uuid: 30b6a7df-429f-4952-9a05-5dd248d75fff
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - user
@@ -8,8 +8,8 @@ dependencies:
     - drupalcampcebu2015
 id: userlogin
 theme: drupalcampcebu2015
-region: content
-weight: -6
+region: '-1'
+weight: -2
 provider: null
 plugin: user_login_block
 settings:
