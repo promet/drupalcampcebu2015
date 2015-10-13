@@ -11,7 +11,7 @@ dependencies:
     - field.storage.node.field_time
     - field.storage.node.field_url_to_slides
     - field.storage.node.field_url_to_video
-    - field.storage.user.field_profile
+    - field.storage.user.field_profile_image
     - node.type.sessions
     - system.menu.main
   module:
@@ -91,10 +91,10 @@ display:
           separator: ''
           hide_empty: false
       fields:
-        field_profile:
-          id: field_profile
-          table: user__field_profile
-          field: field_profile
+        field_profile_image:
+          id: field_profile_image
+          table: user__field_profile_image
+          field: field_profile_image
           relationship: uid
           group_type: group
           admin_label: ''
@@ -354,11 +354,11 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Session type'
+          label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: 'Session type: {{ field_session_type }}'
             make_link: false
             path: ''
             absolute: false
@@ -383,13 +383,13 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: '0'
-          element_class: ''
+          element_type: div
+          element_class: '.col-md-9 .session-type-label'
           element_label_type: '0'
           element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: div
-          element_wrapper_class: '.col-md-9 .session-type'
+          element_label_colon: false
+          element_wrapper_type: '0'
+          element_wrapper_class: ''
           element_default_classes: false
           empty: ''
           hide_empty: false
@@ -777,7 +777,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: "<p class=\"speaker-description\">Here are some proposed sessions submitted for the event.</p>\n<p class=\"speaker-announcement\">You can also <a href=\"/node/add/session\">submit your own</a>. You will need an account, you can create one <a href=\"/user/register\">here</a>.</p>"
+          content: "<p class=\"speaker-description\">Here are some proposed sessions submitted for the event.</p>\n<p class=\"speaker-announcement\">You can also <a href=\"/node/add/sessions\">submit your own</a>. You will need an account, you can create one <a href=\"/user/register\">here</a>.</p>"
           plugin_id: text_custom
       footer: {  }
       empty:
@@ -823,7 +823,7 @@ display:
         - 'config:field.storage.node.field_time'
         - 'config:field.storage.node.field_url_to_slides'
         - 'config:field.storage.node.field_url_to_video'
-        - 'config:field.storage.user.field_profile'
+        - 'config:field.storage.user.field_profile_image'
   page_1:
     display_plugin: page
     id: page_1
@@ -857,4 +857,4 @@ display:
         - 'config:field.storage.node.field_time'
         - 'config:field.storage.node.field_url_to_slides'
         - 'config:field.storage.node.field_url_to_video'
-        - 'config:field.storage.user.field_profile'
+        - 'config:field.storage.user.field_profile_image'

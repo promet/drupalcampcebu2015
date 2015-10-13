@@ -41,7 +41,7 @@ a {
 
 .col-md-9.drupalcamp-speaker,
 .col-md-9.session-type,
-.field--name-field-session-type {
+.session-type-label {
   font-size: 1.1em;
   margin-bottom: 0.5em;
   color: $color-blue;
@@ -55,6 +55,8 @@ a {
   .field__label,
   .field__item {
     float: left;
+    font-weight: normal;
+    color: $color-blue;
   }
   .field__item {
     margin-left: 0.5em;
