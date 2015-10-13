@@ -78,14 +78,10 @@
       </div>
 
       <div class="col-md-8">
-        {% if is_front %}
-        <div class="header-info-top">
-          <h3>University of the Philippines Cebu, Saturday November 7 2015</h3>
-          <h2>DrupalCamp Cebu 2015</h2>
-          <p>A conference about drupal & open source for web development</p>
-          <p>Join Drupal's largest event in Visayas & Mindanao</p>
-          <p>+ Code sprint on Sunday November 8 2015</p>
-        </div>
+        {% if page.header_info_top %}
+          <div class="header-info-top">
+              {{ page.header_info_top }}
+          </div>
         {% endif %}
 
         <div class="content">
@@ -94,7 +90,7 @@
             <h1>{{ title }}</h1>
           {% endif %}
 
-              {{ tabs }}
+          {{ tabs }}
 
           {{ page.content }}
 
