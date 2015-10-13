@@ -1,9 +1,9 @@
-uuid: f71936f0-e63b-49ef-9b0e-14532da5c73c
+uuid: 81ee72a3-8976-4c34-ac00-db50febf0058
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:information:a2f4d9ca-d16d-4312-8400-a041e922bc3d'
+    - 'block_content:information:4e878081-a22a-4a97-b730-487b8fd6b4f7'
   module:
     - block_content
     - system
@@ -14,9 +14,9 @@ theme: drupalcampcebu2015
 region: header_info_top
 weight: -8
 provider: null
-plugin: 'block_content:a2f4d9ca-d16d-4312-8400-a041e922bc3d'
+plugin: 'block_content:4e878081-a22a-4a97-b730-487b8fd6b4f7'
 settings:
-  id: 'block_content:a2f4d9ca-d16d-4312-8400-a041e922bc3d'
+  id: 'block_content:4e878081-a22a-4a97-b730-487b8fd6b4f7'
   label: 'Event description'
   provider: block_content
   label_display: '0'
