@@ -11,3 +11,4 @@ permissions:
   - 'use text format full_html'
   - 'create sessions content'
   - 'delete own sessions content'
+  - 'edit own sessions content'

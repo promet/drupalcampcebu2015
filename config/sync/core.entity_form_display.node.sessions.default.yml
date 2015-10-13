@@ -28,6 +28,11 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_approved:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_room:
     weight: 34
     settings:
