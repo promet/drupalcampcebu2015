@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.sessions.field_am_pm
     - field.field.node.sessions.field_approved
-    - field.field.node.sessions.field_profile_image
     - field.field.node.sessions.field_room
     - field.field.node.sessions.field_session_type
     - field.field.node.sessions.field_text
@@ -14,7 +13,6 @@ dependencies:
     - field.field.node.sessions.field_url_to_video
     - node.type.sessions
   module:
-    - image
     - path
     - text
 id: node.sessions.default
@@ -37,13 +35,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_profile_image:
-    weight: 39
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
   field_room:
     weight: 34
     settings:
