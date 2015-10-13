@@ -22,11 +22,11 @@
   background-color: #1664a6;
   padding: 1.5em;
 }
-/* line 21, ../sass/partials/_header.scss */
+/* line 19, ../sass/partials/_header.scss */
 .header-info-top p,
 .header-info-top h2,
 .header-info-top h3 {
-  color: white;
+  color: #fff;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-size: 1.1em;
@@ -112,7 +112,7 @@
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-4 {
   padding: 0;
 }
-/* line 21, ../sass/partials/_newsletter.scss */
+/* line 20, ../sass/partials/_newsletter.scss */
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-3,
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 {
   padding-left: 0;
@@ -123,7 +123,7 @@
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 label {
   font-weight: normal;
 }
-/* line 33, ../sass/partials/_newsletter.scss */
+/* line 32, ../sass/partials/_newsletter.scss */
 .newsletter .email-address,
 .newsletter .firstname {
   color: #fcb040;
@@ -143,7 +143,7 @@
   padding: 0.3em;
   width: 100%;
   margin-top: 0.5em;
-  color: white;
+  color: #fff;
   background-color: #fcb040;
   border: none;
   text-transform: uppercase;
@@ -170,33 +170,53 @@ p {
 }
 
 /* line 16, ../sass/partials/_global.scss */
-.menu-box {
-  background-color: #fcb040;
+.region-sidebar ul.menu {
+  margin: 0;
+}
+/* line 18, ../sass/partials/_global.scss */
+.region-sidebar ul.menu li {
   padding: 1.6em;
   padding-top: 2em;
   padding-bottom: 2em;
 }
-/* line 21, ../sass/partials/_global.scss */
-.menu-box p {
-  color: white;
+/* line 22, ../sass/partials/_global.scss */
+.region-sidebar ul.menu li a, .region-sidebar ul.menu li p {
+  color: #fff;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.6em;
   line-height: 0.9em;
   margin-bottom: 0;
   text-transform: uppercase;
 }
-/* line 29, ../sass/partials/_global.scss */
-.menu-box p.subtitle {
-  font-size: 1.1em;
-  padding-top: 0.3em;
+/* line 30, ../sass/partials/_global.scss */
+.region-sidebar ul.menu li a {
+  font-size: 1.8em;
 }
-/* line 32, ../sass/partials/_global.scss */
-.menu-box p.subtitle a {
-  color: white;
-  text-decoration: underline;
+/* line 33, ../sass/partials/_global.scss */
+.region-sidebar ul.menu li p {
+  font-size: 1.1em;
 }
 
-/* line 39, ../sass/partials/_global.scss */
+/* line 38, ../sass/partials/_global.scss */
+.region-sidebar li:nth-child(1) {
+  background-color: #fcb040;
+}
+
+/* line 41, ../sass/partials/_global.scss */
+.region-sidebar li:nth-child(2) {
+  background-color: #1664a6;
+}
+
+/* line 44, ../sass/partials/_global.scss */
+.region-sidebar li:nth-child(3) {
+  background-color: #89caae;
+}
+
+/* line 47, ../sass/partials/_global.scss */
+.region-sidebar li:nth-child(4) {
+  background-color: #fff;
+}
+
+/* line 51, ../sass/partials/_global.scss */
 img {
   max-width: 100%;
   height: auto;
@@ -215,7 +235,7 @@ img {
 .promote-sponsor-tab p:nth-child(2) {
   font-size: 1.5em;
 }
-/* line 12, ../sass/partials/_sponsors.scss */
+/* line 11, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1),
 .promote-sponsor-tab p:nth-child(2) {
   color: #1664a6;
@@ -266,7 +286,7 @@ img {
   padding: 3em 1.6em;
   overflow: hidden;
 }
-/* line 54, ../sass/partials/_sponsors.scss */
+/* line 53, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header a,
 .region-sponsors .sponsor-header h3 {
   color: #fff;
@@ -326,7 +346,7 @@ img {
 /* line 103, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
   background-color: #fcb040;
-  color: white;
+  color: #fff;
   font-size: 1.5em;
   height: auto;
   padding: 20px;
@@ -345,7 +365,7 @@ img {
     text-align: unset;
   }
 
-  /* line 125, ../sass/partials/_sponsors.scss */
+  /* line 123, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-header,
   .region-sponsors .view-sponsors .view-empty,
   .region-sponsors .view-sponsors .view-content {
@@ -353,7 +373,7 @@ img {
     float: none;
   }
 
-  /* line 131, ../sass/partials/_sponsors.scss */
+  /* line 130, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-empty,
   .region-sponsors .view-sponsors .view-content {
     vertical-align: middle;
@@ -379,12 +399,12 @@ img {
   padding-right: 0.8em;
   width: 100%;
 }
-/* line 10, ../sass/partials/_footer.scss */
+/* line 9, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1),
 .footer-container div:nth-child(2) {
   text-align: center;
   font-size: 0.8em;
-  color: white;
+  color: #fff;
   font-family: "Open Sans", sans-serif;
   padding-bottom: 0.5em;
   font-weight: 300;
@@ -392,7 +412,7 @@ img {
 /* line 17, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1) p a,
 .footer-container div:nth-child(2) p a {
-  color: white;
+  color: #fff;
   text-decoration: underline;
 }
 
@@ -408,7 +428,7 @@ img {
     padding-top: 3.5em;
     padding-bottom: 5.5em;
   }
-  /* line 10, ../sass/partials/_media-queries.scss */
+  /* line 9, ../sass/partials/_media-queries.scss */
   #site-wrapper .header-info-top h3,
   #site-wrapper .header-info-top p {
     font-size: 1.5em;
@@ -437,7 +457,7 @@ img {
     font-size: 2.1em;
     margin-top: 1.5em;
   }
-  /* line 40, ../sass/partials/_media-queries.scss */
+  /* line 39, ../sass/partials/_media-queries.scss */
   #site-wrapper .newsletter .email-address,
   #site-wrapper .newsletter .firstname {
     font-size: 1.5em;
@@ -487,7 +507,7 @@ img {
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 88, ../sass/partials/_media-queries.scss */
+  /* line 87, ../sass/partials/_media-queries.scss */
   .header-info-top h3,
   .header-info-top p {
     font-size: 1.2em;
@@ -519,7 +539,7 @@ img {
   font-family: "Montserrat", sans-serif;
   text-align: left;
 }
-/* line 11, ../sass/partials/_proposals.scss */
+/* line 10, ../sass/partials/_proposals.scss */
 .col-md-8 .content h6,
 .col-md-8 .content .speaker-announcement {
   color: #1664a6;
