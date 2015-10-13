@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_am_pm
+    - field.storage.node.field_approved
     - field.storage.node.field_room
     - field.storage.node.field_text
     - field.storage.node.field_time
@@ -11,6 +12,7 @@ dependencies:
     - field.storage.node.field_url_to_video
     - field.storage.user.field_image
     - node.type.sessions
+    - system.menu.main
   module:
     - image
     - node
@@ -659,6 +661,11 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_approved:
+          id: field_approved
+          table: node__field_approved
+          field: field_approved
+          plugin_id: field
       filters:
         status:
           value: true
@@ -707,7 +714,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: "<p class=\"speaker-description\">Here are some proposed sessions submitted for the event. You can help by choosing the ones you liked.</p>\n<p class=\"speaker-announcement\">If you can't see any you are interest in, please <a href=\"/node/add/session\">submit a session</a>.</p>"
+          content: "<p class=\"speaker-description\">Here are some proposed sessions submitted for the event.</p>\n<p class=\"speaker-announcement\">You can also <a href=\"/node/add/session\">submit your own</a>. You will need an account, you can create one <a href=\"/user/register\">here</a>.</p>"
           plugin_id: text_custom
       footer: {  }
       empty:
@@ -746,6 +753,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_am_pm'
+        - 'config:field.storage.node.field_approved'
         - 'config:field.storage.node.field_room'
         - 'config:field.storage.node.field_text'
         - 'config:field.storage.node.field_time'
@@ -760,6 +768,14 @@ display:
     display_options:
       display_extenders: {  }
       path: proposals
+      menu:
+        type: normal
+        title: Proposals
+        description: 'Proposed sessions'
+        parent: ''
+        weight: 0
+        context: '0'
+        menu_name: main
     cache_metadata:
       max-age: -1
       contexts:
@@ -770,6 +786,7 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_am_pm'
+        - 'config:field.storage.node.field_approved'
         - 'config:field.storage.node.field_room'
         - 'config:field.storage.node.field_text'
         - 'config:field.storage.node.field_time'
