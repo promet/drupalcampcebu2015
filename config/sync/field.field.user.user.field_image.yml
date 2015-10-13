@@ -11,7 +11,7 @@ id: user.user.field_image
 field_name: field_image
 entity_type: user
 bundle: user
-label: Image
+label: 'Profile Image'
 description: ''
 required: false
 translatable: false
@@ -28,11 +28,11 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: ''
+    uuid: 938300a9-b0fb-4f18-993c-60acc63f1722
     alt: ''
     title: ''
-    width: null
-    height: null
+    width: 220
+    height: 220
   handler: 'default:file'
   handler_settings: {  }
 field_type: image
