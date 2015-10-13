@@ -10,7 +10,7 @@ dependencies:
     - field.storage.node.field_time
     - field.storage.node.field_url_to_slides
     - field.storage.node.field_url_to_video
-    - field.storage.user.field_image
+    - field.storage.user.field_profile
     - node.type.sessions
     - system.menu.main
   module:
@@ -90,10 +90,10 @@ display:
           separator: ''
           hide_empty: false
       fields:
-        field_image:
-          id: field_image
-          table: user__field_image
-          field: field_image
+        field_profile:
+          id: field_profile
+          table: user__field_profile
+          field: field_profile
           relationship: uid
           group_type: group
           admin_label: ''
@@ -126,23 +126,23 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: '0'
-          element_class: ''
+          element_type: div
+          element_class: 'col-md-3 img-speaker'
           element_label_type: '0'
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: div
-          element_wrapper_class: '.col-md-3 .img-speaker'
+          element_wrapper_type: '0'
+          element_wrapper_class: ''
           element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
-          hide_alter_empty: true
+          hide_alter_empty: false
           click_sort_column: target_id
           type: image
           settings:
             image_style: image_proposal
-            image_link: ''
+            image_link: content
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -310,7 +310,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 340
+            max_length: 400
             word_boundary: true
             ellipsis: true
             more_link: false
@@ -759,7 +759,7 @@ display:
         - 'config:field.storage.node.field_time'
         - 'config:field.storage.node.field_url_to_slides'
         - 'config:field.storage.node.field_url_to_video'
-        - 'config:field.storage.user.field_image'
+        - 'config:field.storage.user.field_profile'
   page_1:
     display_plugin: page
     id: page_1
@@ -792,4 +792,4 @@ display:
         - 'config:field.storage.node.field_time'
         - 'config:field.storage.node.field_url_to_slides'
         - 'config:field.storage.node.field_url_to_video'
-        - 'config:field.storage.user.field_image'
+        - 'config:field.storage.user.field_profile'
