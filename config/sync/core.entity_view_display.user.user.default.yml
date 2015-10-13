@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_first_name
-    - field.field.user.user.field_image
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_profile
   module:
     - image
     - user
@@ -21,14 +21,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_image:
-    weight: 6
-    label: hidden
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
   field_last_name:
     weight: 10
     label: above
@@ -36,6 +28,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_profile:
+    weight: 11
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   member_for:
     weight: 5
     settings: {  }
