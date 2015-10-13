@@ -1,10 +1,12 @@
-uuid: 01ebb2ac-50be-4c44-961b-27aad7dbf4db
+uuid: 39938891-22f0-4c48-b400-aec0abbe342d
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_profile_image
     - node.type.sessions
+  module:
+    - image
 id: node.sessions.field_profile_image
 field_name: field_profile_image
 entity_type: node
@@ -15,5 +17,22 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  file_extensions: 'png gif jpg jpeg'
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  max_resolution: ''
+  min_resolution: ''
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  file_directory: ''
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image
