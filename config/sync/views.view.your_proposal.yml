@@ -53,11 +53,14 @@ display:
           items_per_page: 10
           offset: 0
       style:
-        type: default
+        type: html_list
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: true
+          default_row_class: false
+          type: ul
+          wrapper_class: item-list
+          class: ''
       row:
         type: fields
       fields:
