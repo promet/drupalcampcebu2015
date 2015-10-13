@@ -12,13 +12,14 @@
       color: $color-blue;
       font-family: $font-text;
       font-size: 1.3em;
-      padding-left: 15px;
       text-align: left;
+      margin-bottom: 1.5em;
+      a {
+       color: $color-orange;
+      }
     }
-    .speaker-announcement {
-      margin-bottom: 2em;
-      text-align: left;
-      padding-left: 15px;
+    .col-md-12 {
+      padding-left: 0;
     }
     a {
       color: $color-orange;
@@ -34,19 +35,24 @@
   float: left;
   margin-bottom: 1.5em;
 }
-.col-md-4.img-speaker {
+.col-md-3.img-speaker {
   padding: 0;
   margin: 0;
   width: 21%;
 }
-.col-md-8.topic-summary,
-.col-md-8.drupalcamp-speaker {
+.col-md-9.drupalcamp-speaker {
   font-size: 1.1em;
+  margin-bottom: 0.5em;
+  color: $color-blue;
 }
-.col-md-8.speaker-drupalcamp-topic {
+.topic-summary p {
+  font-size: 1.3em;
+}
+.col-md-9.speaker-drupalcamp-topic {
   margin: 0;
   font-family: $font-title;
   a {
     color: $color-blue;
+    font-size: 1.6em;
   }
 }

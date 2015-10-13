@@ -22,11 +22,11 @@
   background-color: #1664a6;
   padding: 1.5em;
 }
-/* line 19, ../sass/partials/_header.scss */
+/* line 21, ../sass/partials/_header.scss */
 .header-info-top p,
 .header-info-top h2,
 .header-info-top h3 {
-  color: #fff;
+  color: white;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-size: 1.1em;
@@ -54,7 +54,7 @@
 /* line 47, ../sass/partials/_header.scss */
 .content p {
   color: #1664a6;
-  font-size: 1.3em;
+  font-size: 1.4em;
 }
 /* line 51, ../sass/partials/_header.scss */
 .content .field-item {
@@ -71,20 +71,20 @@
 .nav-tabs li {
   display: inline;
 }
-/* line 8, ../sass/partials/_tabs.scss */
+/* line 7, ../sass/partials/_tabs.scss */
 .nav-tabs li a {
   font-size: 1.25em;
   color: #1664a6;
   padding: 0.62em 0.93em;
 }
-/* line 14, ../sass/partials/_tabs.scss */
+/* line 12, ../sass/partials/_tabs.scss */
 .nav-tabs li a:hover {
   border: 1px solid #1664a6;
   border-radius: 4px 4px 0 0;
   background-color: #fff;
 }
-/* line 20, ../sass/partials/_tabs.scss */
-.nav-tabs li a.is-active {
+/* line 18, ../sass/partials/_tabs.scss */
+.nav-tabs li.is-active a {
   background-color: #1664a6;
   border-radius: 4px 4px 0 0;
   color: #fff;
@@ -112,7 +112,7 @@
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-4 {
   padding: 0;
 }
-/* line 20, ../sass/partials/_newsletter.scss */
+/* line 21, ../sass/partials/_newsletter.scss */
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-3,
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 {
   padding-left: 0;
@@ -123,7 +123,7 @@
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 label {
   font-weight: normal;
 }
-/* line 32, ../sass/partials/_newsletter.scss */
+/* line 33, ../sass/partials/_newsletter.scss */
 .newsletter .email-address,
 .newsletter .firstname {
   color: #fcb040;
@@ -143,7 +143,7 @@
   padding: 0.3em;
   width: 100%;
   margin-top: 0.5em;
-  color: #fff;
+  color: white;
   background-color: #fcb040;
   border: none;
   text-transform: uppercase;
@@ -178,7 +178,7 @@ p {
 }
 /* line 21, ../sass/partials/_global.scss */
 .menu-box p {
-  color: #fff;
+  color: white;
   font-family: "Montserrat", sans-serif;
   font-size: 1.6em;
   line-height: 0.9em;
@@ -192,7 +192,7 @@ p {
 }
 /* line 32, ../sass/partials/_global.scss */
 .menu-box p.subtitle a {
-  color: #fff;
+  color: white;
   text-decoration: underline;
 }
 
@@ -215,7 +215,7 @@ img {
 .promote-sponsor-tab p:nth-child(2) {
   font-size: 1.5em;
 }
-/* line 11, ../sass/partials/_sponsors.scss */
+/* line 12, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1),
 .promote-sponsor-tab p:nth-child(2) {
   color: #1664a6;
@@ -266,7 +266,7 @@ img {
   padding: 3em 1.6em;
   overflow: hidden;
 }
-/* line 53, ../sass/partials/_sponsors.scss */
+/* line 54, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header a,
 .region-sponsors .sponsor-header h3 {
   color: #fff;
@@ -326,7 +326,7 @@ img {
 /* line 103, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
   background-color: #fcb040;
-  color: #fff;
+  color: white;
   font-size: 1.5em;
   height: auto;
   padding: 20px;
@@ -345,7 +345,7 @@ img {
     text-align: unset;
   }
 
-  /* line 123, ../sass/partials/_sponsors.scss */
+  /* line 125, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-header,
   .region-sponsors .view-sponsors .view-empty,
   .region-sponsors .view-sponsors .view-content {
@@ -353,7 +353,7 @@ img {
     float: none;
   }
 
-  /* line 130, ../sass/partials/_sponsors.scss */
+  /* line 131, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-empty,
   .region-sponsors .view-sponsors .view-content {
     vertical-align: middle;
@@ -379,12 +379,12 @@ img {
   padding-right: 0.8em;
   width: 100%;
 }
-/* line 9, ../sass/partials/_footer.scss */
+/* line 10, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1),
 .footer-container div:nth-child(2) {
   text-align: center;
   font-size: 0.8em;
-  color: #fff;
+  color: white;
   font-family: "Open Sans", sans-serif;
   padding-bottom: 0.5em;
   font-weight: 300;
@@ -392,7 +392,7 @@ img {
 /* line 17, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1) p a,
 .footer-container div:nth-child(2) p a {
-  color: #fff;
+  color: white;
   text-decoration: underline;
 }
 
@@ -408,7 +408,7 @@ img {
     padding-top: 3.5em;
     padding-bottom: 5.5em;
   }
-  /* line 9, ../sass/partials/_media-queries.scss */
+  /* line 10, ../sass/partials/_media-queries.scss */
   #site-wrapper .header-info-top h3,
   #site-wrapper .header-info-top p {
     font-size: 1.5em;
@@ -437,7 +437,7 @@ img {
     font-size: 2.1em;
     margin-top: 1.5em;
   }
-  /* line 39, ../sass/partials/_media-queries.scss */
+  /* line 40, ../sass/partials/_media-queries.scss */
   #site-wrapper .newsletter .email-address,
   #site-wrapper .newsletter .firstname {
     font-size: 1.5em;
@@ -487,7 +487,7 @@ img {
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 87, ../sass/partials/_media-queries.scss */
+  /* line 88, ../sass/partials/_media-queries.scss */
   .header-info-top h3,
   .header-info-top p {
     font-size: 1.2em;
@@ -499,7 +499,7 @@ img {
 
   /* line 96, ../sass/partials/_media-queries.scss */
   .content p {
-    font-size: 1.6em;
+    font-size: 1.4em;
   }
 
   /* line 100, ../sass/partials/_media-queries.scss */
@@ -519,55 +519,65 @@ img {
   font-family: "Montserrat", sans-serif;
   text-align: left;
 }
-/* line 10, ../sass/partials/_proposals.scss */
+/* line 11, ../sass/partials/_proposals.scss */
 .col-md-8 .content h6,
 .col-md-8 .content .speaker-announcement {
   color: #1664a6;
   font-family: "Open Sans", sans-serif;
   font-size: 1.3em;
-  padding-left: 15px;
   text-align: left;
+  margin-bottom: 1.5em;
 }
-/* line 18, ../sass/partials/_proposals.scss */
-.col-md-8 .content .speaker-announcement {
-  margin-bottom: 2em;
-  text-align: left;
-  padding-left: 15px;
+/* line 17, ../sass/partials/_proposals.scss */
+.col-md-8 .content h6 a,
+.col-md-8 .content .speaker-announcement a {
+  color: #fcb040;
 }
-/* line 23, ../sass/partials/_proposals.scss */
+/* line 21, ../sass/partials/_proposals.scss */
+.col-md-8 .content .col-md-12 {
+  padding-left: 0;
+}
+/* line 24, ../sass/partials/_proposals.scss */
 .col-md-8 .content a {
   color: #fcb040;
 }
-/* line 26, ../sass/partials/_proposals.scss */
+/* line 27, ../sass/partials/_proposals.scss */
 .col-md-8 .content a:hover {
   text-decoration: underline;
 }
 
-/* line 33, ../sass/partials/_proposals.scss */
+/* line 34, ../sass/partials/_proposals.scss */
 .views-row {
   float: left;
   margin-bottom: 1.5em;
 }
 
-/* line 37, ../sass/partials/_proposals.scss */
-.col-md-4.img-speaker {
+/* line 38, ../sass/partials/_proposals.scss */
+.col-md-3.img-speaker {
   padding: 0;
   margin: 0;
   width: 21%;
 }
 
-/* line 42, ../sass/partials/_proposals.scss */
-.col-md-8.topic-summary,
-.col-md-8.drupalcamp-speaker {
+/* line 43, ../sass/partials/_proposals.scss */
+.col-md-9.drupalcamp-speaker {
   font-size: 1.1em;
+  margin-bottom: 0.5em;
+  color: #1664a6;
 }
 
-/* line 46, ../sass/partials/_proposals.scss */
-.col-md-8.speaker-drupalcamp-topic {
+/* line 48, ../sass/partials/_proposals.scss */
+.topic-summary p {
+  font-size: 1.3em;
+}
+
+/* line 51, ../sass/partials/_proposals.scss */
+.col-md-9.speaker-drupalcamp-topic {
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
-/* line 49, ../sass/partials/_proposals.scss */
-.col-md-8.speaker-drupalcamp-topic a {
+/* line 54, ../sass/partials/_proposals.scss */
+.col-md-9.speaker-drupalcamp-topic a {
   color: #1664a6;
+  font-size: 1.6em;
 }
