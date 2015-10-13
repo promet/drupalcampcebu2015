@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_profile
+    - field.field.user.user.field_profile_image
   module:
     - image
     - user
@@ -28,7 +28,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_profile:
+  field_profile_image:
     weight: 11
     label: above
     settings:

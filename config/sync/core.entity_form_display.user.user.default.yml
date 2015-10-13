@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
-    - field.field.user.user.field_profile
+    - field.field.user.user.field_profile_image
   module:
     - image
     - user
@@ -30,7 +30,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_profile:
+  field_profile_image:
     weight: 12
     settings:
       progress_indicator: throbber

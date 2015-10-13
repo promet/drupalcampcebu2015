@@ -1,14 +1,14 @@
-uuid: 2dfbb7a0-5898-466d-825c-922b39d5c84e
+uuid: e5117f36-7f3c-46a2-9404-4c1aabca554d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_profile
+    - field.storage.user.field_profile_image
   module:
     - image
     - user
-id: user.user.field_profile
-field_name: field_profile
+id: user.user.field_profile_image
+field_name: field_profile_image
 entity_type: user
 bundle: user
 label: 'Profile Image'
@@ -18,17 +18,17 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: user-profile-pictures
+  file_directory: ''
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
-  max_resolution: 2000x2000
+  max_resolution: ''
   min_resolution: ''
   alt_field: false
-  alt_field_required: false
+  alt_field_required: true
   title_field: false
   title_field_required: false
   default_image:
-    uuid: f9d17e8e-4b6e-4d51-b851-81230eee8517
+    uuid: d3d91047-d853-46b8-9528-401e5de87c12
     alt: ''
     title: ''
     width: 220

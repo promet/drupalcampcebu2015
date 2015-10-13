@@ -1,4 +1,4 @@
-uuid: 5fa5ae7b-0c0f-4ebe-a503-3e0d2043d351
+uuid: 86c8c28e-6836-4ad8-9200-d453841b0a5c
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - file
     - image
     - user
-id: user.field_profile
-field_name: field_profile
+id: user.field_profile_image
+field_name: field_profile_image
 entity_type: user
 type: image
 settings:
