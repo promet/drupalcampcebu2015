@@ -30,13 +30,17 @@
   }
 }
 
+a {
+  text-decoration: underline;
+}
 
 .views-row {
   float: left;
   margin-bottom: 1.5em;
 }
 
-.col-md-9.drupalcamp-speaker {
+.col-md-9.drupalcamp-speaker,
+.col-md-9.session-type {
   font-size: 1.1em;
   margin-bottom: 0.5em;
   color: $color-blue;

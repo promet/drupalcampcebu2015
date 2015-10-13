@@ -1,0 +1,19 @@
+uuid: 01ebb2ac-50be-4c44-961b-27aad7dbf4db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_profile_image
+    - node.type.sessions
+id: node.sessions.field_profile_image
+field_name: field_profile_image
+entity_type: node
+bundle: sessions
+label: 'Profile Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
