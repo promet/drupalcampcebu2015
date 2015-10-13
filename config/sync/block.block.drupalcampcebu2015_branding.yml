@@ -9,7 +9,7 @@ dependencies:
 id: drupalcampcebu2015_branding
 theme: drupalcampcebu2015
 region: '-1'
-weight: -5
+weight: -6
 provider: null
 plugin: system_branding_block
 settings:

@@ -11,7 +11,7 @@ dependencies:
 id: views_block__sponsors_and_partners_sponsor_bronze
 theme: drupalcampcebu2015
 region: '-1'
-weight: -1
+weight: -7
 provider: null
 plugin: 'views_block:sponsors_and_partners-sponsor_bronze'
 settings:

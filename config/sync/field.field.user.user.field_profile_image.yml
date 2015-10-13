@@ -28,7 +28,7 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: d3d91047-d853-46b8-9528-401e5de87c12
+    uuid: f96915c8-0dea-4723-9a03-3c82929f40f0
     alt: ''
     title: ''
     width: 220
