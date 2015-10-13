@@ -835,7 +835,7 @@ display:
       menu:
         type: normal
         title: Proposals
-        description: 'Proposed sessions'
+        description: 'See all proposed sessions'
         parent: ''
         weight: 0
         context: '0'

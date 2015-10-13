@@ -13,27 +13,39 @@ p {
   font-size: 1em;
 }
 
-.menu-box {
-  background-color: $color-orange;
-  padding: 1.6em;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  p {
-    color: $color-white-text;
-    font-family: $font-title;
-    font-size: 1.6em;
-    line-height: 0.9em;
-    margin-bottom: 0;
-    text-transform: uppercase;
-  }
-  p.subtitle {
-    font-size: 1.1em;
-    padding-top: 0.3em;
-    a {
+.region-sidebar ul.menu {
+  margin: 0;
+  li {
+    padding: 1.6em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    a, p {
       color: $color-white-text;
-      text-decoration: underline;
+      font-family: $font-title;
+      line-height: 0.9em;
+      margin-bottom: 0;
+      text-transform: uppercase;
+
+    }
+    a {
+      font-size: 1.8em;
+    }
+    p {
+      font-size: 1.1em;
     }
   }
+}
+.region-sidebar li:nth-child(1) {
+  background-color: $color-orange;
+}
+.region-sidebar li:nth-child(2) {
+  background-color: $color-blue;
+}
+.region-sidebar li:nth-child(3) {
+  background-color: $color-green;
+}
+.region-sidebar li:nth-child(4) {
+  background-color: #fff;
 }
 
 img {

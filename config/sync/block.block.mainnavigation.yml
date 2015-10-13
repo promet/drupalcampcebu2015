@@ -1,0 +1,24 @@
+uuid: a7775431-caf9-437e-ac00-ed914263a38a
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - drupalcampcebu2015
+id: mainnavigation
+theme: drupalcampcebu2015
+region: sidebar
+weight: -9
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }
