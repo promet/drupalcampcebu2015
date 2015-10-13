@@ -12,3 +12,4 @@ permissions:
   - 'create sessions content'
   - 'delete own sessions content'
   - 'edit own sessions content'
+  - 'access user profiles'
