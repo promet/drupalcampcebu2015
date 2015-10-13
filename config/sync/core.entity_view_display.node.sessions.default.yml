@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.sessions.field_am_pm
+    - field.field.node.sessions.field_approved
+    - field.field.node.sessions.field_profile_image
     - field.field.node.sessions.field_room
+    - field.field.node.sessions.field_session_type
     - field.field.node.sessions.field_text
     - field.field.node.sessions.field_time
     - field.field.node.sessions.field_url_to_slides
@@ -31,6 +34,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
+  field_profile_image:
+    weight: 13
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_room:
     weight: 8
     label: above
@@ -38,6 +48,12 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_session_type:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   field_text:
     weight: 0
     label: hidden
