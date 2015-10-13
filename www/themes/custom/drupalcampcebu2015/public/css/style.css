@@ -557,25 +557,50 @@ a {
   margin-bottom: 1.5em;
 }
 
-/* line 43, ../sass/partials/_proposals.scss */
+/* line 44, ../sass/partials/_proposals.scss */
 .col-md-9.drupalcamp-speaker,
-.col-md-9.session-type {
+.col-md-9.session-type,
+.field--name-field-session-type {
   font-size: 1.1em;
   margin-bottom: 0.5em;
   color: #1664a6;
 }
 
-/* line 48, ../sass/partials/_proposals.scss */
+/* line 50, ../sass/partials/_proposals.scss */
+.field--name-field-session-type {
+  overflow: hidden;
+}
+/* line 52, ../sass/partials/_proposals.scss */
+.field--name-field-session-type .field__label::after {
+  content: ":";
+}
+/* line 56, ../sass/partials/_proposals.scss */
+.field--name-field-session-type .field__label,
+.field--name-field-session-type .field__item {
+  float: left;
+}
+/* line 59, ../sass/partials/_proposals.scss */
+.field--name-field-session-type .field__item {
+  margin-left: 0.5em;
+}
+
+/* line 65, ../sass/partials/_proposals.scss */
+.node--type-sessions .node__submitted {
+  color: #1664a6;
+  margin-bottom: 0.5em;
+}
+
+/* line 71, ../sass/partials/_proposals.scss */
 .topic-summary p {
   font-size: 1.3em;
 }
 
-/* line 51, ../sass/partials/_proposals.scss */
+/* line 74, ../sass/partials/_proposals.scss */
 .col-md-9.speaker-drupalcamp-topic {
   margin: 0;
   font-family: "Montserrat", sans-serif;
 }
-/* line 54, ../sass/partials/_proposals.scss */
+/* line 77, ../sass/partials/_proposals.scss */
 .col-md-9.speaker-drupalcamp-topic a {
   color: #1664a6;
   font-size: 1.6em;

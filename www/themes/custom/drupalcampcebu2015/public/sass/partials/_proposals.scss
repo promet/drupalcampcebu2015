@@ -40,11 +40,34 @@ a {
 }
 
 .col-md-9.drupalcamp-speaker,
-.col-md-9.session-type {
+.col-md-9.session-type,
+.field--name-field-session-type {
   font-size: 1.1em;
   margin-bottom: 0.5em;
   color: $color-blue;
 }
+
+.field--name-field-session-type {
+  overflow: hidden;
+  .field__label::after {
+    content: ":";
+  }
+  .field__label,
+  .field__item {
+    float: left;
+  }
+  .field__item {
+    margin-left: 0.5em;
+  }
+}
+
+.node--type-sessions {
+  .node__submitted {
+    color: $color-blue;
+    margin-bottom: 0.5em;
+  }
+}
+
 .topic-summary p {
   font-size: 1.3em;
 }
