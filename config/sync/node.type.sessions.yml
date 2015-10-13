@@ -1,11 +1,18 @@
 uuid: 1008aba6-3080-42b4-9550-8073dec8300a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
 name: Sessions
 type: sessions
 description: ''
 help: ''
 new_revision: false
 preview_mode: 0
-display_submitted: false
+display_submitted: true

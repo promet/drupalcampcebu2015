@@ -1,0 +1,36 @@
+uuid: 3cd655e5-bd9c-4568-bd34-52413d577e9f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_session_type
+field_name: field_session_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Drupal
+      label: Drupal
+    -
+      value: 'Front end'
+      label: 'Front end'
+    -
+      value: 'UI / UX'
+      label: 'UI / UX'
+    -
+      value: DevOps
+      label: DevOps
+    -
+      value: Business
+      label: Business
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

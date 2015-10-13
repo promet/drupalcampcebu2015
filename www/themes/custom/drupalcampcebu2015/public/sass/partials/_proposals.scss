@@ -30,17 +30,55 @@
   }
 }
 
+a {
+  text-decoration: underline;
+}
 
 .views-row {
   float: left;
   margin-bottom: 1.5em;
 }
 
-.col-md-9.drupalcamp-speaker {
+.col-md-9.drupalcamp-speaker,
+.col-md-9.session-type,
+.session-type-label {
   font-size: 1.1em;
   margin-bottom: 0.5em;
   color: $color-blue;
 }
+
+.field--name-field-session-type {
+  overflow: hidden;
+  .field__label::after {
+    content: ":";
+  }
+  .field__label,
+  .field__item {
+    float: left;
+    font-weight: normal;
+    color: $color-blue;
+  }
+  .field__item {
+    margin-left: 0.5em;
+  }
+}
+
+.node--type-sessions {
+  .node__submitted {
+    color: $color-blue;
+    margin-bottom: 0.5em;
+  }
+}
+
+.view-id-your_proposal {
+  ul {
+    list-style-type: none;
+    li {
+      margin-left: 0;
+    }
+  }
+}
+
 .topic-summary p {
   font-size: 1.3em;
 }
