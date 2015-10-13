@@ -16,7 +16,6 @@
 .header-info-top {
   background-color: $color-blue;
   padding: 1.5em;
-
   p,
   h2,
   h3 {
@@ -28,6 +27,11 @@
 
   h2 {
     font-size: 1.9em;
+  }
+  a {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 1.2em;
   }
 }
 

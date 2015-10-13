@@ -1,0 +1,21 @@
+uuid: 61a02793-83ea-430c-ab00-ea1e247aa328
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.information
+    - field.storage.block_content.field_block_text
+  module:
+    - text
+id: block_content.information.field_block_text
+field_name: field_block_text
+entity_type: block_content
+bundle: information
+label: 'Block text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

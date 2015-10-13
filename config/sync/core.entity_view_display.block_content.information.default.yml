@@ -4,9 +4,18 @@ status: true
 dependencies:
   config:
     - block_content.type.information
+    - field.field.block_content.information.field_block_text
+  module:
+    - text
 id: block_content.information.default
 targetEntityType: block_content
 bundle: information
 mode: default
-content: {  }
+content:
+  field_block_text:
+    type: text_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }
