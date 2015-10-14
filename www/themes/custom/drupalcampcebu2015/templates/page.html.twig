@@ -79,6 +79,13 @@
           </div>
         {% endif %}
 
+        {% if is_front %}
+          {% if page.header_info_bottom %}
+              {{ page.header_info_bottom }}
+          {% endif %}
+        {% endif %}
+
+
         <div class="content">
           {{ title_prefix }}
           {% if title %}

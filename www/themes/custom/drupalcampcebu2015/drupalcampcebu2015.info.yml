@@ -12,6 +12,7 @@ libraries:
 regions:
   sidebar: Sidebar
   header_info_top: Header info top
+  header_info_bottom: Header info bottom
   content: Main Content
   content_bottom: Content Bottom
   sponsors: Sponsors
