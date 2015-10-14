@@ -112,16 +112,18 @@ a {
   }
 }
 
+.flexslider {
+  margin-bottom: 2em;
+}
+
 .flex-direction-nav {
   .flex-prev {
     left: 10px;
     height: 4em;
-    padding-left: 1.2em;
   }
   .flex-next {
     right: 10px;
     height: 4em;
-    padding-right: 1.2em;
   }
   a:before {
     color: $color-blue;
@@ -133,12 +135,31 @@ a {
 }
 
 .slides {
-  padding-left: 4em;
-  padding-right: 4em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
 }
 
 ol.flex-control-nav {
   visibility: hidden;
 }
 
-
+// Propose a session button
+.propose-session-wrapper {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 4em;
+  a {
+    overflow: hidden;
+  }
+  .propose-a-session {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    padding: 1em;
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: $color-orange;
+    color: $color-white-text;
+    font-family: $font-title;
+  }
+}
