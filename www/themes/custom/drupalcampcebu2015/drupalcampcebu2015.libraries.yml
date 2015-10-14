@@ -3,3 +3,9 @@ global-styling:
     theme:
       lib/bootstrap/css/bootstrap.css: {}
       public/css/style.css: {}
+      lib/flexslider.css: {}
+
+  js:
+    lib/bootstrap/js/bootstap.js: {}
+    lib/flexslider/jquery.flexslider.js: {}
+
