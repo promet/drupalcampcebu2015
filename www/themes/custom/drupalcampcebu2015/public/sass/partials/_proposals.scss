@@ -1,33 +1,31 @@
-.col-md-8 {
-  .content {
-    overflow: hidden;
-    h1 {
-      font-size: 2.3em;
-      margin-bottom: 0.5em;
-      font-family: $font-title;
-      text-align: left;
-    }
-    h6,
-    .speaker-announcement {
-      color: $color-blue;
-      font-family: $font-text;
-      font-size: 1.3em;
-      text-align: left;
-      margin-bottom: 1.5em;
-      a {
-       color: $color-orange;
-      }
-    }
-    .col-md-12 {
-      padding-left: 0;
-    }
-    a {
-      color: $color-orange;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+content {
+  overflow: hidden;
+}
+h1 {
+  font-size: 2.3em;
+  margin-bottom: 0.5em;
+  font-family: $font-title;
+  text-align: left;
+}
+h6,
+.speaker-announcement {
+  color: $color-blue;
+  font-family: $font-text;
+  font-size: 1.3em;
+  text-align: left;
+  margin-bottom: 1.5em;
+  a {
+   color: $color-orange;
   }
+}
+.col-md-12 {
+  padding-left: 0;
+}
+a {
+  color: $color-orange;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 a {
@@ -91,9 +89,6 @@ a {
   }
 }
 
-.topic-summary p {
-  font-size: 1.3em;
-}
 .col-md-9.speaker-drupalcamp-topic {
   margin: 0;
   font-family: $font-title;
@@ -102,3 +97,48 @@ a {
     font-size: 1.6em;
   }
 }
+
+.col-md-9 .topic-summary {
+  p {
+    font-size: 12em;
+  }
+}
+
+// Homepage carousel
+#block-views-block-carousel-proposal-block-carousel-proposal {
+  h2 {
+    font-size: 2.2em;
+    text-align: left;
+  }
+}
+
+.flex-direction-nav {
+  .flex-prev {
+    left: 10px;
+    height: 4em;
+    padding-left: 1.2em;
+  }
+  .flex-next {
+    right: 10px;
+    height: 4em;
+    padding-right: 1.2em;
+  }
+  a:before {
+    color: $color-blue;
+  }
+}
+
+.flex-direction-nav a {
+  opacity: 10;
+}
+
+.slides {
+  padding-left: 4em;
+  padding-right: 4em;
+}
+
+ol.flex-control-nav {
+  visibility: hidden;
+}
+
+

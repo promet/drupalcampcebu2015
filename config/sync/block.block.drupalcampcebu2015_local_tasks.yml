@@ -7,7 +7,7 @@ dependencies:
 id: drupalcampcebu2015_local_tasks
 theme: drupalcampcebu2015
 region: content
-weight: -4
+weight: -6
 provider: null
 plugin: local_tasks_block
 settings:
