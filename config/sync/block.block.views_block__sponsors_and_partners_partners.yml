@@ -1,4 +1,4 @@
-uuid: e6dde701-2720-474f-8400-a45874caa97c
+uuid: 7ae081e2-7989-4749-9a00-bf559064e6f5
 langcode: en
 status: true
 dependencies:
@@ -9,17 +9,17 @@ dependencies:
     - views
   theme:
     - drupalcampcebu2015
-id: views_block__sponsors_and_partners_sponsor_bronze
+id: views_block__sponsors_and_partners_partners
 theme: drupalcampcebu2015
 region: content_bottom
-weight: -10
+weight: -5
 provider: null
-plugin: 'views_block:sponsors_and_partners-sponsor_bronze'
+plugin: 'views_block:sponsors_and_partners-partners'
 settings:
-  id: 'views_block:sponsors_and_partners-sponsor_bronze'
+  id: 'views_block:sponsors_and_partners-partners'
   label: ''
   provider: views
-  label_display: '0'
+  label_display: visible
   views_label: ''
   items_per_page: none
 visibility:
