@@ -701,22 +701,27 @@ a {
   padding-right: 2.5em;
 }
 
-/* line 142, ../sass/partials/_proposals.scss */
+/* line 145, ../sass/partials/_proposals.scss */
+.slides,
+.slides > li,
+.flex-control-nav,
+.flex-direction-nav {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+/* line 150, ../sass/partials/_proposals.scss */
 ol.flex-control-nav {
   visibility: hidden;
 }
 
-/* line 147, ../sass/partials/_proposals.scss */
+/* line 155, ../sass/partials/_proposals.scss */
 .propose-session-wrapper {
   width: 100%;
   overflow: hidden;
   margin-bottom: 4em;
 }
-/* line 151, ../sass/partials/_proposals.scss */
-.propose-session-wrapper a {
-  overflow: hidden;
-}
-/* line 154, ../sass/partials/_proposals.scss */
+/* line 159, ../sass/partials/_proposals.scss */
 .propose-session-wrapper .propose-a-session {
   font-size: 1.5em;
   text-transform: uppercase;

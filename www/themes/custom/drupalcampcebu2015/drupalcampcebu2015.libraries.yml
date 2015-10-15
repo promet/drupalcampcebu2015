@@ -8,4 +8,5 @@ global-styling:
   js:
     lib/bootstrap/js/bootstap.js: {}
     lib/flexslider/jquery.flexslider.js: {}
+    public/js/flexslider/drupalcampcebu2015.flexslider.js: {}
 
