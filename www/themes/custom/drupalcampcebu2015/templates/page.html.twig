@@ -94,9 +94,13 @@
           {{ tabs }}
 
           {{ page.content }}
-
-          {{ page.content_bottom }}
         </div>
+
+        {% if page.content_bottom %}
+          <div class="content-bottom">
+            {{ page.content_bottom }}
+          </div>
+        {% endif %}
 
         {% if is_front %}
         <div id="mc_embed_signup" class="newsletter">
@@ -140,12 +144,19 @@
     </div><!-- row end -->
   </div><!-- container end -->
 
-  {% if page.sponsors %}
-    <section class="container-fluid sponsors">
-      <div class="row">
-        {{ page.sponsors }}
-      </div><!-- row end -->
-    </section><!-- container end -->
+  {% if is_front %}
+    {% if page.sponsors %}
+      <section class="container-fluid sponsors">
+        <div class="row">
+          {{ page.sponsors }}
+          <div class="col-md-8 camp-button-wrapper">
+            <a href="/sponsors">
+              <div class="camp-button">See all Sponsors</div>
+            </a>
+          </div>
+        </div><!-- row end -->
+      </section><!-- container end -->
+    {% endif %}
   {% endif %}
 </div><!-- site-wrapper end -->
 
@@ -159,3 +170,5 @@
     <p>Drupal is a registered trademark of Dries Buytaert.</p>
  </div>
 </section>
+
+
