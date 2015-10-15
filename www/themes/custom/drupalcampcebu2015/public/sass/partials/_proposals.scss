@@ -150,11 +150,10 @@ a {
 }
 
 // Propose a session button
-.propose-session-wrapper {
-  width: 100%;
-  overflow: hidden;
+.camp-button-wrapper {
+  // overflow: hidden;
   margin-bottom: 4em;
-  .propose-a-session {
+  .camp-button {
     font-size: 1.5em;
     text-transform: uppercase;
     padding: 1em;
