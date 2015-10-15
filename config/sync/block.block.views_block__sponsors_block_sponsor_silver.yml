@@ -25,6 +25,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/sponsors\r\n"
+    pages: /sponsors
     negate: true
     context_mapping: {  }
