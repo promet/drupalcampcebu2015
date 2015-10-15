@@ -7,6 +7,7 @@ dependencies:
     - taxonomy.vocabulary.sponsor_type
   content:
     - 'taxonomy_term:sponsor_type:1740c0c1-3cb4-4b8d-a302-2f2cdf22105b'
+    - 'taxonomy_term:sponsor_type:2b232a24-2ba2-4c2f-9807-7f8658fbcbac'
     - 'taxonomy_term:sponsor_type:a6d56173-c6b1-4dff-9c06-6dc957c9fa03'
     - 'taxonomy_term:sponsor_type:bb0eadc2-8c2a-473b-bf00-c025af324ee4'
     - 'taxonomy_term:sponsor_type:e21b3019-331d-40df-9800-d395a96011c6'
@@ -344,7 +345,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"col-md-4\">\n   <div class=\"menu-box code-sprint-sponsor\">\n      <p>Code Sprint sponsors</p>\n      <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n   </div>\n</div>"
+          content: "<div class=\"sponsor-header\">\n    <h3>Code Sprint sponsors</h3>\n    <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>\n"
           plugin_id: text_custom
       empty:
         area_text_custom:
@@ -358,6 +359,117 @@ display:
           tokenize: false
           content: "<div class=\"col-md-7 code-sprint-sponsor-logo\">\n   <a href=\"mailto:drupalcebu@gmail.com\"><div>Your Logo Here</div></a>\n</div>"
           plugin_id: text_custom
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_sponsor_logo'
+  coffee_and_snacks_sponsor:
+    display_plugin: block
+    id: coffee_and_snacks_sponsor
+    display_title: 'Coffee and snacks sponsors'
+    position: 8
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_description: 'Coffee and snacks sponsor'
+      filters:
+        status:
+          value: true
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        field_sponsor_type_target_id:
+          id: field_sponsor_type_target_id
+          table: node__field_sponsor_type
+          field: field_sponsor_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            8: 8
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: sponsor_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      defaults:
+        filters: false
+        filter_groups: false
+        header: false
+        empty: false
+        footer: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"sponsor-header\">\n  <h3>Coffee and snacks sponsor</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          plugin_id: text_custom
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"col-md-7 coffee-and-snacks-sponsors\">\n   <a href=\"mailto:drupalcebu@gmail.com\"><div>Your Logo Here</div></a>\n</div>"
+          plugin_id: text_custom
+      footer: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -449,6 +561,7 @@ display:
         filter_groups: false
         header: false
         empty: false
+        footer: false
       filters:
         status:
           value: true
@@ -519,7 +632,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"col-md-4\">\n   <div class=\"menu-box partners\">\n      <p>Our Partners</p>\n      <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n    </div>\n </div>"
+          content: "<div class=\"sponsor-header\">\n    <h3>Our Partners</h3>\n    <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>\n"
           plugin_id: text_custom
       empty:
         area_text_custom:
@@ -532,6 +645,18 @@ display:
           empty: true
           tokenize: false
           content: "<div class=\"col-md-2 partners-sponsor-logo\">\n   <a href=\"mailto:drupalcebu@gmail.com\">\n     <div>Your logo here</div> \n   </a>\n</div>\n<div class=\"col-md-2 partners-sponsor-logo\">\n   <a href=\"mailto:drupalcebu@gmail.com\">\n     <div>Or here!</div>\n   </a>\n</div>"
+          plugin_id: text_custom
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"camp-button-wrapper\">\n      <a href=\"/sponsors\">\n           <div class=\"camp-button\">See all Sponsors</div>\n       </a>\n  </div>"
           plugin_id: text_custom
     cache_metadata:
       max-age: -1
@@ -694,7 +819,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"col-md-12\">\n   <div class=\"menu-box\">\n       <p>Saturday Lunch sponsors</p>\n       <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n   </div>\n</div>"
+          content: "<div class=\"sponsor-header\">\n    <h3>Saturday Lunch sponsors</h3>\n    <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>\n"
           plugin_id: text_custom
       empty:
         area_text_custom:
@@ -869,7 +994,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"col-md-4\">\n   <div class=\"menu-box saturday-night-sponsor\">\n       <p>Saturday Night sponsors</p>\n       <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n   </div>\n</div>"
+          content: "<div class=\"sponsor-header\">\n     <h3>Saturday Night sponsors</h3>\n     <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>\n"
           plugin_id: text_custom
       empty:
         area_text_custom:

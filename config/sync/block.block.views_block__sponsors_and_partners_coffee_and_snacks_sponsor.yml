@@ -1,4 +1,4 @@
-uuid: e6dde701-2720-474f-8400-a45874caa97c
+uuid: 14994a6e-aec9-4085-ab00-a763f86ffe15
 langcode: en
 status: true
 dependencies:
@@ -9,17 +9,17 @@ dependencies:
     - views
   theme:
     - drupalcampcebu2015
-id: views_block__sponsors_and_partners_sponsor_bronze
+id: views_block__sponsors_and_partners_coffee_and_snacks_sponsor
 theme: drupalcampcebu2015
 region: content_bottom
-weight: -10
+weight: -6
 provider: null
-plugin: 'views_block:sponsors_and_partners-sponsor_bronze'
+plugin: 'views_block:sponsors_and_partners-coffee_and_snacks_sponsor'
 settings:
-  id: 'views_block:sponsors_and_partners-sponsor_bronze'
+  id: 'views_block:sponsors_and_partners-coffee_and_snacks_sponsor'
   label: ''
   provider: views
-  label_display: '0'
+  label_display: visible
   views_label: ''
   items_per_page: none
 visibility:
