@@ -1,6 +1,6 @@
 uuid: 4413b30e-5859-4c2f-af53-83dc71912ff1
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -8,8 +8,8 @@ dependencies:
     - seven
 id: seven_branding
 theme: seven
-region: header
-weight: 0
+region: '-1'
+weight: -2
 provider: null
 plugin: system_branding_block
 settings:
