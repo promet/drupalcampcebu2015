@@ -144,19 +144,17 @@
     </div><!-- row end -->
   </div><!-- container end -->
 
-  {% if is_front %}
-    {% if page.sponsors %}
-      <section class="container-fluid sponsors">
-        <div class="row">
-          {{ page.sponsors }}
-          <div class="col-md-8 camp-button-wrapper">
-            <a href="/sponsors">
-              <div class="camp-button">See all Sponsors</div>
-            </a>
-          </div>
-        </div><!-- row end -->
-      </section><!-- container end -->
-    {% endif %}
+  {% if page.sponsors %}
+    <section class="container-fluid sponsors">
+      <div class="row">
+        {{ page.sponsors }}
+        <div class="col-md-8 camp-button-wrapper">
+          <a href="/sponsors">
+            <div class="camp-button">See all Sponsors</div>
+          </a>
+        </div>
+      </div><!-- row end -->
+    </section><!-- container end -->
   {% endif %}
 </div><!-- site-wrapper end -->
 
