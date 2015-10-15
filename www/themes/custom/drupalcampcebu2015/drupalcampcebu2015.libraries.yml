@@ -2,11 +2,11 @@ global-styling:
   css:
     theme:
       lib/bootstrap/css/bootstrap.css: {}
+      lib/flexslider/flexslider.css: {}
       public/css/style.css: {}
-      lib/flexslider.css: {}
-
   js:
-    lib/bootstrap/js/bootstap.js: {}
+    lib/bootstrap/js/bootstrap.js: {}
     lib/flexslider/jquery.flexslider.js: {}
     public/js/flexslider/drupalcampcebu2015.flexslider.js: {}
-
+  dependencies:
+    - core/jquery
