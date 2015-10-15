@@ -67,6 +67,11 @@ display:
           class: slides
       row:
         type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: true
       fields:
         field_profile_image:
           id: field_profile_image
@@ -359,9 +364,31 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'SESSION PROPOSALS ARE OPEN'
-      header: {  }
-      footer: {  }
+      title: ''
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: '<h2>Session Proposals are Open</h2?'
+          plugin_id: text_custom
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: "<div class=\"propose-session-wrapper\">\n     <a href=\"/node/add/sessions\">\n          <div class=\"propose-a-session\">Propose a Session</div>\n     </a>\n </div>"
+          plugin_id: text_custom
       empty: {  }
       relationships:
         uid:
