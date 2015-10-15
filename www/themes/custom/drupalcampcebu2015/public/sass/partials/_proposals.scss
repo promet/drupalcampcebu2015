@@ -112,43 +112,41 @@ a {
   }
 }
 
-.flexslider {
-  margin-bottom: 2em;
-}
-
-.flex-direction-nav {
-  .flex-prev {
-    left: 10px;
-    height: 4em;
+// Flexslider.
+.view-content {
+  .flexslider {
+    margin-bottom: 2em;
   }
-  .flex-next {
-    right: 10px;
-    height: 4em;
+  .flex-direction-nav {
+    .flex-prev {
+      left: 10px;
+      height: 4em;
+    }
+    .flex-next {
+      right: 10px;
+      height: 4em;
+    }
+    a:before {
+      color: $color-blue;
+    }
   }
-  a:before {
-    color: $color-blue;
+  .flex-direction-nav a {
+    opacity: 10;
   }
-}
-
-.flex-direction-nav a {
-  opacity: 10;
-}
-
-.slides {
-  padding-left: 2.5em;
-  padding-right: 2.5em;
-}
-
-.slides,
-.slides > li,
-.flex-control-nav,
-.flex-direction-nav {
-  padding-left: 18px;
-  padding-right: 18px;
-}
-
-ol.flex-control-nav {
-  visibility: hidden;
+  .slides {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  }
+  .slides,
+  .slides > li,
+  .flex-control-nav,
+  .flex-direction-nav {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  ol.flex-control-nav {
+    visibility: hidden;
+  }
 }
 
 // Propose a session button
@@ -168,4 +166,3 @@ ol.flex-control-nav {
     font-family: $font-title;
   }
 }
-

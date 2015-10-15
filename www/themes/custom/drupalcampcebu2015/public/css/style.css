@@ -670,58 +670,53 @@ a {
   text-align: left;
 }
 
-/* line 115, ../sass/partials/_proposals.scss */
-.flexslider {
+/* line 117, ../sass/partials/_proposals.scss */
+.view-content .flexslider {
   margin-bottom: 2em;
 }
-
-/* line 120, ../sass/partials/_proposals.scss */
-.flex-direction-nav .flex-prev {
+/* line 121, ../sass/partials/_proposals.scss */
+.view-content .flex-direction-nav .flex-prev {
   left: 10px;
   height: 4em;
 }
-/* line 124, ../sass/partials/_proposals.scss */
-.flex-direction-nav .flex-next {
+/* line 125, ../sass/partials/_proposals.scss */
+.view-content .flex-direction-nav .flex-next {
   right: 10px;
   height: 4em;
 }
-/* line 128, ../sass/partials/_proposals.scss */
-.flex-direction-nav a:before {
+/* line 129, ../sass/partials/_proposals.scss */
+.view-content .flex-direction-nav a:before {
   color: #1664a6;
 }
-
 /* line 133, ../sass/partials/_proposals.scss */
-.flex-direction-nav a {
+.view-content .flex-direction-nav a {
   opacity: 10;
 }
-
-/* line 137, ../sass/partials/_proposals.scss */
-.slides {
+/* line 136, ../sass/partials/_proposals.scss */
+.view-content .slides {
   padding-left: 2.5em;
   padding-right: 2.5em;
 }
-
-/* line 145, ../sass/partials/_proposals.scss */
-.slides,
-.slides > li,
-.flex-control-nav,
-.flex-direction-nav {
+/* line 143, ../sass/partials/_proposals.scss */
+.view-content .slides,
+.view-content .slides > li,
+.view-content .flex-control-nav,
+.view-content .flex-direction-nav {
   padding-left: 18px;
   padding-right: 18px;
 }
-
-/* line 150, ../sass/partials/_proposals.scss */
-ol.flex-control-nav {
+/* line 147, ../sass/partials/_proposals.scss */
+.view-content ol.flex-control-nav {
   visibility: hidden;
 }
 
-/* line 155, ../sass/partials/_proposals.scss */
+/* line 153, ../sass/partials/_proposals.scss */
 .propose-session-wrapper {
   width: 100%;
   overflow: hidden;
   margin-bottom: 4em;
 }
-/* line 159, ../sass/partials/_proposals.scss */
+/* line 157, ../sass/partials/_proposals.scss */
 .propose-session-wrapper .propose-a-session {
   font-size: 1.5em;
   text-transform: uppercase;
