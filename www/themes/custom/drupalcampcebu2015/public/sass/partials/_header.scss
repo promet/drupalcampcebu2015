@@ -35,16 +35,19 @@
   }
 }
 
+.content h1 {
+  font-size: 1.8em;
+  text-align: center;
+}
+
 .content,
 .region-header-info-bottom {
   h1,
   h2 {
     font-weight: bold;
-    font-size: 1.8em;
     color: $color-blue;
     margin-bottom: 1em;
     margin-top: 2em;
-    text-align: center;
   }
   p {
     color: $color-blue;

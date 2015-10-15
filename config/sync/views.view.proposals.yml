@@ -90,7 +90,7 @@ display:
           default_field_elements: true
           inline: {  }
           separator: ''
-          hide_empty: false
+          hide_empty: true
       fields:
         field_profile_image:
           id: field_profile_image
@@ -312,7 +312,7 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 220
+            max_length: 200
             word_boundary: true
             ellipsis: true
             more_link: false

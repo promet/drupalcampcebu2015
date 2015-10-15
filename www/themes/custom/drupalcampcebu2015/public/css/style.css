@@ -42,25 +42,29 @@
   font-size: 1.2em;
 }
 
-/* line 41, ../sass/partials/_header.scss */
+/* line 38, ../sass/partials/_header.scss */
+.content h1 {
+  font-size: 1.8em;
+  text-align: center;
+}
+
+/* line 46, ../sass/partials/_header.scss */
 .content h1,
 .content h2,
 .region-header-info-bottom h1,
 .region-header-info-bottom h2 {
   font-weight: bold;
-  font-size: 1.8em;
   color: #1664a6;
   margin-bottom: 1em;
   margin-top: 2em;
-  text-align: center;
 }
-/* line 49, ../sass/partials/_header.scss */
+/* line 52, ../sass/partials/_header.scss */
 .content p,
 .region-header-info-bottom p {
   color: #1664a6;
   font-size: 1.4em;
 }
-/* line 53, ../sass/partials/_header.scss */
+/* line 56, ../sass/partials/_header.scss */
 .content .field-item,
 .region-header-info-bottom .field-item {
   margin-top: 2em;
