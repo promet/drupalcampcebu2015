@@ -12,7 +12,7 @@ dependencies:
 id: eventdescription
 theme: drupalcampcebu2015
 region: header_info_top
-weight: -9
+weight: -8
 provider: null
 plugin: 'block_content:e04806d1-3433-49dc-9f00-a8d14afc5e05'
 settings:
