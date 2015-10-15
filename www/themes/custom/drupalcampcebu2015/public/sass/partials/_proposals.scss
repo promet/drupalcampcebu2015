@@ -139,6 +139,14 @@ a {
   padding-right: 2.5em;
 }
 
+.slides,
+.slides > li,
+.flex-control-nav,
+.flex-direction-nav {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
 ol.flex-control-nav {
   visibility: hidden;
 }
@@ -148,9 +156,6 @@ ol.flex-control-nav {
   width: 100%;
   overflow: hidden;
   margin-bottom: 4em;
-  a {
-    overflow: hidden;
-  }
   .propose-a-session {
     font-size: 1.5em;
     text-transform: uppercase;
@@ -163,3 +168,4 @@ ol.flex-control-nav {
     font-family: $font-title;
   }
 }
+
