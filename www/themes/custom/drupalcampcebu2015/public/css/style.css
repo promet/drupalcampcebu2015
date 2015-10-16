@@ -31,22 +31,18 @@
   font-size: 1.1em;
 }
 /* line 25, ../sass/partials/_header.scss */
-.header-info-top h2 {
-  font-size: 1.9em;
-}
-/* line 28, ../sass/partials/_header.scss */
 .header-info-top a {
   color: #fff;
   font-size: 1.2em;
 }
 
-/* line 34, ../sass/partials/_header.scss */
+/* line 31, ../sass/partials/_header.scss */
 .content h1 {
   font-size: 1.8em;
   text-align: center;
 }
 
-/* line 42, ../sass/partials/_header.scss */
+/* line 39, ../sass/partials/_header.scss */
 .content h1,
 .content h2,
 .region-header-info-bottom h1,
@@ -56,7 +52,7 @@
   margin-bottom: 1em;
   margin-top: 2em;
 }
-/* line 48, ../sass/partials/_header.scss */
+/* line 45, ../sass/partials/_header.scss */
 .content .field-item,
 .region-header-info-bottom .field-item {
   margin-top: 2em;
