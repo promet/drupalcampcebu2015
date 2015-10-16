@@ -7,12 +7,33 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-title;
   text-transform: uppercase;
 }
-
-p {
-  font-family: $font-text;
-  font-size: 1em;
+.content,
+.view-content {
+  p {
+    font-size: 1.4em;
+    color: $color-blue;
+  }
 }
 
+article {
+  a {
+    color: $color-orange;
+    text-transform: lowercase;
+  }
+  a:hover {
+    color: $color-orange;
+  }
+  .node__submitted {
+    color: $color-blue;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// This applies to all menu boxes including sponsor tabs in region sponsors
 .region-sidebar ul.menu {
   margin: 0;
   li {
@@ -21,20 +42,12 @@ p {
     padding-bottom: 2em;
     a, p {
       color: $color-white-text;
-      font-family: $font-title;
-      line-height: 0.9em;
       margin-bottom: 0;
       text-transform: uppercase;
-
-    }
-    a {
-      font-size: 1.8em;
-    }
-    p {
-      font-size: 1.1em;
     }
   }
 }
+
 .region-sidebar li:nth-child(1) {
   background-color: $color-orange;
 }
@@ -48,7 +61,24 @@ p {
   background-color: #fff;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+h3 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 0;
+  color: $color-white-text;
+}
+
+a {
+  font-size: 1em;
+  text-transform: uppercase;
+  color: $color-white-text;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $color-white-text;
+}
+
+p.subtitle {
+  text-decoration: underline;
 }
