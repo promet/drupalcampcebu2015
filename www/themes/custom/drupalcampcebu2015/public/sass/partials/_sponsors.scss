@@ -140,3 +140,11 @@
     padding: 3em 1.6em;
   }
 }
+// See all sponsors' button
+.col-md-8.camp-button-wrapper {
+  float: right;
+  margin-top: 1em;
+  .camp-button {
+    float: left;
+  }
+}
