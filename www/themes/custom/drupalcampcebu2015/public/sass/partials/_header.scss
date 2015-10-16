@@ -6,7 +6,6 @@
   .site-logo {
     margin-bottom: 1.5em;
     text-align: center;
-
     img {
       height: 30em;
     }
@@ -17,20 +16,14 @@
   background-color: $color-blue;
   padding: 1.5em;
   p,
-  h2,
-  h3 {
+  h2 {
     color: $color-white-text;
     text-transform: uppercase;
     font-family: $font-title;
     font-size: 1.1em;
   }
-
-  h2 {
-    font-size: 1.9em;
-  }
   a {
     color: #fff;
-    text-decoration: underline;
     font-size: 1.2em;
   }
 }
@@ -48,10 +41,6 @@
     color: $color-blue;
     margin-bottom: 1em;
     margin-top: 2em;
-  }
-  p {
-    color: $color-blue;
-    font-size: 1.4em;
   }
   .field-item {
     margin-top: 2em;
