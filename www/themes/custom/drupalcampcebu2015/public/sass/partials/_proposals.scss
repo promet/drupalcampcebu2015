@@ -8,6 +8,7 @@ h1 {
   font-family: $font-title;
   text-align: left;
 }
+
 h6,
 .speaker-announcement {
   color: $color-blue;
@@ -18,9 +19,6 @@ h6,
   a {
    color: $color-orange;
   }
-}
-.col-md-12 {
-  padding-left: 0;
 }
 
 .views-row {
