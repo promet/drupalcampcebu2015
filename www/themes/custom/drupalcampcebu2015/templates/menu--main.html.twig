@@ -32,7 +32,7 @@
     {% if menu_level == 0 %}
       <ul{{ attributes.addClass('menu') }}>
     {% else %}
-      <ul class="menu">
+      </a><ul class="menu">
     {% endif %}
     {% for item in items %}
       {%
@@ -44,12 +44,12 @@
         ]
       %}
       <li{{ item.attributes.addClass(classes) }}>
-        {{ link(item.title, item.url) }}
+        <a href="{{ item.url }}"><h3 class="menu-title">{{ item.title }}</h3></a>
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
         {% if item.original_link.description %}
-          <p>{{ item.original_link.description }}</p>
+          <p class="subtitle"><a href="{{ item.url }}">{{ item.original_link.description }}</a></p>
         {% endif %}
       </li>
     {% endfor %}
