@@ -12,17 +12,17 @@
   margin-bottom: 1.5em;
   text-align: center;
 }
-/* line 10, ../sass/partials/_header.scss */
+/* line 9, ../sass/partials/_header.scss */
 #site-wrapper .site-logo img {
   height: 30em;
 }
 
-/* line 16, ../sass/partials/_header.scss */
+/* line 15, ../sass/partials/_header.scss */
 .header-info-top {
   background-color: #1664a6;
   padding: 1.5em;
 }
-/* line 20, ../sass/partials/_header.scss */
+/* line 19, ../sass/partials/_header.scss */
 .header-info-top p,
 .header-info-top h2 {
   color: white;
@@ -30,23 +30,23 @@
   font-family: "Montserrat", sans-serif;
   font-size: 1.1em;
 }
-/* line 27, ../sass/partials/_header.scss */
+/* line 25, ../sass/partials/_header.scss */
 .header-info-top h2 {
   font-size: 1.9em;
 }
-/* line 30, ../sass/partials/_header.scss */
+/* line 28, ../sass/partials/_header.scss */
 .header-info-top a {
   color: #fff;
   font-size: 1.2em;
 }
 
-/* line 36, ../sass/partials/_header.scss */
+/* line 34, ../sass/partials/_header.scss */
 .content h1 {
   font-size: 1.8em;
   text-align: center;
 }
 
-/* line 44, ../sass/partials/_header.scss */
+/* line 42, ../sass/partials/_header.scss */
 .content h1,
 .content h2,
 .region-header-info-bottom h1,
@@ -56,7 +56,7 @@
   margin-bottom: 1em;
   margin-top: 2em;
 }
-/* line 54, ../sass/partials/_header.scss */
+/* line 48, ../sass/partials/_header.scss */
 .content .field-item,
 .region-header-info-bottom .field-item {
   margin-top: 2em;
