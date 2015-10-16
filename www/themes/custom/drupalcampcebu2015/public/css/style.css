@@ -298,28 +298,30 @@ p.subtitle {
   background-color: #fcb040;
 }
 
-/* line 38, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-silver .sponsor-header {
+/* line 39, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-silver .sponsor-header,
+#block-views-block-sponsors-and-partners-silver-sponsor .sponsor-header {
   background-color: #1664a6;
 }
 
-/* line 42, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-bronze .sponsor-header {
+/* line 44, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-bronze .sponsor-header,
+#block-views-block-sponsors-and-partners-sponsor-bronze .sponsor-header {
   background-color: #89caae;
 }
 
-/* line 46, ../sass/partials/_sponsors.scss */
+/* line 48, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
   padding: 3em 1.6em 1em;
 }
 
 /* Sponsor header text */
-/* line 51, ../sass/partials/_sponsors.scss */
+/* line 53, ../sass/partials/_sponsors.scss */
 .sponsor-header {
   padding: 3em 1.6em;
   overflow: hidden;
 }
-/* line 55, ../sass/partials/_sponsors.scss */
+/* line 57, ../sass/partials/_sponsors.scss */
 .sponsor-header:before {
   background-color: inherit;
   bottom: 0;
@@ -331,7 +333,7 @@ p.subtitle {
   z-index: -1;
 }
 
-/* line 67, ../sass/partials/_sponsors.scss */
+/* line 69, ../sass/partials/_sponsors.scss */
 .region-sponsors .view-empty a {
   color: #fff;
   display: block;
@@ -342,25 +344,25 @@ p.subtitle {
   margin: 15px 0;
 }
 
-/* line 77, ../sass/partials/_sponsors.scss */
+/* line 79, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold .view-empty a {
   background-color: #fcb040;
   font-size: 1.6em;
 }
 
-/* line 82, ../sass/partials/_sponsors.scss */
+/* line 84, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-silver .view-empty a {
   background-color: #1664a6;
   font-size: 1.4em;
 }
 
-/* line 87, ../sass/partials/_sponsors.scss */
+/* line 89, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-bronze .view-empty a {
   background-color: #89caae;
   font-size: 1.3em;
 }
 
-/* line 92, ../sass/partials/_sponsors.scss */
+/* line 94, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
   background-color: #fcb040;
   color: white;
@@ -372,17 +374,17 @@ p.subtitle {
 
 /* Sponsor override float into table display to center items */
 @media (min-width: 992px) {
-  /* line 103, ../sass/partials/_sponsors.scss */
+  /* line 105, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors {
     display: table;
     width: 100%;
   }
-  /* line 107, ../sass/partials/_sponsors.scss */
+  /* line 109, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .views-row {
     text-align: unset;
   }
 
-  /* line 114, ../sass/partials/_sponsors.scss */
+  /* line 116, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-header,
   .region-sponsors .view-sponsors .view-empty,
   .region-sponsors .view-sponsors .view-content {
@@ -390,18 +392,18 @@ p.subtitle {
     float: none;
   }
 
-  /* line 120, ../sass/partials/_sponsors.scss */
+  /* line 122, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-empty,
   .region-sponsors .view-sponsors .view-content {
     vertical-align: middle;
   }
 
-  /* line 124, ../sass/partials/_sponsors.scss */
+  /* line 126, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .view-empty a {
     display: inline-block;
   }
 
-  /* line 128, ../sass/partials/_sponsors.scss */
+  /* line 130, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
     padding: 3em 1.6em;
   }
@@ -557,7 +559,7 @@ h1 {
   text-align: left;
 }
 
-/* line 12, ../sass/partials/_proposals.scss */
+/* line 13, ../sass/partials/_proposals.scss */
 h6,
 .speaker-announcement {
   color: #1664a6;
@@ -566,29 +568,24 @@ h6,
   text-align: left;
   margin-bottom: 1.5em;
 }
-/* line 18, ../sass/partials/_proposals.scss */
+/* line 19, ../sass/partials/_proposals.scss */
 h6 a,
 .speaker-announcement a {
   color: #fcb040;
 }
 
-/* line 22, ../sass/partials/_proposals.scss */
-.col-md-12 {
-  padding-left: 0;
-}
-
-/* line 26, ../sass/partials/_proposals.scss */
+/* line 24, ../sass/partials/_proposals.scss */
 .views-row {
   float: left;
   margin-bottom: 1.5em;
 }
 
-/* line 31, ../sass/partials/_proposals.scss */
+/* line 29, ../sass/partials/_proposals.scss */
 .drupalcamp-speaker {
   margin-bottom: 0.5em;
 }
 
-/* line 35, ../sass/partials/_proposals.scss */
+/* line 33, ../sass/partials/_proposals.scss */
 .drupalcamp-speaker a {
   font-size: 1.1em;
   color: #fcb040;
@@ -596,7 +593,7 @@ h6 a,
   text-decoration: underline;
 }
 
-/* line 44, ../sass/partials/_proposals.scss */
+/* line 42, ../sass/partials/_proposals.scss */
 .drupalcamp-speaker,
 .session-type-label,
 .session-level-label {
@@ -605,19 +602,19 @@ h6 a,
   text-transform: lowercase;
 }
 
-/* line 50, ../sass/partials/_proposals.scss */
+/* line 48, ../sass/partials/_proposals.scss */
 .speaker-drupalcamp-topic {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
-/* line 54, ../sass/partials/_proposals.scss */
+/* line 52, ../sass/partials/_proposals.scss */
 .speaker-drupalcamp-topic a {
   color: #1664a6;
   font-size: 1.3em;
 }
 
-/* line 66, ../sass/partials/_proposals.scss */
+/* line 64, ../sass/partials/_proposals.scss */
 .field--name-field-session-type,
 .field--name-field-session-level,
 .field--name-field-first-name,
@@ -626,7 +623,7 @@ h6 a,
   margin-bottom: 0;
   overflow: hidden;
 }
-/* line 70, ../sass/partials/_proposals.scss */
+/* line 68, ../sass/partials/_proposals.scss */
 .field--name-field-session-type .field__label::after,
 .field--name-field-session-level .field__label::after,
 .field--name-field-first-name .field__label::after,
@@ -634,7 +631,7 @@ h6 a,
 .field--name-field-profile-image .field__label::after {
   content: ":";
 }
-/* line 74, ../sass/partials/_proposals.scss */
+/* line 72, ../sass/partials/_proposals.scss */
 .field--name-field-session-type .field__label,
 .field--name-field-session-type .field__item,
 .field--name-field-session-level .field__label,
@@ -650,7 +647,7 @@ h6 a,
   color: #1664a6;
   font-size: 1.2em;
 }
-/* line 80, ../sass/partials/_proposals.scss */
+/* line 78, ../sass/partials/_proposals.scss */
 .field--name-field-session-type .field__item,
 .field--name-field-session-level .field__item,
 .field--name-field-first-name .field__item,
@@ -659,56 +656,56 @@ h6 a,
   margin-left: 0.5em;
 }
 
-/* line 87, ../sass/partials/_proposals.scss */
+/* line 85, ../sass/partials/_proposals.scss */
 .header-info-top .node__submitted {
   color: #1664a6;
   margin-bottom: 0.5em;
   font-size: 1.2em;
 }
 
-/* line 96, ../sass/partials/_proposals.scss */
+/* line 94, ../sass/partials/_proposals.scss */
 .view-id-your_proposal ul {
   list-style-type: none;
 }
-/* line 98, ../sass/partials/_proposals.scss */
+/* line 96, ../sass/partials/_proposals.scss */
 .view-id-your_proposal ul li {
   margin-left: 0;
 }
 
-/* line 106, ../sass/partials/_proposals.scss */
+/* line 104, ../sass/partials/_proposals.scss */
 #block-views-block-carousel-proposal-block-carousel-proposal h2 {
   font-size: 2.2em;
   text-align: left;
 }
 
-/* line 114, ../sass/partials/_proposals.scss */
+/* line 112, ../sass/partials/_proposals.scss */
 .view-content .flexslider {
   margin-bottom: 2em;
 }
-/* line 118, ../sass/partials/_proposals.scss */
+/* line 116, ../sass/partials/_proposals.scss */
 .view-content .flex-direction-nav .flex-prev {
   left: 10px;
   height: 3em;
 }
-/* line 122, ../sass/partials/_proposals.scss */
+/* line 120, ../sass/partials/_proposals.scss */
 .view-content .flex-direction-nav .flex-next {
   right: 10px;
   height: 3em;
 }
-/* line 126, ../sass/partials/_proposals.scss */
+/* line 124, ../sass/partials/_proposals.scss */
 .view-content .flex-direction-nav a:before {
   color: #1664a6;
 }
-/* line 130, ../sass/partials/_proposals.scss */
+/* line 128, ../sass/partials/_proposals.scss */
 .view-content .flex-direction-nav a {
   opacity: 10;
 }
-/* line 133, ../sass/partials/_proposals.scss */
+/* line 131, ../sass/partials/_proposals.scss */
 .view-content .slides {
   padding-left: 2.5em;
   padding-right: 2.5em;
 }
-/* line 140, ../sass/partials/_proposals.scss */
+/* line 138, ../sass/partials/_proposals.scss */
 .view-content .slides,
 .view-content .slides > li,
 .view-content .flex-control-nav,
@@ -716,18 +713,18 @@ h6 a,
   padding-left: 18px;
   padding-right: 18px;
 }
-/* line 144, ../sass/partials/_proposals.scss */
+/* line 142, ../sass/partials/_proposals.scss */
 .view-content ol.flex-control-nav {
   visibility: hidden;
 }
 
-/* line 150, ../sass/partials/_proposals.scss */
+/* line 148, ../sass/partials/_proposals.scss */
 .camp-button-wrapper {
   width: 100%;
   overflow: hidden;
   margin-bottom: 4em;
 }
-/* line 154, ../sass/partials/_proposals.scss */
+/* line 152, ../sass/partials/_proposals.scss */
 .camp-button-wrapper .camp-button {
   font-size: 1.5em;
   text-transform: uppercase;
