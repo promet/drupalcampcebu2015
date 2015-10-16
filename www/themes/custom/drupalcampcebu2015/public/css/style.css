@@ -292,37 +292,50 @@ p.subtitle {
 }
 
 /* Sponsor header background */
-/* line 34, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-gold .sponsor-header,
-.view-display-id-sponsor_gold .sponsor-header {
+/* line 33, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-gold .sponsor-header {
   background-color: #fcb040;
 }
 
-/* line 39, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-silver .sponsor-header,
-#block-views-block-sponsors-and-partners-silver-sponsor .sponsor-header {
+/* line 37, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-silver .sponsor-header {
   background-color: #1664a6;
 }
 
-/* line 44, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-bronze .sponsor-header,
-#block-views-block-sponsors-and-partners-sponsor-bronze .sponsor-header {
+/* line 41, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-bronze .sponsor-header {
   background-color: #89caae;
 }
 
-/* line 48, ../sass/partials/_sponsors.scss */
+/* line 45, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
   padding: 3em 1.6em 1em;
 }
 
 /* Sponsor header text */
-/* line 53, ../sass/partials/_sponsors.scss */
-.sponsor-header {
+/* line 50, ../sass/partials/_sponsors.scss */
+.region-sponsors .sponsor-header {
   padding: 3em 1.6em;
   overflow: hidden;
 }
+/* line 54, ../sass/partials/_sponsors.scss */
+.region-sponsors .sponsor-header a,
+.region-sponsors .sponsor-header h3 {
+  color: #fff;
+}
 /* line 57, ../sass/partials/_sponsors.scss */
-.sponsor-header:before {
+.region-sponsors .sponsor-header h3 {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 0;
+}
+/* line 62, ../sass/partials/_sponsors.scss */
+.region-sponsors .sponsor-header a {
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+/* line 66, ../sass/partials/_sponsors.scss */
+.region-sponsors .sponsor-header:before {
   background-color: inherit;
   bottom: 0;
   content: "";
@@ -333,7 +346,7 @@ p.subtitle {
   z-index: -1;
 }
 
-/* line 69, ../sass/partials/_sponsors.scss */
+/* line 78, ../sass/partials/_sponsors.scss */
 .region-sponsors .view-empty a {
   color: #fff;
   display: block;
@@ -344,25 +357,25 @@ p.subtitle {
   margin: 15px 0;
 }
 
-/* line 79, ../sass/partials/_sponsors.scss */
+/* line 88, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold .view-empty a {
   background-color: #fcb040;
   font-size: 1.6em;
 }
 
-/* line 84, ../sass/partials/_sponsors.scss */
+/* line 93, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-silver .view-empty a {
   background-color: #1664a6;
   font-size: 1.4em;
 }
 
-/* line 89, ../sass/partials/_sponsors.scss */
+/* line 98, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-bronze .view-empty a {
   background-color: #89caae;
   font-size: 1.3em;
 }
 
-/* line 94, ../sass/partials/_sponsors.scss */
+/* line 103, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
   background-color: #fcb040;
   color: white;
@@ -374,17 +387,17 @@ p.subtitle {
 
 /* Sponsor override float into table display to center items */
 @media (min-width: 992px) {
-  /* line 105, ../sass/partials/_sponsors.scss */
+  /* line 114, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors {
     display: table;
     width: 100%;
   }
-  /* line 109, ../sass/partials/_sponsors.scss */
+  /* line 118, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .views-row {
     text-align: unset;
   }
 
-  /* line 116, ../sass/partials/_sponsors.scss */
+  /* line 125, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-header,
   .region-sponsors .view-sponsors .view-empty,
   .region-sponsors .view-sponsors .view-content {
@@ -392,18 +405,18 @@ p.subtitle {
     float: none;
   }
 
-  /* line 122, ../sass/partials/_sponsors.scss */
+  /* line 131, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-empty,
   .region-sponsors .view-sponsors .view-content {
     vertical-align: middle;
   }
 
-  /* line 126, ../sass/partials/_sponsors.scss */
+  /* line 135, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .view-empty a {
     display: inline-block;
   }
 
-  /* line 130, ../sass/partials/_sponsors.scss */
+  /* line 139, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
     padding: 3em 1.6em;
   }
