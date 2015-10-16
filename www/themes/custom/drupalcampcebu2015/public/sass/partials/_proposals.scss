@@ -1,6 +1,7 @@
 content {
   overflow: hidden;
 }
+
 h1 {
   font-size: 2.3em;
   margin-bottom: 0.5em;
@@ -21,16 +22,6 @@ h6,
 .col-md-12 {
   padding-left: 0;
 }
-a {
-  color: $color-orange;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-a {
-  text-decoration: underline;
-}
 
 .views-row {
   float: left;
@@ -41,17 +32,38 @@ a {
   margin-bottom: 0.5em;
 }
 
+.drupalcamp-speaker a {
+  font-size: 1.1em;
+  color: $color-orange;
+  text-transform: lowercase;
+  text-decoration: underline;
+}
+
 .drupalcamp-speaker,
 .session-type-label,
 .session-level-label {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: $color-blue;
+  text-transform: lowercase;
+}
+
+.speaker-drupalcamp-topic {
+  margin: 0;
+  font-family: $font-title;
+  font-weight: bold;
+  a {
+    color: $color-blue;
+    font-size: 1.3em;
+  }
 }
 
 // Type and Level are like terms to be displayed on the session page.
 // These classes are drupal-generated when title of the content is clicked.
 .field--name-field-session-type,
-.field--name-field-session-level {
+.field--name-field-session-level ,
+.field--name-field-first-name ,
+.field--name-field-last-name,
+.field--name-field-profile-image {
   margin-bottom: 0;
   overflow: hidden;
   // Adds colon between the label and the value.
@@ -89,21 +101,6 @@ a {
   }
 }
 
-.col-md-9.speaker-drupalcamp-topic {
-  margin: 0;
-  font-family: $font-title;
-  a {
-    color: $color-blue;
-    font-size: 1.6em;
-  }
-}
-
-.col-md-9 .topic-summary {
-  p {
-    font-size: 12em;
-  }
-}
-
 // Homepage carousel
 #block-views-block-carousel-proposal-block-carousel-proposal {
   h2 {
@@ -120,11 +117,11 @@ a {
   .flex-direction-nav {
     .flex-prev {
       left: 10px;
-      height: 4em;
+      height: 3em;
     }
     .flex-next {
       right: 10px;
-      height: 4em;
+      height: 3em;
     }
     a:before {
       color: $color-blue;
@@ -150,11 +147,11 @@ a {
 }
 
 // Propose a session button
-.propose-session-wrapper {
+.camp-button-wrapper {
   width: 100%;
   overflow: hidden;
   margin-bottom: 4em;
-  .propose-a-session {
+  .camp-button {
     font-size: 1.5em;
     text-transform: uppercase;
     padding: 1em;

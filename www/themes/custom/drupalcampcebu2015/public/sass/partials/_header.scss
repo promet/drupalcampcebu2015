@@ -17,8 +17,7 @@
   background-color: $color-blue;
   padding: 1.5em;
   p,
-  h2,
-  h3 {
+  h2 {
     color: $color-white-text;
     text-transform: uppercase;
     font-family: $font-title;
@@ -30,7 +29,6 @@
   }
   a {
     color: #fff;
-    text-decoration: underline;
     font-size: 1.2em;
   }
 }
@@ -49,10 +47,10 @@
     margin-bottom: 1em;
     margin-top: 2em;
   }
-  p {
-    color: $color-blue;
-    font-size: 1.4em;
-  }
+  // p {
+  //   color: $color-blue;
+  //   font-size: 1.4em;
+  // }
   .field-item {
     margin-top: 2em;
   }
