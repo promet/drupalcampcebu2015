@@ -417,6 +417,16 @@ p.subtitle {
     padding: 3em 1.6em;
   }
 }
+/* line 144, ../sass/partials/_sponsors.scss */
+.col-md-8.camp-button-wrapper {
+  float: right;
+  margin-top: 1em;
+}
+/* line 147, ../sass/partials/_sponsors.scss */
+.col-md-8.camp-button-wrapper .camp-button {
+  float: left;
+}
+
 /* line 1, ../sass/partials/_footer.scss */
 .footer-container {
   clear: both;
