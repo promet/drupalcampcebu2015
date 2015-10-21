@@ -1,7 +1,3 @@
-content {
-  overflow: hidden;
-}
-
 h1 {
   font-size: 2.3em;
   margin-bottom: 0.5em;
@@ -21,7 +17,7 @@ h6,
   }
 }
 
-.views-row {
+.view-proposals .views-row {
   float: left;
   margin-bottom: 1.5em;
 }
@@ -146,14 +142,12 @@ h6,
 
 // Propose a session button
 .camp-button-wrapper {
-  width: 100%;
   overflow: hidden;
-  margin-bottom: 4em;
   .camp-button {
     font-size: 1.5em;
     text-transform: uppercase;
     padding: 1em;
-    width: 30%;
+    width: 31%;
     margin: 0 auto;
     text-align: center;
     background-color: $color-orange;

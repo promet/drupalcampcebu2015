@@ -12,7 +12,7 @@ dependencies:
 id: views_block__sponsors_block_sponsor_bronze
 theme: drupalcampcebu2015
 region: sponsors
-weight: -3
+weight: -2
 provider: null
 plugin: 'views_block:sponsors-block_sponsor_bronze'
 settings:
