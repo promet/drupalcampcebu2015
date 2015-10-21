@@ -1,25 +1,25 @@
-uuid: 5e5fd756-66ba-4749-8d61-97af4c7e5bf3
+uuid: 56119678-fdaa-4cf4-af07-7c8c15469b6e
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.sponsors_and_partners
+    - views.view.sponsors_and_partners_page
   module:
     - system
     - views
   theme:
     - drupalcampcebu2015
-id: views_block__sponsors_and_partners_code_sprint_sponsor
+id: views_block__sponsors_and_partners_page_block_coffee
 theme: drupalcampcebu2015
-region: content_bottom
-weight: -9
+region: sponsors
+weight: -6
 provider: null
-plugin: 'views_block:sponsors_and_partners-code_sprint_sponsor'
+plugin: 'views_block:sponsors_and_partners_page-block_coffee'
 settings:
-  id: 'views_block:sponsors_and_partners-code_sprint_sponsor'
+  id: 'views_block:sponsors_and_partners_page-block_coffee'
   label: ''
   provider: views
-  label_display: visible
+  label_display: '0'
   views_label: ''
   items_per_page: none
 visibility:

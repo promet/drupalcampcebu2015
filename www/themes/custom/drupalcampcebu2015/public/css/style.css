@@ -280,7 +280,7 @@ p.subtitle {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 25, ../sass/partials/_sponsors.scss */
+/* line 24, ../sass/partials/_sponsors.scss */
 .region-sponsors .view-sponsors .views-row {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -289,51 +289,87 @@ p.subtitle {
 
 /* Sponsor header background */
 /* line 33, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-gold .sponsor-header {
+#block-views-block-sponsors-block-sponsor-gold,
+#block-views-block-sponsors-and-partners-page-block-sponsor-gold {
+  overflow: hidden;
+}
+/* line 35, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-gold .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-sponsor-gold .sponsor-header {
   background-color: #fcb040;
 }
 
-/* line 37, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-silver .sponsor-header {
+/* line 43, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-silver .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-sponsor-silver .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-partners .sponsor-header {
   background-color: #1664a6;
 }
 
-/* line 41, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-bronze .sponsor-header {
+/* line 54, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-bronze .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-sponsor-bronze .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-code-sprint .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-coffee .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-sat-night .sponsor-header {
   background-color: #89caae;
 }
 
-/* line 45, ../sass/partials/_sponsors.scss */
+/* line 63, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-and-partners-page-block-code-sprint,
+#block-views-block-sponsors-and-partners-page-block-coffee,
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
+#block-views-block-sponsors-and-partners-page-block-sat-night,
+#block-views-block-sponsors-and-partners-page-block-partners {
+  margin-top: 1.2em;
+}
+
+/* line 67, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
   padding: 3em 1.6em 1em;
 }
 
+/* View should be hidden without content, but view still showing in the markup.
+Temporary fix, display: none. */
+/* line 74, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
+#block-views-block-sponsors-and-partners-page-block-sat-night {
+  display: none;
+}
+
+/* 'See all sponsors' button displayed except on /sponsors page. */
+/* line 79, ../sass/partials/_sponsors.scss */
+.path-sponsors .all-sponsor-button {
+  display: none;
+}
+
 /* Sponsor header text */
-/* line 50, ../sass/partials/_sponsors.scss */
+/* line 85, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header {
   padding: 3em 1.6em;
   overflow: hidden;
 }
-/* line 54, ../sass/partials/_sponsors.scss */
+/* line 89, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header a,
 .region-sponsors .sponsor-header h3 {
   color: #fff;
 }
-/* line 57, ../sass/partials/_sponsors.scss */
+/* line 92, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header h3 {
   font-size: 1.8em;
   font-weight: 700;
   margin: 0;
 }
-/* line 62, ../sass/partials/_sponsors.scss */
+/* line 97, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header a {
   font-size: 1.3em;
   text-transform: uppercase;
 }
-/* line 66, ../sass/partials/_sponsors.scss */
+/* line 101, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header:before {
   background-color: inherit;
-  bottom: 0;
+  height: 100%;
   content: "";
   left: 15px;
   position: absolute;
@@ -342,7 +378,7 @@ p.subtitle {
   z-index: -1;
 }
 
-/* line 78, ../sass/partials/_sponsors.scss */
+/* line 114, ../sass/partials/_sponsors.scss */
 .region-sponsors .view-empty a {
   color: #fff;
   display: block;
@@ -353,25 +389,32 @@ p.subtitle {
   margin: 15px 0;
 }
 
-/* line 88, ../sass/partials/_sponsors.scss */
+/* line 125, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold .view-empty a {
   background-color: #fcb040;
   font-size: 1.6em;
 }
 
-/* line 93, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-silver .view-empty a {
+/* line 134, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-silver
+#block-views-block-sponsors-and-partners-page-block-sponsor-silver .view-empty a,
+#block-views-block-sponsors-and-partners-page-block-partners .view-empty a {
   background-color: #1664a6;
   font-size: 1.4em;
 }
 
-/* line 98, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-bronze .view-empty a {
+/* line 146, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-bronze .view-empty a,
+#block-views-block-sponsors-and-partners-page-block-sponsor-bronze .view-empty a,
+#block-views-block-sponsors-and-partners-page-block-code-sprint .view-empty a,
+#block-views-block-sponsors-and-partners-page-block-coffee .view-empty a,
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch .view-empty a,
+#block-views-block-sponsors-and-partners-page-block-sat-night .view-empty a {
   background-color: #89caae;
   font-size: 1.3em;
 }
 
-/* line 103, ../sass/partials/_sponsors.scss */
+/* line 152, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
   background-color: #fcb040;
   color: white;
@@ -383,48 +426,62 @@ p.subtitle {
 
 /* Sponsor override float into table display to center items */
 @media (min-width: 992px) {
-  /* line 114, ../sass/partials/_sponsors.scss */
-  .region-sponsors .view-sponsors {
+  /* line 164, ../sass/partials/_sponsors.scss */
+  .region-sponsors .view-sponsors,
+  .region-sponsors .view-sponsors-and-partners-page {
     display: table;
     width: 100%;
   }
-  /* line 118, ../sass/partials/_sponsors.scss */
-  .region-sponsors .view-sponsors .views-row {
+  /* line 167, ../sass/partials/_sponsors.scss */
+  .region-sponsors .view-sponsors .views-row,
+  .region-sponsors .view-sponsors-and-partners-page .views-row {
     text-align: unset;
   }
 
-  /* line 125, ../sass/partials/_sponsors.scss */
+  /* line 177, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-header,
+  .region-sponsors .view-sponsors-and-partners-page .view-header,
   .region-sponsors .view-sponsors .view-empty,
-  .region-sponsors .view-sponsors .view-content {
+  .region-sponsors .view-sponsors-and-partners-page .view-empty,
+  .region-sponsors .view-sponsors .view-content,
+  .region-sponsors .view-sponsors-and-partners-page .view-content {
     display: table-cell;
     float: none;
   }
 
-  /* line 131, ../sass/partials/_sponsors.scss */
+  /* line 183, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-empty,
   .region-sponsors .view-sponsors .view-content {
     vertical-align: middle;
   }
 
-  /* line 135, ../sass/partials/_sponsors.scss */
+  /* line 187, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .view-empty a {
     display: inline-block;
   }
 
-  /* line 139, ../sass/partials/_sponsors.scss */
+  /* line 191, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
     padding: 3em 1.6em;
   }
 }
-/* line 144, ../sass/partials/_sponsors.scss */
+/* line 196, ../sass/partials/_sponsors.scss */
 .col-md-8.camp-button-wrapper {
   float: right;
   margin-top: 1em;
 }
-/* line 147, ../sass/partials/_sponsors.scss */
+/* line 199, ../sass/partials/_sponsors.scss */
 .col-md-8.camp-button-wrapper .camp-button {
   float: left;
+}
+
+/* line 205, ../sass/partials/_sponsors.scss */
+.view-footer li p {
+  margin-bottom: 0;
+}
+/* line 208, ../sass/partials/_sponsors.scss */
+.view-footer li::before {
+  display: none;
 }
 
 /* line 1, ../sass/partials/_footer.scss */
@@ -520,57 +577,54 @@ p.subtitle {
   /* line 59, ../sass/partials/_media-queries.scss */
   .region-sponsors {
     margin-top: 5em;
+    overflow: hidden;
   }
 
-  /* line 63, ../sass/partials/_media-queries.scss */
+  /* line 64, ../sass/partials/_media-queries.scss */
   .logo-wrapper {
     margin-top: 0;
   }
 
-  /* line 67, ../sass/partials/_media-queries.scss */
+  /* line 68, ../sass/partials/_media-queries.scss */
   .promote-sponsor-tab {
     padding-top: 2.5em;
     padding: 1.6em;
   }
-  /* line 70, ../sass/partials/_media-queries.scss */
+  /* line 71, ../sass/partials/_media-queries.scss */
   .promote-sponsor-tab p:nth-child(1) {
     font-size: 1.8em;
   }
 
-  /* line 75, ../sass/partials/_media-queries.scss */
+  /* line 76, ../sass/partials/_media-queries.scss */
   .promote-sponsor-button {
     margin-top: 1em;
   }
 
-  /* line 79, ../sass/partials/_media-queries.scss */
+  /* line 80, ../sass/partials/_media-queries.scss */
   .footer-container p {
     font-size: 1.5em;
     margin-bottom: 0;
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 89, ../sass/partials/_media-queries.scss */
+  /* line 90, ../sass/partials/_media-queries.scss */
   .header-info-top h3,
   .header-info-top p {
     font-size: 1.2em;
   }
-  /* line 92, ../sass/partials/_media-queries.scss */
+  /* line 93, ../sass/partials/_media-queries.scss */
   .header-info-top h2 {
     font-size: 2.2em;
   }
 
-  /* line 97, ../sass/partials/_media-queries.scss */
+  /* line 98, ../sass/partials/_media-queries.scss */
   .footer-container {
     padding-top: 3em;
     padding-bottom: 5em;
+    margin-top: 3em;
   }
 }
 /* line 1, ../sass/partials/_proposals.scss */
-content {
-  overflow: hidden;
-}
-
-/* line 5, ../sass/partials/_proposals.scss */
 h1 {
   font-size: 2.3em;
   margin-bottom: 0.5em;
@@ -578,7 +632,7 @@ h1 {
   text-align: left;
 }
 
-/* line 13, ../sass/partials/_proposals.scss */
+/* line 9, ../sass/partials/_proposals.scss */
 h6,
 .speaker-announcement {
   color: #1664a6;
@@ -587,24 +641,24 @@ h6,
   text-align: left;
   margin-bottom: 1.5em;
 }
-/* line 19, ../sass/partials/_proposals.scss */
+/* line 15, ../sass/partials/_proposals.scss */
 h6 a,
 .speaker-announcement a {
   color: #fcb040;
 }
 
-/* line 24, ../sass/partials/_proposals.scss */
-.views-row {
+/* line 20, ../sass/partials/_proposals.scss */
+.view-proposals .views-row {
   float: left;
   margin-bottom: 1.5em;
 }
 
-/* line 29, ../sass/partials/_proposals.scss */
+/* line 25, ../sass/partials/_proposals.scss */
 .drupalcamp-speaker {
   margin-bottom: 0.5em;
 }
 
-/* line 33, ../sass/partials/_proposals.scss */
+/* line 29, ../sass/partials/_proposals.scss */
 .drupalcamp-speaker a {
   font-size: 1.1em;
   color: #fcb040;
@@ -612,7 +666,7 @@ h6 a,
   text-decoration: underline;
 }
 
-/* line 42, ../sass/partials/_proposals.scss */
+/* line 38, ../sass/partials/_proposals.scss */
 .drupalcamp-speaker,
 .session-type-label,
 .session-level-label {
@@ -621,19 +675,19 @@ h6 a,
   text-transform: lowercase;
 }
 
-/* line 48, ../sass/partials/_proposals.scss */
+/* line 44, ../sass/partials/_proposals.scss */
 .speaker-drupalcamp-topic {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
-/* line 52, ../sass/partials/_proposals.scss */
+/* line 48, ../sass/partials/_proposals.scss */
 .speaker-drupalcamp-topic a {
   color: #1664a6;
   font-size: 1.3em;
 }
 
-/* line 64, ../sass/partials/_proposals.scss */
+/* line 60, ../sass/partials/_proposals.scss */
 .field--name-field-session-type,
 .field--name-field-session-level,
 .field--name-field-first-name,
@@ -642,7 +696,7 @@ h6 a,
   margin-bottom: 0;
   overflow: hidden;
 }
-/* line 68, ../sass/partials/_proposals.scss */
+/* line 64, ../sass/partials/_proposals.scss */
 .field--name-field-session-type .field__label::after,
 .field--name-field-session-level .field__label::after,
 .field--name-field-first-name .field__label::after,
@@ -650,7 +704,7 @@ h6 a,
 .field--name-field-profile-image .field__label::after {
   content: ":";
 }
-/* line 72, ../sass/partials/_proposals.scss */
+/* line 68, ../sass/partials/_proposals.scss */
 .field--name-field-session-type .field__label,
 .field--name-field-session-type .field__item,
 .field--name-field-session-level .field__label,
@@ -666,7 +720,7 @@ h6 a,
   color: #1664a6;
   font-size: 1.2em;
 }
-/* line 78, ../sass/partials/_proposals.scss */
+/* line 74, ../sass/partials/_proposals.scss */
 .field--name-field-session-type .field__item,
 .field--name-field-session-level .field__item,
 .field--name-field-first-name .field__item,
@@ -675,56 +729,56 @@ h6 a,
   margin-left: 0.5em;
 }
 
-/* line 85, ../sass/partials/_proposals.scss */
+/* line 81, ../sass/partials/_proposals.scss */
 .header-info-top .node__submitted {
   color: #1664a6;
   margin-bottom: 0.5em;
   font-size: 1.2em;
 }
 
-/* line 94, ../sass/partials/_proposals.scss */
+/* line 90, ../sass/partials/_proposals.scss */
 .view-id-your_proposal ul {
   list-style-type: none;
 }
-/* line 96, ../sass/partials/_proposals.scss */
+/* line 92, ../sass/partials/_proposals.scss */
 .view-id-your_proposal ul li {
   margin-left: 0;
 }
 
-/* line 104, ../sass/partials/_proposals.scss */
+/* line 100, ../sass/partials/_proposals.scss */
 #block-views-block-carousel-proposal-block-carousel-proposal h2 {
   font-size: 2.2em;
   text-align: left;
 }
 
-/* line 112, ../sass/partials/_proposals.scss */
+/* line 108, ../sass/partials/_proposals.scss */
 .view-content .flexslider {
   margin-bottom: 2em;
 }
-/* line 116, ../sass/partials/_proposals.scss */
+/* line 112, ../sass/partials/_proposals.scss */
 .view-content .flex-direction-nav .flex-prev {
   left: 10px;
   height: 3em;
 }
-/* line 120, ../sass/partials/_proposals.scss */
+/* line 116, ../sass/partials/_proposals.scss */
 .view-content .flex-direction-nav .flex-next {
   right: 10px;
   height: 3em;
 }
-/* line 124, ../sass/partials/_proposals.scss */
+/* line 120, ../sass/partials/_proposals.scss */
 .view-content .flex-direction-nav a:before {
   color: #1664a6;
 }
-/* line 128, ../sass/partials/_proposals.scss */
+/* line 124, ../sass/partials/_proposals.scss */
 .view-content .flex-direction-nav a {
   opacity: 10;
 }
-/* line 131, ../sass/partials/_proposals.scss */
+/* line 127, ../sass/partials/_proposals.scss */
 .view-content .slides {
   padding-left: 2.5em;
   padding-right: 2.5em;
 }
-/* line 138, ../sass/partials/_proposals.scss */
+/* line 134, ../sass/partials/_proposals.scss */
 .view-content .slides,
 .view-content .slides > li,
 .view-content .flex-control-nav,
@@ -732,23 +786,21 @@ h6 a,
   padding-left: 18px;
   padding-right: 18px;
 }
-/* line 142, ../sass/partials/_proposals.scss */
+/* line 138, ../sass/partials/_proposals.scss */
 .view-content ol.flex-control-nav {
   visibility: hidden;
 }
 
-/* line 148, ../sass/partials/_proposals.scss */
+/* line 144, ../sass/partials/_proposals.scss */
 .camp-button-wrapper {
-  width: 100%;
   overflow: hidden;
-  margin-bottom: 4em;
 }
-/* line 152, ../sass/partials/_proposals.scss */
+/* line 146, ../sass/partials/_proposals.scss */
 .camp-button-wrapper .camp-button {
   font-size: 1.5em;
   text-transform: uppercase;
   padding: 1em;
-  width: 30%;
+  width: 31%;
   margin: 0 auto;
   text-align: center;
   background-color: #fcb040;
