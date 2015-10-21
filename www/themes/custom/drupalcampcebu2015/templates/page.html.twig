@@ -96,6 +96,12 @@
           {{ page.content }}
         </div>
 
+        {% if page.content_bottom %}
+        <div class="content-bottom">
+          {{ page.content_bottom }}
+        </div>
+        {% endif %}
+
         {% if is_front %}
         <div id="mc_embed_signup" class="newsletter">
           <h4>Join Drupal Cebu Newsletter</h4>
