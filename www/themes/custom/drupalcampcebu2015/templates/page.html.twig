@@ -96,12 +96,6 @@
           {{ page.content }}
         </div>
 
-        {% if page.content_bottom %}
-          <div class="content-bottom">
-            {{ page.content_bottom }}
-          </div>
-        {% endif %}
-
         {% if is_front %}
         <div id="mc_embed_signup" class="newsletter">
           <h4>Join Drupal Cebu Newsletter</h4>
@@ -139,7 +133,6 @@
           </form>
         </div><!-- mailchimp end -->
         {% endif %}
-
       </div>
     </div><!-- row end -->
   </div><!-- container end -->
@@ -148,13 +141,13 @@
     <section class="container-fluid sponsors">
       <div class="row">
         {{ page.sponsors }}
-        <div class="col-md-8 camp-button-wrapper">
+        <div class="col-md-8 camp-button-wrapper all-sponsor-button">
           <a href="/sponsors">
             <div class="camp-button">See all Sponsors</div>
           </a>
         </div>
       </div><!-- row end -->
-    </section><!-- container end -->
+    </section>
   {% endif %}
 </div><!-- site-wrapper end -->
 

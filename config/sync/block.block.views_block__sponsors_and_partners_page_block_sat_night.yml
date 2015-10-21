@@ -1,25 +1,25 @@
-uuid: f3d6748d-e700-44c4-af08-8a1c0a9810c2
+uuid: f410e2c7-99e4-4e24-ba00-be90121a35d9
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.sponsors_and_partners
+    - views.view.sponsors_and_partners_page
   module:
     - system
     - views
   theme:
     - drupalcampcebu2015
-id: views_block__sponsors_and_partners_saturday_night_sponsor
+id: views_block__sponsors_and_partners_page_block_sat_night
 theme: drupalcampcebu2015
-region: content_bottom
+region: sponsors
 weight: -7
 provider: null
-plugin: 'views_block:sponsors_and_partners-saturday_night_sponsor'
+plugin: 'views_block:sponsors_and_partners_page-block_sat_night'
 settings:
-  id: 'views_block:sponsors_and_partners-saturday_night_sponsor'
+  id: 'views_block:sponsors_and_partners_page-block_sat_night'
   label: ''
   provider: views
-  label_display: visible
+  label_display: '0'
   views_label: ''
   items_per_page: none
 visibility:
