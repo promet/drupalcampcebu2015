@@ -1,25 +1,25 @@
-uuid: 0ed2aa6b-6061-47f5-9e00-f2029153db20
+uuid: d0a93b2d-4948-4777-9702-2f9cecc2baa1
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.sponsors_and_partners
+    - views.view.sponsors_and_partners_page
   module:
     - system
     - views
   theme:
     - drupalcampcebu2015
-id: views_block__sponsors_and_partners_saturday_lunch_sponsor
+id: views_block__sponsors_and_partners_page_block_saturday_lunch
 theme: drupalcampcebu2015
-region: content_bottom
+region: sponsors
 weight: -8
 provider: null
-plugin: 'views_block:sponsors_and_partners-saturday_lunch_sponsor'
+plugin: 'views_block:sponsors_and_partners_page-block_saturday_lunch'
 settings:
-  id: 'views_block:sponsors_and_partners-saturday_lunch_sponsor'
+  id: 'views_block:sponsors_and_partners_page-block_saturday_lunch'
   label: ''
   provider: views
-  label_display: visible
+  label_display: '0'
   views_label: ''
   items_per_page: none
 visibility:

@@ -1,9 +1,10 @@
-uuid: 14454363-91b5-465f-b330-483a98e8038e
+uuid: 9aeeb1e8-bc21-46f7-ae3c-60efdb63f198
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - field.storage.node.field_sponsor_logo
+    - node.type.sponsors
     - taxonomy.vocabulary.sponsor_type
   content:
     - 'taxonomy_term:sponsor_type:1740c0c1-3cb4-4b8d-a302-2f2cdf22105b'
@@ -19,8 +20,8 @@ dependencies:
     - node
     - taxonomy
     - user
-id: sponsors_and_partners
-label: 'Sponsors and Partners'
+id: sponsors_and_partners_page
+label: 'Sponsors and Partners Page'
 module: views
 description: ''
 tag: ''
@@ -60,150 +61,23 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: full
+        type: some
         options:
-          items_per_page: 10
+          items_per_page: 5
           offset: 0
-          id: 0
-          total_pages: null
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
-          quantity: 9
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
       row:
         type: fields
         options:
           default_field_elements: true
           inline: {  }
           separator: ''
-          hide_empty: false
-      fields:
-        field_sponsor_logo:
-          id: field_sponsor_logo
-          table: node__field_sponsor_logo
-          field: field_sponsor_logo
-          plugin_id: field
-      filters:
-        status:
-          value: true
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-          group: 1
-        field_sponsor_type_target_id:
-          id: field_sponsor_type_target_id
-          table: node__field_sponsor_type
-          field: field_sponsor_type_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value:
-            5: 5
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: sponsor_type
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
-      sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          order: DESC
-          entity_type: node
-          entity_field: created
-          plugin_id: date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exposed: false
-          expose:
-            label: ''
-          granularity: second
-      title: ''
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          plugin_id: text_custom
-      footer: {  }
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          plugin_id: text_custom
-      relationships: {  }
-      arguments: {  }
-      display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url.query_args
-        - user
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.field_sponsor_logo'
-  code_sprint_sponsor:
-    display_plugin: block
-    id: code_sprint_sponsor
-    display_title: 'Code Sprint sponsor'
-    position: 4
-    display_options:
-      display_extenders: {  }
-      display_description: ''
-      block_description: 'Code sprint sponsor page'
+          hide_empty: true
       fields:
         field_sponsor_logo:
           id: field_sponsor_logo
@@ -241,14 +115,203 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: '0'
+          element_type: ''
           element_class: ''
-          element_label_type: '0'
+          element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: '0'
+          element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: ''
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+      filters:
+        status:
+          value: true
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            sponsors: sponsors
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+      title: ''
+      header: {  }
+      footer: {  }
+      empty: {  }
+      relationships: {  }
+      arguments: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_sponsor_logo'
+  block_code_sprint:
+    display_plugin: block
+    id: block_code_sprint
+    display_title: 'Code sprint sponsor'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_description: 'Code sprint sponsor for page'
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"sponsor-header\">\n  <h3>Code Sprint Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          plugin_id: text_custom
+      defaults:
+        header: false
+        empty: false
+        fields: false
+        filters: false
+        filter_groups: false
+        footer: false
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"row\">\n  <div class=\"col-md-4\">\n   <a href=\"mailto:drupalcebu@gmail.com\">Your logo here!</a>\n  </div>\n</div>"
+          plugin_id: text_custom
+      fields:
+        field_sponsor_logo:
+          id: field_sponsor_logo
+          table: node__field_sponsor_logo
+          field: field_sponsor_logo
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -269,12 +332,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-      defaults:
-        fields: false
-        filters: false
-        filter_groups: false
-        header: false
-        empty: false
       filters:
         status:
           value: true
@@ -287,6 +344,15 @@ display:
           expose:
             operator: ''
           group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            sponsors: sponsors
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
         field_sponsor_type_target_id:
           id: field_sponsor_type_target_id
           table: node__field_sponsor_type
@@ -335,50 +401,26 @@ display:
         operator: AND
         groups:
           1: AND
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: "<div class=\"sponsor-header\">\n    <h3>Code Sprint sponsors</h3>\n    <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>\n"
-          plugin_id: text_custom
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: "<div class=\"col-md-7 code-sprint-sponsor-logo\">\n   <a href=\"mailto:drupalcebu@gmail.com\"><div>Your Logo Here</div></a>\n</div>"
-          plugin_id: text_custom
+      footer: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_logo'
-  coffee_and_snacks_sponsor:
+  block_coffee:
     display_plugin: block
-    id: coffee_and_snacks_sponsor
-    display_title: 'Coffee and snacks sponsors'
-    position: 8
+    id: block_coffee
+    display_title: 'Coffee and snacks sponsor'
+    position: 7
     display_options:
       display_extenders: {  }
+      block_description: 'Coffee and snacks sponsor for page'
       display_description: ''
-      block_description: 'Coffee and snacks sponsor'
       filters:
         status:
           value: true
@@ -391,6 +433,46 @@ display:
           expose:
             operator: ''
           group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            sponsors: sponsors
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
         field_sponsor_type_target_id:
           id: field_sponsor_type_target_id
           table: node__field_sponsor_type
@@ -440,7 +522,6 @@ display:
         filter_groups: false
         header: false
         empty: false
-        footer: false
       filter_groups:
         operator: AND
         groups:
@@ -455,7 +536,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Coffee and snacks sponsor</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Coffee and Snacks sponsor</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
           plugin_id: text_custom
       empty:
         area_text_custom:
@@ -467,29 +548,58 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"col-md-7 coffee-and-snacks-sponsors\">\n   <a href=\"mailto:drupalcebu@gmail.com\"><div>Your Logo Here</div></a>\n</div>"
+          content: "<div class=\"row\">\n  <div class=\"col-md-4\">\n   <a href=\"mailto:drupalcebu@gmail.com\">Your logo here</a>\n  </div>\n</div>"
           plugin_id: text_custom
-      footer: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_logo'
-  partners:
+  block_partners:
     display_plugin: block
-    id: partners
+    id: block_partners
     display_title: Partners
-    position: 7
+    position: 3
     display_options:
       display_extenders: {  }
       display_description: ''
-      block_description: 'partners page'
+      block_description: 'Partners page'
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"sponsor-header\">\n  <h3>Partners</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          plugin_id: text_custom
+      defaults:
+        header: false
+        empty: false
+        fields: false
+        filters: false
+        filter_groups: false
+        footer: false
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"row\">\n  <div class=\"col-md-4\">\n   <a href=\"mailto:drupalcebu@gmail.com\">Your logo here!</a>\n  </div>\n</div>"
+          plugin_id: text_custom
       fields:
         field_sponsor_logo:
           id: field_sponsor_logo
@@ -527,14 +637,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: '0'
+          element_type: ''
           element_class: ''
-          element_label_type: '0'
+          element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: '0'
+          element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -555,13 +665,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-      defaults:
-        fields: false
-        filters: false
-        filter_groups: false
-        header: false
-        empty: false
-        footer: false
       filters:
         status:
           value: true
@@ -574,6 +677,15 @@ display:
           expose:
             operator: ''
           group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            sponsors: sponsors
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
         field_sponsor_type_target_id:
           id: field_sponsor_type_target_id
           table: node__field_sponsor_type
@@ -622,6 +734,131 @@ display:
         operator: AND
         groups:
           1: AND
+      footer: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_sponsor_logo'
+  block_sat_night:
+    display_plugin: block
+    id: block_sat_night
+    display_title: 'Saturday night sponsor'
+    position: 6
+    display_options:
+      display_extenders: {  }
+      block_description: 'Saturday night sponsor for page'
+      display_description: ''
+      filters:
+        status:
+          value: true
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            sponsors: sponsors
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        field_sponsor_type_target_id:
+          id: field_sponsor_type_target_id
+          table: node__field_sponsor_type
+          field: field_sponsor_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            6: 6
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: sponsor_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      defaults:
+        filters: false
+        filter_groups: false
+        header: false
+        empty: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       header:
         area_text_custom:
           id: area_text_custom
@@ -630,54 +867,50 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: true
+          empty: false
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n    <h3>Our Partners</h3>\n    <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>\n"
+          content: "<div class=\"sponsor-header\">\n  <h3>Saturday Night sponsor</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
           plugin_id: text_custom
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: "<div class=\"col-md-2 partners-sponsor-logo\">\n   <a href=\"mailto:drupalcebu@gmail.com\">\n     <div>Your logo here</div> \n   </a>\n</div>\n<div class=\"col-md-2 partners-sponsor-logo\">\n   <a href=\"mailto:drupalcebu@gmail.com\">\n     <div>Or here!</div>\n   </a>\n</div>"
-          plugin_id: text_custom
-      footer:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: "<div class=\"camp-button-wrapper\">\n      <a href=\"/sponsors\">\n           <div class=\"camp-button\">See all Sponsors</div>\n       </a>\n  </div>"
-          plugin_id: text_custom
+      empty: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_logo'
-  saturday_lunch_sponsor:
+  block_saturday_lunch:
     display_plugin: block
-    id: saturday_lunch_sponsor
-    display_title: 'Saturday Lunch sponsor'
-    position: 5
+    id: block_saturday_lunch
+    display_title: 'Saturday lunch sponsor'
+    position: 3
     display_options:
       display_extenders: {  }
       display_description: ''
-      block_description: 'Saturday Lunch sponsor page'
+      block_description: 'Saturday lunch sponsor for page'
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: "<div class=\"sponsor-header\">\n  <h3>Saturday Lunch Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          plugin_id: text_custom
+      defaults:
+        header: false
+        empty: false
+        fields: false
+        filters: false
+        filter_groups: false
+        footer: false
+      empty: {  }
       fields:
         field_sponsor_logo:
           id: field_sponsor_logo
@@ -715,14 +948,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: '0'
+          element_type: ''
           element_class: ''
-          element_label_type: '0'
+          element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: '0'
+          element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -743,12 +976,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-      defaults:
-        fields: false
-        filters: false
-        filter_groups: false
-        header: false
-        empty: false
       filters:
         status:
           value: true
@@ -761,6 +988,15 @@ display:
           expose:
             operator: ''
           group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            sponsors: sponsors
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
         field_sponsor_type_target_id:
           id: field_sponsor_type_target_id
           table: node__field_sponsor_type
@@ -809,466 +1045,26 @@ display:
         operator: AND
         groups:
           1: AND
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: "<div class=\"sponsor-header\">\n    <h3>Saturday Lunch sponsors</h3>\n    <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>\n"
-          plugin_id: text_custom
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: "<div class=\"col-md-7 code-sprint-sponsor-logo\">\n   <a href=\"mailto:drupalcebu@gmail.com\">\n     <div>Your Logo Here</div>\n   </a>\n</div>"
-          plugin_id: text_custom
+      footer: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_logo'
-  saturday_night_sponsor:
+  block_sponsor_bronze:
     display_plugin: block
-    id: saturday_night_sponsor
-    display_title: 'Saturday Night sponsor'
-    position: 6
-    display_options:
-      display_extenders: {  }
-      display_description: ''
-      block_description: 'Saturday Night sponsor page'
-      fields:
-        field_sponsor_logo:
-          id: field_sponsor_logo
-          table: node__field_sponsor_logo
-          field: field_sponsor_logo
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: '0'
-          element_class: ''
-          element_label_type: '0'
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: '0'
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_style: drupalcampcebu2015_small
-            image_link: ''
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-      defaults:
-        fields: false
-        filters: false
-        filter_groups: false
-        header: false
-        empty: false
-      filters:
-        status:
-          value: true
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-          group: 1
-        field_sponsor_type_target_id:
-          id: field_sponsor_type_target_id
-          table: node__field_sponsor_type
-          field: field_sponsor_type_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value:
-            6: 6
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: sponsor_type
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: "<div class=\"sponsor-header\">\n     <h3>Saturday Night sponsors</h3>\n     <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>\n"
-          plugin_id: text_custom
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: "<div class=\"col-md-7 saturday-night-sponsor-logo\">\n   <a href=\"mailto:drupalcebu@gmail.com\"><div>Your Logo Here</div></a>\n</div> "
-          plugin_id: text_custom
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url.query_args
-        - user
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.field_sponsor_logo'
-  silver_sponsor:
-    display_plugin: block
-    id: silver_sponsor
-    display_title: 'Silver sponsor'
-    position: 2
-    display_options:
-      display_extenders: {  }
-      display_description: ''
-      block_description: 'Silver sponsor page'
-      fields:
-        field_sponsor_logo:
-          id: field_sponsor_logo
-          table: node__field_sponsor_logo
-          field: field_sponsor_logo
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: '0'
-          element_class: ''
-          element_label_type: '0'
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: '0'
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_style: drupalcampcebu2015_medium
-            image_link: ''
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-      defaults:
-        fields: false
-        filters: false
-        filter_groups: false
-        header: false
-        empty: false
-      filters:
-        status:
-          value: true
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-          group: 1
-        field_sponsor_type_target_id:
-          id: field_sponsor_type_target_id
-          table: node__field_sponsor_type
-          field: field_sponsor_type_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value:
-            2: 2
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: sponsor_type
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Silver Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
-          plugin_id: text_custom
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: "<div class=\"row\">\n  <div class=\"col-md-6\">\n     <a href=\"mailto:drupalcebu@gmail.com\">Your logo here</a>\n  </div>\n  <div class=\"col-md-6\">\n     <a href=\"mailto:drupalcebu@gmail.com\">Or here!</a>\n  </div>\n</div>"
-          plugin_id: text_custom
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url.query_args
-        - user
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.field_sponsor_logo'
-  sponsor_bronze:
-    display_plugin: block
-    id: sponsor_bronze
+    id: block_sponsor_bronze
     display_title: 'Bronze sponsor'
     position: 3
     display_options:
       display_extenders: {  }
       display_description: ''
-      block_description: 'Bronze sponsor page'
-      filters:
-        status:
-          value: true
-          table: node_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: node
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-          group: 1
-        field_sponsor_type_target_id:
-          id: field_sponsor_type_target_id
-          table: node__field_sponsor_type
-          field: field_sponsor_type_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value:
-            3: 3
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: sponsor_type
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
-      defaults:
-        filters: false
-        filter_groups: false
-        header: false
-        empty: false
-        fields: false
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
+      block_description: 'Bronze sponsor for page'
       header:
         area_text_custom:
           id: area_text_custom
@@ -1281,6 +1077,13 @@ display:
           tokenize: false
           content: "<div class=\"sponsor-header\">\n  <h3>Bronze Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
           plugin_id: text_custom
+      defaults:
+        header: false
+        empty: false
+        fields: false
+        filters: false
+        filter_groups: false
+        footer: false
       empty:
         area_text_custom:
           id: area_text_custom
@@ -1330,14 +1133,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: '0'
+          element_type: ''
           element_class: ''
-          element_label_type: '0'
+          element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: '0'
+          element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1358,26 +1161,95 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+      filters:
+        status:
+          value: true
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            sponsors: sponsors
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        field_sponsor_type_target_id:
+          id: field_sponsor_type_target_id
+          table: node__field_sponsor_type
+          field: field_sponsor_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            3: 3
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: sponsor_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      footer: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
         - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_logo'
-  sponsor_gold:
-    display_plugin: page
-    id: sponsor_gold
+  block_sponsor_gold:
+    display_plugin: block
+    id: block_sponsor_gold
     display_title: 'Gold sponsor'
     position: 1
     display_options:
       display_extenders: {  }
-      path: sponsors
       display_description: ''
+      block_description: 'Gold sponsor for page'
       fields:
         field_sponsor_logo:
           id: field_sponsor_logo
@@ -1447,8 +1319,9 @@ display:
         fields: false
         filters: false
         filter_groups: false
-        header: false
         empty: false
+        header: false
+        css_class: false
       filters:
         status:
           value: true
@@ -1509,18 +1382,6 @@ display:
         operator: AND
         groups:
           1: AND
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: "<div class=\"sponsor-header\">\n   <h3>Gold Sponsor</h3>\n   <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
-          plugin_id: text_custom
       empty:
         area_text_custom:
           id: area_text_custom
@@ -1533,12 +1394,344 @@ display:
           tokenize: false
           content: "<div class=\"row\">\n  <div class=\"col-md-12\">\n    <a href=\"mailto:drupalcebu@gmail.com\">Your Logo Here</a>\n  </div>\n</div>"
           plugin_id: text_custom
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"sponsor-header\">\n   <h3>Gold Sponsor</h3>\n   <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          plugin_id: text_custom
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_sponsor_logo'
+  block_sponsor_silver:
+    display_plugin: block
+    id: block_sponsor_silver
+    display_title: 'Silver sponsor'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_description: 'Silver sponsor for page'
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"sponsor-header\">\n  <h3>Silver Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>\n"
+          plugin_id: text_custom
+      defaults:
+        header: false
+        empty: false
+        filters: false
+        filter_groups: false
+        fields: false
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<div class=\"row\">\n  <div class=\"col-md-6\">\n     <a href=\"mailto:drupalcebu@gmail.com\">Your logo here</a>\n  </div>\n  <div class=\"col-md-6\">\n     <a href=\"mailto:drupalcebu@gmail.com\">Or here!</a>\n  </div>\n</div>"
+          plugin_id: text_custom
+      filters:
+        status:
+          value: true
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            sponsors: sponsors
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        field_sponsor_type_target_id:
+          id: field_sponsor_type_target_id
+          table: node__field_sponsor_type
+          field: field_sponsor_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            2: 2
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: sponsor_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      fields:
+        field_sponsor_logo:
+          id: field_sponsor_logo
+          table: node__field_sponsor_logo
+          field: field_sponsor_logo
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: '0'
+          element_class: ''
+          element_label_type: '0'
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: '0'
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: drupalcampcebu2015_medium
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_sponsor_logo'
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Page
+    position: 9
+    display_options:
+      display_extenders: {  }
+      path: sponsors
+      filters:
+        status:
+          value: true
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            sponsors: sponsors
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        field_sponsor_type_target_id:
+          id: field_sponsor_type_target_id
+          table: node__field_sponsor_type
+          field: field_sponsor_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: empty
+          value: {  }
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: sponsor_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      defaults:
+        filters: false
+        filter_groups: false
+        header: false
+        footer: false
+        title: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      header: {  }
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<p>A Drupal Camp’s success is usually made possible by the generosity of sponsors. Their donation lower the ticket prices for attendees and allow us to facilitate more sessions and provide free food and freebies to our attendees.</p>\n<p>What’s in it for sponsors? Well this event will give you opportunities to:<br>\n<ul>\n<li><p>Network and build relationships</p></li>\n<li><p>Touch base with the community and partners</p></li>\n<li><p>Promote and advertise your company</p></li>\n<li><p>Show your commitment to Drupal and to the open source community</p></li>\n</ul>\n<p>If you would like to reserve a sponsorship spot, please email drupalcampcebu@gmail.com.</p>"
+          plugin_id: text_custom
+      title: 'Sponsors and Partners'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
         - user.permissions

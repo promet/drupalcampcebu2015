@@ -21,7 +21,6 @@
 
 .region-sponsors .view-sponsors {
   @include clearfix();
-
   .views-row {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -30,48 +29,85 @@
 }
 
 /* Sponsor header background */
-#block-views-block-sponsors-block-sponsor-gold .sponsor-header {
-  background-color: $color-orange;
+#block-views-block-sponsors-block-sponsor-gold,
+#block-views-block-sponsors-and-partners-page-block-sponsor-gold {
+  overflow: hidden;
+  .sponsor-header {
+    background-color: $color-orange;
+  }
 }
 
-#block-views-block-sponsors-block-sponsor-silver .sponsor-header {
-  background-color: $color-blue;
+#block-views-block-sponsors-block-sponsor-silver,
+#block-views-block-sponsors-and-partners-page-block-sponsor-silver,
+#block-views-block-sponsors-and-partners-page-block-partners {
+  .sponsor-header {
+    background-color: $color-blue;
+  }
 }
 
-#block-views-block-sponsors-block-sponsor-bronze .sponsor-header {
-  background-color: $color-green;
+#block-views-block-sponsors-block-sponsor-bronze,
+#block-views-block-sponsors-and-partners-page-block-sponsor-bronze,
+#block-views-block-sponsors-and-partners-page-block-code-sprint,
+#block-views-block-sponsors-and-partners-page-block-coffee,
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
+#block-views-block-sponsors-and-partners-page-block-sat-night, {
+  .sponsor-header {
+    background-color: $color-green;
+  }
+}
+
+#block-views-block-sponsors-and-partners-page-block-code-sprint,
+#block-views-block-sponsors-and-partners-page-block-coffee,
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
+#block-views-block-sponsors-and-partners-page-block-sat-night,
+#block-views-block-sponsors-and-partners-page-block-partners {
+  margin-top: 1.2em;
 }
 
 #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
   padding: 3em 1.6em 1em;
 }
 
+/* View should be hidden without content, but view still showing in the markup.
+Temporary fix, display: none. */
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
+#block-views-block-sponsors-and-partners-page-block-sat-night {
+  display: none;
+}
+
+/* 'See all sponsors' button displayed except on /sponsors page. */
+.path-sponsors .all-sponsor-button {
+  display: none;
+}
+
 /* Sponsor header text */
-.region-sponsors .sponsor-header {
-  padding: 3em 1.6em;
-  overflow: hidden;
-  a,
-  h3 {
-    color: #fff;
-  }
-  h3 {
-    font-size: 1.8em;
-    font-weight: 700;
-    margin: 0;
-  }
-  a {
-    font-size: 1.3em;
-    text-transform: uppercase;
-  }
-  &:before {
-    background-color: inherit;
-    bottom: 0;
-    content: "";
-    left: 15px;
-    position: absolute;
-    right: 15px;
-    top: 0;
-    z-index: -1;
+.region-sponsors {
+  .sponsor-header {
+    padding: 3em 1.6em;
+    overflow: hidden;
+    a,
+    h3 {
+      color: #fff;
+    }
+    h3 {
+      font-size: 1.8em;
+      font-weight: 700;
+      margin: 0;
+    }
+    a {
+      font-size: 1.3em;
+      text-transform: uppercase;
+    }
+    &:before {
+      background-color: inherit;
+      height: 100%;
+      content: "";
+      left: 15px;
+      position: absolute;
+      right: 15px;
+      top: 0;
+      z-index: -1;
+    }
   }
 }
 
@@ -85,19 +121,32 @@
   margin: 15px 0;
 }
 
-#block-views-block-sponsors-block-sponsor-gold .view-empty a {
-  background-color: $color-orange;
-  font-size: 1.6em;
+#block-views-block-sponsors-block-sponsor-gold {
+  .view-empty a {
+    background-color: $color-orange;
+    font-size: 1.6em;
+  }
 }
 
-#block-views-block-sponsors-block-sponsor-silver .view-empty a {
-  background-color: $color-blue;
-  font-size: 1.4em;
+#block-views-block-sponsors-block-sponsor-silver
+#block-views-block-sponsors-and-partners-page-block-sponsor-silver,
+#block-views-block-sponsors-and-partners-page-block-partners {
+  .view-empty a {
+    background-color: $color-blue;
+    font-size: 1.4em;
+  }
 }
 
-#block-views-block-sponsors-block-sponsor-bronze .view-empty a {
-  background-color: $color-green;
-  font-size: 1.3em;
+#block-views-block-sponsors-block-sponsor-bronze,
+#block-views-block-sponsors-and-partners-page-block-sponsor-bronze,
+#block-views-block-sponsors-and-partners-page-block-code-sprint,
+#block-views-block-sponsors-and-partners-page-block-coffee,
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
+#block-views-block-sponsors-and-partners-page-block-sat-night {
+  .view-empty a {
+    background-color: $color-green;
+    font-size: 1.3em;
+  }
 }
 
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
@@ -111,18 +160,21 @@
 
 /* Sponsor override float into table display to center items */
 @media (min-width: 992px) {
-  .region-sponsors .view-sponsors {
+  .region-sponsors .view-sponsors ,
+  .region-sponsors .view-sponsors-and-partners-page {
     display: table;
     width: 100%;
-
     .views-row {
       text-align: unset;
     }
   }
 
   .region-sponsors .view-sponsors .view-header,
+  .region-sponsors .view-sponsors-and-partners-page .view-header,
   .region-sponsors .view-sponsors .view-empty,
-  .region-sponsors .view-sponsors .view-content {
+  .region-sponsors .view-sponsors-and-partners-page .view-empty,
+  .region-sponsors .view-sponsors .view-content,
+  .region-sponsors .view-sponsors-and-partners-page .view-content {
     display: table-cell;
     float: none;
   }
@@ -146,5 +198,14 @@
   margin-top: 1em;
   .camp-button {
     float: left;
+  }
+}
+
+.view-footer {
+  li p {
+    margin-bottom: 0;
+  }
+  li::before {
+    display: none;
   }
 }
