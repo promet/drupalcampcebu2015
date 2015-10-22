@@ -1,42 +1,58 @@
-h1 {
-  font-size: 2.3em;
-  margin-bottom: 0.5em;
-  font-family: $font-title;
-  text-align: left;
+.header-info-top {
+  padding: 2em;
 }
 
 h6,
 .speaker-announcement {
   color: $color-blue;
   font-family: $font-text;
-  font-size: 1.3em;
+  font-size: 1.5em;
   text-align: left;
-  margin-bottom: 1.5em;
   a {
    color: $color-orange;
   }
 }
 
-.view-proposals .views-row {
-  float: left;
-  margin-bottom: 1.5em;
+.view-proposals {
+  img {
+    width: 40%;
+    margin-bottom: 1.5em;
+  }
+  .views-row {
+    float: left;
+    margin-bottom: 3em;
+    margin-top: 3em;
+  }
+}
+
+.view-carousel-proposal {
+  .drupalcamp-speaker,
+  .session-type-label,
+  .session-level-label,
+  .session-summary,
+  .speaker-drupalcamp-topic  {
+    text-align: center;
+  }
 }
 
 .drupalcamp-speaker {
   margin-bottom: 0.5em;
 }
 
-.drupalcamp-speaker a {
-  font-size: 1.1em;
-  color: $color-orange;
-  text-transform: lowercase;
-  text-decoration: underline;
+.drupalcamp-speaker {
+  margin-bottom: 0.5em;
+  a {
+    color: $color-orange;
+    text-transform: lowercase;
+    text-decoration: underline;
+  }
 }
+
 
 .drupalcamp-speaker,
 .session-type-label,
-.session-level-label {
-  font-size: 1.1em;
+.session-level-label,
+.session-summary {
   color: $color-blue;
   text-transform: lowercase;
 }
@@ -47,7 +63,6 @@ h6,
   font-weight: bold;
   a {
     color: $color-blue;
-    font-size: 1.3em;
   }
 }
 
@@ -95,39 +110,39 @@ h6,
   }
 }
 
-// Homepage carousel
 #block-views-block-carousel-proposal-block-carousel-proposal {
   h2 {
-    font-size: 2.2em;
-    text-align: left;
+    text-align: center;
   }
 }
 
 // Flexslider.
-.view-content {
-  .flexslider {
-    margin-bottom: 2em;
+.flexslider {
+  margin-bottom: 1em;
+  .slides img {
+    margin: 0 auto;
   }
+
   .flex-direction-nav {
-    .flex-prev {
-      left: 10px;
-      height: 3em;
-    }
-    .flex-next {
-      right: 10px;
-      height: 3em;
+    a {
+      top: 25%;
     }
     a:before {
+      font-size: 3em;
       color: $color-blue;
     }
+    .flex-next,
+    .flex-prev {
+      height: 4em;
+    }
+    .flex-prev {
+      left: 6px;
+    }
+    .flex-next {
+      right: 6px;
+    }
   }
-  .flex-direction-nav a {
-    opacity: 10;
-  }
-  .slides {
-    padding-left: 2.5em;
-    padding-right: 2.5em;
-  }
+
   .slides,
   .slides > li,
   .flex-control-nav,
@@ -138,16 +153,19 @@ h6,
   ol.flex-control-nav {
     visibility: hidden;
   }
+  .flex-direction-nav a {
+    opacity: 10;
+  }
 }
 
 // Propose a session button
 .camp-button-wrapper {
   overflow: hidden;
   .camp-button {
-    font-size: 1.5em;
+    font-size: 1.8em;
     text-transform: uppercase;
     padding: 1em;
-    width: 31%;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     background-color: $color-orange;

@@ -1,4 +1,17 @@
 // Style specific for promote sponsor.
+.sponsors {
+  h2 {
+    color: $color-blue;
+    padding: 0.2em;
+    text-align: center;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+  }
+  img {
+    width: 50%;
+  }
+}
+
 .promote-sponsor-tab {
   padding-bottom: 0.6em;
   padding-top: 1.5em;
@@ -19,7 +32,9 @@
   color: #1664a6;
 }
 
-.region-sponsors .view-sponsors {
+.view-sponsors,
+.view-sponsors-and-partners-page {
+  margin: 0.5em 0 2em 0;
   @include clearfix();
   .views-row {
     padding-top: 10px;
@@ -83,19 +98,19 @@ Temporary fix, display: none. */
 /* Sponsor header text */
 .region-sponsors {
   .sponsor-header {
-    padding: 3em 1.6em;
+    padding: 2em 1.6em;
     overflow: hidden;
     a,
     h3 {
       color: #fff;
     }
     h3 {
-      font-size: 1.8em;
+      font-family: 1.3em;
       font-weight: 700;
       margin: 0;
     }
     a {
-      font-size: 1.3em;
+      font-size: 1.1em;
       text-transform: uppercase;
     }
     &:before {
@@ -119,21 +134,20 @@ Temporary fix, display: none. */
   text-align: center;
   text-transform: uppercase;
   margin: 15px 0;
+  font-size: 1.2em;
 }
 
 #block-views-block-sponsors-block-sponsor-gold {
   .view-empty a {
     background-color: $color-orange;
-    font-size: 1.6em;
   }
 }
 
-#block-views-block-sponsors-block-sponsor-silver
+#block-views-block-sponsors-block-sponsor-silver,
 #block-views-block-sponsors-and-partners-page-block-sponsor-silver,
 #block-views-block-sponsors-and-partners-page-block-partners {
   .view-empty a {
     background-color: $color-blue;
-    font-size: 1.4em;
   }
 }
 
@@ -145,16 +159,15 @@ Temporary fix, display: none. */
 #block-views-block-sponsors-and-partners-page-block-sat-night {
   .view-empty a {
     background-color: $color-green;
-    font-size: 1.3em;
   }
 }
 
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
   background-color: $color-orange;
   color: $color-white-text;
-  font-size: 1.5em;
+  font-size: 1.2em;
   height: auto;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -168,7 +181,6 @@ Temporary fix, display: none. */
       text-align: unset;
     }
   }
-
   .region-sponsors .view-sponsors .view-header,
   .region-sponsors .view-sponsors-and-partners-page .view-header,
   .region-sponsors .view-sponsors .view-empty,
@@ -178,34 +190,23 @@ Temporary fix, display: none. */
     display: table-cell;
     float: none;
   }
-
   .region-sponsors .view-sponsors .view-empty,
   .region-sponsors .view-sponsors .view-content {
     vertical-align: middle;
   }
-
   #block-views-block-sponsors-block-sponsor-promote .view-empty a {
     display: inline-block;
   }
-
-  #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
-    padding: 3em 1.6em;
-  }
 }
+
 // See all sponsors' button
 .col-md-8.camp-button-wrapper {
-  float: right;
-  margin-top: 1em;
+  width: 100%;
   .camp-button {
-    float: left;
+    font-size: 1.5em;
   }
 }
 
-.view-footer {
-  li p {
-    margin-bottom: 0;
-  }
-  li::before {
-    display: none;
-  }
+.footer-container {
+  margin-top: 3em;
 }

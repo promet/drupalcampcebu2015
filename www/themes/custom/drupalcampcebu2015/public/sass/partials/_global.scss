@@ -7,6 +7,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-title;
   text-transform: uppercase;
 }
+
 .content,
 .view-content {
   p {
@@ -61,15 +62,23 @@ img {
   background-color: #fff;
 }
 
+h1 {
+  font-size: 2.2em;
+}
+
+h2,
 h3 {
-  font-size: 1.8em;
   font-weight: 700;
   margin: 0;
   color: $color-white-text;
 }
 
-a {
-  font-size: 1em;
+h4 {
+ font-size: 1.8em;
+}
+
+p.subtitle a {
+  font-size: 1.1em;
   text-transform: uppercase;
   color: $color-white-text;
 }

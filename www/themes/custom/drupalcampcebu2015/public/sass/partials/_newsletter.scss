@@ -1,11 +1,13 @@
 .newsletter {
   padding: 0.9em;
+  padding-left: 0;
   padding-bottom: 3em;
+  margin-top: 3.5em;
   h4 {
     font-weight: bold;
-    font-size: 1.5em;
     color: $color-orange;
     margin: 0;
+    text-align: left;
   }
 
   form {
@@ -13,7 +15,7 @@
       .mc-field-group {
         padding-left: 0;
         padding-right: 0;
-        margin-top: 0.9em;
+        margin-top: 1em;
         .col-md-4 {
           padding: 0;
         }
@@ -32,7 +34,7 @@
   .email-address,
   .firstname {
     color: $color-orange;
-    font-size: 1.2em;;
+    font-size: 1.2em;
     text-transform: uppercase;
     font-weight: normal;
     font-family: 'Montserrat', sans-serif;
@@ -41,11 +43,11 @@
   .required {
     border: 1px solid $color-orange;
     width: 100%;
-    font-size: 1.3em;
+    font-size: 2em;
   }
 
   .button {
-    padding: 0.3em;
+    padding: 1em;
     width: 100%;
     margin-top: 0.5em;
     color: $color-white-text;
@@ -53,6 +55,6 @@
     border: none;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.3em;
+    font-size: 1.8em;
   }
 }

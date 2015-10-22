@@ -7,30 +7,23 @@
     margin-bottom: 1.5em;
     text-align: center;
     img {
-      height: 30em;
+     height: 30em;
     }
   }
 }
 
 .header-info-top {
   background-color: $color-blue;
-  padding: 1.5em;
   p,
   h2 {
     color: $color-white-text;
     text-transform: uppercase;
-    font-family: $font-title;
-    font-size: 1.1em;
+    // font-family: $font-title;
   }
   a {
     color: #fff;
     font-size: 1.2em;
   }
-}
-
-.content h1 {
-  font-size: 1.8em;
-  text-align: center;
 }
 
 .content,
@@ -39,7 +32,7 @@
   h2 {
     font-weight: bold;
     color: $color-blue;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     margin-top: 2em;
   }
   .field-item {
