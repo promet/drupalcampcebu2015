@@ -22,10 +22,10 @@
   background-color: #1664a6;
   padding: 1.5em;
 }
-/* line 19, ../sass/partials/_header.scss */
+/* line 18, ../sass/partials/_header.scss */
 .header-info-top p,
 .header-info-top h2 {
-  color: white;
+  color: #fff;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-size: 1.1em;
@@ -42,7 +42,7 @@
   text-align: center;
 }
 
-/* line 39, ../sass/partials/_header.scss */
+/* line 38, ../sass/partials/_header.scss */
 .content h1,
 .content h2,
 .region-header-info-bottom h1,
@@ -109,7 +109,7 @@
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-4 {
   padding: 0;
 }
-/* line 21, ../sass/partials/_newsletter.scss */
+/* line 20, ../sass/partials/_newsletter.scss */
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-3,
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 {
   padding-left: 0;
@@ -120,7 +120,7 @@
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 label {
   font-weight: normal;
 }
-/* line 33, ../sass/partials/_newsletter.scss */
+/* line 32, ../sass/partials/_newsletter.scss */
 .newsletter .email-address,
 .newsletter .firstname {
   color: #fcb040;
@@ -140,7 +140,7 @@
   padding: 0.3em;
   width: 100%;
   margin-top: 0.5em;
-  color: white;
+  color: #fff;
   background-color: #fcb040;
   border: none;
   text-transform: uppercase;
@@ -199,7 +199,7 @@ img {
 }
 /* line 43, ../sass/partials/_global.scss */
 .region-sidebar ul.menu li a, .region-sidebar ul.menu li p {
-  color: white;
+  color: #fff;
   margin-bottom: 0;
   text-transform: uppercase;
 }
@@ -229,20 +229,20 @@ h3 {
   font-size: 1.8em;
   font-weight: 700;
   margin: 0;
-  color: white;
+  color: #fff;
 }
 
 /* line 71, ../sass/partials/_global.scss */
 a {
   font-size: 1em;
   text-transform: uppercase;
-  color: white;
+  color: #fff;
 }
 
 /* line 77, ../sass/partials/_global.scss */
 a:hover {
   text-decoration: none;
-  color: white;
+  color: #fff;
 }
 
 /* line 82, ../sass/partials/_global.scss */
@@ -263,7 +263,7 @@ p.subtitle {
 .promote-sponsor-tab p:nth-child(2) {
   font-size: 1.5em;
 }
-/* line 12, ../sass/partials/_sponsors.scss */
+/* line 11, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1),
 .promote-sponsor-tab p:nth-child(2) {
   color: #1664a6;
@@ -276,12 +276,14 @@ p.subtitle {
 }
 
 /* line 22, ../sass/partials/_sponsors.scss */
-.region-sponsors .view-sponsors {
+.view-sponsors,
+.view-sponsors-and-partners-page {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 24, ../sass/partials/_sponsors.scss */
-.region-sponsors .view-sponsors .views-row {
+/* line 25, ../sass/partials/_sponsors.scss */
+.view-sponsors .views-row,
+.view-sponsors-and-partners-page .views-row {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
@@ -293,20 +295,20 @@ p.subtitle {
 #block-views-block-sponsors-and-partners-page-block-sponsor-gold {
   overflow: hidden;
 }
-/* line 35, ../sass/partials/_sponsors.scss */
+/* line 36, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold .sponsor-header,
 #block-views-block-sponsors-and-partners-page-block-sponsor-gold .sponsor-header {
   background-color: #fcb040;
 }
 
-/* line 43, ../sass/partials/_sponsors.scss */
+/* line 44, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-silver .sponsor-header,
 #block-views-block-sponsors-and-partners-page-block-sponsor-silver .sponsor-header,
 #block-views-block-sponsors-and-partners-page-block-partners .sponsor-header {
   background-color: #1664a6;
 }
 
-/* line 54, ../sass/partials/_sponsors.scss */
+/* line 55, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-bronze .sponsor-header,
 #block-views-block-sponsors-and-partners-page-block-sponsor-bronze .sponsor-header,
 #block-views-block-sponsors-and-partners-page-block-code-sprint .sponsor-header,
@@ -316,7 +318,7 @@ p.subtitle {
   background-color: #89caae;
 }
 
-/* line 63, ../sass/partials/_sponsors.scss */
+/* line 60, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-and-partners-page-block-code-sprint,
 #block-views-block-sponsors-and-partners-page-block-coffee,
 #block-views-block-sponsors-and-partners-page-block-saturday-lunch,
@@ -325,7 +327,7 @@ p.subtitle {
   margin-top: 1.2em;
 }
 
-/* line 67, ../sass/partials/_sponsors.scss */
+/* line 68, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
   padding: 3em 1.6em 1em;
 }
@@ -339,35 +341,35 @@ Temporary fix, display: none. */
 }
 
 /* 'See all sponsors' button displayed except on /sponsors page. */
-/* line 79, ../sass/partials/_sponsors.scss */
+/* line 80, ../sass/partials/_sponsors.scss */
 .path-sponsors .all-sponsor-button {
   display: none;
 }
 
 /* Sponsor header text */
 /* line 85, ../sass/partials/_sponsors.scss */
-.region-sponsors .sponsor-header {
+.sponsor-header {
   padding: 3em 1.6em;
   overflow: hidden;
 }
-/* line 89, ../sass/partials/_sponsors.scss */
-.region-sponsors .sponsor-header a,
-.region-sponsors .sponsor-header h3 {
+/* line 88, ../sass/partials/_sponsors.scss */
+.sponsor-header a,
+.sponsor-header h3 {
   color: #fff;
 }
 /* line 92, ../sass/partials/_sponsors.scss */
-.region-sponsors .sponsor-header h3 {
+.sponsor-header h3 {
   font-size: 1.8em;
   font-weight: 700;
   margin: 0;
 }
 /* line 97, ../sass/partials/_sponsors.scss */
-.region-sponsors .sponsor-header a {
+.sponsor-header a {
   font-size: 1.3em;
   text-transform: uppercase;
 }
 /* line 101, ../sass/partials/_sponsors.scss */
-.region-sponsors .sponsor-header:before {
+.sponsor-header:before {
   background-color: inherit;
   height: 100%;
   content: "";
@@ -378,7 +380,7 @@ Temporary fix, display: none. */
   z-index: -1;
 }
 
-/* line 114, ../sass/partials/_sponsors.scss */
+/* line 113, ../sass/partials/_sponsors.scss */
 .region-sponsors .view-empty a {
   color: #fff;
   display: block;
@@ -389,13 +391,13 @@ Temporary fix, display: none. */
   margin: 15px 0;
 }
 
-/* line 125, ../sass/partials/_sponsors.scss */
+/* line 124, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold .view-empty a {
   background-color: #fcb040;
   font-size: 1.6em;
 }
 
-/* line 134, ../sass/partials/_sponsors.scss */
+/* line 133, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-silver
 #block-views-block-sponsors-and-partners-page-block-sponsor-silver .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-partners .view-empty a {
@@ -403,7 +405,7 @@ Temporary fix, display: none. */
   font-size: 1.4em;
 }
 
-/* line 146, ../sass/partials/_sponsors.scss */
+/* line 145, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-bronze .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-sponsor-bronze .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-code-sprint .view-empty a,
@@ -414,72 +416,77 @@ Temporary fix, display: none. */
   font-size: 1.3em;
 }
 
-/* line 152, ../sass/partials/_sponsors.scss */
+/* line 151, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
   background-color: #fcb040;
-  color: white;
+  color: #fff;
   font-size: 1.5em;
   height: auto;
   padding: 20px;
   text-align: center;
 }
 
+/* ================== */
+/* BREAKPOINT SECTION */
+/* ================== */
 /* Sponsor override float into table display to center items */
 @media (min-width: 992px) {
-  /* line 164, ../sass/partials/_sponsors.scss */
-  .region-sponsors .view-sponsors,
-  .region-sponsors .view-sponsors-and-partners-page {
+  /* line 166, ../sass/partials/_sponsors.scss */
+  .view-sponsors,
+  .view-sponsors-and-partners-page {
     display: table;
     width: 100%;
   }
-  /* line 167, ../sass/partials/_sponsors.scss */
-  .region-sponsors .view-sponsors .views-row,
-  .region-sponsors .view-sponsors-and-partners-page .views-row {
+  /* line 170, ../sass/partials/_sponsors.scss */
+  .view-sponsors .views-row,
+  .view-sponsors-and-partners-page .views-row {
     text-align: unset;
   }
 
-  /* line 177, ../sass/partials/_sponsors.scss */
-  .region-sponsors .view-sponsors .view-header,
-  .region-sponsors .view-sponsors-and-partners-page .view-header,
-  .region-sponsors .view-sponsors .view-empty,
-  .region-sponsors .view-sponsors-and-partners-page .view-empty,
-  .region-sponsors .view-sponsors .view-content,
-  .region-sponsors .view-sponsors-and-partners-page .view-content {
+  /* line 175, ../sass/partials/_sponsors.scss */
+  .view-sponsors .view-header,
+  .view-sponsors-and-partners-page .view-header,
+  .view-sponsors .view-empty,
+  .view-sponsors-and-partners-page .view-empty,
+  .view-sponsors .view-content,
+  .view-sponsors-and-partners-page .view-content {
     display: table-cell;
     float: none;
   }
 
-  /* line 183, ../sass/partials/_sponsors.scss */
-  .region-sponsors .view-sponsors .view-empty,
-  .region-sponsors .view-sponsors .view-content {
+  /* line 186, ../sass/partials/_sponsors.scss */
+  .view-sponsors .view-empty,
+  .view-sponsors-and-partners-page .view-empty,
+  .view-sponsors .view-content,
+  .view-sponsors-and-partners-page .view-content {
     vertical-align: middle;
   }
 
-  /* line 187, ../sass/partials/_sponsors.scss */
+  /* line 193, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .view-empty a {
     display: inline-block;
   }
 
-  /* line 191, ../sass/partials/_sponsors.scss */
+  /* line 197, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
     padding: 3em 1.6em;
   }
 }
-/* line 196, ../sass/partials/_sponsors.scss */
+/* line 202, ../sass/partials/_sponsors.scss */
 .col-md-8.camp-button-wrapper {
   float: right;
   margin-top: 1em;
 }
-/* line 199, ../sass/partials/_sponsors.scss */
+/* line 205, ../sass/partials/_sponsors.scss */
 .col-md-8.camp-button-wrapper .camp-button {
   float: left;
 }
 
-/* line 205, ../sass/partials/_sponsors.scss */
+/* line 211, ../sass/partials/_sponsors.scss */
 .view-footer li p {
   margin-bottom: 0;
 }
-/* line 208, ../sass/partials/_sponsors.scss */
+/* line 214, ../sass/partials/_sponsors.scss */
 .view-footer li::before {
   display: none;
 }
@@ -494,12 +501,12 @@ Temporary fix, display: none. */
   padding-right: 0.8em;
   width: 100%;
 }
-/* line 10, ../sass/partials/_footer.scss */
+/* line 9, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1),
 .footer-container div:nth-child(2) {
   text-align: center;
   font-size: 0.8em;
-  color: white;
+  color: #fff;
   font-family: "Open Sans", sans-serif;
   padding-bottom: 0.5em;
   font-weight: 300;
@@ -507,7 +514,7 @@ Temporary fix, display: none. */
 /* line 17, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1) p a,
 .footer-container div:nth-child(2) p a {
-  color: white;
+  color: #fff;
 }
 
 @media only screen and (min-width: 420px) {
@@ -515,7 +522,7 @@ Temporary fix, display: none. */
   #site-wrapper .site-logo {
     margin-bottom: 2.5em;
   }
-  /* line 8, ../sass/partials/_media-queries.scss */
+  /* line 7, ../sass/partials/_media-queries.scss */
   #site-wrapper .header-info-top,
   #site-wrapper .header-info-bottom {
     text-align: left;
@@ -523,7 +530,7 @@ Temporary fix, display: none. */
     padding-top: 3.5em;
     padding-bottom: 5.5em;
   }
-  /* line 11, ../sass/partials/_media-queries.scss */
+  /* line 10, ../sass/partials/_media-queries.scss */
   #site-wrapper .header-info-top h3,
   #site-wrapper .header-info-top p,
   #site-wrapper .header-info-bottom h3,
@@ -556,7 +563,7 @@ Temporary fix, display: none. */
     font-size: 2.1em;
     margin-top: 1.5em;
   }
-  /* line 41, ../sass/partials/_media-queries.scss */
+  /* line 40, ../sass/partials/_media-queries.scss */
   #site-wrapper .newsletter .email-address,
   #site-wrapper .newsletter .firstname {
     font-size: 1.5em;
@@ -607,7 +614,7 @@ Temporary fix, display: none. */
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 90, ../sass/partials/_media-queries.scss */
+  /* line 89, ../sass/partials/_media-queries.scss */
   .header-info-top h3,
   .header-info-top p {
     font-size: 1.2em;
@@ -632,7 +639,7 @@ h1 {
   text-align: left;
 }
 
-/* line 9, ../sass/partials/_proposals.scss */
+/* line 8, ../sass/partials/_proposals.scss */
 h6,
 .speaker-announcement {
   color: #1664a6;
@@ -666,7 +673,7 @@ h6 a,
   text-decoration: underline;
 }
 
-/* line 38, ../sass/partials/_proposals.scss */
+/* line 36, ../sass/partials/_proposals.scss */
 .drupalcamp-speaker,
 .session-type-label,
 .session-level-label {
@@ -687,7 +694,7 @@ h6 a,
   font-size: 1.3em;
 }
 
-/* line 60, ../sass/partials/_proposals.scss */
+/* line 56, ../sass/partials/_proposals.scss */
 .field--name-field-session-type,
 .field--name-field-session-level,
 .field--name-field-first-name,
@@ -704,7 +711,7 @@ h6 a,
 .field--name-field-profile-image .field__label::after {
   content: ":";
 }
-/* line 68, ../sass/partials/_proposals.scss */
+/* line 67, ../sass/partials/_proposals.scss */
 .field--name-field-session-type .field__label,
 .field--name-field-session-type .field__item,
 .field--name-field-session-level .field__label,
@@ -778,7 +785,7 @@ h6 a,
   padding-left: 2.5em;
   padding-right: 2.5em;
 }
-/* line 134, ../sass/partials/_proposals.scss */
+/* line 131, ../sass/partials/_proposals.scss */
 .view-content .slides,
 .view-content .slides > li,
 .view-content .flex-control-nav,
@@ -804,6 +811,6 @@ h6 a,
   margin: 0 auto;
   text-align: center;
   background-color: #fcb040;
-  color: white;
+  color: #fff;
   font-family: "Montserrat", sans-serif;
 }
