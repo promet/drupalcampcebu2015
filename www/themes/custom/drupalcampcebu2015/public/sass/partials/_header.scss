@@ -14,11 +14,20 @@
 
 .header-info-top {
   background-color: $color-blue;
+  margin-top: 1em;
   p,
-  h2 {
+  h2,
+  h3 {
     color: $color-white-text;
     text-transform: uppercase;
-    // font-family: $font-title;
+    font-weight: 700;
+  }
+  h3,
+  p {
+    font-size: 1.1em;
+  }
+  h2 {
+    font-size: 1.5em;
   }
   a {
     color: #fff;

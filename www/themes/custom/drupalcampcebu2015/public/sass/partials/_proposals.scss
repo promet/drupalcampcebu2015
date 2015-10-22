@@ -1,5 +1,5 @@
 .header-info-top {
-  padding: 2em;
+  padding: 1.6em;
 }
 
 h6,
@@ -14,14 +14,10 @@ h6,
 }
 
 .view-proposals {
-  img {
-    width: 40%;
-    margin-bottom: 1.5em;
-  }
   .views-row {
     float: left;
-    margin-bottom: 3em;
-    margin-top: 3em;
+    margin-bottom: 2em;
+    margin-top: 2em;
   }
 }
 
@@ -37,10 +33,6 @@ h6,
 
 .drupalcamp-speaker {
   margin-bottom: 0.5em;
-}
-
-.drupalcamp-speaker {
-  margin-bottom: 0.5em;
   a {
     color: $color-orange;
     text-transform: lowercase;
@@ -48,21 +40,23 @@ h6,
   }
 }
 
-
 .drupalcamp-speaker,
 .session-type-label,
 .session-level-label,
-.session-summary {
+.topic-summary p {
   color: $color-blue;
   text-transform: lowercase;
+  font-size: 1.2em;
 }
 
 .speaker-drupalcamp-topic {
   margin: 0;
   font-family: $font-title;
   font-weight: bold;
+  margin-top: 0.5em;
   a {
     color: $color-blue;
+    font-size: 1.4em;
   }
 }
 

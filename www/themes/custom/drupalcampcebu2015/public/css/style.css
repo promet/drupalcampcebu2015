@@ -20,20 +20,32 @@
 /* line 15, ../sass/partials/_header.scss */
 .header-info-top {
   background-color: #1664a6;
+  margin-top: 1em;
 }
-/* line 18, ../sass/partials/_header.scss */
+/* line 20, ../sass/partials/_header.scss */
 .header-info-top p,
-.header-info-top h2 {
+.header-info-top h2,
+.header-info-top h3 {
   color: white;
   text-transform: uppercase;
+  font-weight: 700;
 }
-/* line 23, ../sass/partials/_header.scss */
+/* line 26, ../sass/partials/_header.scss */
+.header-info-top h3,
+.header-info-top p {
+  font-size: 1.1em;
+}
+/* line 29, ../sass/partials/_header.scss */
+.header-info-top h2 {
+  font-size: 1.5em;
+}
+/* line 32, ../sass/partials/_header.scss */
 .header-info-top a {
   color: #fff;
   font-size: 1.2em;
 }
 
-/* line 32, ../sass/partials/_header.scss */
+/* line 41, ../sass/partials/_header.scss */
 .content h1,
 .content h2,
 .region-header-info-bottom h1,
@@ -43,7 +55,7 @@
   margin-bottom: 0.5em;
   margin-top: 2em;
 }
-/* line 38, ../sass/partials/_header.scss */
+/* line 47, ../sass/partials/_header.scss */
 .content .field-item,
 .region-header-info-bottom .field-item {
   margin-top: 2em;
@@ -258,47 +270,45 @@ p.subtitle {
   color: #1664a6;
   padding: 0.2em;
   text-align: center;
-  margin-bottom: 0.5em;
-  margin-top: 1em;
 }
-/* line 10, ../sass/partials/_sponsors.scss */
+/* line 8, ../sass/partials/_sponsors.scss */
 .sponsors img {
   width: 50%;
 }
 
-/* line 15, ../sass/partials/_sponsors.scss */
+/* line 13, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab {
   padding-bottom: 0.6em;
   padding-top: 1.5em;
 }
-/* line 18, ../sass/partials/_sponsors.scss */
+/* line 16, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1) {
   font-size: 1.6em;
 }
-/* line 21, ../sass/partials/_sponsors.scss */
+/* line 19, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(2) {
   font-size: 1.5em;
 }
-/* line 25, ../sass/partials/_sponsors.scss */
+/* line 23, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1),
 .promote-sponsor-tab p:nth-child(2) {
   color: #1664a6;
   margin-bottom: 0;
 }
 
-/* line 31, ../sass/partials/_sponsors.scss */
+/* line 29, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote h3 {
   color: #1664a6;
 }
 
-/* line 36, ../sass/partials/_sponsors.scss */
+/* line 34, ../sass/partials/_sponsors.scss */
 .view-sponsors,
 .view-sponsors-and-partners-page {
   margin: 0.5em 0 2em 0;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 39, ../sass/partials/_sponsors.scss */
+/* line 37, ../sass/partials/_sponsors.scss */
 .view-sponsors .views-row,
 .view-sponsors-and-partners-page .views-row {
   padding-top: 10px;
@@ -307,25 +317,25 @@ p.subtitle {
 }
 
 /* Sponsor header background */
-/* line 48, ../sass/partials/_sponsors.scss */
+/* line 46, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold,
 #block-views-block-sponsors-and-partners-page-block-sponsor-gold {
   overflow: hidden;
 }
-/* line 50, ../sass/partials/_sponsors.scss */
+/* line 48, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold .sponsor-header,
 #block-views-block-sponsors-and-partners-page-block-sponsor-gold .sponsor-header {
   background-color: #fcb040;
 }
 
-/* line 58, ../sass/partials/_sponsors.scss */
+/* line 56, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-silver .sponsor-header,
 #block-views-block-sponsors-and-partners-page-block-sponsor-silver .sponsor-header,
 #block-views-block-sponsors-and-partners-page-block-partners .sponsor-header {
   background-color: #1664a6;
 }
 
-/* line 69, ../sass/partials/_sponsors.scss */
+/* line 67, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-bronze .sponsor-header,
 #block-views-block-sponsors-and-partners-page-block-sponsor-bronze .sponsor-header,
 #block-views-block-sponsors-and-partners-page-block-code-sprint .sponsor-header,
@@ -335,7 +345,7 @@ p.subtitle {
   background-color: #89caae;
 }
 
-/* line 78, ../sass/partials/_sponsors.scss */
+/* line 76, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-and-partners-page-block-code-sprint,
 #block-views-block-sponsors-and-partners-page-block-coffee,
 #block-views-block-sponsors-and-partners-page-block-saturday-lunch,
@@ -344,48 +354,48 @@ p.subtitle {
   margin-top: 1.2em;
 }
 
-/* line 82, ../sass/partials/_sponsors.scss */
+/* line 80, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
   padding: 3em 1.6em 1em;
 }
 
 /* View should be hidden without content, but view still showing in the markup.
 Temporary fix, display: none. */
-/* line 89, ../sass/partials/_sponsors.scss */
+/* line 87, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-and-partners-page-block-saturday-lunch,
 #block-views-block-sponsors-and-partners-page-block-sat-night {
   display: none;
 }
 
 /* 'See all sponsors' button displayed except on /sponsors page. */
-/* line 94, ../sass/partials/_sponsors.scss */
+/* line 92, ../sass/partials/_sponsors.scss */
 .path-sponsors .all-sponsor-button {
   display: none;
 }
 
 /* Sponsor header text */
-/* line 100, ../sass/partials/_sponsors.scss */
+/* line 98, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header {
   padding: 2em 1.6em;
   overflow: hidden;
 }
-/* line 104, ../sass/partials/_sponsors.scss */
+/* line 102, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header a,
 .region-sponsors .sponsor-header h3 {
   color: #fff;
 }
-/* line 107, ../sass/partials/_sponsors.scss */
+/* line 105, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header h3 {
   font-family: 1.3em;
   font-weight: 700;
   margin: 0;
 }
-/* line 112, ../sass/partials/_sponsors.scss */
+/* line 110, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header a {
   font-size: 1.1em;
   text-transform: uppercase;
 }
-/* line 116, ../sass/partials/_sponsors.scss */
+/* line 114, ../sass/partials/_sponsors.scss */
 .region-sponsors .sponsor-header:before {
   background-color: inherit;
   height: 100%;
@@ -397,7 +407,7 @@ Temporary fix, display: none. */
   z-index: -1;
 }
 
-/* line 129, ../sass/partials/_sponsors.scss */
+/* line 127, ../sass/partials/_sponsors.scss */
 .region-sponsors .view-empty a {
   color: #fff;
   display: block;
@@ -409,19 +419,19 @@ Temporary fix, display: none. */
   font-size: 1.2em;
 }
 
-/* line 141, ../sass/partials/_sponsors.scss */
+/* line 139, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold .view-empty a {
   background-color: #fcb040;
 }
 
-/* line 149, ../sass/partials/_sponsors.scss */
+/* line 147, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-silver .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-sponsor-silver .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-partners .view-empty a {
   background-color: #1664a6;
 }
 
-/* line 160, ../sass/partials/_sponsors.scss */
+/* line 158, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-bronze .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-sponsor-bronze .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-code-sprint .view-empty a,
@@ -431,7 +441,7 @@ Temporary fix, display: none. */
   background-color: #89caae;
 }
 
-/* line 165, ../sass/partials/_sponsors.scss */
+/* line 163, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
   background-color: #fcb040;
   color: white;
@@ -443,19 +453,19 @@ Temporary fix, display: none. */
 
 /* Sponsor override float into table display to center items */
 @media (min-width: 992px) {
-  /* line 177, ../sass/partials/_sponsors.scss */
+  /* line 175, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors,
   .region-sponsors .view-sponsors-and-partners-page {
     display: table;
     width: 100%;
   }
-  /* line 180, ../sass/partials/_sponsors.scss */
+  /* line 178, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .views-row,
   .region-sponsors .view-sponsors-and-partners-page .views-row {
     text-align: unset;
   }
 
-  /* line 189, ../sass/partials/_sponsors.scss */
+  /* line 187, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-header,
   .region-sponsors .view-sponsors-and-partners-page .view-header,
   .region-sponsors .view-sponsors .view-empty,
@@ -466,27 +476,27 @@ Temporary fix, display: none. */
     float: none;
   }
 
-  /* line 194, ../sass/partials/_sponsors.scss */
+  /* line 192, ../sass/partials/_sponsors.scss */
   .region-sponsors .view-sponsors .view-empty,
   .region-sponsors .view-sponsors .view-content {
     vertical-align: middle;
   }
 
-  /* line 197, ../sass/partials/_sponsors.scss */
+  /* line 195, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .view-empty a {
     display: inline-block;
   }
 }
-/* line 203, ../sass/partials/_sponsors.scss */
+/* line 201, ../sass/partials/_sponsors.scss */
 .col-md-8.camp-button-wrapper {
   width: 100%;
 }
-/* line 205, ../sass/partials/_sponsors.scss */
+/* line 203, ../sass/partials/_sponsors.scss */
 .col-md-8.camp-button-wrapper .camp-button {
   font-size: 1.5em;
 }
 
-/* line 210, ../sass/partials/_sponsors.scss */
+/* line 208, ../sass/partials/_sponsors.scss */
 .footer-container {
   margin-top: 3em;
 }
@@ -519,7 +529,7 @@ Temporary fix, display: none. */
 
 /* line 1, ../sass/partials/_proposals.scss */
 .header-info-top {
-  padding: 2em;
+  padding: 1.6em;
 }
 
 /* line 6, ../sass/partials/_proposals.scss */
@@ -537,18 +547,13 @@ h6 a,
 }
 
 /* line 17, ../sass/partials/_proposals.scss */
-.view-proposals img {
-  width: 40%;
-  margin-bottom: 1.5em;
-}
-/* line 21, ../sass/partials/_proposals.scss */
 .view-proposals .views-row {
   float: left;
-  margin-bottom: 3em;
-  margin-top: 3em;
+  margin-bottom: 2em;
+  margin-top: 2em;
 }
 
-/* line 33, ../sass/partials/_proposals.scss */
+/* line 29, ../sass/partials/_proposals.scss */
 .view-carousel-proposal .drupalcamp-speaker,
 .view-carousel-proposal .session-type-label,
 .view-carousel-proposal .session-level-label,
@@ -557,43 +562,41 @@ h6 a,
   text-align: center;
 }
 
-/* line 38, ../sass/partials/_proposals.scss */
+/* line 34, ../sass/partials/_proposals.scss */
 .drupalcamp-speaker {
   margin-bottom: 0.5em;
 }
-
-/* line 42, ../sass/partials/_proposals.scss */
-.drupalcamp-speaker {
-  margin-bottom: 0.5em;
-}
-/* line 44, ../sass/partials/_proposals.scss */
+/* line 36, ../sass/partials/_proposals.scss */
 .drupalcamp-speaker a {
   color: #fcb040;
   text-transform: lowercase;
   text-decoration: underline;
 }
 
-/* line 55, ../sass/partials/_proposals.scss */
+/* line 46, ../sass/partials/_proposals.scss */
 .drupalcamp-speaker,
 .session-type-label,
 .session-level-label,
-.session-summary {
+.topic-summary p {
   color: #1664a6;
   text-transform: lowercase;
+  font-size: 1.2em;
 }
 
-/* line 60, ../sass/partials/_proposals.scss */
+/* line 52, ../sass/partials/_proposals.scss */
 .speaker-drupalcamp-topic {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
+  margin-top: 0.5em;
 }
-/* line 64, ../sass/partials/_proposals.scss */
+/* line 57, ../sass/partials/_proposals.scss */
 .speaker-drupalcamp-topic a {
   color: #1664a6;
+  font-size: 1.4em;
 }
 
-/* line 75, ../sass/partials/_proposals.scss */
+/* line 69, ../sass/partials/_proposals.scss */
 .field--name-field-session-type,
 .field--name-field-session-level,
 .field--name-field-first-name,
@@ -602,7 +605,7 @@ h6 a,
   margin-bottom: 0;
   overflow: hidden;
 }
-/* line 79, ../sass/partials/_proposals.scss */
+/* line 73, ../sass/partials/_proposals.scss */
 .field--name-field-session-type .field__label::after,
 .field--name-field-session-level .field__label::after,
 .field--name-field-first-name .field__label::after,
@@ -610,7 +613,7 @@ h6 a,
 .field--name-field-profile-image .field__label::after {
   content: ":";
 }
-/* line 83, ../sass/partials/_proposals.scss */
+/* line 77, ../sass/partials/_proposals.scss */
 .field--name-field-session-type .field__label,
 .field--name-field-session-type .field__item,
 .field--name-field-session-level .field__label,
@@ -626,7 +629,7 @@ h6 a,
   color: #1664a6;
   font-size: 1.2em;
 }
-/* line 89, ../sass/partials/_proposals.scss */
+/* line 83, ../sass/partials/_proposals.scss */
 .field--name-field-session-type .field__item,
 .field--name-field-session-level .field__item,
 .field--name-field-first-name .field__item,
@@ -635,58 +638,58 @@ h6 a,
   margin-left: 0.5em;
 }
 
-/* line 96, ../sass/partials/_proposals.scss */
+/* line 90, ../sass/partials/_proposals.scss */
 .header-info-top .node__submitted {
   color: #1664a6;
   margin-bottom: 0.5em;
   font-size: 1.2em;
 }
 
-/* line 105, ../sass/partials/_proposals.scss */
+/* line 99, ../sass/partials/_proposals.scss */
 .view-id-your_proposal ul {
   list-style-type: none;
 }
-/* line 107, ../sass/partials/_proposals.scss */
+/* line 101, ../sass/partials/_proposals.scss */
 .view-id-your_proposal ul li {
   margin-left: 0;
 }
 
-/* line 114, ../sass/partials/_proposals.scss */
+/* line 108, ../sass/partials/_proposals.scss */
 #block-views-block-carousel-proposal-block-carousel-proposal h2 {
   text-align: center;
 }
 
-/* line 120, ../sass/partials/_proposals.scss */
+/* line 114, ../sass/partials/_proposals.scss */
 .flexslider {
   margin-bottom: 1em;
 }
-/* line 122, ../sass/partials/_proposals.scss */
+/* line 116, ../sass/partials/_proposals.scss */
 .flexslider .slides img {
   margin: 0 auto;
 }
-/* line 127, ../sass/partials/_proposals.scss */
+/* line 121, ../sass/partials/_proposals.scss */
 .flexslider .flex-direction-nav a {
   top: 25%;
 }
-/* line 130, ../sass/partials/_proposals.scss */
+/* line 124, ../sass/partials/_proposals.scss */
 .flexslider .flex-direction-nav a:before {
   font-size: 3em;
   color: #1664a6;
 }
-/* line 135, ../sass/partials/_proposals.scss */
+/* line 129, ../sass/partials/_proposals.scss */
 .flexslider .flex-direction-nav .flex-next,
 .flexslider .flex-direction-nav .flex-prev {
   height: 4em;
 }
-/* line 138, ../sass/partials/_proposals.scss */
+/* line 132, ../sass/partials/_proposals.scss */
 .flexslider .flex-direction-nav .flex-prev {
   left: 6px;
 }
-/* line 141, ../sass/partials/_proposals.scss */
+/* line 135, ../sass/partials/_proposals.scss */
 .flexslider .flex-direction-nav .flex-next {
   right: 6px;
 }
-/* line 149, ../sass/partials/_proposals.scss */
+/* line 143, ../sass/partials/_proposals.scss */
 .flexslider .slides,
 .flexslider .slides > li,
 .flexslider .flex-control-nav,
@@ -694,20 +697,20 @@ h6 a,
   padding-left: 18px;
   padding-right: 18px;
 }
-/* line 153, ../sass/partials/_proposals.scss */
+/* line 147, ../sass/partials/_proposals.scss */
 .flexslider ol.flex-control-nav {
   visibility: hidden;
 }
-/* line 156, ../sass/partials/_proposals.scss */
+/* line 150, ../sass/partials/_proposals.scss */
 .flexslider .flex-direction-nav a {
   opacity: 10;
 }
 
-/* line 162, ../sass/partials/_proposals.scss */
+/* line 156, ../sass/partials/_proposals.scss */
 .camp-button-wrapper {
   overflow: hidden;
 }
-/* line 164, ../sass/partials/_proposals.scss */
+/* line 158, ../sass/partials/_proposals.scss */
 .camp-button-wrapper .camp-button {
   font-size: 1.8em;
   text-transform: uppercase;
