@@ -19,7 +19,8 @@
   color: #1664a6;
 }
 
-.region-sponsors .view-sponsors {
+.view-sponsors,
+.view-sponsors-and-partners-page {
   @include clearfix();
   .views-row {
     padding-top: 10px;
@@ -81,33 +82,31 @@ Temporary fix, display: none. */
 }
 
 /* Sponsor header text */
-.region-sponsors {
-  .sponsor-header {
-    padding: 3em 1.6em;
-    overflow: hidden;
-    a,
-    h3 {
-      color: #fff;
-    }
-    h3 {
-      font-size: 1.8em;
-      font-weight: 700;
-      margin: 0;
-    }
-    a {
-      font-size: 1.3em;
-      text-transform: uppercase;
-    }
-    &:before {
-      background-color: inherit;
-      height: 100%;
-      content: "";
-      left: 15px;
-      position: absolute;
-      right: 15px;
-      top: 0;
-      z-index: -1;
-    }
+.sponsor-header {
+  padding: 3em 1.6em;
+  overflow: hidden;
+  a,
+  h3 {
+    color: #fff;
+  }
+  h3 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0;
+  }
+  a {
+    font-size: 1.3em;
+    text-transform: uppercase;
+  }
+  &:before {
+    background-color: inherit;
+    height: 100%;
+    content: "";
+    left: 15px;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    z-index: -1;
   }
 }
 
@@ -158,10 +157,14 @@ Temporary fix, display: none. */
   text-align: center;
 }
 
+/* ================== */
+/* BREAKPOINT SECTION */
+/* ================== */
+
 /* Sponsor override float into table display to center items */
 @media (min-width: 992px) {
-  .region-sponsors .view-sponsors ,
-  .region-sponsors .view-sponsors-and-partners-page {
+  .view-sponsors ,
+  .view-sponsors-and-partners-page {
     display: table;
     width: 100%;
     .views-row {
@@ -169,18 +172,21 @@ Temporary fix, display: none. */
     }
   }
 
-  .region-sponsors .view-sponsors .view-header,
-  .region-sponsors .view-sponsors-and-partners-page .view-header,
-  .region-sponsors .view-sponsors .view-empty,
-  .region-sponsors .view-sponsors-and-partners-page .view-empty,
-  .region-sponsors .view-sponsors .view-content,
-  .region-sponsors .view-sponsors-and-partners-page .view-content {
+  .view-sponsors .view-header,
+  .view-sponsors-and-partners-page .view-header,
+  .view-sponsors .view-empty,
+  .view-sponsors-and-partners-page .view-empty,
+  .view-sponsors .view-content,
+  .view-sponsors-and-partners-page .view-content {
     display: table-cell;
     float: none;
   }
 
-  .region-sponsors .view-sponsors .view-empty,
-  .region-sponsors .view-sponsors .view-content {
+  // This vertically aligns the blank boxes and sponsor images.
+  .view-sponsors .view-empty,
+  .view-sponsors-and-partners-page .view-empty,
+  .view-sponsors .view-content,
+  .view-sponsors-and-partners-page .view-content {
     vertical-align: middle;
   }
 
