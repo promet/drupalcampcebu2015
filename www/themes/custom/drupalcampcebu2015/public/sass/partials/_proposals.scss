@@ -1,33 +1,16 @@
-.header-info-top {
-  padding: 1.6em;
+.view-carousel-proposal {
+  text-align: center;
+  h2 {
+    font-size: 1.9em;
+  }
+  .speaker-drupalcamp-topic a {
+    font-size: 1.2em;
+  }
 }
 
-h6,
-.speaker-announcement {
-  color: $color-blue;
-  font-family: $font-text;
-  font-size: 1.5em;
-  text-align: left;
+p.speaker-announcement {
   a {
    color: $color-orange;
-  }
-}
-
-.view-proposals {
-  .views-row {
-    float: left;
-    margin-bottom: 2em;
-    margin-top: 2em;
-  }
-}
-
-.view-carousel-proposal {
-  .drupalcamp-speaker,
-  .session-type-label,
-  .session-level-label,
-  .session-summary,
-  .speaker-drupalcamp-topic  {
-    text-align: center;
   }
 }
 
@@ -57,6 +40,13 @@ h6,
   a {
     color: $color-blue;
     font-size: 1.4em;
+  }
+}
+
+.view-proposals {
+  .views-row {
+    margin-bottom: 2em;
+    margin-top: 2em;
   }
 }
 
@@ -159,7 +149,6 @@ h6,
     font-size: 1.8em;
     text-transform: uppercase;
     padding: 1em;
-    width: 100%;
     margin: 0 auto;
     text-align: center;
     background-color: $color-orange;

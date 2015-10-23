@@ -5,9 +5,6 @@
     padding: 0.2em;
     text-align: center;
   }
-  img {
-    width: 50%;
-  }
 }
 
 .promote-sponsor-tab {
@@ -42,6 +39,7 @@
 }
 
 /* Sponsor header background */
+/* Temporary fix, adding height. */
 #block-views-block-sponsors-block-sponsor-gold,
 #block-views-block-sponsors-and-partners-page-block-sponsor-gold {
   overflow: hidden;
@@ -167,34 +165,6 @@ Temporary fix, display: none. */
   height: auto;
   padding: 10px;
   text-align: center;
-}
-
-/* Sponsor override float into table display to center items */
-@media (min-width: 992px) {
-  .region-sponsors .view-sponsors ,
-  .region-sponsors .view-sponsors-and-partners-page {
-    display: table;
-    width: 100%;
-    .views-row {
-      text-align: unset;
-    }
-  }
-  .region-sponsors .view-sponsors .view-header,
-  .region-sponsors .view-sponsors-and-partners-page .view-header,
-  .region-sponsors .view-sponsors .view-empty,
-  .region-sponsors .view-sponsors-and-partners-page .view-empty,
-  .region-sponsors .view-sponsors .view-content,
-  .region-sponsors .view-sponsors-and-partners-page .view-content {
-    display: table-cell;
-    float: none;
-  }
-  .region-sponsors .view-sponsors .view-empty,
-  .region-sponsors .view-sponsors .view-content {
-    vertical-align: middle;
-  }
-  #block-views-block-sponsors-block-sponsor-promote .view-empty a {
-    display: inline-block;
-  }
 }
 
 // See all sponsors' button

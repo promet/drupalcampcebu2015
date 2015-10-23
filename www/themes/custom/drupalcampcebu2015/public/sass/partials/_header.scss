@@ -13,8 +13,15 @@
 }
 
 .header-info-top {
+  padding: 1.6em;
+  padding-top: 2em;
+  padding-bottom: 2em;
   background-color: $color-blue;
   margin-top: 1em;
+  h3,
+  p {
+    font-size: 1.1em;
+  }
   p,
   h2,
   h3 {
@@ -22,12 +29,8 @@
     text-transform: uppercase;
     font-weight: 700;
   }
-  h3,
-  p {
-    font-size: 1.1em;
-  }
   h2 {
-    font-size: 1.5em;
+    font-size: 1.6em;
   }
   a {
     color: #fff;
