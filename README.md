@@ -1,7 +1,12 @@
 ![Drupalcamp Cebu 2015 logo](https://2015.drupalcebu.org/themes/custom/drupalcampcebu2015/public/images/camp15-logo.jpg)
 
+Drupalcamp Cebu 2015
+
+## About Drupalcamp Cebu
+
 [Drupalcamp Cebu 2015](https://2015.drupalcebu.org/) is a conference about Drupal and Open Source technologies organized in Cebu City, Philippines.
-==================
+
+The website is build using Drupal 8. Original version based on drupal-8-beta-14.
 
 ## Get started!
 
