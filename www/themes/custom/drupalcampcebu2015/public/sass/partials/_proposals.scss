@@ -104,54 +104,123 @@ h6,
 }
 
 // Flexslider.
-.view-content {
-  .flexslider {
-    margin-bottom: 2em;
+
+.flexslider {
+  .slides img {
+    margin: 0 auto;
   }
-  .flex-direction-nav {
-    .flex-prev {
-      left: 10px;
-      height: 3em;
-    }
-    .flex-next {
-      right: 10px;
-      height: 3em;
-    }
-    a:before {
-      color: $color-blue;
-    }
+  .col-md-9.speaker-drupalcamp-topic,
+  .col-md-9.drupalcamp-speaker,
+  .col-md-9.session-summary {
+    text-align: center;
   }
-  .flex-direction-nav a {
-    opacity: 10;
+}
+
+#block-views-block-carousel-proposal-block-carousel-proposal h2 {
+  text-align: center;
+}
+.flexslider {
+  margin-bottom: 2em;
+}
+.flex-direction-nav {
+  .flex-prev {
+    left: 10px;
+    height: 3em;
   }
-  .slides {
-    padding-left: 2.5em;
-    padding-right: 2.5em;
+  .flex-next {
+    right: 10px;
+    height: 3em;
   }
-  .slides,
-  .slides > li,
-  .flex-control-nav,
-  .flex-direction-nav {
-    padding-left: 18px;
-    padding-right: 18px;
+  a:before {
+    color: $color-blue;
   }
-  ol.flex-control-nav {
-    visibility: hidden;
-  }
+}
+.flex-direction-nav a {
+  opacity: 10;
+}
+.slides {
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+}
+.slides,
+.slides > li,
+.flex-control-nav,
+.flex-direction-nav {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+ol.flex-control-nav {
+  visibility: hidden;
 }
 
 // Propose a session button
 .camp-button-wrapper {
   overflow: hidden;
+  width: 100%;
   .camp-button {
     font-size: 1.5em;
     text-transform: uppercase;
     padding: 1em;
-    width: 31%;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     background-color: $color-orange;
     color: $color-white-text;
     font-family: $font-title;
+  }
+}
+
+/* ================== */
+/* BREAKPOINT SECTION */
+/* ================== */
+@media (min-width: 480px) {
+  .flexslider {
+    .slides img {
+      width: 40%;
+    }
+  }
+  .camp-button-wrapper {
+    .camp-button {
+      width: 60%;
+    }
+  }
+}
+
+/* ================== */
+/* BREAKPOINT SECTION */
+/* ================== */
+@media (min-width: 1020px) {
+  .flexslider {
+    .slides img {
+      width: 100%;
+    }
+    .col-md-9.speaker-drupalcamp-topic,
+    .col-md-9.drupalcamp-speaker,
+    .col-md-9.session-summary {
+      text-align: left;
+    }
+  }
+  .col-md-9.session-type-label,
+  .col-md-9.session-level-label {
+    float: right;
+  }
+  #block-views-block-carousel-proposal-block-carousel-proposal h2 {
+    text-align: left;
+  }
+  .camp-button-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    .camp-button {
+      width: 31.5%;
+    }
+  }
+}
+
+/* ================== */
+/* BREAKPOINT SECTION */
+/* ================== */
+@media (min-width: 1200px) {
+  .camp-button-wrapper .camp-button {
+    width: 34%;
   }
 }
