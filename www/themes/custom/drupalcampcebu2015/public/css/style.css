@@ -246,6 +246,11 @@ p.subtitle {
   text-decoration: underline;
 }
 
+/* line 86, ../sass/partials/_global.scss */
+.node-type-list dt a {
+  color: #000;
+}
+
 /* line 2, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab {
   padding-bottom: 0.6em;
