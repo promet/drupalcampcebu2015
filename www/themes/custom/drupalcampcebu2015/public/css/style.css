@@ -7,42 +7,38 @@
   margin-top: 2.5em;
 }
 
-/* line 6, ../sass/partials/_header.scss */
+/* line 5, ../sass/partials/_header.scss */
 #site-wrapper .site-logo {
   margin-bottom: 1.5em;
   text-align: center;
 }
-/* line 9, ../sass/partials/_header.scss */
-#site-wrapper .site-logo img {
-  height: 30em;
-}
 
-/* line 15, ../sass/partials/_header.scss */
+/* line 10, ../sass/partials/_header.scss */
 .header-info-top {
   background-color: #1664a6;
   padding: 1.5em;
 }
-/* line 19, ../sass/partials/_header.scss */
+/* line 13, ../sass/partials/_header.scss */
 .header-info-top p,
 .header-info-top h2 {
-  color: white;
+  color: #fff;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-size: 1.1em;
 }
-/* line 25, ../sass/partials/_header.scss */
+/* line 20, ../sass/partials/_header.scss */
 .header-info-top a {
   color: #fff;
   font-size: 1.2em;
 }
 
-/* line 31, ../sass/partials/_header.scss */
+/* line 26, ../sass/partials/_header.scss */
 .content h1 {
   font-size: 1.8em;
   text-align: center;
 }
 
-/* line 39, ../sass/partials/_header.scss */
+/* line 33, ../sass/partials/_header.scss */
 .content h1,
 .content h2,
 .region-header-info-bottom h1,
@@ -52,7 +48,7 @@
   margin-bottom: 1em;
   margin-top: 2em;
 }
-/* line 45, ../sass/partials/_header.scss */
+/* line 40, ../sass/partials/_header.scss */
 .content .field-item,
 .region-header-info-bottom .field-item {
   margin-top: 2em;
@@ -109,7 +105,7 @@
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-4 {
   padding: 0;
 }
-/* line 21, ../sass/partials/_newsletter.scss */
+/* line 20, ../sass/partials/_newsletter.scss */
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-3,
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 {
   padding-left: 0;
@@ -120,7 +116,7 @@
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 label {
   font-weight: normal;
 }
-/* line 33, ../sass/partials/_newsletter.scss */
+/* line 32, ../sass/partials/_newsletter.scss */
 .newsletter .email-address,
 .newsletter .firstname {
   color: #fcb040;
@@ -140,7 +136,7 @@
   padding: 0.3em;
   width: 100%;
   margin-top: 0.5em;
-  color: white;
+  color: #fff;
   background-color: #fcb040;
   border: none;
   text-transform: uppercase;
@@ -199,7 +195,7 @@ img {
 }
 /* line 43, ../sass/partials/_global.scss */
 .region-sidebar ul.menu li a, .region-sidebar ul.menu li p {
-  color: white;
+  color: #fff;
   margin-bottom: 0;
   text-transform: uppercase;
 }
@@ -229,20 +225,20 @@ h3 {
   font-size: 1.8em;
   font-weight: 700;
   margin: 0;
-  color: white;
+  color: #fff;
 }
 
 /* line 71, ../sass/partials/_global.scss */
 a {
   font-size: 1em;
   text-transform: uppercase;
-  color: white;
+  color: #fff;
 }
 
 /* line 77, ../sass/partials/_global.scss */
 a:hover {
   text-decoration: none;
-  color: white;
+  color: #fff;
 }
 
 /* line 82, ../sass/partials/_global.scss */
@@ -263,7 +259,7 @@ p.subtitle {
 .promote-sponsor-tab p:nth-child(2) {
   font-size: 1.5em;
 }
-/* line 12, ../sass/partials/_sponsors.scss */
+/* line 11, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1),
 .promote-sponsor-tab p:nth-child(2) {
   color: #1664a6;
@@ -275,7 +271,7 @@ p.subtitle {
   color: #1664a6;
 }
 
-/* line 23, ../sass/partials/_sponsors.scss */
+/* line 22, ../sass/partials/_sponsors.scss */
 .view-sponsors,
 .view-sponsors-and-partners-page {
   overflow: hidden;
@@ -290,7 +286,7 @@ p.subtitle {
 }
 
 /* Sponsor header background */
-/* line 34, ../sass/partials/_sponsors.scss */
+/* line 33, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold,
 #block-views-block-sponsors-and-partners-page-block-sponsor-gold {
   overflow: hidden;
@@ -318,7 +314,7 @@ p.subtitle {
   background-color: #89caae;
 }
 
-/* line 64, ../sass/partials/_sponsors.scss */
+/* line 60, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-and-partners-page-block-code-sprint,
 #block-views-block-sponsors-and-partners-page-block-coffee,
 #block-views-block-sponsors-and-partners-page-block-saturday-lunch,
@@ -334,7 +330,7 @@ p.subtitle {
 
 /* View should be hidden without content, but view still showing in the markup.
 Temporary fix, display: none. */
-/* line 75, ../sass/partials/_sponsors.scss */
+/* line 74, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-and-partners-page-block-saturday-lunch,
 #block-views-block-sponsors-and-partners-page-block-sat-night {
   display: none;
@@ -352,7 +348,7 @@ Temporary fix, display: none. */
   padding: 3em 1.6em;
   overflow: hidden;
 }
-/* line 89, ../sass/partials/_sponsors.scss */
+/* line 88, ../sass/partials/_sponsors.scss */
 .sponsor-header a,
 .sponsor-header h3 {
   color: #fff;
@@ -419,7 +415,7 @@ Temporary fix, display: none. */
 /* line 151, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
   background-color: #fcb040;
-  color: white;
+  color: #fff;
   font-size: 1.5em;
   height: auto;
   padding: 20px;
@@ -431,7 +427,7 @@ Temporary fix, display: none. */
 /* ================== */
 /* Sponsor override float into table display to center items */
 @media (min-width: 992px) {
-  /* line 167, ../sass/partials/_sponsors.scss */
+  /* line 166, ../sass/partials/_sponsors.scss */
   .view-sponsors,
   .view-sponsors-and-partners-page {
     display: table;
@@ -443,7 +439,7 @@ Temporary fix, display: none. */
     text-align: unset;
   }
 
-  /* line 180, ../sass/partials/_sponsors.scss */
+  /* line 175, ../sass/partials/_sponsors.scss */
   .view-sponsors .view-header,
   .view-sponsors-and-partners-page .view-header,
   .view-sponsors .view-empty,
@@ -454,7 +450,7 @@ Temporary fix, display: none. */
     float: none;
   }
 
-  /* line 189, ../sass/partials/_sponsors.scss */
+  /* line 186, ../sass/partials/_sponsors.scss */
   .view-sponsors .view-empty,
   .view-sponsors-and-partners-page .view-empty,
   .view-sponsors .view-content,
@@ -498,12 +494,12 @@ Temporary fix, display: none. */
   margin-top: 2em;
   width: 100%;
 }
-/* line 11, ../sass/partials/_footer.scss */
+/* line 10, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1),
 .footer-container div:nth-child(2) {
   text-align: center;
   font-size: 0.8em;
-  color: white;
+  color: #fff;
   font-family: "Open Sans", sans-serif;
   padding-bottom: 0.5em;
   font-weight: 300;
@@ -511,7 +507,7 @@ Temporary fix, display: none. */
 /* line 18, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1) p a,
 .footer-container div:nth-child(2) p a {
-  color: white;
+  color: #fff;
 }
 
 @media only screen and (min-width: 420px) {
@@ -519,7 +515,7 @@ Temporary fix, display: none. */
   #site-wrapper .site-logo {
     margin-bottom: 2.5em;
   }
-  /* line 8, ../sass/partials/_media-queries.scss */
+  /* line 7, ../sass/partials/_media-queries.scss */
   #site-wrapper .header-info-top,
   #site-wrapper .header-info-bottom {
     text-align: left;
@@ -527,7 +523,7 @@ Temporary fix, display: none. */
     padding-top: 3.5em;
     padding-bottom: 5.5em;
   }
-  /* line 11, ../sass/partials/_media-queries.scss */
+  /* line 10, ../sass/partials/_media-queries.scss */
   #site-wrapper .header-info-top h3,
   #site-wrapper .header-info-top p,
   #site-wrapper .header-info-bottom h3,
@@ -560,7 +556,7 @@ Temporary fix, display: none. */
     font-size: 2.1em;
     margin-top: 1.5em;
   }
-  /* line 41, ../sass/partials/_media-queries.scss */
+  /* line 40, ../sass/partials/_media-queries.scss */
   #site-wrapper .newsletter .email-address,
   #site-wrapper .newsletter .firstname {
     font-size: 1.5em;
@@ -611,7 +607,7 @@ Temporary fix, display: none. */
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 90, ../sass/partials/_media-queries.scss */
+  /* line 89, ../sass/partials/_media-queries.scss */
   .header-info-top h3,
   .header-info-top p {
     font-size: 1.2em;
@@ -636,7 +632,7 @@ h1 {
   text-align: left;
 }
 
-/* line 9, ../sass/partials/_proposals.scss */
+/* line 8, ../sass/partials/_proposals.scss */
 h6,
 .speaker-announcement {
   color: #1664a6;
@@ -670,7 +666,7 @@ h6 a,
   text-decoration: underline;
 }
 
-/* line 38, ../sass/partials/_proposals.scss */
+/* line 36, ../sass/partials/_proposals.scss */
 .drupalcamp-speaker,
 .session-type-label,
 .session-level-label {
@@ -691,7 +687,7 @@ h6 a,
   font-size: 1.3em;
 }
 
-/* line 60, ../sass/partials/_proposals.scss */
+/* line 56, ../sass/partials/_proposals.scss */
 .field--name-field-session-type,
 .field--name-field-session-level,
 .field--name-field-first-name,
@@ -708,7 +704,7 @@ h6 a,
 .field--name-field-profile-image .field__label::after {
   content: ":";
 }
-/* line 68, ../sass/partials/_proposals.scss */
+/* line 67, ../sass/partials/_proposals.scss */
 .field--name-field-session-type .field__label,
 .field--name-field-session-type .field__item,
 .field--name-field-session-level .field__label,
@@ -759,7 +755,7 @@ h6 a,
 .flexslider .slides img {
   margin: 0 auto;
 }
-/* line 114, ../sass/partials/_proposals.scss */
+/* line 112, ../sass/partials/_proposals.scss */
 .flexslider .col-md-9.speaker-drupalcamp-topic,
 .flexslider .col-md-9.drupalcamp-speaker,
 .flexslider .col-md-9.session-summary {
@@ -802,7 +798,7 @@ h6 a,
   padding-right: 2.5em;
 }
 
-/* line 148, ../sass/partials/_proposals.scss */
+/* line 145, ../sass/partials/_proposals.scss */
 .slides,
 .slides > li,
 .flex-control-nav,
@@ -830,7 +826,7 @@ ol.flex-control-nav {
   margin: 0 auto;
   text-align: center;
   background-color: #fcb040;
-  color: white;
+  color: #fff;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -856,14 +852,14 @@ ol.flex-control-nav {
   .flexslider .slides img {
     width: 100%;
   }
-  /* line 199, ../sass/partials/_proposals.scss */
+  /* line 197, ../sass/partials/_proposals.scss */
   .flexslider .col-md-9.speaker-drupalcamp-topic,
   .flexslider .col-md-9.drupalcamp-speaker,
   .flexslider .col-md-9.session-summary {
     text-align: left;
   }
 
-  /* line 204, ../sass/partials/_proposals.scss */
+  /* line 203, ../sass/partials/_proposals.scss */
   .col-md-9.session-type-label,
   .col-md-9.session-level-label {
     float: right;
