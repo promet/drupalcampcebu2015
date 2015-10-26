@@ -599,7 +599,11 @@ Temporary fix, display: none. */
   margin-top: 2em;
   width: 100%;
 }
-/* line 11, ../sass/partials/_footer.scss */
+/* line 10, ../sass/partials/_footer.scss */
+.footer-container img.membership-logo {
+  padding: 0 0 16px;
+}
+/* line 13, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1),
 .footer-container div:nth-child(2) {
   text-align: center;
