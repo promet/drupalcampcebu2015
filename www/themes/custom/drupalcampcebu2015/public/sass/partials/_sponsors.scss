@@ -84,7 +84,8 @@ Temporary fix, display: none. */
 /* Sponsor header text */
 .sponsor-header {
   padding: 3em 1.6em;
-  overflow: hidden;
+  /* Possible fix for the bug in sponsor tabs background-color */
+  // overflow: hidden;
   a,
   h3 {
     color: #fff;
