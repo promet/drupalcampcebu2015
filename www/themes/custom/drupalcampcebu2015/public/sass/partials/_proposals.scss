@@ -51,6 +51,15 @@ h6,
   }
 }
 
+#block-views-block-your-proposals-block-your-proposals-list {
+  p,
+  a {
+    text-transform: none;
+    font-size: 1.5em;
+    margin: 0;
+  }
+}
+
 // Type and Level are like terms to be displayed on the session page.
 // These classes are drupal-generated when title of the content is clicked.
 .field--name-field-session-type,
