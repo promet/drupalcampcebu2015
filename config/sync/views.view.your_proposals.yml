@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - node.type.sessions
+    - user.role.admin
+    - user.role.authenticated
+    - user.role.speaker
   module:
     - node
     - user
@@ -23,9 +26,12 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
+        type: role
         options:
-          perm: 'access content'
+          role:
+            authenticated: authenticated
+            admin: admin
+            speaker: speaker
       cache:
         type: tag
         options: {  }
@@ -233,7 +239,7 @@ display:
         - url
         - user
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }
   block_your_proposals_list:
     display_plugin: block
@@ -250,5 +256,5 @@ display:
         - url
         - user
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }
