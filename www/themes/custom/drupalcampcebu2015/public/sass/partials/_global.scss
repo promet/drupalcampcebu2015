@@ -33,6 +33,10 @@ img {
   height: auto;
 }
 
+.node-type-list dt a {
+  color: $color-blue;
+}
+
 // This applies to all menu boxes including sponsor tabs in region sponsors
 .region-sidebar ul.menu {
   margin: 0;
