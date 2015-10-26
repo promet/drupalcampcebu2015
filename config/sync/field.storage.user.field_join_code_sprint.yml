@@ -1,0 +1,27 @@
+uuid: 0aaf8eef-1b03-4068-be00-ed44e378a208
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_join_code_sprint
+field_name: field_join_code_sprint
+entity_type: user
+type: list_float
+settings:
+  allowed_values:
+    -
+      value: !!float 0
+      label: 'YES'
+    -
+      value: !!float 1
+      label: 'NO'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

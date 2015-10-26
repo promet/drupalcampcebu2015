@@ -1,0 +1,21 @@
+uuid: f62e1581-0d81-416f-965b-910bb2c08923
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_drupal_contribute
+  module:
+    - options
+    - user
+id: user.user.field_drupal_contribute
+field_name: field_drupal_contribute
+entity_type: user
+bundle: user
+label: 'If yes, have you contributed to Drupal before?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_float

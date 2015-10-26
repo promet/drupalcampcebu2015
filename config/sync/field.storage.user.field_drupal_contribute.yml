@@ -1,0 +1,27 @@
+uuid: 60598f1e-e5cd-4a17-9e05-5c09732c56c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_drupal_contribute
+field_name: field_drupal_contribute
+entity_type: user
+type: list_float
+settings:
+  allowed_values:
+    -
+      value: !!float 0
+      label: 'YES'
+    -
+      value: !!float 1
+      label: 'NO'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
