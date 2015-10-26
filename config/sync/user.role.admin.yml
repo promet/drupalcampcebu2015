@@ -62,3 +62,4 @@ permissions:
   - 'select account cancellation method'
   - 'access user profiles'
   - 'administer views'
+  - 'use text format full_html_ckeditor'

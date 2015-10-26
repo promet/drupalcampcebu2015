@@ -1,0 +1,25 @@
+uuid: bdde154b-a1fd-4502-8006-6cb7ebbb27f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - editor
+name: 'Full HTML CKEditor'
+format: full_html_ckeditor
+weight: -10
+filters:
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 0
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <a href hreflang !href target> <img !data-entity-type !data-entity-uuid !src alt width height data-entity-type data-entity-uuid src>'
+      filter_html_help: true
+      filter_html_nofollow: false
