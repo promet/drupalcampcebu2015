@@ -1,22 +1,22 @@
-uuid: 350f9c9b-33ea-45b9-9402-2cbb21ca92ac
+uuid: 90cdf337-c055-45c2-9d05-05e018f8a3f4
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.your_proposal
+    - views.view.your_proposals
   module:
     - system
     - views
   theme:
     - drupalcampcebu2015
-id: views_block__your_proposal_block_your_proposals
+id: views_block__your_proposals_block_your_proposals_list
 theme: drupalcampcebu2015
 region: header_info_top
 weight: -13
 provider: null
-plugin: 'views_block:your_proposal-block_your_proposals'
+plugin: 'views_block:your_proposals-block_your_proposals_list'
 settings:
-  id: 'views_block:your_proposal-block_your_proposals'
+  id: 'views_block:your_proposals-block_your_proposals_list'
   label: ''
   provider: views
   label_display: visible
