@@ -41,4 +41,8 @@ content:
     weight: 0
   timezone:
     weight: 6
-hidden: {  }
+hidden:
+  field_company: true
+  field_drupal_contribute: true
+  field_join_code_sprint: true
+  field_role: true
