@@ -306,31 +306,39 @@ p.subtitle {
   text-transform: none;
 }
 
+/* UP Logo below the menu */
+/* line 142, ../sass/partials/_global.scss */
+#site-wrapper .col-md-4 .up-logo {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 /* ================== */
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
 @media only screen and (min-width: 420px) {
-  /* line 145, ../sass/partials/_global.scss */
+  /* line 156, ../sass/partials/_global.scss */
   .profile .field--name-field-first-name .field__label,
   .profile .field--name-field-last-name .field__label {
     font-size: 1.3em;
   }
-  /* line 148, ../sass/partials/_global.scss */
+  /* line 159, ../sass/partials/_global.scss */
   .profile .form-item h4.label {
     font-size: 1.1em;
   }
 
-  /* line 154, ../sass/partials/_global.scss */
+  /* line 165, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals h2 {
     font-size: 1.7em;
   }
-  /* line 157, ../sass/partials/_global.scss */
+  /* line 168, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals a {
     font-size: 1.2em;
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 168, ../sass/partials/_global.scss */
+  /* line 179, ../sass/partials/_global.scss */
   .profile .field--name-field-first-name .field__label,
   .profile .field--name-field-last-name .field__label,
   .profile .field--name-field-first-name .field__item,
@@ -338,15 +346,15 @@ p.subtitle {
     font-size: 1.5em;
   }
 
-  /* line 173, ../sass/partials/_global.scss */
+  /* line 184, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals {
     padding-top: 1em;
   }
-  /* line 175, ../sass/partials/_global.scss */
+  /* line 186, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals h2 {
     font-size: 2em;
   }
-  /* line 178, ../sass/partials/_global.scss */
+  /* line 189, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals a {
     font-size: 1.5em;
   }
@@ -603,7 +611,7 @@ Temporary fix, display: none. */
 .footer-container img.membership-logo {
   padding: 0 0 16px;
 }
-/* line 13, ../sass/partials/_footer.scss */
+/* line 14, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1),
 .footer-container div:nth-child(2) {
   text-align: center;
@@ -613,7 +621,7 @@ Temporary fix, display: none. */
   padding-bottom: 0.5em;
   font-weight: 300;
 }
-/* line 18, ../sass/partials/_footer.scss */
+/* line 21, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1) p a,
 .footer-container div:nth-child(2) p a {
   color: white;

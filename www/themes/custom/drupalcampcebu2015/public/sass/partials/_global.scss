@@ -136,6 +136,17 @@ p.subtitle {
   }
 }
 
+/* UP Logo below the menu */
+#site-wrapper {
+  .col-md-4 {
+    .up-logo {
+      text-align: center;
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+  }
+}
+
 /* ================== */
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
