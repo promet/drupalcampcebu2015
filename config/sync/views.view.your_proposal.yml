@@ -230,14 +230,15 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_1:
+  block_your_proposals:
     display_plugin: block
-    id: block_1
+    id: block_your_proposals
     display_title: 'Your proposals'
     position: 1
     display_options:
       display_extenders: {  }
       display_description: ''
+      block_description: 'Your Proposals'
     cache_metadata:
       max-age: -1
       contexts:

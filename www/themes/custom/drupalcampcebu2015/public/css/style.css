@@ -273,7 +273,7 @@ p.subtitle {
   color: #fcb040;
   font-size: 1.1em;
 }
-/* line 110, ../sass/partials/_global.scss */
+/* line 111, ../sass/partials/_global.scss */
 .profile .form-item,
 .profile .form-item h4.label {
   color: #1664a6;
@@ -287,18 +287,18 @@ p.subtitle {
   margin-bottom: 0;
 }
 
-/* line 122, ../sass/partials/_global.scss */
+/* line 123, ../sass/partials/_global.scss */
 #block-views-block-user-proposals-block-user-proposals {
   padding-bottom: 2em;
   padding-top: 0.5em;
   overflow: hidden;
 }
-/* line 126, ../sass/partials/_global.scss */
+/* line 127, ../sass/partials/_global.scss */
 #block-views-block-user-proposals-block-user-proposals h2 {
   margin: 0;
   font-size: 1.2em;
 }
-/* line 130, ../sass/partials/_global.scss */
+/* line 131, ../sass/partials/_global.scss */
 #block-views-block-user-proposals-block-user-proposals a {
   color: #1664a6;
   font-size: 1em;
@@ -310,41 +310,43 @@ p.subtitle {
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
 @media only screen and (min-width: 420px) {
-  /* line 144, ../sass/partials/_global.scss */
+  /* line 145, ../sass/partials/_global.scss */
   .profile .field--name-field-first-name .field__label,
   .profile .field--name-field-last-name .field__label {
     font-size: 1.3em;
   }
-  /* line 147, ../sass/partials/_global.scss */
+  /* line 148, ../sass/partials/_global.scss */
   .profile .form-item h4.label {
     font-size: 1.1em;
   }
 
-  /* line 153, ../sass/partials/_global.scss */
+  /* line 154, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals h2 {
     font-size: 1.7em;
   }
-  /* line 156, ../sass/partials/_global.scss */
+  /* line 157, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals a {
     font-size: 1.2em;
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 165, ../sass/partials/_global.scss */
+  /* line 168, ../sass/partials/_global.scss */
   .profile .field--name-field-first-name .field__label,
-  .profile .field--name-field-last-name .field__label {
+  .profile .field--name-field-last-name .field__label,
+  .profile .field--name-field-first-name .field__item,
+  .profile .field--name-field-last-name .field__item {
     font-size: 1.5em;
   }
 
-  /* line 170, ../sass/partials/_global.scss */
+  /* line 173, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals {
     padding-top: 1em;
   }
-  /* line 172, ../sass/partials/_global.scss */
+  /* line 175, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals h2 {
     font-size: 2em;
   }
-  /* line 175, ../sass/partials/_global.scss */
+  /* line 178, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals a {
     font-size: 1.5em;
   }
