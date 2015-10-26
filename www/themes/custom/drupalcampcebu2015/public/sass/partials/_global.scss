@@ -82,3 +82,94 @@ a:hover {
 p.subtitle {
   text-decoration: underline;
 }
+
+/* Styling for user profile page */
+#block-drupalcampcebu2015-page-title {
+  h1.page-title {
+    font-size: 2em;
+    text-align: left;
+  }
+}
+
+.profile {
+  .field--name-field-profile-image {
+    width: 35%;
+    float: left;
+    padding-right: 2em;
+  }
+  .field--name-field-first-name .field__label,
+  .field--name-field-last-name .field__label {
+    color: $color-orange;
+    font-size: 1.1em;
+  }
+  .form-item,
+  .form-item h4.label {
+    color: $color-blue;
+    font-family: $font-title;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1em;
+    font-weight: normal;
+    text-transform: lowercase;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+#block-views-block-user-proposals-block-user-proposals {
+  padding-bottom: 2em;
+  padding-top: 0.5em;
+  overflow: hidden;
+  h2 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  a {
+    color: $color-blue;
+    font-size: 1em;
+    font-family: $font-text;
+    text-transform: none;
+  }
+}
+
+/* ================== */
+/* BREAKPOINT SECTION FOR USER PROFILE */
+/* ================== */
+@media only screen and (min-width:420px) {
+  .profile {
+    .field--name-field-first-name .field__label,
+    .field--name-field-last-name .field__label {
+      font-size: 1.3em;
+    }
+    .form-item h4.label {
+      font-size: 1.1em;
+    }
+  }
+
+  #block-views-block-user-proposals-block-user-proposals {
+    h2 {
+      font-size: 1.7em;
+    }
+    a {
+      font-size: 1.2em;
+    }
+  }
+}
+
+@media only screen and (min-width: 1290px) {
+    .profile {
+    .field--name-field-first-name .field__label,
+    .field--name-field-last-name .field__label {
+      font-size: 1.5em;
+    }
+  }
+
+  #block-views-block-user-proposals-block-user-proposals {
+    padding-top: 1em;
+    h2 {
+      font-size: 2em;
+    }
+    a {
+      font-size: 1.5em;
+    }
+  }
+}

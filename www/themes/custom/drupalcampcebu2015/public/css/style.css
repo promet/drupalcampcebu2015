@@ -12,17 +12,13 @@
   margin-bottom: 1.5em;
   text-align: center;
 }
-/* line 9, ../sass/partials/_header.scss */
-#site-wrapper .site-logo img {
-  height: 30em;
-}
 
-/* line 15, ../sass/partials/_header.scss */
+/* line 12, ../sass/partials/_header.scss */
 .header-info-top {
   background-color: #1664a6;
   padding: 1.5em;
 }
-/* line 19, ../sass/partials/_header.scss */
+/* line 16, ../sass/partials/_header.scss */
 .header-info-top p,
 .header-info-top h2 {
   color: white;
@@ -30,31 +26,34 @@
   font-family: "Montserrat", sans-serif;
   font-size: 1.1em;
 }
-/* line 25, ../sass/partials/_header.scss */
+/* line 22, ../sass/partials/_header.scss */
 .header-info-top a {
   color: #fff;
   font-size: 1.2em;
 }
 
-/* line 31, ../sass/partials/_header.scss */
+/* line 28, ../sass/partials/_header.scss */
 .content h1 {
   font-size: 1.8em;
   text-align: center;
 }
 
-/* line 39, ../sass/partials/_header.scss */
+/* line 37, ../sass/partials/_header.scss */
 .content h1,
 .content h2,
 .region-header-info-bottom h1,
-.region-header-info-bottom h2 {
+.region-header-info-bottom h2,
+#block-views-block-user-proposals-block-user-proposals h1,
+#block-views-block-user-proposals-block-user-proposals h2 {
   font-weight: bold;
   color: #1664a6;
   margin-bottom: 1em;
   margin-top: 2em;
 }
-/* line 45, ../sass/partials/_header.scss */
+/* line 43, ../sass/partials/_header.scss */
 .content .field-item,
-.region-header-info-bottom .field-item {
+.region-header-info-bottom .field-item,
+#block-views-block-user-proposals-block-user-proposals .field-item {
   margin-top: 2em;
 }
 
@@ -250,6 +249,101 @@ p.subtitle {
   text-decoration: underline;
 }
 
+/* Styling for user profile page */
+/* line 88, ../sass/partials/_global.scss */
+#block-drupalcampcebu2015-page-title h1.page-title {
+  font-size: 2em;
+  text-align: left;
+}
+
+/* line 95, ../sass/partials/_global.scss */
+.profile .field--name-field-profile-image {
+  width: 35%;
+  float: left;
+  padding-right: 2em;
+}
+/* line 101, ../sass/partials/_global.scss */
+.profile .field--name-field-first-name .field__label,
+.profile .field--name-field-last-name .field__label {
+  color: #fcb040;
+  font-size: 1.1em;
+}
+/* line 106, ../sass/partials/_global.scss */
+.profile .form-item,
+.profile .form-item h4.label {
+  color: #1664a6;
+  font-family: "Montserrat", sans-serif;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 1em;
+  font-weight: normal;
+  text-transform: lowercase;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 118, ../sass/partials/_global.scss */
+#block-views-block-user-proposals-block-user-proposals {
+  padding-bottom: 2em;
+  padding-top: 0.5em;
+  overflow: hidden;
+}
+/* line 122, ../sass/partials/_global.scss */
+#block-views-block-user-proposals-block-user-proposals h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+/* line 126, ../sass/partials/_global.scss */
+#block-views-block-user-proposals-block-user-proposals a {
+  color: #1664a6;
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
+  text-transform: none;
+}
+
+/* ================== */
+/* BREAKPOINT SECTION FOR USER PROFILE */
+/* ================== */
+@media only screen and (min-width: 420px) {
+  /* line 140, ../sass/partials/_global.scss */
+  .profile .field--name-field-first-name .field__label,
+  .profile .field--name-field-last-name .field__label {
+    font-size: 1.3em;
+  }
+  /* line 143, ../sass/partials/_global.scss */
+  .profile .form-item h4.label {
+    font-size: 1.1em;
+  }
+
+  /* line 149, ../sass/partials/_global.scss */
+  #block-views-block-user-proposals-block-user-proposals h2 {
+    font-size: 1.7em;
+  }
+  /* line 152, ../sass/partials/_global.scss */
+  #block-views-block-user-proposals-block-user-proposals a {
+    font-size: 1.2em;
+  }
+}
+@media only screen and (min-width: 1290px) {
+  /* line 161, ../sass/partials/_global.scss */
+  .profile .field--name-field-first-name .field__label,
+  .profile .field--name-field-last-name .field__label {
+    font-size: 1.5em;
+  }
+
+  /* line 166, ../sass/partials/_global.scss */
+  #block-views-block-user-proposals-block-user-proposals {
+    padding-top: 1em;
+  }
+  /* line 168, ../sass/partials/_global.scss */
+  #block-views-block-user-proposals-block-user-proposals h2 {
+    font-size: 2em;
+  }
+  /* line 171, ../sass/partials/_global.scss */
+  #block-views-block-user-proposals-block-user-proposals a {
+    font-size: 1.5em;
+  }
+}
 /* line 2, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab {
   padding-bottom: 0.6em;

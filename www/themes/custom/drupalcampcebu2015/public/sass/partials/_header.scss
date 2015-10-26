@@ -6,9 +6,6 @@
   .site-logo {
     margin-bottom: 1.5em;
     text-align: center;
-    img {
-      height: 30em;
-    }
   }
 }
 
@@ -34,7 +31,8 @@
 }
 
 .content,
-.region-header-info-bottom {
+.region-header-info-bottom,
+#block-views-block-user-proposals-block-user-proposals {
   h1,
   h2 {
     font-weight: bold;
@@ -46,3 +44,4 @@
     margin-top: 2em;
   }
 }
+
