@@ -1,12 +1,24 @@
+boostrap:
+  version: 1.x
+  js:
+    lib/bootstrap/js/bootstrap.js: {}
+
+flexslider:
+  version: 1.x
+  js:
+    lib/flexslider/jquery.flexslider.js: {}
+
 global-styling:
+  version: 1.x
   css:
     theme:
       lib/bootstrap/css/bootstrap.css: {}
       lib/flexslider/flexslider.css: {}
       public/css/style.css: {}
-  js:
-    lib/bootstrap/js/bootstrap.js: {}
-    lib/flexslider/jquery.flexslider.js: {}
-    public/js/flexslider/drupalcampcebu2015.flexslider.js: {}
-  dependencies:
-    - core/jquery
+  # js:
+  #   public/js/flexslider/drupalcampcebu2015.flexslider.js: {}
+  # dependencies:
+  #   - drupalcampcebu2015/boostrap
+  #   - drupalcampcebu2015/flexslider
+  #   - core/jquery
+  #   - core/jquery.once
