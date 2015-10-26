@@ -1,0 +1,21 @@
+uuid: bb6ab4da-fdbd-4788-bb00-b0d5c02cb22d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_join_code_sprint
+  module:
+    - options
+    - user
+id: user.user.field_join_code_sprint
+field_name: field_join_code_sprint
+entity_type: user
+bundle: user
+label: 'Would you like to join the code sprint on Sunday?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_float
