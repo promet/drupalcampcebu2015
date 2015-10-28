@@ -902,8 +902,13 @@ display:
       path: sessions
       menu:
         type: normal
+<<<<<<< HEAD
         title: Sessions
         description: 'See all sessions'
+=======
+        title: Proposals
+        description: 'See all proposed sessions'
+>>>>>>> develop
         parent: ''
         weight: 0
         context: '0'

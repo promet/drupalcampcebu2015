@@ -1,6 +1,6 @@
 uuid: f77136d0-82ae-4f95-8f29-4154c3b3b8ab
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - filter.format.full_html_ckeditor
