@@ -3,7 +3,7 @@ global-styling:
   css:
     theme:
       lib/bootstrap/css/bootstrap.css: {}
-      public/css/style.css: {}
+      public/css/style.css: { weight: 10 }
   js:
     public/js/flexslider/drupalcampcebu2015.flexslider.js: {}
 
