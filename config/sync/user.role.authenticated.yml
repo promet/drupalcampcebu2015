@@ -7,9 +7,8 @@ label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
-  - 'access content'
-  - 'use text format full_html'
-  - 'create sessions content'
-  - 'delete own sessions content'
-  - 'edit own sessions content'
-  - 'access user profiles'
+  0: 'access content'
+  1: 'use text format full_html'
+  3: 'delete own sessions content'
+  4: 'edit own sessions content'
+  5: 'access user profiles'
