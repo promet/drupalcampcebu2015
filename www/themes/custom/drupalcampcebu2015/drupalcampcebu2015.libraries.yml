@@ -7,6 +7,9 @@ flexslider:
   version: 1.x
   js:
     lib/flexslider/jquery.flexslider.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
 
 global-styling:
   version: 1.x
@@ -15,10 +18,3 @@ global-styling:
       lib/bootstrap/css/bootstrap.css: {}
       lib/flexslider/flexslider.css: {}
       public/css/style.css: {}
-  # js:
-  #   public/js/flexslider/drupalcampcebu2015.flexslider.js: {}
-  # dependencies:
-  #   - drupalcampcebu2015/boostrap
-  #   - drupalcampcebu2015/flexslider
-  #   - core/jquery
-  #   - core/jquery.once
