@@ -1,6 +1,17 @@
-// Can also be used with $(document).ready()
-$(document).ready(function() {
-  $('.flexslider').flexslider({
-    animation: "slide"
-  });
-});
+/**
+ * @file
+ * Contains Flexslider init code.
+ */
+
+(function($) {
+  Drupal.behaviors.drupalCampCebu2015 = {
+    attach: function (context, settings) {
+      // This is the recommended approach for Flexslider.
+      $(window).load(function() {
+        $('.flexslider').flexslider({
+          animation: "slide"
+        });
+      });
+    }
+  };
+})(jQuery);

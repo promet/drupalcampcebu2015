@@ -8,6 +8,7 @@ base theme: classy
 # Defines libraries group in which we can add css/js.
 libraries:
   - drupalcampcebu2015/global-styling
+  - drupalcampcebu2015/flexslider
 # Regions
 regions:
   sidebar: Sidebar

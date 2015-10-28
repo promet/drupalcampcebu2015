@@ -1,20 +1,26 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      lib/bootstrap/css/bootstrap.css: {}
+      public/css/style.css: {}
+  js:
+    public/js/flexslider/drupalcampcebu2015.flexslider.js: {}
+
 boostrap:
   version: 1.x
   js:
     lib/bootstrap/js/bootstrap.js: {}
 
 flexslider:
-  version: 1.x
+  version: 2.5.0
+  css:
+    theme:
+      lib/flexslider/flexslider.css: {}
   js:
     lib/flexslider/jquery.flexslider.js: {}
   dependencies:
     - core/jquery
+    - core/drupal
     - core/jquery.once
-
-global-styling:
-  version: 1.x
-  css:
-    theme:
-      lib/bootstrap/css/bootstrap.css: {}
-      lib/flexslider/flexslider.css: {}
-      public/css/style.css: {}
+    - core/drupalSettings
