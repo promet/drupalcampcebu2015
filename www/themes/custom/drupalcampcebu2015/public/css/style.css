@@ -459,25 +459,25 @@ Temporary fix, display: none. */
 /* line 85, ../sass/partials/_sponsors.scss */
 .sponsor-header {
   padding: 3em 1.6em;
-  overflow: hidden;
+  /* Possible fix for the bug in sponsor tabs background-color */
 }
-/* line 89, ../sass/partials/_sponsors.scss */
+/* line 90, ../sass/partials/_sponsors.scss */
 .sponsor-header a,
 .sponsor-header h3 {
   color: #fff;
 }
-/* line 92, ../sass/partials/_sponsors.scss */
+/* line 93, ../sass/partials/_sponsors.scss */
 .sponsor-header h3 {
   font-size: 1.8em;
   font-weight: 700;
   margin: 0;
 }
-/* line 97, ../sass/partials/_sponsors.scss */
+/* line 98, ../sass/partials/_sponsors.scss */
 .sponsor-header a {
   font-size: 1.3em;
   text-transform: uppercase;
 }
-/* line 101, ../sass/partials/_sponsors.scss */
+/* line 102, ../sass/partials/_sponsors.scss */
 .sponsor-header:before {
   background-color: inherit;
   height: 100%;
@@ -489,7 +489,7 @@ Temporary fix, display: none. */
   z-index: -1;
 }
 
-/* line 113, ../sass/partials/_sponsors.scss */
+/* line 114, ../sass/partials/_sponsors.scss */
 .region-sponsors .view-empty a {
   color: #fff;
   display: block;
@@ -500,13 +500,13 @@ Temporary fix, display: none. */
   margin: 15px 0;
 }
 
-/* line 124, ../sass/partials/_sponsors.scss */
+/* line 125, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold .view-empty a {
   background-color: #fcb040;
   font-size: 1.6em;
 }
 
-/* line 133, ../sass/partials/_sponsors.scss */
+/* line 134, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-silver
 #block-views-block-sponsors-and-partners-page-block-sponsor-silver .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-partners .view-empty a {
@@ -514,7 +514,7 @@ Temporary fix, display: none. */
   font-size: 1.4em;
 }
 
-/* line 145, ../sass/partials/_sponsors.scss */
+/* line 146, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-bronze .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-sponsor-bronze .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-code-sprint .view-empty a,
@@ -525,7 +525,7 @@ Temporary fix, display: none. */
   font-size: 1.3em;
 }
 
-/* line 151, ../sass/partials/_sponsors.scss */
+/* line 152, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
   background-color: #fcb040;
   color: white;
@@ -540,19 +540,19 @@ Temporary fix, display: none. */
 /* ================== */
 /* Sponsor override float into table display to center items */
 @media (min-width: 992px) {
-  /* line 167, ../sass/partials/_sponsors.scss */
+  /* line 168, ../sass/partials/_sponsors.scss */
   .view-sponsors,
   .view-sponsors-and-partners-page {
     display: table;
     width: 100%;
   }
-  /* line 170, ../sass/partials/_sponsors.scss */
+  /* line 171, ../sass/partials/_sponsors.scss */
   .view-sponsors .views-row,
   .view-sponsors-and-partners-page .views-row {
     text-align: unset;
   }
 
-  /* line 180, ../sass/partials/_sponsors.scss */
+  /* line 181, ../sass/partials/_sponsors.scss */
   .view-sponsors .view-header,
   .view-sponsors-and-partners-page .view-header,
   .view-sponsors .view-empty,
@@ -563,7 +563,7 @@ Temporary fix, display: none. */
     float: none;
   }
 
-  /* line 189, ../sass/partials/_sponsors.scss */
+  /* line 190, ../sass/partials/_sponsors.scss */
   .view-sponsors .view-empty,
   .view-sponsors-and-partners-page .view-empty,
   .view-sponsors .view-content,
@@ -571,27 +571,27 @@ Temporary fix, display: none. */
     vertical-align: middle;
   }
 
-  /* line 193, ../sass/partials/_sponsors.scss */
+  /* line 194, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .view-empty a {
     display: inline-block;
   }
 
-  /* line 197, ../sass/partials/_sponsors.scss */
+  /* line 198, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
     padding: 3em 1.6em;
   }
 }
-/* line 202, ../sass/partials/_sponsors.scss */
+/* line 203, ../sass/partials/_sponsors.scss */
 .col-md-8.camp-button-wrapper {
   float: right;
   margin-top: 1em;
 }
 
-/* line 208, ../sass/partials/_sponsors.scss */
+/* line 209, ../sass/partials/_sponsors.scss */
 .view-footer li p {
   margin-bottom: 0;
 }
-/* line 211, ../sass/partials/_sponsors.scss */
+/* line 212, ../sass/partials/_sponsors.scss */
 .view-footer li::before {
   display: none;
 }
