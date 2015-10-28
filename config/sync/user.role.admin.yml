@@ -63,3 +63,4 @@ permissions:
   - 'access user profiles'
   - 'administer views'
   - 'use text format full_html_ckeditor'
+  - 'create sessions content'
