@@ -190,7 +190,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<p>You have not submitted a proposal yet.</p>\n<a href=\"/node/add/sessions\">Submit a proposal now.</a>"
+          content: "<p>You have not submitted a proposal.</p>\n"
           plugin_id: text_custom
       relationships: {  }
       arguments:

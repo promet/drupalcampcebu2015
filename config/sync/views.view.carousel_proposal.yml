@@ -375,20 +375,9 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<h2>Session Proposals are Open</h2>'
+          content: '<h2>Submitted Proposals</h2>'
           plugin_id: text_custom
-      footer:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content: "<div class=\"camp-button-wrapper\">\n     <a href=\"/node/add/sessions\">\n          <div class=\"camp-button\">Propose a Session</div>\n     </a>\n </div>"
-          plugin_id: text_custom
+      footer: {  }
       empty: {  }
       relationships:
         uid:

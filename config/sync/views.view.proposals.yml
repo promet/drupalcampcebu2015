@@ -844,7 +844,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: "<p class=\"speaker-description\">Here are some proposed sessions submitted for the event.</p>\n<p class=\"speaker-announcement\">If you already have an account, <a href=\"/node/add/sessions\">submit a proposal</a>.<br>\nNo account yet? <a href=\"/user/register\"> Click here</a>.</p>"
+          content: "<p class=\"speaker-description\">Here are some proposed sessions submitted for the event.</p>\n<p class=\"speaker-announcement\">No account yet? <a href=\"/user/register\"> Click here</a>.</p>"
           plugin_id: text_custom
       footer: {  }
       empty:
