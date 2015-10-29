@@ -1,0 +1,27 @@
+uuid: 214446c1-dd29-451f-af62-984800934585
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_beginner_workshop
+field_name: field_beginner_workshop
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'YES'
+      label: 'YES'
+    -
+      value: 'NO'
+      label: 'NO'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
