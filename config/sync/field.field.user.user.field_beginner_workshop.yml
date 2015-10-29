@@ -12,7 +12,7 @@ field_name: field_beginner_workshop
 entity_type: user
 bundle: user
 label: 'Would you like to join the workshop for beginners?'
-description: 'Requirements to attend the workshop on this page <a href="https://2015.drupalcebu.org/workshops-sessions-for-beginners">https://2015.drupalcebu.org/workshops-sessions-for-beginners.</a>'
+description: 'Requirements to attend the workshop on this page <a href="https://2015.drupalcebu.org/workshops-sessions-for-beginners" target="_blank">https://2015.drupalcebu.org/workshops-sessions-for-beginners.</a>'
 required: false
 translatable: false
 default_value: {  }
