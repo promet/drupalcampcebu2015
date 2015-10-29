@@ -94,15 +94,15 @@ h6,
   }
 }
 
-// Deletes bullets for the unordered list of proposals submitted by the user.
-.view-id-your_proposal {
-  ul {
-    list-style-type: none;
-    li {
-      margin-left: 0;
-    }
+// Styling list in the proposal.
+  .topic-summary ul {
+    color: $color-blue;
+    font-size: 1.4em;
   }
-}
+
+  .item-list ul {
+    color: $color-white-text;
+  }
 
 // Homepage carousel
 #block-views-block-carousel-proposal-block-carousel-proposal {

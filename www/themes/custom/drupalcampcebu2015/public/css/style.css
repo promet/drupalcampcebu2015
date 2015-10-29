@@ -861,13 +861,15 @@ h6 a,
   font-size: 1.2em;
 }
 
-/* line 99, ../sass/partials/_proposals.scss */
-.view-id-your_proposal ul {
-  list-style-type: none;
+/* line 98, ../sass/partials/_proposals.scss */
+.topic-summary ul {
+  color: #1664a6;
+  font-size: 1.4em;
 }
-/* line 101, ../sass/partials/_proposals.scss */
-.view-id-your_proposal ul li {
-  margin-left: 0;
+
+/* line 103, ../sass/partials/_proposals.scss */
+.item-list ul {
+  color: white;
 }
 
 /* line 109, ../sass/partials/_proposals.scss */
