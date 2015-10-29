@@ -885,7 +885,7 @@ h6 a,
 /* line 123, ../sass/partials/_proposals.scss */
 .flexslider .col-md-9.speaker-drupalcamp-topic,
 .flexslider .col-md-9.drupalcamp-speaker,
-.flexslider .col-md-9.session-summary {
+.flexslider .col-md-9.topic-summary {
   text-align: center;
 }
 
@@ -982,7 +982,7 @@ ol.flex-control-nav {
   /* line 208, ../sass/partials/_proposals.scss */
   .flexslider .col-md-9.speaker-drupalcamp-topic,
   .flexslider .col-md-9.drupalcamp-speaker,
-  .flexslider .col-md-9.session-summary {
+  .flexslider .col-md-9.topic-summary {
     text-align: left;
   }
 
