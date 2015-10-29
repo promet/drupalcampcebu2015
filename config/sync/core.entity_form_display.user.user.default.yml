@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_beginner_workshop
+    - field.field.user.user.field_biography
     - field.field.user.user.field_company
     - field.field.user.user.field_drupal_contribute
     - field.field.user.user.field_first_name
@@ -22,20 +24,32 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+  field_beginner_workshop:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_biography:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_company:
     type: string_textfield
-    weight: 6
+    weight: 4
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   field_drupal_contribute:
     type: options_select
-    weight: 9
+    weight: 8
     settings: {  }
     third_party_settings: {  }
   field_first_name:
-    weight: 3
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -43,18 +57,18 @@ content:
     type: string_textfield
   field_join_code_sprint:
     type: options_select
-    weight: 8
+    weight: 7
     settings: {  }
     third_party_settings: {  }
   field_last_name:
-    weight: 4
+    weight: 2
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_profile_image:
-    weight: 5
+    weight: 3
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -62,17 +76,17 @@ content:
     type: image_image
   field_role:
     type: string_textfield
-    weight: 7
+    weight: 5
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   language:
-    weight: 1
+    weight: 11
     settings: {  }
     third_party_settings: {  }
   timezone:
-    weight: 2
+    weight: 10
     settings: {  }
     third_party_settings: {  }
 hidden: {  }
