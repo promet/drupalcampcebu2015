@@ -1,0 +1,21 @@
+uuid: f300b907-e454-4467-8c03-3a8d8d7d944e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_beginner_workshop
+  module:
+    - options
+    - user
+id: user.user.field_beginner_workshop
+field_name: field_beginner_workshop
+entity_type: user
+bundle: user
+label: 'Would you like to join the workshop for beginners?'
+description: 'Requirements to attend the workshop on this page <a href="https://2015.drupalcebu.org/workshops-sessions-for-beginners">https://2015.drupalcebu.org/workshops-sessions-for-beginners.</a>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

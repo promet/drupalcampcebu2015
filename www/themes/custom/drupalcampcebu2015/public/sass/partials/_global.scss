@@ -36,6 +36,11 @@ img {
 .node-type-list dt a {
   color: $color-blue;
 }
+// This is for the link in the description for field 'would you like to join workshop for seminar'.
+#edit-field-beginner-workshop--description a {
+  color: $color-orange;
+  text-transform: none;
+}
 
 // This applies to all menu boxes including sponsor tabs in region sponsors
 .region-sidebar ul.menu {
