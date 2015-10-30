@@ -14,7 +14,6 @@ dependencies:
     - field.storage.node.field_url_to_video
     - field.storage.user.field_profile_image
     - node.type.sessions
-    - system.menu.main
   module:
     - image
     - node
@@ -901,7 +900,7 @@ display:
       display_extenders: {  }
       path: proposals
       menu:
-        type: normal
+        type: none
         title: Proposals
         description: 'See all proposed sessions'
         parent: ''
