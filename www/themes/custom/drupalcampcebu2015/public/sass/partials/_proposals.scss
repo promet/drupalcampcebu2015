@@ -22,33 +22,25 @@ h6,
   margin-bottom: 1.5em;
 }
 
-.drupalcamp-speaker {
-  margin-bottom: 0.5em;
-}
-
 .drupalcamp-speaker a {
-  font-size: 1.1em;
   color: $color-orange;
-  text-transform: lowercase;
   text-decoration: underline;
 }
 
 .drupalcamp-speaker,
 .session-type-label,
 .session-level-label {
-  font-size: 1.1em;
   color: $color-blue;
-  text-transform: lowercase;
 }
 
-.speaker-drupalcamp-topic {
-  margin: 0;
-  font-family: $font-title;
-  font-weight: bold;
-  a {
-    color: $color-blue;
-    font-size: 1.3em;
-  }
+.session-room {
+  margin-bottom: 1.5em;
+  overflow: hidden;
+  padding-left: 3em;
+}
+
+.session-summary {
+  margin-bottom: 0.5em;
 }
 
 #block-views-block-your-proposals-block-your-proposals-list {
@@ -91,26 +83,23 @@ h6,
   }
 }
 
-// Styling list in the proposal.
-  .topic-summary ul {
-    color: $color-blue;
-    font-size: 1.4em;
-  }
+// Styling list sessions and proposals.
+.topic-summary ul {
+  color: $color-blue;
+}
 
-  .item-list ul {
-    color: $color-white-text;
-  }
+.item-list ul {
+  color: $color-white-text;
+}
 
 // Homepage carousel
 #block-views-block-carousel-proposal-block-carousel-proposal {
   h2 {
-    font-size: 2.2em;
     text-align: left;
   }
 }
 
 // Flexslider.
-
 .flexslider {
   .slides img {
     margin: 0 auto;
@@ -119,6 +108,9 @@ h6,
   .col-md-9.drupalcamp-speaker,
   .col-md-9.topic-summary {
     text-align: center;
+  }
+  h3.speaker-drupalcamp-topic a {
+    color: $color-blue;
   }
 }
 
@@ -159,6 +151,36 @@ ol.flex-control-nav {
   visibility: hidden;
 }
 
+// Session page.
+.session-time {
+  color: $color-blue;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.type,
+.level,
+.room {
+  color: $color-white-text;
+  padding: 0.4em;
+  text-transform: uppercase;
+  padding-left: 1.5em;
+  padding-right: 1em;
+}
+.type {
+  background-color: $color-blue;
+}
+.level {
+  background-color: #fcb040;
+}
+.room {
+background-color: #89caae;
+}
+
+.speaker-drupalcamp-topic h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 // Propose a session button
 .camp-button-wrapper {
   overflow: hidden;
@@ -185,6 +207,11 @@ ol.flex-control-nav {
       width: 40%;
     }
   }
+  .type,
+  .level,
+  .room {
+    float: left;
+  }
   .camp-button-wrapper {
     .camp-button {
       width: 60%;
@@ -205,6 +232,9 @@ ol.flex-control-nav {
     .col-md-9.topic-summary {
       text-align: left;
     }
+  }
+  .col-md-9.topic-summary {
+    font-size: 1.2em;
   }
   .col-md-9.session-type-label,
   .col-md-9.session-level-label {
