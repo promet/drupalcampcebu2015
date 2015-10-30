@@ -14,6 +14,7 @@ dependencies:
     - field.field.user.user.field_role
   module:
     - image
+    - text
     - user
 id: user.user.default
 targetEntityType: user
@@ -32,10 +33,10 @@ content:
   field_biography:
     weight: 6
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: text_textarea
   field_company:
     type: string_textfield
     weight: 4

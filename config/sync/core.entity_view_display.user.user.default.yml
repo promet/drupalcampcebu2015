@@ -14,6 +14,7 @@ dependencies:
     - field.field.user.user.field_role
   module:
     - image
+    - text
     - user
 id: user.user.default
 targetEntityType: user
@@ -21,12 +22,11 @@ bundle: user
 mode: default
 content:
   field_biography:
-    weight: 5
+    weight: 10
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    type: string
+    type: text_default
   field_company:
     type: string
     weight: 3
@@ -63,11 +63,8 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  member_for:
-    weight: 9
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   field_beginner_workshop: true
   field_drupal_contribute: true
   field_join_code_sprint: true
+  member_for: true
