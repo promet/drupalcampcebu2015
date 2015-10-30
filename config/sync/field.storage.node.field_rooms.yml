@@ -1,0 +1,39 @@
+uuid: 120f08f3-31ed-404d-ab01-1df821283138
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_rooms
+field_name: field_rooms
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'IBM room'
+      label: 'IBM room'
+    -
+      value: 'Pantheon room'
+      label: 'Pantheon room'
+    -
+      value: 'Promet Source room'
+      label: 'Promet Source room'
+    -
+      value: 'Training room'
+      label: 'Training room'
+    -
+      value: Auditorium
+      label: Auditorium
+    -
+      value: 'Coffee area'
+      label: 'Coffee area'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -564,7 +564,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: p
+          element_type: h3
           element_class: 'col-md-9 speaker-drupalcamp-topic'
           element_label_type: '0'
           element_label_class: ''
