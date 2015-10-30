@@ -5,8 +5,12 @@ dependencies:
   config:
     - field.field.node.sessions.field_am_pm
     - field.field.node.sessions.field_approved
+    - field.field.node.sessions.field_hour
+    - field.field.node.sessions.field_minutes
     - field.field.node.sessions.field_room
+    - field.field.node.sessions.field_rooms
     - field.field.node.sessions.field_session_level
+    - field.field.node.sessions.field_session_number
     - field.field.node.sessions.field_session_type
     - field.field.node.sessions.field_text
     - field.field.node.sessions.field_time
@@ -36,6 +40,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_hour:
+    weight: 40
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_minutes:
+    weight: 41
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   field_room:
     weight: 34
     settings:
@@ -44,11 +60,22 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_rooms:
+    weight: 42
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_session_level:
     weight: 39
     settings: {  }
     third_party_settings: {  }
     type: options_select
+  field_session_number:
+    weight: 43
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
   field_session_type:
     weight: 38
     settings: {  }
