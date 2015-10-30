@@ -208,33 +208,40 @@ img {
   padding-bottom: 2em;
 }
 /* line 52, ../sass/partials/_global.scss */
-.region-sidebar ul.menu li a, .region-sidebar ul.menu li p {
-  color: white;
+.region-sidebar ul.menu li a, .region-sidebar ul.menu li p, .region-sidebar ul.menu li h3 {
+  color: #1664a6;
   margin-bottom: 0;
   text-transform: uppercase;
 }
 
-/* line 60, ../sass/partials/_global.scss */
-.region-sidebar li:nth-child(1) {
+/* line 61, ../sass/partials/_global.scss */
+.region-sidebar ul.menu li:nth-child(1) {
   background-color: #fcb040;
 }
-
 /* line 63, ../sass/partials/_global.scss */
-.region-sidebar li:nth-child(2) {
+.region-sidebar ul.menu li:nth-child(1) a, .region-sidebar ul.menu li:nth-child(1) p, .region-sidebar ul.menu li:nth-child(1) h3 {
+  color: white;
+}
+
+/* line 70, ../sass/partials/_global.scss */
+.region-sidebar ul.menu li:nth-child(2) {
   background-color: #1664a6;
 }
+/* line 72, ../sass/partials/_global.scss */
+.region-sidebar ul.menu li:nth-child(2) a, .region-sidebar ul.menu li:nth-child(2) p, .region-sidebar ul.menu li:nth-child(2) h3 {
+  color: white;
+}
 
-/* line 66, ../sass/partials/_global.scss */
-.region-sidebar li:nth-child(3) {
+/* line 79, ../sass/partials/_global.scss */
+.region-sidebar ul.menu li:nth-child(3) {
   background-color: #89caae;
 }
-
-/* line 69, ../sass/partials/_global.scss */
-.region-sidebar li:nth-child(4) {
-  background-color: #fff;
+/* line 81, ../sass/partials/_global.scss */
+.region-sidebar ul.menu li:nth-child(3) a, .region-sidebar ul.menu li:nth-child(3) p, .region-sidebar ul.menu li:nth-child(3) h3 {
+  color: white;
 }
 
-/* line 73, ../sass/partials/_global.scss */
+/* line 87, ../sass/partials/_global.scss */
 h3 {
   font-size: 1.8em;
   font-weight: 700;
@@ -242,44 +249,50 @@ h3 {
   color: white;
 }
 
-/* line 80, ../sass/partials/_global.scss */
+/* line 94, ../sass/partials/_global.scss */
 a {
   font-size: 1em;
   text-transform: uppercase;
   color: white;
 }
 
-/* line 86, ../sass/partials/_global.scss */
+/* line 100, ../sass/partials/_global.scss */
 a:hover {
   text-decoration: none;
   color: white;
 }
 
-/* line 91, ../sass/partials/_global.scss */
+/* line 105, ../sass/partials/_global.scss */
 p.subtitle {
   text-decoration: underline;
 }
 
 /* Styling for user profile page */
-/* line 97, ../sass/partials/_global.scss */
+/* line 111, ../sass/partials/_global.scss */
 #block-drupalcampcebu2015-page-title h1.page-title {
   font-size: 2em;
   text-align: left;
 }
 
-/* line 104, ../sass/partials/_global.scss */
+/* line 118, ../sass/partials/_global.scss */
 .profile .field--name-field-profile-image {
   width: 35%;
   float: left;
   padding-right: 2em;
 }
+<<<<<<< HEAD
 /* line 110, ../sass/partials/_global.scss */
 .profile .field__label,
 .profile .field__item {
+=======
+/* line 124, ../sass/partials/_global.scss */
+.profile .field--name-field-first-name .field__label,
+.profile .field--name-field-last-name .field__label {
+>>>>>>> develop
   color: #1664a6;
   font-size: 1.1em;
 }
-/* line 116, ../sass/partials/_global.scss */
+/* line 130, ../sass/partials/_global.scss */
 .profile .form-item,
 .profile .form-item h4.label {
   color: #1664a6;
@@ -293,18 +306,18 @@ p.subtitle {
   margin-bottom: 0;
 }
 
-/* line 128, ../sass/partials/_global.scss */
+/* line 142, ../sass/partials/_global.scss */
 #block-views-block-user-proposals-block-user-proposals {
   padding-bottom: 2em;
   padding-top: 0.5em;
   overflow: hidden;
 }
-/* line 132, ../sass/partials/_global.scss */
+/* line 146, ../sass/partials/_global.scss */
 #block-views-block-user-proposals-block-user-proposals h2 {
   margin: 0;
   font-size: 1.2em;
 }
-/* line 136, ../sass/partials/_global.scss */
+/* line 150, ../sass/partials/_global.scss */
 #block-views-block-user-proposals-block-user-proposals a {
   color: #fcb040;
   font-size: 1em;
@@ -313,7 +326,7 @@ p.subtitle {
 }
 
 /* UP Logo below the menu */
-/* line 147, ../sass/partials/_global.scss */
+/* line 161, ../sass/partials/_global.scss */
 #site-wrapper .col-md-4 .up-logo {
   text-align: center;
   padding-top: 1em;
@@ -324,26 +337,33 @@ p.subtitle {
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
 @media only screen and (min-width: 420px) {
+<<<<<<< HEAD
   /* line 161, ../sass/partials/_global.scss */
   .profile .field__label,
   .profile .field__item {
+=======
+  /* line 175, ../sass/partials/_global.scss */
+  .profile .field--name-field-first-name .field__label,
+  .profile .field--name-field-last-name .field__label {
+>>>>>>> develop
     font-size: 1.3em;
   }
-  /* line 164, ../sass/partials/_global.scss */
+  /* line 178, ../sass/partials/_global.scss */
   .profile .form-item h4.label {
     font-size: 1.1em;
   }
 
-  /* line 170, ../sass/partials/_global.scss */
+  /* line 184, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals h2 {
     font-size: 1.7em;
   }
-  /* line 173, ../sass/partials/_global.scss */
+  /* line 187, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals a {
     font-size: 1.2em;
   }
 }
 @media only screen and (min-width: 1290px) {
+<<<<<<< HEAD
   /* line 182, ../sass/partials/_global.scss */
   .profile .field__label,
   .profile .field__item {
@@ -359,6 +379,25 @@ p.subtitle {
     font-size: 2em;
   }
   /* line 192, ../sass/partials/_global.scss */
+=======
+  /* line 198, ../sass/partials/_global.scss */
+  .profile .field--name-field-first-name .field__label,
+  .profile .field--name-field-last-name .field__label,
+  .profile .field--name-field-first-name .field__item,
+  .profile .field--name-field-last-name .field__item {
+    font-size: 1.5em;
+  }
+
+  /* line 203, ../sass/partials/_global.scss */
+  #block-views-block-user-proposals-block-user-proposals {
+    padding-top: 1em;
+  }
+  /* line 205, ../sass/partials/_global.scss */
+  #block-views-block-user-proposals-block-user-proposals h2 {
+    font-size: 2em;
+  }
+  /* line 208, ../sass/partials/_global.scss */
+>>>>>>> develop
   #block-views-block-user-proposals-block-user-proposals a {
     font-size: 1.5em;
   }
