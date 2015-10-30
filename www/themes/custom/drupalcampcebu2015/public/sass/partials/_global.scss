@@ -106,8 +106,8 @@ p.subtitle {
     float: left;
     padding-right: 2em;
   }
-  .field--name-field-first-name .field__label,
-  .field--name-field-last-name .field__label {
+  .field__label,
+  .field__item {
     color: $color-blue;
     font-size: 1.1em;
   }
@@ -157,8 +157,8 @@ p.subtitle {
 /* ================== */
 @media only screen and (min-width:420px) {
   .profile {
-    .field--name-field-first-name .field__label,
-    .field--name-field-last-name .field__label {
+    .field__label,
+    .field__item {
       font-size: 1.3em;
     }
     .form-item h4.label {
@@ -177,11 +177,9 @@ p.subtitle {
 }
 
 @media only screen and (min-width: 1290px) {
-    .profile {
-    .field--name-field-first-name .field__label,
-    .field--name-field-last-name .field__label,
-    .field--name-field-first-name .field__item,
-    .field--name-field-last-name .field__item {
+  .profile {
+    .field__label,
+    .field__item {
       font-size: 1.5em;
     }
   }
