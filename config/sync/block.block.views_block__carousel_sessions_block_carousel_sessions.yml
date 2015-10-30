@@ -1,0 +1,30 @@
+uuid: 7fb44e3c-1e87-41ca-aa05-05f2d17e1450
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.carousel_sessions
+  module:
+    - system
+    - views
+  theme:
+    - drupalcampcebu2015
+id: views_block__carousel_sessions_block_carousel_sessions
+theme: drupalcampcebu2015
+region: header_info_bottom
+weight: -14
+provider: null
+plugin: 'views_block:carousel_sessions-block_carousel_sessions'
+settings:
+  id: 'views_block:carousel_sessions-block_carousel_sessions'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
