@@ -1,0 +1,23 @@
+uuid: d61e0545-5222-49e7-ae00-ca0c1a5cb18f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Basic HTML'
+format: basic_html
+weight: -9
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <u> <s> <a href hreflang !href target>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: true
+    weight: 9
+    settings: {  }
