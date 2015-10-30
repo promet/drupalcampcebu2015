@@ -280,15 +280,9 @@ p.subtitle {
   float: left;
   padding-right: 2em;
 }
-<<<<<<< HEAD
-/* line 110, ../sass/partials/_global.scss */
+/* line 124, ../sass/partials/_global.scss */
 .profile .field__label,
 .profile .field__item {
-=======
-/* line 124, ../sass/partials/_global.scss */
-.profile .field--name-field-first-name .field__label,
-.profile .field--name-field-last-name .field__label {
->>>>>>> develop
   color: #1664a6;
   font-size: 1.1em;
 }
@@ -337,15 +331,9 @@ p.subtitle {
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
 @media only screen and (min-width: 420px) {
-<<<<<<< HEAD
-  /* line 161, ../sass/partials/_global.scss */
+  /* line 175, ../sass/partials/_global.scss */
   .profile .field__label,
   .profile .field__item {
-=======
-  /* line 175, ../sass/partials/_global.scss */
-  .profile .field--name-field-first-name .field__label,
-  .profile .field--name-field-last-name .field__label {
->>>>>>> develop
     font-size: 1.3em;
   }
   /* line 178, ../sass/partials/_global.scss */
@@ -363,41 +351,21 @@ p.subtitle {
   }
 }
 @media only screen and (min-width: 1290px) {
-<<<<<<< HEAD
-  /* line 182, ../sass/partials/_global.scss */
+  /* line 196, ../sass/partials/_global.scss */
   .profile .field__label,
   .profile .field__item {
     font-size: 1.5em;
   }
 
-  /* line 187, ../sass/partials/_global.scss */
+  /* line 201, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals {
     padding-top: 1em;
   }
-  /* line 189, ../sass/partials/_global.scss */
-  #block-views-block-user-proposals-block-user-proposals h2 {
-    font-size: 2em;
-  }
-  /* line 192, ../sass/partials/_global.scss */
-=======
-  /* line 198, ../sass/partials/_global.scss */
-  .profile .field--name-field-first-name .field__label,
-  .profile .field--name-field-last-name .field__label,
-  .profile .field--name-field-first-name .field__item,
-  .profile .field--name-field-last-name .field__item {
-    font-size: 1.5em;
-  }
-
   /* line 203, ../sass/partials/_global.scss */
-  #block-views-block-user-proposals-block-user-proposals {
-    padding-top: 1em;
-  }
-  /* line 205, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals h2 {
     font-size: 2em;
   }
-  /* line 208, ../sass/partials/_global.scss */
->>>>>>> develop
+  /* line 206, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals a {
     font-size: 1.5em;
   }
