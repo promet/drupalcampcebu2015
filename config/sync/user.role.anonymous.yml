@@ -7,6 +7,6 @@ label: 'Anonymous user'
 weight: 0
 is_admin: false
 permissions:
-  - 'access content'
-  - 'use text format full_html'
-  - 'access user profiles'
+  0: 'access content'
+  2: 'access user profiles'
+  3: 'use text format basic_html'
