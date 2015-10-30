@@ -281,8 +281,8 @@ p.subtitle {
   padding-right: 2em;
 }
 /* line 124, ../sass/partials/_global.scss */
-.profile .field--name-field-first-name .field__label,
-.profile .field--name-field-last-name .field__label {
+.profile .field__label,
+.profile .field__item {
   color: #1664a6;
   font-size: 1.1em;
 }
@@ -332,8 +332,8 @@ p.subtitle {
 /* ================== */
 @media only screen and (min-width: 420px) {
   /* line 175, ../sass/partials/_global.scss */
-  .profile .field--name-field-first-name .field__label,
-  .profile .field--name-field-last-name .field__label {
+  .profile .field__label,
+  .profile .field__item {
     font-size: 1.3em;
   }
   /* line 178, ../sass/partials/_global.scss */
@@ -351,23 +351,21 @@ p.subtitle {
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 198, ../sass/partials/_global.scss */
-  .profile .field--name-field-first-name .field__label,
-  .profile .field--name-field-last-name .field__label,
-  .profile .field--name-field-first-name .field__item,
-  .profile .field--name-field-last-name .field__item {
+  /* line 196, ../sass/partials/_global.scss */
+  .profile .field__label,
+  .profile .field__item {
     font-size: 1.5em;
   }
 
-  /* line 203, ../sass/partials/_global.scss */
+  /* line 201, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals {
     padding-top: 1em;
   }
-  /* line 205, ../sass/partials/_global.scss */
+  /* line 203, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals h2 {
     font-size: 2em;
   }
-  /* line 208, ../sass/partials/_global.scss */
+  /* line 206, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals a {
     font-size: 1.5em;
   }
@@ -825,120 +823,103 @@ h6 a,
   margin: 0;
 }
 
-/* line 69, ../sass/partials/_proposals.scss */
-.field--name-field-session-type,
-.field--name-field-session-level,
-.field--name-field-first-name,
-.field--name-field-last-name,
-.field--name-field-profile-image {
+/* line 65, ../sass/partials/_proposals.scss */
+.profile .field {
   margin-bottom: 0;
   overflow: hidden;
 }
-/* line 73, ../sass/partials/_proposals.scss */
-.field--name-field-session-type .field__label::after,
-.field--name-field-session-level .field__label::after,
-.field--name-field-first-name .field__label::after,
-.field--name-field-last-name .field__label::after,
-.field--name-field-profile-image .field__label::after {
+
+/* line 70, ../sass/partials/_proposals.scss */
+.field__label::after {
   content: ":";
 }
-/* line 77, ../sass/partials/_proposals.scss */
-.field--name-field-session-type .field__label,
-.field--name-field-session-type .field__item,
-.field--name-field-session-level .field__label,
-.field--name-field-session-level .field__item,
-.field--name-field-first-name .field__label,
-.field--name-field-first-name .field__item,
-.field--name-field-last-name .field__label,
-.field--name-field-last-name .field__item,
-.field--name-field-profile-image .field__label,
-.field--name-field-profile-image .field__item {
+
+/* line 74, ../sass/partials/_proposals.scss */
+.field__label,
+.field__item {
   float: left;
   font-weight: normal;
   color: #1664a6;
   font-size: 1.2em;
 }
-/* line 83, ../sass/partials/_proposals.scss */
-.field--name-field-session-type .field__item,
-.field--name-field-session-level .field__item,
-.field--name-field-first-name .field__item,
-.field--name-field-last-name .field__item,
-.field--name-field-profile-image .field__item {
+
+/* line 80, ../sass/partials/_proposals.scss */
+.field__item {
   margin-left: 0.5em;
 }
 
-/* line 90, ../sass/partials/_proposals.scss */
+/* line 87, ../sass/partials/_proposals.scss */
 .header-info-top .node__submitted {
   color: #1664a6;
   margin-bottom: 0.5em;
   font-size: 1.2em;
 }
 
-/* line 98, ../sass/partials/_proposals.scss */
+/* line 95, ../sass/partials/_proposals.scss */
 .topic-summary ul {
   color: #1664a6;
   font-size: 1.4em;
 }
 
-/* line 103, ../sass/partials/_proposals.scss */
+/* line 100, ../sass/partials/_proposals.scss */
 .item-list ul {
   color: white;
 }
 
-/* line 109, ../sass/partials/_proposals.scss */
+/* line 106, ../sass/partials/_proposals.scss */
 #block-views-block-carousel-proposal-block-carousel-proposal h2 {
   font-size: 2.2em;
   text-align: left;
 }
 
-/* line 118, ../sass/partials/_proposals.scss */
+/* line 115, ../sass/partials/_proposals.scss */
 .flexslider .slides img {
   margin: 0 auto;
 }
-/* line 123, ../sass/partials/_proposals.scss */
+/* line 120, ../sass/partials/_proposals.scss */
 .flexslider .col-md-9.speaker-drupalcamp-topic,
 .flexslider .col-md-9.drupalcamp-speaker,
 .flexslider .col-md-9.topic-summary {
   text-align: center;
 }
 
-/* line 128, ../sass/partials/_proposals.scss */
+/* line 125, ../sass/partials/_proposals.scss */
 #block-views-block-carousel-proposal-block-carousel-proposal h2 {
   text-align: center;
 }
 
-/* line 131, ../sass/partials/_proposals.scss */
+/* line 128, ../sass/partials/_proposals.scss */
 .flexslider {
   margin-bottom: 2em;
 }
 
-/* line 135, ../sass/partials/_proposals.scss */
+/* line 132, ../sass/partials/_proposals.scss */
 .flex-direction-nav .flex-prev {
   left: 10px;
   height: 3em;
 }
-/* line 139, ../sass/partials/_proposals.scss */
+/* line 136, ../sass/partials/_proposals.scss */
 .flex-direction-nav .flex-next {
   right: 10px;
   height: 3em;
 }
-/* line 143, ../sass/partials/_proposals.scss */
+/* line 140, ../sass/partials/_proposals.scss */
 .flex-direction-nav a:before {
   color: #1664a6;
 }
 
-/* line 147, ../sass/partials/_proposals.scss */
+/* line 144, ../sass/partials/_proposals.scss */
 .flex-direction-nav a {
   opacity: 10;
 }
 
-/* line 150, ../sass/partials/_proposals.scss */
+/* line 147, ../sass/partials/_proposals.scss */
 .slides {
   padding-left: 2.5em;
   padding-right: 2.5em;
 }
 
-/* line 157, ../sass/partials/_proposals.scss */
+/* line 154, ../sass/partials/_proposals.scss */
 .slides,
 .slides > li,
 .flex-control-nav,
@@ -947,17 +928,17 @@ h6 a,
   padding-right: 18px;
 }
 
-/* line 161, ../sass/partials/_proposals.scss */
+/* line 158, ../sass/partials/_proposals.scss */
 ol.flex-control-nav {
   visibility: hidden;
 }
 
-/* line 166, ../sass/partials/_proposals.scss */
+/* line 163, ../sass/partials/_proposals.scss */
 .camp-button-wrapper {
   overflow: hidden;
   width: 100%;
 }
-/* line 169, ../sass/partials/_proposals.scss */
+/* line 166, ../sass/partials/_proposals.scss */
 .camp-button-wrapper .camp-button {
   font-size: 1.5em;
   text-transform: uppercase;
@@ -974,12 +955,12 @@ ol.flex-control-nav {
 /* BREAKPOINT SECTION */
 /* ================== */
 @media (min-width: 480px) {
-  /* line 187, ../sass/partials/_proposals.scss */
+  /* line 184, ../sass/partials/_proposals.scss */
   .flexslider .slides img {
     width: 40%;
   }
 
-  /* line 192, ../sass/partials/_proposals.scss */
+  /* line 189, ../sass/partials/_proposals.scss */
   .camp-button-wrapper .camp-button {
     width: 60%;
   }
@@ -988,34 +969,34 @@ ol.flex-control-nav {
 /* BREAKPOINT SECTION */
 /* ================== */
 @media (min-width: 1020px) {
-  /* line 203, ../sass/partials/_proposals.scss */
+  /* line 200, ../sass/partials/_proposals.scss */
   .flexslider .slides img {
     width: 100%;
   }
-  /* line 208, ../sass/partials/_proposals.scss */
+  /* line 205, ../sass/partials/_proposals.scss */
   .flexslider .col-md-9.speaker-drupalcamp-topic,
   .flexslider .col-md-9.drupalcamp-speaker,
   .flexslider .col-md-9.topic-summary {
     text-align: left;
   }
 
-  /* line 213, ../sass/partials/_proposals.scss */
+  /* line 210, ../sass/partials/_proposals.scss */
   .col-md-9.session-type-label,
   .col-md-9.session-level-label {
     float: right;
   }
 
-  /* line 216, ../sass/partials/_proposals.scss */
+  /* line 213, ../sass/partials/_proposals.scss */
   #block-views-block-carousel-proposal-block-carousel-proposal h2 {
     text-align: left;
   }
 
-  /* line 219, ../sass/partials/_proposals.scss */
+  /* line 216, ../sass/partials/_proposals.scss */
   .camp-button-wrapper {
     width: 100%;
     margin: 0 auto;
   }
-  /* line 222, ../sass/partials/_proposals.scss */
+  /* line 219, ../sass/partials/_proposals.scss */
   .camp-button-wrapper .camp-button {
     width: 31.5%;
   }
@@ -1024,7 +1005,7 @@ ol.flex-control-nav {
 /* BREAKPOINT SECTION */
 /* ================== */
 @media (min-width: 1200px) {
-  /* line 232, ../sass/partials/_proposals.scss */
+  /* line 229, ../sass/partials/_proposals.scss */
   .camp-button-wrapper .camp-button {
     width: 34%;
   }
