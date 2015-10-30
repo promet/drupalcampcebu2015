@@ -1,18 +1,16 @@
-uuid: 31e30f18-bdeb-4fe9-a800-e74adc6f8674
+uuid: 725fc8ae-4998-494c-af00-d5576ba129aa
 langcode: en
 status: true
 dependencies:
   module:
+    - text
     - user
 id: user.field_biography
 field_name: field_biography
 entity_type: user
-type: string
-settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
-module: core
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true
