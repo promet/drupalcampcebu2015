@@ -3,17 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.sessions.field_am_pm
     - field.field.node.sessions.field_approved
-    - field.field.node.sessions.field_hour
-    - field.field.node.sessions.field_minutes
-    - field.field.node.sessions.field_room
     - field.field.node.sessions.field_rooms
     - field.field.node.sessions.field_session_level
     - field.field.node.sessions.field_session_number
     - field.field.node.sessions.field_session_type
     - field.field.node.sessions.field_text
-    - field.field.node.sessions.field_time
+    - field.field.node.sessions.field_text_time
     - field.field.node.sessions.field_url_to_slides
     - field.field.node.sessions.field_url_to_video
     - node.type.sessions
@@ -26,57 +22,20 @@ targetEntityType: node
 bundle: sessions
 mode: default
 content:
-  field_am_pm:
+  field_rooms:
     weight: 7
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
-  field_hour:
-    weight: 14
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-  field_minutes:
-    weight: 15
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-  field_room:
-    weight: 8
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-  field_rooms:
-    weight: 16
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
   field_session_level:
-    weight: 13
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
-  field_session_number:
-    weight: 17
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
   field_session_type:
-    weight: 12
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -87,23 +46,22 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_time:
+  field_text_time:
     weight: 6
-    label: above
+    label: hidden
     settings:
-      thousand_separator: ''
-      prefix_suffix: true
+      link_to_entity: false
     third_party_settings: {  }
-    type: number_integer
+    type: string
   field_url_to_slides:
-    weight: 4
+    weight: 2
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_url_to_video:
-    weight: 5
+    weight: 3
     label: above
     settings:
       link_to_entity: false
@@ -115,3 +73,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_approved: true
+  field_session_number: true

@@ -1,21 +1,19 @@
-uuid: f40aab0b-d1ab-44d6-8d00-ad050e889c53
+uuid: 86c4d6b2-c992-4505-b620-3253a51096e2
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_am_pm
+    - field.storage.node.field_text_time
     - node.type.sessions
-  module:
-    - options
-id: node.sessions.field_am_pm
-field_name: field_am_pm
+id: node.sessions.field_text_time
+field_name: field_text_time
 entity_type: node
 bundle: sessions
-label: 'AM / PM'
+label: 'Text time'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: list_string
+field_type: string

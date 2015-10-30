@@ -3,17 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.sessions.field_am_pm
     - field.field.node.sessions.field_approved
-    - field.field.node.sessions.field_hour
-    - field.field.node.sessions.field_minutes
-    - field.field.node.sessions.field_room
     - field.field.node.sessions.field_rooms
     - field.field.node.sessions.field_session_level
     - field.field.node.sessions.field_session_number
     - field.field.node.sessions.field_session_type
     - field.field.node.sessions.field_text
-    - field.field.node.sessions.field_time
+    - field.field.node.sessions.field_text_time
     - field.field.node.sessions.field_url_to_slides
     - field.field.node.sessions.field_url_to_video
     - node.type.sessions
@@ -30,36 +26,11 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
-  field_am_pm:
-    weight: 33
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
   field_approved:
     weight: 35
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_hour:
-    weight: 40
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
-  field_minutes:
-    weight: 41
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
-  field_room:
-    weight: 34
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
   field_rooms:
     weight: 42
     settings: {  }
@@ -88,12 +59,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
-  field_time:
-    weight: 32
+  field_text_time:
+    weight: 44
     settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: number
+    type: string_textfield
   field_url_to_slides:
     weight: 8
     settings:

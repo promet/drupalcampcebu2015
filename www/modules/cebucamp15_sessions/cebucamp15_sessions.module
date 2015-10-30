@@ -18,9 +18,9 @@ function cebucamp15_sessions_form_alter(&$form, \Drupal\Core\Form\FormStateInter
     $account = \Drupal::currentUser();
     if (!in_array('admin', $account->getRoles())) {
       $form['field_approved']['#access'] = FALSE;
-      $form['field_time']['#access'] = FALSE;
-      $form['field_am_pm']['#access'] = FALSE;
-      $form['field_room']['#access'] = FALSE;
+      $form['field_rooms']['#access'] = FALSE;
+      $form['field_session_number']['#access'] = FALSE;
+      $form['field_text_time']['#access'] = FALSE;
     }
   }
 }

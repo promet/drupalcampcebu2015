@@ -1,16 +1,17 @@
-uuid: 5bbd736b-5377-4c31-b900-d01bc7cbafec
+uuid: 2a17911f-fff1-4b94-b200-f202abcbe42d
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_hour
-field_name: field_hour
+id: node.field_text_time
+field_name: field_text_time
 entity_type: node
-type: integer
+type: string
 settings:
-  unsigned: false
-  size: normal
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

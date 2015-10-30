@@ -95,12 +95,19 @@ img {
 
 a {
   font-size: 1em;
-  color: $color-white-text;
+  color: $color-blue;
 }
-
 a:hover {
   text-decoration: none;
-  color: $color-white-text;
+  color: $color-blue;
+}
+.header-info-top {
+  a {
+    color: $color-white-text;
+  }
+  a:hover {
+    color: $color-white-text;
+  }
 }
 
 p.subtitle {
