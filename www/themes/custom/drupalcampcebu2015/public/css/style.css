@@ -177,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* line 26, ../sass/partials/_global.scss */
-.view-sessions .view-content {
+.view-sessions .view-content p {
   margin: 0;
 }
 
