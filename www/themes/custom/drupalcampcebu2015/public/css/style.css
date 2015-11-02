@@ -259,22 +259,31 @@ img {
 /* line 99, ../sass/partials/_global.scss */
 a {
   font-size: 1em;
-  color: white;
+  color: #1664a6;
 }
 
 /* line 104, ../sass/partials/_global.scss */
 a:hover {
   text-decoration: none;
-  color: white;
+  color: #1664a6;
 }
 
 /* line 109, ../sass/partials/_global.scss */
+.header-info-top a {
+  color: white;
+}
+/* line 112, ../sass/partials/_global.scss */
+.header-info-top a:hover {
+  color: white;
+}
+
+/* line 117, ../sass/partials/_global.scss */
 p.subtitle {
   text-decoration: underline;
 }
 
 /* Styling for user profile page */
-/* line 115, ../sass/partials/_global.scss */
+/* line 123, ../sass/partials/_global.scss */
 #block-drupalcampcebu2015-page-title h1.page-title {
   font-size: 2em;
   text-align: left;
@@ -282,19 +291,19 @@ p.subtitle {
   margin-bottom: 0.2em;
 }
 
-/* line 124, ../sass/partials/_global.scss */
+/* line 132, ../sass/partials/_global.scss */
 .profile .field--name-field-profile-image {
   width: 35%;
   float: left;
   padding-right: 2em;
 }
-/* line 130, ../sass/partials/_global.scss */
+/* line 138, ../sass/partials/_global.scss */
 .profile .field__label,
 .profile .field__item {
   color: #1664a6;
   font-size: 1.1em;
 }
-/* line 136, ../sass/partials/_global.scss */
+/* line 144, ../sass/partials/_global.scss */
 .profile .form-item,
 .profile .form-item h4.label {
   color: #1664a6;
@@ -308,18 +317,18 @@ p.subtitle {
   margin-bottom: 0;
 }
 
-/* line 148, ../sass/partials/_global.scss */
+/* line 156, ../sass/partials/_global.scss */
 #block-views-block-user-proposals-block-user-proposals {
   padding-bottom: 2em;
   padding-top: 0.5em;
   overflow: hidden;
 }
-/* line 152, ../sass/partials/_global.scss */
+/* line 160, ../sass/partials/_global.scss */
 #block-views-block-user-proposals-block-user-proposals h2 {
   margin: 0;
   font-size: 1.2em;
 }
-/* line 156, ../sass/partials/_global.scss */
+/* line 164, ../sass/partials/_global.scss */
 #block-views-block-user-proposals-block-user-proposals a {
   color: #fcb040;
   font-size: 1em;
@@ -328,7 +337,7 @@ p.subtitle {
 }
 
 /* UP Logo below the menu */
-/* line 167, ../sass/partials/_global.scss */
+/* line 175, ../sass/partials/_global.scss */
 #site-wrapper .col-md-4 .up-logo {
   text-align: center;
   padding-top: 1em;
@@ -339,41 +348,41 @@ p.subtitle {
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
 @media only screen and (min-width: 420px) {
-  /* line 181, ../sass/partials/_global.scss */
+  /* line 189, ../sass/partials/_global.scss */
   .profile .field__label,
   .profile .field__item {
     font-size: 1.3em;
   }
-  /* line 184, ../sass/partials/_global.scss */
+  /* line 192, ../sass/partials/_global.scss */
   .profile .form-item h4.label {
     font-size: 1.1em;
   }
 
-  /* line 190, ../sass/partials/_global.scss */
+  /* line 198, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals h2 {
     font-size: 1.7em;
   }
-  /* line 193, ../sass/partials/_global.scss */
+  /* line 201, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals a {
     font-size: 1.2em;
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 202, ../sass/partials/_global.scss */
+  /* line 210, ../sass/partials/_global.scss */
   .profile .field__label,
   .profile .field__item {
     font-size: 1.5em;
   }
 
-  /* line 207, ../sass/partials/_global.scss */
+  /* line 215, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals {
     padding-top: 1em;
   }
-  /* line 209, ../sass/partials/_global.scss */
+  /* line 217, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals h2 {
     font-size: 2em;
   }
-  /* line 212, ../sass/partials/_global.scss */
+  /* line 220, ../sass/partials/_global.scss */
   #block-views-block-user-proposals-block-user-proposals a {
     font-size: 1.5em;
   }
