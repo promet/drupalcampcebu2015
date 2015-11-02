@@ -43,8 +43,8 @@
 .content h2,
 .region-header-info-bottom h1,
 .region-header-info-bottom h2,
-#block-views-block-user-proposals-block-user-proposals h1,
-#block-views-block-user-proposals-block-user-proposals h2 {
+#block-views-block-user-sessions-block-user-sessions h1,
+#block-views-block-user-sessions-block-user-sessions h2 {
   font-weight: bold;
   color: #1664a6;
   margin-bottom: 1em;
@@ -53,7 +53,7 @@
 /* line 41, ../sass/partials/_header.scss */
 .content .field-item,
 .region-header-info-bottom .field-item,
-#block-views-block-user-proposals-block-user-proposals .field-item {
+#block-views-block-user-sessions-block-user-sessions .field-item {
   margin-top: 2em;
 }
 
@@ -317,19 +317,19 @@ p.subtitle {
   margin-bottom: 0;
 }
 
-/* line 156, ../sass/partials/_global.scss */
-#block-views-block-user-proposals-block-user-proposals {
+/* line 157, ../sass/partials/_global.scss */
+#block-views-block-user-sessions-block-user-sessions {
   padding-bottom: 2em;
   padding-top: 0.5em;
   overflow: hidden;
 }
-/* line 160, ../sass/partials/_global.scss */
-#block-views-block-user-proposals-block-user-proposals h2 {
+/* line 161, ../sass/partials/_global.scss */
+#block-views-block-user-sessions-block-user-sessions h2 {
   margin: 0;
   font-size: 1.2em;
 }
-/* line 164, ../sass/partials/_global.scss */
-#block-views-block-user-proposals-block-user-proposals a {
+/* line 165, ../sass/partials/_global.scss */
+#block-views-block-user-sessions-block-user-sessions a {
   color: #fcb040;
   font-size: 1em;
   font-family: "Open Sans", sans-serif;
@@ -337,7 +337,7 @@ p.subtitle {
 }
 
 /* UP Logo below the menu */
-/* line 175, ../sass/partials/_global.scss */
+/* line 176, ../sass/partials/_global.scss */
 #site-wrapper .col-md-4 .up-logo {
   text-align: center;
   padding-top: 1em;
@@ -348,42 +348,42 @@ p.subtitle {
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
 @media only screen and (min-width: 420px) {
-  /* line 189, ../sass/partials/_global.scss */
+  /* line 190, ../sass/partials/_global.scss */
   .profile .field__label,
   .profile .field__item {
     font-size: 1.3em;
   }
-  /* line 192, ../sass/partials/_global.scss */
+  /* line 193, ../sass/partials/_global.scss */
   .profile .form-item h4.label {
     font-size: 1.1em;
   }
 
-  /* line 198, ../sass/partials/_global.scss */
-  #block-views-block-user-proposals-block-user-proposals h2 {
+  /* line 199, ../sass/partials/_global.scss */
+  #block-views-block-user-sessions-block-user-sessions h2 {
     font-size: 1.7em;
   }
-  /* line 201, ../sass/partials/_global.scss */
-  #block-views-block-user-proposals-block-user-proposals a {
+  /* line 202, ../sass/partials/_global.scss */
+  #block-views-block-user-sessions-block-user-sessions a {
     font-size: 1.2em;
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 210, ../sass/partials/_global.scss */
+  /* line 211, ../sass/partials/_global.scss */
   .profile .field__label,
   .profile .field__item {
     font-size: 1.5em;
   }
 
-  /* line 215, ../sass/partials/_global.scss */
-  #block-views-block-user-proposals-block-user-proposals {
+  /* line 216, ../sass/partials/_global.scss */
+  #block-views-block-user-sessions-block-user-sessions {
     padding-top: 1em;
   }
-  /* line 217, ../sass/partials/_global.scss */
-  #block-views-block-user-proposals-block-user-proposals h2 {
+  /* line 218, ../sass/partials/_global.scss */
+  #block-views-block-user-sessions-block-user-sessions h2 {
     font-size: 2em;
   }
-  /* line 220, ../sass/partials/_global.scss */
-  #block-views-block-user-proposals-block-user-proposals a {
+  /* line 221, ../sass/partials/_global.scss */
+  #block-views-block-user-sessions-block-user-sessions a {
     font-size: 1.5em;
   }
 }
