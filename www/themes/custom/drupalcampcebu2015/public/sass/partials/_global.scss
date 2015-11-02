@@ -20,8 +20,11 @@ h1, h2, h3, h4, h5, h6 {
   p {
     font-size: 1.2em;
     color: $color-blue;
-    margin: 0;
   }
+}
+
+.view-sessions .view-content {
+  margin: 0;
 }
 
 article {
@@ -95,19 +98,12 @@ img {
 
 a {
   font-size: 1em;
-  color: $color-blue;
+  color: $color-white-text;
 }
+
 a:hover {
   text-decoration: none;
-  color: $color-blue;
-}
-.header-info-top {
-  a {
-    color: $color-white-text;
-  }
-  a:hover {
-    color: $color-white-text;
-  }
+  color: $color-white-text;
 }
 
 p.subtitle {
