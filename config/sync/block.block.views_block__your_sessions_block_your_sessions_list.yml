@@ -1,25 +1,26 @@
 uuid: 6d682bc4-06d6-4f10-a240-6448c7a29dca
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.your_sessions
   module:
     - system
+    - user
     - views
   theme:
     - drupalcampcebu2015
 id: views_block__your_sessions_block_your_sessions_list
 theme: drupalcampcebu2015
-region: header_info_top
-weight: -12
+region: '-1'
+weight: -6
 provider: null
 plugin: 'views_block:your_sessions-block_your_sessions_list'
 settings:
   id: 'views_block:your_sessions-block_your_sessions_list'
   label: ''
   provider: views
-  label_display: visible
+  label_display: '0'
   views_label: ''
   items_per_page: none
 visibility:
@@ -28,3 +29,11 @@ visibility:
     pages: '<front>'
     negate: true
     context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      admin: admin
+      speaker: speaker
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
