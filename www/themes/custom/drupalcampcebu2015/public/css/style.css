@@ -18,10 +18,10 @@
   background-color: #1664a6;
   padding: 1.5em;
 }
-/* line 14, ../sass/partials/_header.scss */
+/* line 13, ../sass/partials/_header.scss */
 .header-info-top p,
 .header-info-top h2 {
-  color: white;
+  color: #fff;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-size: 1.1em;
@@ -38,7 +38,7 @@
   text-align: center;
 }
 
-/* line 35, ../sass/partials/_header.scss */
+/* line 34, ../sass/partials/_header.scss */
 .content h1,
 .content h2,
 .region-header-info-bottom h1,
@@ -109,7 +109,7 @@
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-4 {
   padding: 0;
 }
-/* line 22, ../sass/partials/_newsletter.scss */
+/* line 21, ../sass/partials/_newsletter.scss */
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-3,
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 {
   padding-left: 0;
@@ -120,7 +120,7 @@
 .newsletter form #mc_embed_signup_scroll .mc-field-group .col-md-8 label {
   font-weight: normal;
 }
-/* line 34, ../sass/partials/_newsletter.scss */
+/* line 33, ../sass/partials/_newsletter.scss */
 .newsletter .email-address,
 .newsletter .firstname {
   color: #fcb040;
@@ -140,7 +140,7 @@
   padding: 0.3em;
   width: 100%;
   margin-top: 0.5em;
-  color: white;
+  color: #fff;
   background-color: #fcb040;
   border: none;
   text-transform: uppercase;
@@ -166,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.8em;
   font-weight: 700;
   margin: 0;
-  color: white;
+  color: #fff;
 }
 
 /* line 20, ../sass/partials/_global.scss */
@@ -235,7 +235,7 @@ img {
 }
 /* line 75, ../sass/partials/_global.scss */
 .region-sidebar ul.menu li:nth-child(1) a, .region-sidebar ul.menu li:nth-child(1) p, .region-sidebar ul.menu li:nth-child(1) h3 {
-  color: white;
+  color: #fff;
 }
 
 /* line 82, ../sass/partials/_global.scss */
@@ -244,7 +244,7 @@ img {
 }
 /* line 84, ../sass/partials/_global.scss */
 .region-sidebar ul.menu li:nth-child(2) a, .region-sidebar ul.menu li:nth-child(2) p, .region-sidebar ul.menu li:nth-child(2) h3 {
-  color: white;
+  color: #fff;
 }
 
 /* line 91, ../sass/partials/_global.scss */
@@ -253,7 +253,7 @@ img {
 }
 /* line 93, ../sass/partials/_global.scss */
 .region-sidebar ul.menu li:nth-child(3) a, .region-sidebar ul.menu li:nth-child(3) p, .region-sidebar ul.menu li:nth-child(3) h3 {
-  color: white;
+  color: #fff;
 }
 
 /* line 99, ../sass/partials/_global.scss */
@@ -270,11 +270,11 @@ a:hover {
 
 /* line 109, ../sass/partials/_global.scss */
 .header-info-top a {
-  color: white;
+  color: #fff;
 }
 /* line 112, ../sass/partials/_global.scss */
 .header-info-top a:hover {
-  color: white;
+  color: #fff;
 }
 
 /* line 117, ../sass/partials/_global.scss */
@@ -297,13 +297,13 @@ p.subtitle {
   float: left;
   padding-right: 2em;
 }
-/* line 138, ../sass/partials/_global.scss */
+/* line 137, ../sass/partials/_global.scss */
 .profile .field__label,
 .profile .field__item {
   color: #1664a6;
   font-size: 1.1em;
 }
-/* line 144, ../sass/partials/_global.scss */
+/* line 143, ../sass/partials/_global.scss */
 .profile .form-item,
 .profile .form-item h4.label {
   color: #1664a6;
@@ -348,7 +348,7 @@ p.subtitle {
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
 @media only screen and (min-width: 420px) {
-  /* line 190, ../sass/partials/_global.scss */
+  /* line 189, ../sass/partials/_global.scss */
   .profile .field__label,
   .profile .field__item {
     font-size: 1.3em;
@@ -368,7 +368,7 @@ p.subtitle {
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 211, ../sass/partials/_global.scss */
+  /* line 210, ../sass/partials/_global.scss */
   .profile .field__label,
   .profile .field__item {
     font-size: 1.5em;
@@ -400,7 +400,7 @@ p.subtitle {
 .promote-sponsor-tab p:nth-child(2) {
   font-size: 1.5em;
 }
-/* line 12, ../sass/partials/_sponsors.scss */
+/* line 11, ../sass/partials/_sponsors.scss */
 .promote-sponsor-tab p:nth-child(1),
 .promote-sponsor-tab p:nth-child(2) {
   color: #1664a6;
@@ -412,7 +412,7 @@ p.subtitle {
   color: #1664a6;
 }
 
-/* line 23, ../sass/partials/_sponsors.scss */
+/* line 22, ../sass/partials/_sponsors.scss */
 .view-sponsors,
 .view-sponsors-and-partners-page {
   overflow: hidden;
@@ -421,91 +421,33 @@ p.subtitle {
 /* line 25, ../sass/partials/_sponsors.scss */
 .view-sponsors .views-row,
 .view-sponsors-and-partners-page .views-row {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 0.5em;
+  padding-bottom: 1.5em;
   text-align: center;
 }
 
-/* Sponsor header background */
-/* line 34, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-gold,
-#block-views-block-sponsors-and-partners-page-block-sponsor-gold {
-  overflow: hidden;
-}
-/* line 36, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-gold .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-sponsor-gold .sponsor-header {
-  background-color: #fcb040;
-}
-
-/* line 44, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-silver .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-sponsor-silver .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-partners .sponsor-header {
-  background-color: #1664a6;
-}
-
-/* line 55, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-bronze .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-sponsor-bronze .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-code-sprint .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-coffee .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-saturday-lunch .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-sat-night .sponsor-header {
-  background-color: #89caae;
-}
-
-/* line 64, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-and-partners-page-block-code-sprint,
-#block-views-block-sponsors-and-partners-page-block-coffee,
-#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
-#block-views-block-sponsors-and-partners-page-block-sat-night,
-#block-views-block-sponsors-and-partners-page-block-partners {
-  margin-top: 1.2em;
-}
-
-/* line 68, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-promote .sponsor-header {
-  padding: 3em 1.6em 1em;
-}
-
-/* View should be hidden without content, but view still showing in the markup.
-Temporary fix, display: none. */
-/* line 75, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
-#block-views-block-sponsors-and-partners-page-block-sat-night {
-  display: none;
-}
-
-/* 'See all sponsors' button displayed except on /sponsors page. */
-/* line 80, ../sass/partials/_sponsors.scss */
-.path-sponsors .all-sponsor-button {
-  display: none;
-}
-
 /* Sponsor header text */
-/* line 85, ../sass/partials/_sponsors.scss */
+/* line 33, ../sass/partials/_sponsors.scss */
 .sponsor-header {
-  padding: 3em 1.6em;
   /* Possible fix for the bug in sponsor tabs background-color */
 }
-/* line 90, ../sass/partials/_sponsors.scss */
+/* line 35, ../sass/partials/_sponsors.scss */
 .sponsor-header a,
 .sponsor-header h3 {
   color: #fff;
 }
-/* line 93, ../sass/partials/_sponsors.scss */
+/* line 39, ../sass/partials/_sponsors.scss */
 .sponsor-header h3 {
   font-size: 1.8em;
   font-weight: 700;
   margin: 0;
 }
-/* line 98, ../sass/partials/_sponsors.scss */
+/* line 44, ../sass/partials/_sponsors.scss */
 .sponsor-header a {
   font-size: 1.3em;
   text-transform: uppercase;
 }
-/* line 102, ../sass/partials/_sponsors.scss */
+/* line 48, ../sass/partials/_sponsors.scss */
 .sponsor-header:before {
   background-color: inherit;
   height: 100%;
@@ -517,7 +459,104 @@ Temporary fix, display: none. */
   z-index: -1;
 }
 
-/* line 114, ../sass/partials/_sponsors.scss */
+/* line 61, ../sass/partials/_sponsors.scss */
+.view-id-sponsors .view-header.col-md-4, .view-id-sponsors_and_partners_page .view-header.col-md-4 {
+  float: left;
+  width: 100%;
+}
+/* line 65, ../sass/partials/_sponsors.scss */
+.view-id-sponsors .view-header.col-md-4 h3, .view-id-sponsors_and_partners_page .view-header.col-md-4 h3 {
+  padding-top: 1em;
+  text-align: center;
+}
+/* line 70, ../sass/partials/_sponsors.scss */
+.view-id-sponsors .view-content.col-md-4, .view-id-sponsors_and_partners_page .view-content.col-md-4 {
+  float: right;
+}
+/* line 73, ../sass/partials/_sponsors.scss */
+.view-id-sponsors a, .view-id-sponsors_and_partners_page a {
+  color: #fff;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+/* line 80, ../sass/partials/_sponsors.scss */
+.view-id-sponsors .view-header.col-md-4 .view-id-sponsor_link .view-content,
+.view-id-sponsors_and_partners_page .view-header.col-md-4 .view-id-sponsor_link .view-content {
+  width: 100%;
+}
+/* line 83, ../sass/partials/_sponsors.scss */
+.view-id-sponsors .view-header.col-md-4 .view-id-sponsor_link .view-content ul,
+.view-id-sponsors_and_partners_page .view-header.col-md-4 .view-id-sponsor_link .view-content ul {
+  list-style: none;
+  margin-top: 0.5em;
+  text-align: center;
+}
+/* line 87, ../sass/partials/_sponsors.scss */
+.view-id-sponsors .view-header.col-md-4 .view-id-sponsor_link .view-content ul li,
+.view-id-sponsors_and_partners_page .view-header.col-md-4 .view-id-sponsor_link .view-content ul li {
+  margin: 0;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+/* line 97, ../sass/partials/_sponsors.scss */
+.view-display-id-block_sponsor_gold .view-header.col-md-4 .sponsor-header,
+.view-display-id-block_sponsor_gold .view-header.col-md-4 .view-id-sponsor_link .view-content {
+  background-color: #fcb040;
+}
+
+/* line 106, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-silver .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-sponsor-silver .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-partners .sponsor-header {
+  background-color: #1664a6;
+}
+
+/* line 117, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-bronze .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-sponsor-bronze .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-code-sprint .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-coffee .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-sat-night .sponsor-header {
+  background-color: #89caae;
+}
+
+/* line 122, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-and-partners-page-block-code-sprint,
+#block-views-block-sponsors-and-partners-page-block-coffee,
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
+#block-views-block-sponsors-and-partners-page-block-sat-night,
+#block-views-block-sponsors-and-partners-page-block-partners {
+  margin-top: 1.2em;
+}
+
+/* line 130, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-promote .sponsor-header {
+  padding: 3em 1.6em 1em;
+}
+
+/* line 135, ../sass/partials/_sponsors.scss */
+.view-id-sponsor_link .view-content {
+  float: left;
+}
+
+/* View should be hidden without content, but view still showing in the markup.
+Temporary fix, display: none. */
+/* line 142, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
+#block-views-block-sponsors-and-partners-page-block-sat-night {
+  display: none;
+}
+
+/* 'See all sponsors' button displayed except on /sponsors page. */
+/* line 148, ../sass/partials/_sponsors.scss */
+.path-sponsors .all-sponsor-button {
+  display: none;
+}
+
+/* line 152, ../sass/partials/_sponsors.scss */
 .region-sponsors .view-empty a {
   color: #fff;
   display: block;
@@ -528,13 +567,13 @@ Temporary fix, display: none. */
   margin: 15px 0;
 }
 
-/* line 125, ../sass/partials/_sponsors.scss */
+/* line 163, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold .view-empty a {
   background-color: #fcb040;
   font-size: 1.6em;
 }
 
-/* line 134, ../sass/partials/_sponsors.scss */
+/* line 172, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-silver
 #block-views-block-sponsors-and-partners-page-block-sponsor-silver .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-partners .view-empty a {
@@ -542,7 +581,7 @@ Temporary fix, display: none. */
   font-size: 1.4em;
 }
 
-/* line 146, ../sass/partials/_sponsors.scss */
+/* line 184, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-bronze .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-sponsor-bronze .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-code-sprint .view-empty a,
@@ -553,10 +592,10 @@ Temporary fix, display: none. */
   font-size: 1.3em;
 }
 
-/* line 152, ../sass/partials/_sponsors.scss */
+/* line 190, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
   background-color: #fcb040;
-  color: white;
+  color: #fff;
   font-size: 1.5em;
   height: auto;
   padding: 20px;
@@ -568,32 +607,57 @@ Temporary fix, display: none. */
 /* ================== */
 /* Sponsor override float into table display to center items */
 @media (min-width: 992px) {
-  /* line 168, ../sass/partials/_sponsors.scss */
+  /* line 205, ../sass/partials/_sponsors.scss */
   .view-sponsors,
   .view-sponsors-and-partners-page {
-    display: table;
     width: 100%;
   }
-  /* line 171, ../sass/partials/_sponsors.scss */
+  /* line 208, ../sass/partials/_sponsors.scss */
   .view-sponsors .views-row,
   .view-sponsors-and-partners-page .views-row {
-    text-align: unset;
+    text-align: left;
     display: inline-block;
     padding-left: 1em;
   }
 
-  /* line 183, ../sass/partials/_sponsors.scss */
-  .view-sponsors .view-header,
-  .view-sponsors-and-partners-page .view-header,
-  .view-sponsors .view-empty,
-  .view-sponsors-and-partners-page .view-empty,
-  .view-sponsors .view-content,
-  .view-sponsors-and-partners-page .view-content {
-    display: table-cell;
-    float: none;
+  /* line 215, ../sass/partials/_sponsors.scss */
+  .sponsor-header {
+    padding-top: 3em;
+    padding-left: 1.6em;
   }
 
-  /* line 192, ../sass/partials/_sponsors.scss */
+  /* line 221, ../sass/partials/_sponsors.scss */
+  .view-id-sponsors .view-header.col-md-4, .view-id-sponsors_and_partners_page .view-header.col-md-4 {
+    width: 33.33333333%;
+  }
+  /* line 224, ../sass/partials/_sponsors.scss */
+  .view-id-sponsors .view-header.col-md-4 h3, .view-id-sponsors_and_partners_page .view-header.col-md-4 h3 {
+    text-align: left;
+  }
+  /* line 227, ../sass/partials/_sponsors.scss */
+  .view-id-sponsors .view-header.col-md-4 .view-id-sponsor_link .view-content ul, .view-id-sponsors_and_partners_page .view-header.col-md-4 .view-id-sponsor_link .view-content ul {
+    text-align: left;
+  }
+
+  /* line 234, ../sass/partials/_sponsors.scss */
+  .view-sponsor-link.view-id-sponsor_link {
+    min-height: 11em;
+    overflow: hidden;
+  }
+
+  /* line 239, ../sass/partials/_sponsors.scss */
+  .view-sponsor-link.view-display-id-block_link_silver {
+    min-height: 9em;
+    overflow: hidden;
+  }
+
+  /* line 243, ../sass/partials/_sponsors.scss */
+  .view-sponsor-link.view-display-id-block_link_bronze {
+    min-height: 7em;
+    overflow: hidden;
+  }
+
+  /* line 249, ../sass/partials/_sponsors.scss */
   .view-sponsors .view-empty,
   .view-sponsors-and-partners-page .view-empty,
   .view-sponsors .view-content,
@@ -601,27 +665,27 @@ Temporary fix, display: none. */
     vertical-align: middle;
   }
 
-  /* line 196, ../sass/partials/_sponsors.scss */
+  /* line 256, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .view-empty a {
     display: inline-block;
   }
 
-  /* line 200, ../sass/partials/_sponsors.scss */
+  /* line 260, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
     padding: 3em 1.6em;
   }
 }
-/* line 205, ../sass/partials/_sponsors.scss */
+/* line 265, ../sass/partials/_sponsors.scss */
 .col-md-8.camp-button-wrapper {
   float: right;
   margin-top: 1em;
 }
 
-/* line 211, ../sass/partials/_sponsors.scss */
+/* line 271, ../sass/partials/_sponsors.scss */
 .view-footer li p {
   margin-bottom: 0;
 }
-/* line 214, ../sass/partials/_sponsors.scss */
+/* line 274, ../sass/partials/_sponsors.scss */
 .view-footer li::before {
   display: none;
 }
@@ -641,12 +705,12 @@ Temporary fix, display: none. */
 .footer-container img.membership-logo {
   padding: 0 0 16px;
 }
-/* line 14, ../sass/partials/_footer.scss */
+/* line 13, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1),
 .footer-container div:nth-child(2) {
   text-align: center;
   font-size: 0.8em;
-  color: white;
+  color: #fff;
   font-family: "Open Sans", sans-serif;
   padding-bottom: 0.5em;
   font-weight: 300;
@@ -654,7 +718,7 @@ Temporary fix, display: none. */
 /* line 21, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1) p a,
 .footer-container div:nth-child(2) p a {
-  color: white;
+  color: #fff;
 }
 
 @media only screen and (min-width: 420px) {
@@ -662,7 +726,7 @@ Temporary fix, display: none. */
   #site-wrapper .site-logo {
     margin-bottom: 2.5em;
   }
-  /* line 8, ../sass/partials/_media-queries.scss */
+  /* line 7, ../sass/partials/_media-queries.scss */
   #site-wrapper .header-info-top,
   #site-wrapper .header-info-bottom {
     text-align: left;
@@ -670,7 +734,7 @@ Temporary fix, display: none. */
     padding-top: 3.5em;
     padding-bottom: 5.5em;
   }
-  /* line 11, ../sass/partials/_media-queries.scss */
+  /* line 10, ../sass/partials/_media-queries.scss */
   #site-wrapper .header-info-top h3,
   #site-wrapper .header-info-top p,
   #site-wrapper .header-info-bottom h3,
@@ -698,7 +762,7 @@ Temporary fix, display: none. */
     font-size: 2.1em;
     margin-top: 1.5em;
   }
-  /* line 39, ../sass/partials/_media-queries.scss */
+  /* line 38, ../sass/partials/_media-queries.scss */
   #site-wrapper .newsletter .email-address,
   #site-wrapper .newsletter .firstname {
     font-size: 1.5em;
@@ -748,7 +812,7 @@ Temporary fix, display: none. */
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 87, ../sass/partials/_media-queries.scss */
+  /* line 86, ../sass/partials/_media-queries.scss */
   .header-info-top h3,
   .header-info-top p {
     font-size: 1.2em;
@@ -773,7 +837,7 @@ h1 {
   text-align: left;
 }
 
-/* line 9, ../sass/partials/_proposals.scss */
+/* line 8, ../sass/partials/_proposals.scss */
 h6,
 .speaker-announcement {
   color: #1664a6;
@@ -800,7 +864,7 @@ h6 a,
   text-decoration: underline;
 }
 
-/* line 32, ../sass/partials/_proposals.scss */
+/* line 30, ../sass/partials/_proposals.scss */
 .drupalcamp-speaker,
 .session-type-label,
 .session-level-label {
@@ -819,7 +883,7 @@ h6 a,
   margin-bottom: 0.5em;
 }
 
-/* line 48, ../sass/partials/_proposals.scss */
+/* line 47, ../sass/partials/_proposals.scss */
 #block-views-block-your-proposals-block-your-proposals-list p,
 #block-views-block-your-proposals-block-your-proposals-list a {
   text-transform: none;
@@ -827,7 +891,7 @@ h6 a,
   margin: 0;
 }
 
-/* line 56, ../sass/partials/_proposals.scss */
+/* line 55, ../sass/partials/_proposals.scss */
 .field__label,
 .field__item {
   font-weight: normal;
@@ -849,7 +913,7 @@ h6 a,
 .profile .field__label::after {
   content: ":";
 }
-/* line 75, ../sass/partials/_proposals.scss */
+/* line 74, ../sass/partials/_proposals.scss */
 .profile .field__label,
 .profile .field__item {
   float: left;
@@ -869,7 +933,7 @@ h6 a,
 
 /* line 94, ../sass/partials/_proposals.scss */
 .item-list ul {
-  color: white;
+  color: #fff;
 }
 
 /* line 100, ../sass/partials/_proposals.scss */
@@ -881,7 +945,7 @@ h6 a,
 .flexslider .slides img {
   margin: 0 auto;
 }
-/* line 112, ../sass/partials/_proposals.scss */
+/* line 110, ../sass/partials/_proposals.scss */
 .flexslider .col-md-9.speaker-drupalcamp-topic,
 .flexslider .col-md-9.drupalcamp-speaker,
 .flexslider .col-md-9.topic-summary {
@@ -928,7 +992,7 @@ h6 a,
   padding-right: 2.5em;
 }
 
-/* line 149, ../sass/partials/_proposals.scss */
+/* line 146, ../sass/partials/_proposals.scss */
 .slides,
 .slides > li,
 .flex-control-nav,
@@ -949,11 +1013,11 @@ ol.flex-control-nav {
   font-weight: 700;
 }
 
-/* line 165, ../sass/partials/_proposals.scss */
+/* line 163, ../sass/partials/_proposals.scss */
 .type,
 .level,
 .room {
-  color: white;
+  color: #fff;
   padding: 0.4em;
   text-transform: uppercase;
   padding-left: 1.5em;
@@ -1004,7 +1068,7 @@ h3.speaker-drupalcamp-topic {
   margin: 0 auto;
   text-align: center;
   background-color: #fcb040;
-  color: white;
+  color: #fff;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -1017,7 +1081,7 @@ h3.speaker-drupalcamp-topic {
     width: 40%;
   }
 
-  /* line 223, ../sass/partials/_proposals.scss */
+  /* line 221, ../sass/partials/_proposals.scss */
   .type,
   .level,
   .room {
@@ -1037,7 +1101,7 @@ h3.speaker-drupalcamp-topic {
   .flexslider .slides img {
     width: 100%;
   }
-  /* line 243, ../sass/partials/_proposals.scss */
+  /* line 241, ../sass/partials/_proposals.scss */
   .flexslider .col-md-9.speaker-drupalcamp-topic,
   .flexslider .col-md-9.drupalcamp-speaker,
   .flexslider .col-md-9.topic-summary {
@@ -1049,7 +1113,7 @@ h3.speaker-drupalcamp-topic {
     font-size: 1.2em;
   }
 
-  /* line 251, ../sass/partials/_proposals.scss */
+  /* line 250, ../sass/partials/_proposals.scss */
   .col-md-9.session-type-label,
   .col-md-9.session-level-label {
     float: right;

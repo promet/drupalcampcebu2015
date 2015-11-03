@@ -6,9 +6,10 @@ dependencies:
     - field.storage.node.field_sponsor_logo
     - node.type.sponsors
     - taxonomy.vocabulary.sponsor_type
+    - views.view.sponsor_link
   content:
     - 'taxonomy_term:sponsor_type:1740c0c1-3cb4-4b8d-a302-2f2cdf22105b'
-    - 'taxonomy_term:sponsor_type:2b232a24-2ba2-4c2f-9807-7f8658fbcbac'
+    - 'taxonomy_term:sponsor_type:8c3e419e-3710-462d-af00-ddf6d3ec574a'
     - 'taxonomy_term:sponsor_type:a6d56173-c6b1-4dff-9c06-6dc957c9fa03'
     - 'taxonomy_term:sponsor_type:bb0eadc2-8c2a-473b-bf00-c025af324ee4'
     - 'taxonomy_term:sponsor_type:e21b3019-331d-40df-9800-d395a96011c6'
@@ -246,7 +247,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Code Sprint Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Code Sprint Sponsors</h3>\n</div>"
           plugin_id: text_custom
       defaults:
         header: false
@@ -536,7 +537,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Coffee and Snacks sponsor</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Coffee and Snacks sponsor</h3>\n</div>"
           plugin_id: text_custom
       empty:
         area_text_custom:
@@ -579,7 +580,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Partners</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Partners</h3>\n</div>"
           plugin_id: text_custom
       defaults:
         header: false
@@ -869,7 +870,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Saturday Night sponsor</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Saturday Night sponsor</h3>\n</div>"
           plugin_id: text_custom
       empty: {  }
     cache_metadata:
@@ -901,7 +902,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Saturday Lunch Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Saturday Lunch Sponsors</h3>\n</div>"
           plugin_id: text_custom
       defaults:
         header: false
@@ -1075,7 +1076,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Bronze Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Bronze Sponsors</h3>\n</div>"
           plugin_id: text_custom
       defaults:
         header: false
@@ -1404,8 +1405,19 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n   <h3>Gold Sponsor</h3>\n   <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n   <h3>Gold Sponsor</h3>\n</div>"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_gold'
+          inherit_arguments: false
+          plugin_id: view
       css_class: ''
     cache_metadata:
       max-age: -1
@@ -1436,7 +1448,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Silver Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>\n"
+          content: "<div class=\"sponsor-header\">\n  <h3>Silver Sponsors</h3>\n</div>\n"
           plugin_id: text_custom
       defaults:
         header: false
