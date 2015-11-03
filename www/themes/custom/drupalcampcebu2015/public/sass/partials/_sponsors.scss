@@ -23,17 +23,84 @@
 .view-sponsors-and-partners-page {
   @include clearfix();
   .views-row {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0.5em;
+    padding-bottom: 1.5em;
     text-align: center;
   }
 }
 
-/* Sponsor header background */
-#block-views-block-sponsors-block-sponsor-gold,
-#block-views-block-sponsors-and-partners-page-block-sponsor-gold {
-  overflow: hidden;
-  .sponsor-header {
+/* Sponsor header text */
+.sponsor-header {
+  /* Possible fix for the bug in sponsor tabs background-color */
+  a,
+  h3 {
+    color: #fff;
+  }
+  h3 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 0;
+  }
+  a {
+    font-size: 1.3em;
+    text-transform: uppercase;
+  }
+  &:before {
+    background-color: inherit;
+    height: 100%;
+    content: "";
+    left: 15px;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+.view-id-sponsors_and_partners_page .view-content .views-row img {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.view-id-sponsors, .view-id-sponsors_and_partners_page {
+  .view-header.col-md-4 {
+    float: left;
+    // We need the background to cover the whole col-4 area.
+    width: 100%;
+    h3 {
+      padding-top: 1em;
+      text-align: center;
+    }
+  }
+  .view-content.col-md-4 {
+    float: right;
+  }
+  a {
+    color: #fff;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+}
+
+.view-id-sponsors .view-header.col-md-4 .view-id-sponsor_link .view-content,
+.view-id-sponsors_and_partners_page .view-header.col-md-4 .view-id-sponsor_link .view-content {
+  width: 100%;
+  ul {
+    list-style: none;
+    margin-top: 0.5em;
+    text-align: center;
+    li {
+      margin: 0;
+      margin-left: 2em;
+      margin-right: 2em;
+    }
+  }
+
+}
+
+.view-display-id-block_sponsor_gold .view-header.col-md-4 {
+  .sponsor-header,
+  .view-id-sponsor_link .view-content {
     background-color: $color-orange;
   }
 }
@@ -69,6 +136,12 @@
   padding: 3em 1.6em 1em;
 }
 
+.view-id-sponsor_link {
+  .view-content {
+    float: left;
+  }
+}
+
 /* View should be hidden without content, but view still showing in the markup.
 Temporary fix, display: none. */
 #block-views-block-sponsors-and-partners-page-block-saturday-lunch,
@@ -79,36 +152,6 @@ Temporary fix, display: none. */
 /* 'See all sponsors' button displayed except on /sponsors page. */
 .path-sponsors .all-sponsor-button {
   display: none;
-}
-
-/* Sponsor header text */
-.sponsor-header {
-  padding: 3em 1.6em;
-  /* Possible fix for the bug in sponsor tabs background-color */
-  // overflow: hidden;
-  a,
-  h3 {
-    color: #fff;
-  }
-  h3 {
-    font-size: 1.8em;
-    font-weight: 700;
-    margin: 0;
-  }
-  a {
-    font-size: 1.3em;
-    text-transform: uppercase;
-  }
-  &:before {
-    background-color: inherit;
-    height: 100%;
-    content: "";
-    left: 15px;
-    position: absolute;
-    right: 15px;
-    top: 0;
-    z-index: -1;
-  }
 }
 
 .region-sponsors .view-empty a {
@@ -166,21 +209,52 @@ Temporary fix, display: none. */
 @media (min-width: 992px) {
   .view-sponsors ,
   .view-sponsors-and-partners-page {
-    display: table;
     width: 100%;
     .views-row {
-      text-align: unset;
+      text-align: left;
+      display: inline-block;
+      padding-left: 1em;
     }
   }
 
-  .view-sponsors .view-header,
-  .view-sponsors-and-partners-page .view-header,
-  .view-sponsors .view-empty,
-  .view-sponsors-and-partners-page .view-empty,
-  .view-sponsors .view-content,
-  .view-sponsors-and-partners-page .view-content {
-    display: table-cell;
-    float: none;
+  .view-id-sponsors_and_partners_page .view-content .views-row img {
+    margin: 0;
+  }
+
+  .sponsor-header {
+    padding-top: 3em;
+    padding-left: 1.6em;
+  }
+
+  .view-id-sponsors, .view-id-sponsors_and_partners_page {
+    .view-header.col-md-4 {
+      // The mobile first approach fixed it to 100%, we revert it here.
+      width: 33.33333333%;
+      h3 {
+        text-align: left;
+      }
+      .view-id-sponsor_link .view-content ul {
+        text-align: left;
+      }
+    }
+  }
+
+  // Default sponsor link.
+  .view-sponsor-link.view-id-sponsor_link {
+    min-height: 11em;
+    overflow: hidden;
+  }
+  // Specific sponsor link.
+  .view-sponsor-link.view-display-id-block_link_silver {
+    min-height: 9em;
+    overflow: hidden;
+  }
+  .view-sponsor-link.view-display-id-block_link_bronze,
+  .view-sponsor-link.view-display-id-block_link_code_sprint,
+  .view-sponsor-link.view-display-id-block_link_coffee_snacks,
+  .view-sponsor-link.view-display-id-block_link_partners {
+    min-height: 7em;
+    overflow: hidden;
   }
 
   // This vertically aligns the blank boxes and sponsor images.
