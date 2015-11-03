@@ -3,17 +3,30 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sponsors.field_sponsor_link
     - field.field.node.sponsors.field_sponsor_logo
     - field.field.node.sponsors.field_sponsor_type
     - node.type.sponsors
   module:
     - image
+    - link
     - user
 id: node.sponsors.default
 targetEntityType: node
 bundle: sponsors
 mode: default
 content:
+  field_sponsor_link:
+    weight: 103
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
   field_sponsor_logo:
     weight: 101
     label: above
