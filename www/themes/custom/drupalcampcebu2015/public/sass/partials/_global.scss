@@ -15,6 +15,10 @@ h1, h2, h3, h4, h5, h6 {
   color: $color-white-text;
 }
 
+.header-info-top a {
+  text-decoration: underline;
+}
+
 .content,
 .view-content {
   p {
