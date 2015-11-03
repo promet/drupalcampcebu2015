@@ -293,21 +293,22 @@ p.subtitle {
   font-size: 2em;
   text-align: left;
   margin-top: 1em;
-  margin-bottom: 0.2em;
+  margin-bottom: 1em;
+  padding-left: 0.2em;
 }
 
-/* line 135, ../sass/partials/_global.scss */
+/* line 136, ../sass/partials/_global.scss */
 #block-views-block-user-sessions-block-user-sessions {
   padding-bottom: 2em;
   padding-top: 0.5em;
   overflow: hidden;
 }
-/* line 139, ../sass/partials/_global.scss */
+/* line 140, ../sass/partials/_global.scss */
 #block-views-block-user-sessions-block-user-sessions h2 {
   margin: 0;
   font-size: 1.2em;
 }
-/* line 143, ../sass/partials/_global.scss */
+/* line 144, ../sass/partials/_global.scss */
 #block-views-block-user-sessions-block-user-sessions a {
   color: #fcb040;
   font-size: 1em;
@@ -316,14 +317,14 @@ p.subtitle {
 }
 
 /* UP Logo below the menu */
-/* line 154, ../sass/partials/_global.scss */
+/* line 155, ../sass/partials/_global.scss */
 #site-wrapper .col-md-4 .up-logo {
   text-align: center;
   padding-top: 1em;
   padding-bottom: 1em;
 }
 
-/* line 162, ../sass/partials/_global.scss */
+/* line 163, ../sass/partials/_global.scss */
 .path-node.node--type-sessions .region-content {
   margin-bottom: 30px;
 }
@@ -332,25 +333,25 @@ p.subtitle {
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
 @media only screen and (min-width: 420px) {
-  /* line 171, ../sass/partials/_global.scss */
+  /* line 172, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions h2 {
     font-size: 1.7em;
   }
-  /* line 174, ../sass/partials/_global.scss */
+  /* line 175, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions a {
     font-size: 1.2em;
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 181, ../sass/partials/_global.scss */
+  /* line 182, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions {
     padding-top: 1em;
   }
-  /* line 183, ../sass/partials/_global.scss */
+  /* line 184, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions h2 {
     font-size: 2em;
   }
-  /* line 186, ../sass/partials/_global.scss */
+  /* line 187, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions a {
     font-size: 1.5em;
   }
