@@ -293,47 +293,22 @@ p.subtitle {
   font-size: 2em;
   text-align: left;
   margin-top: 1em;
-  margin-bottom: 0.2em;
+  margin-bottom: 1em;
+  padding-left: 0.2em;
 }
 
 /* line 136, ../sass/partials/_global.scss */
-.profile .field--name-field-profile-image {
-  width: 35%;
-  float: left;
-  padding-right: 2em;
-}
-/* line 141, ../sass/partials/_global.scss */
-.profile .field__label,
-.profile .field__item {
-  color: #1664a6;
-  font-size: 1.1em;
-}
-/* line 147, ../sass/partials/_global.scss */
-.profile .form-item,
-.profile .form-item h4.label {
-  color: #1664a6;
-  font-family: "Montserrat", sans-serif;
-  padding-left: 0;
-  padding-right: 0;
-  font-size: 1em;
-  font-weight: normal;
-  text-transform: lowercase;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-/* line 161, ../sass/partials/_global.scss */
 #block-views-block-user-sessions-block-user-sessions {
   padding-bottom: 2em;
   padding-top: 0.5em;
   overflow: hidden;
 }
-/* line 165, ../sass/partials/_global.scss */
+/* line 140, ../sass/partials/_global.scss */
 #block-views-block-user-sessions-block-user-sessions h2 {
   margin: 0;
   font-size: 1.2em;
 }
-/* line 169, ../sass/partials/_global.scss */
+/* line 144, ../sass/partials/_global.scss */
 #block-views-block-user-sessions-block-user-sessions a {
   color: #fcb040;
   font-size: 1em;
@@ -342,52 +317,41 @@ p.subtitle {
 }
 
 /* UP Logo below the menu */
-/* line 180, ../sass/partials/_global.scss */
+/* line 155, ../sass/partials/_global.scss */
 #site-wrapper .col-md-4 .up-logo {
   text-align: center;
   padding-top: 1em;
   padding-bottom: 1em;
 }
 
+/* line 163, ../sass/partials/_global.scss */
+.path-node.node--type-sessions .region-content {
+  margin-bottom: 30px;
+}
+
 /* ================== */
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
 @media only screen and (min-width: 420px) {
-  /* line 193, ../sass/partials/_global.scss */
-  .profile .field__label,
-  .profile .field__item {
-    font-size: 1.3em;
-  }
-  /* line 197, ../sass/partials/_global.scss */
-  .profile .form-item h4.label {
-    font-size: 1.1em;
-  }
-
-  /* line 203, ../sass/partials/_global.scss */
+  /* line 172, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions h2 {
     font-size: 1.7em;
   }
-  /* line 206, ../sass/partials/_global.scss */
+  /* line 175, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions a {
     font-size: 1.2em;
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 214, ../sass/partials/_global.scss */
-  .profile .field__label,
-  .profile .field__item {
-    font-size: 1.5em;
-  }
-
-  /* line 220, ../sass/partials/_global.scss */
+  /* line 182, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions {
     padding-top: 1em;
   }
-  /* line 222, ../sass/partials/_global.scss */
+  /* line 184, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions h2 {
     font-size: 2em;
   }
-  /* line 225, ../sass/partials/_global.scss */
+  /* line 187, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions a {
     font-size: 1.5em;
   }
@@ -932,100 +896,85 @@ h6 a,
   font-size: 1.2em;
 }
 
-/* line 61, ../sass/partials/_proposals.scss */
+/* line 62, ../sass/partials/_proposals.scss */
 .field__item {
   margin-left: 0.5em;
 }
 
-/* line 66, ../sass/partials/_proposals.scss */
-.profile .field {
-  margin-bottom: 0;
-  overflow: hidden;
-}
-/* line 71, ../sass/partials/_proposals.scss */
-.profile .field__label::after {
-  content: ":";
-}
-/* line 74, ../sass/partials/_proposals.scss */
-.profile .field__label,
-.profile .field__item {
-  float: left;
-}
-
-/* line 82, ../sass/partials/_proposals.scss */
+/* line 68, ../sass/partials/_proposals.scss */
 .header-info-top .node__submitted {
   color: #1664a6;
   margin-bottom: 0.5em;
   font-size: 1.2em;
 }
 
-/* line 90, ../sass/partials/_proposals.scss */
+/* line 76, ../sass/partials/_proposals.scss */
 .topic-summary ul {
   color: #1664a6;
 }
 
-/* line 94, ../sass/partials/_proposals.scss */
+/* line 80, ../sass/partials/_proposals.scss */
 .item-list ul {
   color: #fff;
 }
 
-/* line 100, ../sass/partials/_proposals.scss */
+/* line 86, ../sass/partials/_proposals.scss */
 #block-views-block-carousel-proposal-block-carousel-proposal h2 {
   text-align: left;
 }
 
-/* line 107, ../sass/partials/_proposals.scss */
+/* line 93, ../sass/partials/_proposals.scss */
 .flexslider .slides img {
   margin: 0 auto;
 }
-/* line 110, ../sass/partials/_proposals.scss */
+/* line 96, ../sass/partials/_proposals.scss */
 .flexslider .col-md-9.speaker-drupalcamp-topic,
 .flexslider .col-md-9.drupalcamp-speaker,
 .flexslider .col-md-9.topic-summary {
   text-align: center;
 }
-/* line 115, ../sass/partials/_proposals.scss */
+/* line 101, ../sass/partials/_proposals.scss */
 .flexslider h3.speaker-drupalcamp-topic a {
   color: #1664a6;
 }
 
-/* line 120, ../sass/partials/_proposals.scss */
+/* line 106, ../sass/partials/_proposals.scss */
 #block-views-block-carousel-proposal-block-carousel-proposal h2 {
   text-align: center;
 }
 
-/* line 123, ../sass/partials/_proposals.scss */
+/* line 109, ../sass/partials/_proposals.scss */
 .flexslider {
   margin-bottom: 2em;
 }
 
-/* line 127, ../sass/partials/_proposals.scss */
+/* line 113, ../sass/partials/_proposals.scss */
 .flex-direction-nav .flex-prev {
   left: 10px;
   height: 3em;
 }
-/* line 131, ../sass/partials/_proposals.scss */
+/* line 117, ../sass/partials/_proposals.scss */
 .flex-direction-nav .flex-next {
   right: 10px;
   height: 3em;
 }
-/* line 135, ../sass/partials/_proposals.scss */
+/* line 121, ../sass/partials/_proposals.scss */
 .flex-direction-nav a:before {
   color: #1664a6;
 }
 
-/* line 139, ../sass/partials/_proposals.scss */
+/* line 125, ../sass/partials/_proposals.scss */
 .flex-direction-nav a {
   opacity: 10;
 }
 
-/* line 142, ../sass/partials/_proposals.scss */
+/* line 128, ../sass/partials/_proposals.scss */
 .slides {
   padding-left: 2.5em;
   padding-right: 2.5em;
 }
 
-/* line 146, ../sass/partials/_proposals.scss */
+/* line 132, ../sass/partials/_proposals.scss */
 .slides,
 .slides > li,
 .flex-control-nav,
@@ -1034,19 +983,19 @@ h6 a,
   padding-right: 18px;
 }
 
-/* line 153, ../sass/partials/_proposals.scss */
+/* line 139, ../sass/partials/_proposals.scss */
 ol.flex-control-nav {
   visibility: hidden;
 }
 
-/* line 158, ../sass/partials/_proposals.scss */
+/* line 144, ../sass/partials/_proposals.scss */
 .session-time {
   color: #1664a6;
   font-size: 1.2em;
   font-weight: 700;
 }
 
-/* line 163, ../sass/partials/_proposals.scss */
+/* line 149, ../sass/partials/_proposals.scss */
 .type,
 .level,
 .room {
@@ -1057,29 +1006,29 @@ ol.flex-control-nav {
   padding-right: 1em;
 }
 
-/* line 172, ../sass/partials/_proposals.scss */
+/* line 158, ../sass/partials/_proposals.scss */
 .type {
   background-color: #1664a6;
 }
 
-/* line 175, ../sass/partials/_proposals.scss */
+/* line 161, ../sass/partials/_proposals.scss */
 .level {
   background-color: #fcb040;
 }
 
-/* line 178, ../sass/partials/_proposals.scss */
+/* line 164, ../sass/partials/_proposals.scss */
 .room {
   background-color: #89caae;
 }
 
-/* line 182, ../sass/partials/_proposals.scss */
+/* line 168, ../sass/partials/_proposals.scss */
 .speaker-drupalcamp-topic h3 {
   margin-bottom: 0;
   font-size: 1.4em;
   font-weight: 700;
 }
 
-/* line 188, ../sass/partials/_proposals.scss */
+/* line 174, ../sass/partials/_proposals.scss */
 h3.speaker-drupalcamp-topic {
   margin-bottom: 0;
   margin-top: 0.5em;
@@ -1087,12 +1036,12 @@ h3.speaker-drupalcamp-topic {
   font-weight: 700;
 }
 
-/* line 196, ../sass/partials/_proposals.scss */
+/* line 182, ../sass/partials/_proposals.scss */
 .camp-button-wrapper {
   overflow: hidden;
   width: 100%;
 }
-/* line 199, ../sass/partials/_proposals.scss */
+/* line 185, ../sass/partials/_proposals.scss */
 .camp-button-wrapper .camp-button {
   font-size: 1.5em;
   text-transform: uppercase;
@@ -1109,19 +1058,19 @@ h3.speaker-drupalcamp-topic {
 /* BREAKPOINT SECTION */
 /* ================== */
 @media (min-width: 480px) {
-  /* line 217, ../sass/partials/_proposals.scss */
+  /* line 203, ../sass/partials/_proposals.scss */
   .flexslider .slides img {
     width: 40%;
   }
 
-  /* line 221, ../sass/partials/_proposals.scss */
+  /* line 207, ../sass/partials/_proposals.scss */
   .type,
   .level,
   .room {
     float: left;
   }
 
-  /* line 227, ../sass/partials/_proposals.scss */
+  /* line 213, ../sass/partials/_proposals.scss */
   .camp-button-wrapper .camp-button {
     width: 60%;
   }
@@ -1130,39 +1079,39 @@ h3.speaker-drupalcamp-topic {
 /* BREAKPOINT SECTION */
 /* ================== */
 @media (min-width: 1020px) {
-  /* line 238, ../sass/partials/_proposals.scss */
+  /* line 224, ../sass/partials/_proposals.scss */
   .flexslider .slides img {
     width: 100%;
   }
-  /* line 241, ../sass/partials/_proposals.scss */
+  /* line 227, ../sass/partials/_proposals.scss */
   .flexslider .col-md-9.speaker-drupalcamp-topic,
   .flexslider .col-md-9.drupalcamp-speaker,
   .flexslider .col-md-9.topic-summary {
     text-align: left;
   }
 
-  /* line 247, ../sass/partials/_proposals.scss */
+  /* line 233, ../sass/partials/_proposals.scss */
   .col-md-9.topic-summary {
     font-size: 1.2em;
   }
 
-  /* line 250, ../sass/partials/_proposals.scss */
+  /* line 236, ../sass/partials/_proposals.scss */
   .col-md-9.session-type-label,
   .col-md-9.session-level-label {
     float: right;
   }
 
-  /* line 254, ../sass/partials/_proposals.scss */
+  /* line 240, ../sass/partials/_proposals.scss */
   #block-views-block-carousel-proposal-block-carousel-proposal h2 {
     text-align: left;
   }
 
-  /* line 257, ../sass/partials/_proposals.scss */
+  /* line 243, ../sass/partials/_proposals.scss */
   .camp-button-wrapper {
     width: 100%;
     margin: 0 auto;
   }
-  /* line 260, ../sass/partials/_proposals.scss */
+  /* line 246, ../sass/partials/_proposals.scss */
   .camp-button-wrapper .camp-button {
     width: 31.5%;
   }
@@ -1171,8 +1120,116 @@ h3.speaker-drupalcamp-topic {
 /* BREAKPOINT SECTION */
 /* ================== */
 @media (min-width: 1200px) {
-  /* line 270, ../sass/partials/_proposals.scss */
+  /* line 256, ../sass/partials/_proposals.scss */
   .camp-button-wrapper .camp-button {
     width: 34%;
+  }
+}
+/* line 1, ../sass/partials/_user.scss */
+.profile {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 3, ../sass/partials/_user.scss */
+.profile .field {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+/* line 9, ../sass/partials/_user.scss */
+.profile .field__label::after {
+  content: ":";
+}
+/* line 13, ../sass/partials/_user.scss */
+.profile .field--name-field-profile-image {
+  margin: 0 15px 15px 0;
+}
+/* line 17, ../sass/partials/_user.scss */
+.profile .field__label,
+.profile .field__item {
+  color: #1664a6;
+  font-size: 1.1em;
+}
+/* line 23, ../sass/partials/_user.scss */
+.profile .form-item,
+.profile .form-item h4.label {
+  color: #1664a6;
+  font-family: "Montserrat", sans-serif;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 1em;
+  font-weight: normal;
+  text-transform: lowercase;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ======================= */
+/* ABOUT THE SPEAKER BLOCK */
+/* ======================= */
+/* line 40, ../sass/partials/_user.scss */
+.block-views-blockabout-the-speaker-block-1 {
+  overflow: hidden;
+  *zoom: 1;
+  background-color: #1664a6;
+  color: #fff;
+  padding: 15px;
+}
+/* line 46, ../sass/partials/_user.scss */
+.block-views-blockabout-the-speaker-block-1 h2, .block-views-blockabout-the-speaker-block-1 a {
+  color: #fff;
+}
+/* line 50, ../sass/partials/_user.scss */
+.block-views-blockabout-the-speaker-block-1 h2 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+/* line 56, ../sass/partials/_user.scss */
+.block-views-blockabout-the-speaker-block-1 .speaker-image {
+  margin: 0 15px 15px 0;
+}
+/* line 60, ../sass/partials/_user.scss */
+.block-views-blockabout-the-speaker-block-1 .views-row > div {
+  font-size: 16px;
+}
+/* line 64, ../sass/partials/_user.scss */
+.block-views-blockabout-the-speaker-block-1 .views-row .speaker-username {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+/* ========================= */
+/* BREAKPOINT - USER PROFILE */
+/* ========================= */
+@media only screen and (min-width: 420px) {
+  /* line 74, ../sass/partials/_user.scss */
+  .profile {
+    margin-bottom: 30px;
+  }
+  /* line 77, ../sass/partials/_user.scss */
+  .profile .field--name-field-profile-image {
+    float: left;
+    margin: 0 15px 15px 0;
+  }
+  /* line 82, ../sass/partials/_user.scss */
+  .profile .field__label,
+  .profile .field__item {
+    font-size: 1.3em;
+  }
+  /* line 87, ../sass/partials/_user.scss */
+  .profile .form-item h4.label {
+    font-size: 1.1em;
+  }
+
+  /* line 92, ../sass/partials/_user.scss */
+  .block-views-blockabout-the-speaker-block-1 .speaker-image {
+    float: left;
+  }
+}
+@media only screen and (min-width: 1290px) {
+  /* line 99, ../sass/partials/_user.scss */
+  .profile .field__label,
+  .profile .field__item {
+    font-size: 1.5em;
   }
 }
