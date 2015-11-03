@@ -82,6 +82,12 @@
   }
 }
 
+.view-footer .view-id-sponsors_and_partners_page .view-content {
+  a {
+    color: $color-blue;
+  }
+}
+
 .view-id-sponsors .view-header.col-md-4 .view-id-sponsor_link .view-content,
 .view-id-sponsors_and_partners_page .view-header.col-md-4 .view-id-sponsor_link .view-content {
   width: 100%;
@@ -238,7 +244,14 @@ Temporary fix, display: none. */
       }
     }
   }
-
+  .view-footer {
+    .view-id-sponsor_link .item-list li a {
+      color: $color-blue;
+    }
+    .view-sponsor-link.view-id-sponsor_link {
+      min-height: 0;
+    }
+  }
   // Default sponsor link.
   .view-sponsor-link.view-id-sponsor_link {
     min-height: 11em;
