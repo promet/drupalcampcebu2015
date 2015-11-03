@@ -170,6 +170,8 @@ Temporary fix, display: none. */
     width: 100%;
     .views-row {
       text-align: unset;
+      display: inline-block;
+      padding-left: 1em;
     }
   }
 
