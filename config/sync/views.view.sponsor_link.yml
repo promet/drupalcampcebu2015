@@ -9,9 +9,11 @@ dependencies:
     - user.role.authenticated
     - user.role.speaker
   content:
+    - 'taxonomy_term:sponsor_type:8c3e419e-3710-462d-af00-ddf6d3ec574a'
+    - 'taxonomy_term:sponsor_type:a6d56173-c6b1-4dff-9c06-6dc957c9fa03'
     - 'taxonomy_term:sponsor_type:bb0eadc2-8c2a-473b-bf00-c025af324ee4'
     - 'taxonomy_term:sponsor_type:e21b3019-331d-40df-9800-d395a96011c6'
-    - 'taxonomy_term:sponsor_type:efc345c7-1ab7-49da-9900-008f32b5c4d5'
+    - 'taxonomy_term:sponsor_type:f17548ce-7853-4d69-bf00-da1709e7960b'
   module:
     - link
     - node
@@ -197,7 +199,7 @@ display:
           admin_label: ''
           operator: or
           value:
-            1: 1
+            6: 6
           group: 1
           exposed: false
           expose:
@@ -374,6 +376,134 @@ display:
         - user.roles
       tags:
         - 'config:field.storage.node.field_sponsor_link'
+  block_link_code_sprint:
+    display_plugin: block
+    id: block_link_code_sprint
+    display_title: 'Block Link Code Sprint'
+    position: 4
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_description: 'Block Link Code Sprint'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.roles
+      tags:
+        - 'config:field.storage.node.field_sponsor_link'
+  block_link_coffee_snacks:
+    display_plugin: block
+    id: block_link_coffee_snacks
+    display_title: 'Block Link Coffee and Snacks'
+    position: 5
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_description: 'Block Link Coffee and Snacks'
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: true
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+        field_sponsor_type_target_id:
+          id: field_sponsor_type_target_id
+          table: node__field_sponsor_type
+          field: field_sponsor_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            8: 8
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: sponsor_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      defaults:
+        filters: false
+        filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.roles
+      tags:
+        - 'config:field.storage.node.field_sponsor_link'
   block_link_gold:
     display_plugin: block
     id: block_link_gold
@@ -384,6 +514,153 @@ display:
       defaults:
         fields: true
       display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.roles
+      tags:
+        - 'config:field.storage.node.field_sponsor_link'
+  block_link_partners:
+    display_plugin: block
+    id: block_link_partners
+    display_title: 'Block Link Partners'
+    position: 6
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_description: 'Block Link Partners'
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: true
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+        field_sponsor_type_target_id:
+          id: field_sponsor_type_target_id
+          table: node__field_sponsor_type
+          field: field_sponsor_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            7: 7
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: sponsor_type
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+      defaults:
+        filters: false
+        filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.roles
+      tags:
+        - 'config:field.storage.node.field_sponsor_link'
+  block_link_saturday_lunch:
+    display_plugin: block
+    id: block_link_saturday_lunch
+    display_title: 'Block Link Saturday Lunch'
+    position: 7
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_description: 'Block Link Saturday Lunch'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - 'user.node_grants:view'
+        - user.roles
+      tags:
+        - 'config:field.storage.node.field_sponsor_link'
+  block_link_saturday_night:
+    display_plugin: block
+    id: block_link_saturday_night
+    display_title: 'Block Link Saturday Night'
+    position: 8
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      block_description: 'Block Link Saturday Night'
     cache_metadata:
       max-age: -1
       contexts:

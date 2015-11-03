@@ -57,6 +57,11 @@
   }
 }
 
+.view-id-sponsors_and_partners_page .view-content .views-row img {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
 .view-id-sponsors, .view-id-sponsors_and_partners_page {
   .view-header.col-md-4 {
     float: left;
@@ -212,6 +217,10 @@ Temporary fix, display: none. */
     }
   }
 
+  .view-id-sponsors_and_partners_page .view-content .views-row img {
+    margin: 0;
+  }
+
   .sponsor-header {
     padding-top: 3em;
     padding-left: 1.6em;
@@ -240,7 +249,10 @@ Temporary fix, display: none. */
     min-height: 9em;
     overflow: hidden;
   }
-  .view-sponsor-link.view-display-id-block_link_bronze {
+  .view-sponsor-link.view-display-id-block_link_bronze,
+  .view-sponsor-link.view-display-id-block_link_code_sprint,
+  .view-sponsor-link.view-display-id-block_link_coffee_snacks,
+  .view-sponsor-link.view-display-id-block_link_partners {
     min-height: 7em;
     overflow: hidden;
   }

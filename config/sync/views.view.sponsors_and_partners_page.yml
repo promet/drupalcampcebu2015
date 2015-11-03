@@ -249,6 +249,17 @@ display:
           tokenize: false
           content: "<div class=\"sponsor-header\">\n  <h3>Code Sprint Sponsors</h3>\n</div>"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_code_sprint'
+          inherit_arguments: false
+          plugin_id: view
       defaults:
         header: false
         empty: false
@@ -539,6 +550,17 @@ display:
           tokenize: false
           content: "<div class=\"sponsor-header\">\n  <h3>Coffee and Snacks sponsor</h3>\n</div>"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_coffee_snacks'
+          inherit_arguments: false
+          plugin_id: view
       empty:
         area_text_custom:
           id: area_text_custom
@@ -582,6 +604,17 @@ display:
           tokenize: false
           content: "<div class=\"sponsor-header\">\n  <h3>Partners</h3>\n</div>"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_partners'
+          inherit_arguments: false
+          plugin_id: view
       defaults:
         header: false
         empty: false
@@ -1078,6 +1111,17 @@ display:
           tokenize: false
           content: "<div class=\"sponsor-header\">\n  <h3>Bronze Sponsors</h3>\n</div>"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_bronze'
+          inherit_arguments: false
+          plugin_id: view
       defaults:
         header: false
         empty: false
@@ -1450,6 +1494,17 @@ display:
           tokenize: false
           content: "<div class=\"sponsor-header\">\n  <h3>Silver Sponsors</h3>\n</div>\n"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_silver'
+          inherit_arguments: false
+          plugin_id: view
       defaults:
         header: false
         empty: false
