@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_sponsor_logo
     - node.type.sponsors
     - taxonomy.vocabulary.sponsor_type
+    - views.view.sponsor_link
   content:
     - 'taxonomy_term:sponsor_type:bb0eadc2-8c2a-473b-bf00-c025af324ee4'
     - 'taxonomy_term:sponsor_type:e21b3019-331d-40df-9800-d395a96011c6'
@@ -215,7 +216,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Bronze Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Bronze Sponsors</h3>\n</div>"
           plugin_id: text_custom
       defaults:
         header: false
@@ -443,7 +444,7 @@ display:
           type: image
           settings:
             image_style: drupalcampcebu_big
-            image_link: ''
+            image_link: content
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -544,8 +545,19 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n   <h3>Gold Sponsor</h3>\n   <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n   <h3>Gold Sponsor</h3>\n</div>"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:attachment_gold_link'
+          inherit_arguments: false
+          plugin_id: view
       css_class: ''
     cache_metadata:
       max-age: -1
@@ -576,7 +588,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Silver Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>\n"
+          content: "<div class=\"sponsor-header\">\n  <h3>Silver Sponsors</h3>\n</div>\n"
           plugin_id: text_custom
       defaults:
         header: false
