@@ -9,4 +9,3 @@ is_admin: false
 permissions:
   0: 'access content'
   2: 'access user profiles'
-  3: 'use text format basic_html'
