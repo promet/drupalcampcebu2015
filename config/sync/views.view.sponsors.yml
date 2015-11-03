@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_sponsor_logo
     - node.type.sponsors
     - taxonomy.vocabulary.sponsor_type
+    - views.view.sponsor_link
   content:
     - 'taxonomy_term:sponsor_type:bb0eadc2-8c2a-473b-bf00-c025af324ee4'
     - 'taxonomy_term:sponsor_type:e21b3019-331d-40df-9800-d395a96011c6'
@@ -110,14 +111,14 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: '0'
           element_class: ''
-          element_label_type: ''
+          element_label_type: '0'
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
+          element_wrapper_type: '0'
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -125,7 +126,7 @@ display:
           click_sort_column: target_id
           type: image
           settings:
-            image_style: ''
+            image_style: drupalcampcebu_big
             image_link: ''
           group_column: ''
           group_columns: {  }
@@ -215,8 +216,19 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Bronze Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Bronze Sponsors</h3>\n</div>"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_bronze'
+          inherit_arguments: false
+          plugin_id: view
       defaults:
         header: false
         empty: false
@@ -390,71 +402,6 @@ display:
       display_extenders: {  }
       display_description: ''
       block_description: 'Gold sponsor'
-      fields:
-        field_sponsor_logo:
-          id: field_sponsor_logo
-          table: node__field_sponsor_logo
-          field: field_sponsor_logo
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: '0'
-          element_class: ''
-          element_label_type: '0'
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: '0'
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_style: drupalcampcebu_big
-            image_link: ''
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
       defaults:
         fields: false
         filters: false
@@ -544,9 +491,85 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n   <h3>Gold Sponsor</h3>\n   <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n   <h3>Gold Sponsor</h3>\n</div>"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_gold'
+          inherit_arguments: false
+          plugin_id: view
       css_class: ''
+      fields:
+        field_sponsor_logo:
+          id: field_sponsor_logo
+          table: node__field_sponsor_logo
+          field: field_sponsor_logo
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: '0'
+          element_class: ''
+          element_label_type: '0'
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: '0'
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_style: drupalcampcebu_big
+            image_link: ''
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
     cache_metadata:
       max-age: -1
       contexts:
@@ -576,8 +599,19 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Silver Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>\n"
+          content: "<div class=\"sponsor-header\">\n  <h3>Silver Sponsors</h3>\n</div>\n"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_silver'
+          inherit_arguments: false
+          plugin_id: view
       defaults:
         header: false
         empty: false

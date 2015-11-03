@@ -9,7 +9,7 @@
       // This is the recommended approach for Flexslider.
       $(window).load(function() {
         $('.flexslider').flexslider({
-          animation: "slide"
+          animation: "fade"
         });
       });
     }
