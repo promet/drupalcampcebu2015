@@ -1,0 +1,104 @@
+.profile {
+  @include clearfix();
+  .field {
+    margin-bottom: 0;
+    overflow: hidden;
+  }
+
+  // Adds colon between the label and the value.
+  .field__label::after {
+    content: ":";
+  }
+
+  .field--name-field-profile-image {
+    margin: 0 15px 15px 0;
+  }
+
+  .field__label,
+  .field__item {
+    color: $color-blue;
+    font-size: 1.1em;
+  }
+
+  .form-item,
+  .form-item h4.label {
+    color: $color-blue;
+    font-family: $font-title;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1em;
+    font-weight: normal;
+    text-transform: lowercase;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* ======================= */
+/* ABOUT THE SPEAKER BLOCK */
+/* ======================= */
+.block-views-blockabout-the-speaker-block-1 {
+  @include clearfix;
+  background-color: #1664a6;
+  color: #fff;
+  padding: 15px;
+
+  h2, a {
+    color: #fff;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  .speaker-image {
+    margin: 0 15px 15px 0;
+  }
+
+  .views-row > div {
+    font-size: 16px;
+  }
+
+  .views-row .speaker-username {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+}
+
+/* ========================= */
+/* BREAKPOINT - USER PROFILE */
+/* ========================= */
+@media only screen and (min-width:420px) {
+  .profile {
+    margin-bottom: 30px;
+
+    .field--name-field-profile-image {
+      float: left;
+      margin: 0 15px 15px 0;
+    }
+
+    .field__label,
+    .field__item {
+      font-size: 1.3em;
+    }
+
+    .form-item h4.label {
+      font-size: 1.1em;
+    }
+  }
+
+  .block-views-blockabout-the-speaker-block-1 .speaker-image {
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 1290px) {
+  .profile {
+    .field__label,
+    .field__item {
+      font-size: 1.5em;
+    }
+  }
+}

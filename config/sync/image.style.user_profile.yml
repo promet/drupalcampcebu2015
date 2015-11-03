@@ -1,0 +1,15 @@
+uuid: f1c4f081-9b61-497d-9a20-324d6cd0f635
+langcode: en
+status: true
+dependencies: {  }
+name: user_profile
+label: 'User image'
+effects:
+  e2415870-e08b-453b-aa27-391526234f37:
+    uuid: e2415870-e08b-453b-aa27-391526234f37
+    id: image_scale
+    weight: 2
+    data:
+      width: null
+      height: 130
+      upscale: false

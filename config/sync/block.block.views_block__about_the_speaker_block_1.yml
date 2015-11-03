@@ -1,0 +1,32 @@
+uuid: dbd55cf1-4cc6-4992-bc00-0d95722f3653
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.about_the_speaker
+  module:
+    - node
+    - views
+  theme:
+    - drupalcampcebu2015
+id: views_block__about_the_speaker_block_1
+theme: drupalcampcebu2015
+region: content_bottom
+weight: -15
+provider: null
+plugin: 'views_block:about_the_speaker-block_1'
+settings:
+  id: 'views_block:about_the_speaker-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      sessions: sessions
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

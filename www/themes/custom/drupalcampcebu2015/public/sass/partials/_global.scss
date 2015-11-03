@@ -128,32 +128,6 @@ p.subtitle {
   }
 }
 
-.profile {
-  .field--name-field-profile-image {
-    width: 35%;
-    float: left;
-    padding-right: 2em;
-  }
-  .field__label,
-  .field__item {
-    color: $color-blue;
-    font-size: 1.1em;
-  }
-
-  .form-item,
-  .form-item h4.label {
-    color: $color-blue;
-    font-family: $font-title;
-    padding-left: 0;
-    padding-right: 0;
-    font-size: 1em;
-    font-weight: normal;
-    text-transform: lowercase;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
 #block-views-block-user-sessions-block-user-sessions {
   padding-bottom: 2em;
   padding-top: 0.5em;
@@ -181,20 +155,14 @@ p.subtitle {
   }
 }
 
+.path-node.node--type-sessions .region-content {
+  margin-bottom: 30px;
+}
+
 /* ================== */
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
 @media only screen and (min-width:420px) {
-  .profile {
-    .field__label,
-    .field__item {
-      font-size: 1.3em;
-    }
-    .form-item h4.label {
-      font-size: 1.1em;
-    }
-  }
-
   #block-views-block-user-sessions-block-user-sessions {
     h2 {
       font-size: 1.7em;
@@ -206,13 +174,6 @@ p.subtitle {
 }
 
 @media only screen and (min-width: 1290px) {
-  .profile {
-    .field__label,
-    .field__item {
-      font-size: 1.5em;
-    }
-  }
-
   #block-views-block-user-sessions-block-user-sessions{
     padding-top: 1em;
     h2 {
