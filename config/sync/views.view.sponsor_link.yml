@@ -5,9 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_sponsor_link
     - taxonomy.vocabulary.sponsor_type
-    - user.role.admin
-    - user.role.authenticated
-    - user.role.speaker
   content:
     - 'taxonomy_term:sponsor_type:8c3e419e-3710-462d-af00-ddf6d3ec574a'
     - 'taxonomy_term:sponsor_type:a6d56173-c6b1-4dff-9c06-6dc957c9fa03'
@@ -37,12 +34,9 @@ display:
     position: 0
     display_options:
       access:
-        type: role
+        type: perm
         options:
-          role:
-            authenticated: authenticated
-            admin: admin
-            speaker: speaker
+          perm: 'access user profiles'
       cache:
         type: tag
         options: {  }
@@ -266,7 +260,7 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_link'
   block_link_bronze:
@@ -375,7 +369,7 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_link'
   block_link_code_sprint:
@@ -484,7 +478,7 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_link'
   block_link_coffee_snacks:
@@ -593,7 +587,7 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_link'
   block_link_gold:
@@ -613,7 +607,7 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_link'
   block_link_partners:
@@ -722,7 +716,7 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_link'
   block_link_saturday_lunch:
@@ -741,7 +735,7 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_link'
   block_link_saturday_night:
@@ -850,7 +844,7 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_link'
   block_link_silver:
@@ -958,6 +952,6 @@ display:
         - 'languages:language_interface'
         - user
         - 'user.node_grants:view'
-        - user.roles
+        - user.permissions
       tags:
         - 'config:field.storage.node.field_sponsor_link'
