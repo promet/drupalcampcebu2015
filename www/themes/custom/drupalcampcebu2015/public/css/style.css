@@ -38,11 +38,13 @@
   text-align: center;
 }
 
-/* line 35, ../sass/partials/_header.scss */
+/* line 36, ../sass/partials/_header.scss */
 .content h1,
 .content h2,
 .region-header-info-bottom h1,
 .region-header-info-bottom h2,
+.region-content-bottom h1,
+.region-content-bottom h2,
 #block-views-block-user-sessions-block-user-sessions h1,
 #block-views-block-user-sessions-block-user-sessions h2 {
   font-weight: bold;
@@ -50,9 +52,10 @@
   margin-bottom: 1em;
   margin-top: 2em;
 }
-/* line 41, ../sass/partials/_header.scss */
+/* line 42, ../sass/partials/_header.scss */
 .content .field-item,
 .region-header-info-bottom .field-item,
+.region-content-bottom .field-item,
 #block-views-block-user-sessions-block-user-sessions .field-item {
   margin-top: 2em;
 }
@@ -821,6 +824,11 @@ Temporary fix, display: none. */
   }
 
   /* line 95, ../sass/partials/_media-queries.scss */
+  #site-wrapper .newsletter h4 {
+    margin-top: 1em;
+  }
+
+  /* line 99, ../sass/partials/_media-queries.scss */
   .footer-container {
     padding-top: 3em;
     padding-bottom: 5em;
@@ -1124,6 +1132,73 @@ h3.speaker-drupalcamp-topic {
   /* line 256, ../sass/partials/_proposals.scss */
   .camp-button-wrapper .camp-button {
     width: 34%;
+  }
+}
+/* line 2, ../sass/partials/_registrants.scss */
+.view-block-registrants.view-id-block_registrants {
+  margin-bottom: 3em;
+  overflow: hidden;
+}
+/* line 6, ../sass/partials/_registrants.scss */
+.view-block-registrants.view-id-block_registrants h2,
+.view-block-registrants.view-id-block_registrants .view-content {
+  text-align: center;
+}
+/* line 9, ../sass/partials/_registrants.scss */
+.view-block-registrants.view-id-block_registrants .field-data {
+  color: #1664a6;
+}
+/* line 12, ../sass/partials/_registrants.scss */
+.view-block-registrants.view-id-block_registrants .views-row {
+  display: inline-block;
+  padding: 1em;
+}
+/* line 16, ../sass/partials/_registrants.scss */
+.view-block-registrants.view-id-block_registrants .speaker-image {
+  margin-bottom: 0.5em;
+}
+/* line 19, ../sass/partials/_registrants.scss */
+.view-block-registrants.view-id-block_registrants .col-md-2.registrants:nth-child(n+3) {
+  display: none;
+}
+/* line 22, ../sass/partials/_registrants.scss */
+.view-block-registrants.view-id-block_registrants .registrants {
+  text-align: center;
+  margin-top: 1em;
+}
+/* line 25, ../sass/partials/_registrants.scss */
+.view-block-registrants.view-id-block_registrants .registrants a {
+  color: #fcb040;
+  font-size: 1.8em;
+  text-decoration: underline;
+}
+
+/* line 34, ../sass/partials/_registrants.scss */
+.user-logged-in .register-now-button {
+  display: none;
+}
+
+/* ================== */
+/* BREAKPOINT SECTION FOR USER PROFILE */
+/* ================== */
+@media only screen and (min-width: 1024px) {
+  /* line 44, ../sass/partials/_registrants.scss */
+  .view-block-registrants.view-id-block_registrants h2,
+  .view-block-registrants.view-id-block_registrants .view-content {
+    text-align: left;
+  }
+  /* line 47, ../sass/partials/_registrants.scss */
+  .view-block-registrants.view-id-block_registrants .camp-button {
+    width: 50%;
+  }
+  /* line 50, ../sass/partials/_registrants.scss */
+  .view-block-registrants.view-id-block_registrants .col-md-2.registrants:nth-child(n+3) {
+    display: block;
+  }
+
+  /* line 54, ../sass/partials/_registrants.scss */
+  .view-block-registrants.view-id-block_registrants {
+    margin-bottom: 1em;
   }
 }
 /* line 1, ../sass/partials/_user.scss */
