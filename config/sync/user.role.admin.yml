@@ -65,5 +65,5 @@ permissions:
   - 'use text format full_html_ckeditor'
   - 'create sessions content'
   - 'use text format ckeditor_full_html'
-  - 'use text format full_html'
   - 'use text format basic_html'
+  - 'use text format full_html'
