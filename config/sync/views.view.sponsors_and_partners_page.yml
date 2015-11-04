@@ -6,9 +6,10 @@ dependencies:
     - field.storage.node.field_sponsor_logo
     - node.type.sponsors
     - taxonomy.vocabulary.sponsor_type
+    - views.view.sponsor_link
   content:
     - 'taxonomy_term:sponsor_type:1740c0c1-3cb4-4b8d-a302-2f2cdf22105b'
-    - 'taxonomy_term:sponsor_type:2b232a24-2ba2-4c2f-9807-7f8658fbcbac'
+    - 'taxonomy_term:sponsor_type:8c3e419e-3710-462d-af00-ddf6d3ec574a'
     - 'taxonomy_term:sponsor_type:a6d56173-c6b1-4dff-9c06-6dc957c9fa03'
     - 'taxonomy_term:sponsor_type:bb0eadc2-8c2a-473b-bf00-c025af324ee4'
     - 'taxonomy_term:sponsor_type:e21b3019-331d-40df-9800-d395a96011c6'
@@ -246,8 +247,19 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Code Sprint Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Code Sprint Sponsors</h3>\n</div>"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_code_sprint'
+          inherit_arguments: false
+          plugin_id: view
       defaults:
         header: false
         empty: false
@@ -536,8 +548,19 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Coffee and Snacks sponsor</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Coffee and Snacks sponsor</h3>\n</div>"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_coffee_snacks'
+          inherit_arguments: false
+          plugin_id: view
       empty:
         area_text_custom:
           id: area_text_custom
@@ -579,8 +602,19 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Partners</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Partners</h3>\n</div>"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_partners'
+          inherit_arguments: false
+          plugin_id: view
       defaults:
         header: false
         empty: false
@@ -869,7 +903,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Saturday Night sponsor</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Saturday Night sponsor</h3>\n</div>"
           plugin_id: text_custom
       empty: {  }
     cache_metadata:
@@ -901,7 +935,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Saturday Lunch Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Saturday Lunch Sponsors</h3>\n</div>"
           plugin_id: text_custom
       defaults:
         header: false
@@ -1075,8 +1109,19 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Bronze Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n  <h3>Bronze Sponsors</h3>\n</div>"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_bronze'
+          inherit_arguments: false
+          plugin_id: view
       defaults:
         header: false
         empty: false
@@ -1404,8 +1449,19 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n   <h3>Gold Sponsor</h3>\n   <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>"
+          content: "<div class=\"sponsor-header\">\n   <h3>Gold Sponsor</h3>\n</div>"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_gold'
+          inherit_arguments: false
+          plugin_id: view
       css_class: ''
     cache_metadata:
       max-age: -1
@@ -1436,8 +1492,19 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<div class=\"sponsor-header\">\n  <h3>Silver Sponsors</h3>\n  <p class=\"subtitle\"><a href=\"mailto:drupalcebu@gmail.com\">Sponsor Now</a></p>\n</div>\n"
+          content: "<div class=\"sponsor-header\">\n  <h3>Silver Sponsors</h3>\n</div>\n"
           plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_silver'
+          inherit_arguments: false
+          plugin_id: view
       defaults:
         header: false
         empty: false
@@ -1724,7 +1791,78 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<p>A Drupal Camp’s success is usually made possible by the generosity of sponsors. Their donation lower the ticket prices for attendees and allow us to facilitate more sessions and provide free food and freebies to our attendees.</p>\n<p>What’s in it for sponsors? Well this event will give you opportunities to:<br>\n<ul>\n<li><p>Network and build relationships</p></li>\n<li><p>Touch base with the community and partners</p></li>\n<li><p>Promote and advertise your company</p></li>\n<li><p>Show your commitment to Drupal and to the open source community</p></li>\n</ul>\n<p>If you would like to reserve a sponsorship spot, please email drupalcampcebu@gmail.com.</p>"
+          content: "<p>A Drupal Camp’s success is usually made possible by the generosity of sponsors. Their donation lower the ticket prices for attendees and allow us to facilitate more sessions and provide free food and freebies to our attendees.</p>\n<p>What’s in it for sponsors? Well this event will give you opportunities to:<br>\n<ul>\n<li><p>Network and build relationships</p></li>\n<li><p>Touch base with the community and partners</p></li>\n<li><p>Promote and advertise your company</p></li>\n<li><p>Show your commitment to Drupal and to the open source community</p></li>\n</ul>\n<h2>Thanks to our sponsors</h2>\n<p>Drupalcamp Cebu is probably the only Drupalcamp in South East Asia this year. It would not have been possible without the support of our sponsors.</p>\n<p>A huge THANKS to them for making Drupalcamp Cebu possible and supporting the community in this part of the world.</p>\n<p>The sponsors of Drupalcamp Cebu 2015 are :</p>"
+          plugin_id: text_custom
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_gold'
+          inherit_arguments: false
+          plugin_id: view
+        view_1:
+          id: view_1
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_silver'
+          inherit_arguments: false
+          plugin_id: view
+        view_2:
+          id: view_2
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_bronze'
+          inherit_arguments: false
+          plugin_id: view
+        view_3:
+          id: view_3
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_coffee_snacks'
+          inherit_arguments: false
+          plugin_id: view
+        view_4:
+          id: view_4
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          view_to_insert: 'sponsor_link:block_link_code_sprint'
+          inherit_arguments: false
+          plugin_id: view
+        view_5:
+          id: view_5
+          table: views
+          field: view
+          plugin_id: view
+        area_text_custom_1:
+          id: area_text_custom_1
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: '<p>Scroll down to see all our sponsors and partners.</p>'
           plugin_id: text_custom
       title: 'Sponsors and Partners'
     cache_metadata:

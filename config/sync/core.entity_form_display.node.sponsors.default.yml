@@ -3,11 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sponsors.field_sponsor_link
     - field.field.node.sponsors.field_sponsor_logo
     - field.field.node.sponsors.field_sponsor_type
     - node.type.sponsors
   module:
     - image
+    - link
+    - path
 id: node.sponsors.default
 targetEntityType: node
 bundle: sponsors
@@ -18,6 +21,13 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+  field_sponsor_link:
+    weight: 31
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
   field_sponsor_logo:
     weight: 26
     settings:
@@ -33,6 +43,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:

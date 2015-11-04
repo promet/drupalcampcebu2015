@@ -169,166 +169,147 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
-/* line 20, ../sass/partials/_global.scss */
+/* line 18, ../sass/partials/_global.scss */
+.header-info-top a {
+  text-decoration: underline;
+}
+
+/* line 24, ../sass/partials/_global.scss */
 .content p,
 .view-content p {
   font-size: 1.2em;
   color: #1664a6;
 }
 
-/* line 26, ../sass/partials/_global.scss */
+/* line 30, ../sass/partials/_global.scss */
 .view-sessions .view-content p {
   margin: 0;
 }
 
-/* line 31, ../sass/partials/_global.scss */
+/* line 35, ../sass/partials/_global.scss */
 article a {
   color: #fcb040;
   text-transform: lowercase;
 }
-/* line 35, ../sass/partials/_global.scss */
+/* line 39, ../sass/partials/_global.scss */
 article a:hover {
   color: #fcb040;
 }
-/* line 38, ../sass/partials/_global.scss */
+/* line 42, ../sass/partials/_global.scss */
 article .node__submitted {
   color: #1664a6;
 }
 
-/* line 43, ../sass/partials/_global.scss */
+/* line 47, ../sass/partials/_global.scss */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 48, ../sass/partials/_global.scss */
+/* line 52, ../sass/partials/_global.scss */
 .node-type-list dt a {
   color: #1664a6;
 }
 
-/* line 52, ../sass/partials/_global.scss */
+/* line 56, ../sass/partials/_global.scss */
 #edit-field-beginner-workshop--description a {
   color: #fcb040;
   text-transform: none;
 }
 
-/* line 58, ../sass/partials/_global.scss */
+/* line 62, ../sass/partials/_global.scss */
 .region-sidebar ul.menu {
   margin: 0;
 }
-/* line 60, ../sass/partials/_global.scss */
+/* line 64, ../sass/partials/_global.scss */
 .region-sidebar ul.menu li {
   padding: 1.6em;
   padding-top: 2em;
   padding-bottom: 2em;
 }
-/* line 64, ../sass/partials/_global.scss */
+/* line 68, ../sass/partials/_global.scss */
 .region-sidebar ul.menu li a, .region-sidebar ul.menu li p, .region-sidebar ul.menu li h3 {
   color: #1664a6;
   margin-bottom: 0;
   text-transform: uppercase;
 }
 
-/* line 73, ../sass/partials/_global.scss */
+/* line 77, ../sass/partials/_global.scss */
 .region-sidebar ul.menu li:nth-child(1) {
   background-color: #fcb040;
 }
-/* line 75, ../sass/partials/_global.scss */
+/* line 79, ../sass/partials/_global.scss */
 .region-sidebar ul.menu li:nth-child(1) a, .region-sidebar ul.menu li:nth-child(1) p, .region-sidebar ul.menu li:nth-child(1) h3 {
   color: white;
 }
 
-/* line 82, ../sass/partials/_global.scss */
+/* line 86, ../sass/partials/_global.scss */
 .region-sidebar ul.menu li:nth-child(2) {
   background-color: #1664a6;
 }
-/* line 84, ../sass/partials/_global.scss */
+/* line 88, ../sass/partials/_global.scss */
 .region-sidebar ul.menu li:nth-child(2) a, .region-sidebar ul.menu li:nth-child(2) p, .region-sidebar ul.menu li:nth-child(2) h3 {
   color: white;
 }
 
-/* line 91, ../sass/partials/_global.scss */
+/* line 95, ../sass/partials/_global.scss */
 .region-sidebar ul.menu li:nth-child(3) {
   background-color: #89caae;
 }
-/* line 93, ../sass/partials/_global.scss */
+/* line 97, ../sass/partials/_global.scss */
 .region-sidebar ul.menu li:nth-child(3) a, .region-sidebar ul.menu li:nth-child(3) p, .region-sidebar ul.menu li:nth-child(3) h3 {
   color: white;
 }
 
-/* line 99, ../sass/partials/_global.scss */
+/* line 103, ../sass/partials/_global.scss */
 a {
   font-size: 1em;
   color: #1664a6;
 }
 
-/* line 104, ../sass/partials/_global.scss */
+/* line 108, ../sass/partials/_global.scss */
 a:hover {
   text-decoration: none;
   color: #1664a6;
 }
 
-/* line 109, ../sass/partials/_global.scss */
+/* line 113, ../sass/partials/_global.scss */
 .header-info-top a {
   color: white;
+  text-decoration: underline;
 }
-/* line 112, ../sass/partials/_global.scss */
+/* line 117, ../sass/partials/_global.scss */
 .header-info-top a:hover {
   color: white;
 }
 
-/* line 117, ../sass/partials/_global.scss */
+/* line 122, ../sass/partials/_global.scss */
 p.subtitle {
   text-decoration: underline;
 }
 
 /* Styling for user profile page */
-/* line 123, ../sass/partials/_global.scss */
+/* line 128, ../sass/partials/_global.scss */
 #block-drupalcampcebu2015-page-title h1.page-title {
   font-size: 2em;
   text-align: left;
   margin-top: 1em;
-  margin-bottom: 0.2em;
+  margin-bottom: 1em;
+  padding-left: 0.2em;
 }
 
-/* line 132, ../sass/partials/_global.scss */
-.profile .field--name-field-profile-image {
-  width: 35%;
-  float: left;
-  padding-right: 2em;
-}
-/* line 138, ../sass/partials/_global.scss */
-.profile .field__label,
-.profile .field__item {
-  color: #1664a6;
-  font-size: 1.1em;
-}
-/* line 144, ../sass/partials/_global.scss */
-.profile .form-item,
-.profile .form-item h4.label {
-  color: #1664a6;
-  font-family: "Montserrat", sans-serif;
-  padding-left: 0;
-  padding-right: 0;
-  font-size: 1em;
-  font-weight: normal;
-  text-transform: lowercase;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-/* line 157, ../sass/partials/_global.scss */
+/* line 137, ../sass/partials/_global.scss */
 #block-views-block-user-sessions-block-user-sessions {
   padding-bottom: 2em;
   padding-top: 0.5em;
   overflow: hidden;
 }
-/* line 161, ../sass/partials/_global.scss */
+/* line 141, ../sass/partials/_global.scss */
 #block-views-block-user-sessions-block-user-sessions h2 {
   margin: 0;
   font-size: 1.2em;
 }
-/* line 165, ../sass/partials/_global.scss */
+/* line 145, ../sass/partials/_global.scss */
 #block-views-block-user-sessions-block-user-sessions a {
   color: #fcb040;
   font-size: 1em;
@@ -337,52 +318,41 @@ p.subtitle {
 }
 
 /* UP Logo below the menu */
-/* line 176, ../sass/partials/_global.scss */
+/* line 156, ../sass/partials/_global.scss */
 #site-wrapper .col-md-4 .up-logo {
   text-align: center;
   padding-top: 1em;
   padding-bottom: 1em;
 }
 
+/* line 164, ../sass/partials/_global.scss */
+.path-node.node--type-sessions .region-content {
+  margin-bottom: 30px;
+}
+
 /* ================== */
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
 @media only screen and (min-width: 420px) {
-  /* line 190, ../sass/partials/_global.scss */
-  .profile .field__label,
-  .profile .field__item {
-    font-size: 1.3em;
-  }
-  /* line 193, ../sass/partials/_global.scss */
-  .profile .form-item h4.label {
-    font-size: 1.1em;
-  }
-
-  /* line 199, ../sass/partials/_global.scss */
+  /* line 173, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions h2 {
     font-size: 1.7em;
   }
-  /* line 202, ../sass/partials/_global.scss */
+  /* line 176, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions a {
     font-size: 1.2em;
   }
 }
 @media only screen and (min-width: 1290px) {
-  /* line 211, ../sass/partials/_global.scss */
-  .profile .field__label,
-  .profile .field__item {
-    font-size: 1.5em;
-  }
-
-  /* line 216, ../sass/partials/_global.scss */
+  /* line 183, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions {
     padding-top: 1em;
   }
-  /* line 218, ../sass/partials/_global.scss */
+  /* line 185, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions h2 {
     font-size: 2em;
   }
-  /* line 221, ../sass/partials/_global.scss */
+  /* line 188, ../sass/partials/_global.scss */
   #block-views-block-user-sessions-block-user-sessions a {
     font-size: 1.5em;
   }
@@ -421,91 +391,33 @@ p.subtitle {
 /* line 25, ../sass/partials/_sponsors.scss */
 .view-sponsors .views-row,
 .view-sponsors-and-partners-page .views-row {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 0.5em;
+  padding-bottom: 1.5em;
   text-align: center;
 }
 
-/* Sponsor header background */
-/* line 34, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-gold,
-#block-views-block-sponsors-and-partners-page-block-sponsor-gold {
-  overflow: hidden;
-}
-/* line 36, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-gold .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-sponsor-gold .sponsor-header {
-  background-color: #fcb040;
-}
-
-/* line 44, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-silver .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-sponsor-silver .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-partners .sponsor-header {
-  background-color: #1664a6;
-}
-
-/* line 55, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-bronze .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-sponsor-bronze .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-code-sprint .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-coffee .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-saturday-lunch .sponsor-header,
-#block-views-block-sponsors-and-partners-page-block-sat-night .sponsor-header {
-  background-color: #89caae;
-}
-
-/* line 64, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-and-partners-page-block-code-sprint,
-#block-views-block-sponsors-and-partners-page-block-coffee,
-#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
-#block-views-block-sponsors-and-partners-page-block-sat-night,
-#block-views-block-sponsors-and-partners-page-block-partners {
-  margin-top: 1.2em;
-}
-
-/* line 68, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-block-sponsor-promote .sponsor-header {
-  padding: 3em 1.6em 1em;
-}
-
-/* View should be hidden without content, but view still showing in the markup.
-Temporary fix, display: none. */
-/* line 75, ../sass/partials/_sponsors.scss */
-#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
-#block-views-block-sponsors-and-partners-page-block-sat-night {
-  display: none;
-}
-
-/* 'See all sponsors' button displayed except on /sponsors page. */
-/* line 80, ../sass/partials/_sponsors.scss */
-.path-sponsors .all-sponsor-button {
-  display: none;
-}
-
 /* Sponsor header text */
-/* line 85, ../sass/partials/_sponsors.scss */
+/* line 33, ../sass/partials/_sponsors.scss */
 .sponsor-header {
-  padding: 3em 1.6em;
   /* Possible fix for the bug in sponsor tabs background-color */
 }
-/* line 90, ../sass/partials/_sponsors.scss */
+/* line 36, ../sass/partials/_sponsors.scss */
 .sponsor-header a,
 .sponsor-header h3 {
   color: #fff;
 }
-/* line 93, ../sass/partials/_sponsors.scss */
+/* line 39, ../sass/partials/_sponsors.scss */
 .sponsor-header h3 {
   font-size: 1.8em;
   font-weight: 700;
   margin: 0;
 }
-/* line 98, ../sass/partials/_sponsors.scss */
+/* line 44, ../sass/partials/_sponsors.scss */
 .sponsor-header a {
   font-size: 1.3em;
   text-transform: uppercase;
 }
-/* line 102, ../sass/partials/_sponsors.scss */
+/* line 48, ../sass/partials/_sponsors.scss */
 .sponsor-header:before {
   background-color: inherit;
   height: 100%;
@@ -517,7 +429,115 @@ Temporary fix, display: none. */
   z-index: -1;
 }
 
-/* line 114, ../sass/partials/_sponsors.scss */
+/* line 60, ../sass/partials/_sponsors.scss */
+.view-id-sponsors_and_partners_page .view-content .views-row img {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+/* line 66, ../sass/partials/_sponsors.scss */
+.view-id-sponsors .view-header.col-md-4, .view-id-sponsors_and_partners_page .view-header.col-md-4 {
+  float: left;
+  width: 100%;
+}
+/* line 70, ../sass/partials/_sponsors.scss */
+.view-id-sponsors .view-header.col-md-4 h3, .view-id-sponsors_and_partners_page .view-header.col-md-4 h3 {
+  padding-top: 1em;
+  text-align: center;
+}
+/* line 75, ../sass/partials/_sponsors.scss */
+.view-id-sponsors .view-content.col-md-4, .view-id-sponsors_and_partners_page .view-content.col-md-4 {
+  float: right;
+}
+/* line 78, ../sass/partials/_sponsors.scss */
+.view-id-sponsors a, .view-id-sponsors_and_partners_page a {
+  color: #fff;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+/* line 86, ../sass/partials/_sponsors.scss */
+.view-footer .view-id-sponsors_and_partners_page .view-content a {
+  color: #1664a6;
+}
+
+/* line 92, ../sass/partials/_sponsors.scss */
+.view-id-sponsors .view-header.col-md-4 .view-id-sponsor_link .view-content,
+.view-id-sponsors_and_partners_page .view-header.col-md-4 .view-id-sponsor_link .view-content {
+  width: 100%;
+}
+/* line 94, ../sass/partials/_sponsors.scss */
+.view-id-sponsors .view-header.col-md-4 .view-id-sponsor_link .view-content ul,
+.view-id-sponsors_and_partners_page .view-header.col-md-4 .view-id-sponsor_link .view-content ul {
+  list-style: none;
+  margin-top: 0.5em;
+  text-align: center;
+}
+/* line 98, ../sass/partials/_sponsors.scss */
+.view-id-sponsors .view-header.col-md-4 .view-id-sponsor_link .view-content ul li,
+.view-id-sponsors_and_partners_page .view-header.col-md-4 .view-id-sponsor_link .view-content ul li {
+  margin: 0;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+/* line 109, ../sass/partials/_sponsors.scss */
+.view-display-id-block_sponsor_gold .view-header.col-md-4 .sponsor-header,
+.view-display-id-block_sponsor_gold .view-header.col-md-4 .view-id-sponsor_link .view-content {
+  background-color: #fcb040;
+}
+
+/* line 117, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-silver .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-sponsor-silver .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-partners .sponsor-header {
+  background-color: #1664a6;
+}
+
+/* line 128, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-bronze .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-sponsor-bronze .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-code-sprint .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-coffee .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch .sponsor-header,
+#block-views-block-sponsors-and-partners-page-block-sat-night .sponsor-header {
+  background-color: #89caae;
+}
+
+/* line 137, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-and-partners-page-block-code-sprint,
+#block-views-block-sponsors-and-partners-page-block-coffee,
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
+#block-views-block-sponsors-and-partners-page-block-sat-night,
+#block-views-block-sponsors-and-partners-page-block-partners {
+  margin-top: 1.2em;
+}
+
+/* line 141, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-block-sponsor-promote .sponsor-header {
+  padding: 3em 1.6em 1em;
+}
+
+/* line 146, ../sass/partials/_sponsors.scss */
+.view-id-sponsor_link .view-content {
+  float: left;
+}
+
+/* View should be hidden without content, but view still showing in the markup.
+Temporary fix, display: none. */
+/* line 154, ../sass/partials/_sponsors.scss */
+#block-views-block-sponsors-and-partners-page-block-saturday-lunch,
+#block-views-block-sponsors-and-partners-page-block-sat-night {
+  display: none;
+}
+
+/* 'See all sponsors' button displayed except on /sponsors page. */
+/* line 159, ../sass/partials/_sponsors.scss */
+.path-sponsors .all-sponsor-button {
+  display: none;
+}
+
+/* line 163, ../sass/partials/_sponsors.scss */
 .region-sponsors .view-empty a {
   color: #fff;
   display: block;
@@ -528,13 +548,13 @@ Temporary fix, display: none. */
   margin: 15px 0;
 }
 
-/* line 125, ../sass/partials/_sponsors.scss */
+/* line 174, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-gold .view-empty a {
   background-color: #fcb040;
   font-size: 1.6em;
 }
 
-/* line 134, ../sass/partials/_sponsors.scss */
+/* line 183, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-silver
 #block-views-block-sponsors-and-partners-page-block-sponsor-silver .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-partners .view-empty a {
@@ -542,7 +562,7 @@ Temporary fix, display: none. */
   font-size: 1.4em;
 }
 
-/* line 146, ../sass/partials/_sponsors.scss */
+/* line 195, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-bronze .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-sponsor-bronze .view-empty a,
 #block-views-block-sponsors-and-partners-page-block-code-sprint .view-empty a,
@@ -553,7 +573,7 @@ Temporary fix, display: none. */
   font-size: 1.3em;
 }
 
-/* line 152, ../sass/partials/_sponsors.scss */
+/* line 201, ../sass/partials/_sponsors.scss */
 #block-views-block-sponsors-block-sponsor-promote .view-empty a {
   background-color: #fcb040;
   color: white;
@@ -568,32 +588,74 @@ Temporary fix, display: none. */
 /* ================== */
 /* Sponsor override float into table display to center items */
 @media (min-width: 992px) {
-  /* line 168, ../sass/partials/_sponsors.scss */
+  /* line 217, ../sass/partials/_sponsors.scss */
   .view-sponsors,
   .view-sponsors-and-partners-page {
-    display: table;
     width: 100%;
   }
-  /* line 171, ../sass/partials/_sponsors.scss */
+  /* line 219, ../sass/partials/_sponsors.scss */
   .view-sponsors .views-row,
   .view-sponsors-and-partners-page .views-row {
-    text-align: unset;
+    text-align: left;
     display: inline-block;
     padding-left: 1em;
   }
 
-  /* line 183, ../sass/partials/_sponsors.scss */
-  .view-sponsors .view-header,
-  .view-sponsors-and-partners-page .view-header,
-  .view-sponsors .view-empty,
-  .view-sponsors-and-partners-page .view-empty,
-  .view-sponsors .view-content,
-  .view-sponsors-and-partners-page .view-content {
-    display: table-cell;
-    float: none;
+  /* line 226, ../sass/partials/_sponsors.scss */
+  .view-id-sponsors_and_partners_page .view-content .views-row img {
+    margin: 0;
   }
 
-  /* line 192, ../sass/partials/_sponsors.scss */
+  /* line 230, ../sass/partials/_sponsors.scss */
+  .sponsor-header {
+    padding-top: 3em;
+    padding-left: 1.6em;
+  }
+
+  /* line 236, ../sass/partials/_sponsors.scss */
+  .view-id-sponsors .view-header.col-md-4, .view-id-sponsors_and_partners_page .view-header.col-md-4 {
+    width: 33.33333333%;
+  }
+  /* line 239, ../sass/partials/_sponsors.scss */
+  .view-id-sponsors .view-header.col-md-4 h3, .view-id-sponsors_and_partners_page .view-header.col-md-4 h3 {
+    text-align: left;
+  }
+  /* line 242, ../sass/partials/_sponsors.scss */
+  .view-id-sponsors .view-header.col-md-4 .view-id-sponsor_link .view-content ul, .view-id-sponsors_and_partners_page .view-header.col-md-4 .view-id-sponsor_link .view-content ul {
+    text-align: left;
+  }
+
+  /* line 248, ../sass/partials/_sponsors.scss */
+  .view-footer .view-id-sponsor_link .item-list li a {
+    color: #1664a6;
+  }
+  /* line 251, ../sass/partials/_sponsors.scss */
+  .view-footer .view-sponsor-link.view-id-sponsor_link {
+    min-height: 0;
+  }
+
+  /* line 256, ../sass/partials/_sponsors.scss */
+  .view-sponsor-link.view-id-sponsor_link {
+    min-height: 11em;
+    overflow: hidden;
+  }
+
+  /* line 261, ../sass/partials/_sponsors.scss */
+  .view-sponsor-link.view-display-id-block_link_silver {
+    min-height: 9em;
+    overflow: hidden;
+  }
+
+  /* line 268, ../sass/partials/_sponsors.scss */
+  .view-sponsor-link.view-display-id-block_link_bronze,
+  .view-sponsor-link.view-display-id-block_link_code_sprint,
+  .view-sponsor-link.view-display-id-block_link_coffee_snacks,
+  .view-sponsor-link.view-display-id-block_link_partners {
+    min-height: 7em;
+    overflow: hidden;
+  }
+
+  /* line 277, ../sass/partials/_sponsors.scss */
   .view-sponsors .view-empty,
   .view-sponsors-and-partners-page .view-empty,
   .view-sponsors .view-content,
@@ -601,27 +663,27 @@ Temporary fix, display: none. */
     vertical-align: middle;
   }
 
-  /* line 196, ../sass/partials/_sponsors.scss */
+  /* line 281, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .view-empty a {
     display: inline-block;
   }
 
-  /* line 200, ../sass/partials/_sponsors.scss */
+  /* line 285, ../sass/partials/_sponsors.scss */
   #block-views-block-sponsors-block-sponsor-promote .sponsor-header {
     padding: 3em 1.6em;
   }
 }
-/* line 205, ../sass/partials/_sponsors.scss */
+/* line 290, ../sass/partials/_sponsors.scss */
 .col-md-8.camp-button-wrapper {
   float: right;
   margin-top: 1em;
 }
 
-/* line 211, ../sass/partials/_sponsors.scss */
+/* line 296, ../sass/partials/_sponsors.scss */
 .view-footer li p {
   margin-bottom: 0;
 }
-/* line 214, ../sass/partials/_sponsors.scss */
+/* line 299, ../sass/partials/_sponsors.scss */
 .view-footer li::before {
   display: none;
 }
@@ -835,100 +897,85 @@ h6 a,
   font-size: 1.2em;
 }
 
-/* line 61, ../sass/partials/_proposals.scss */
+/* line 62, ../sass/partials/_proposals.scss */
 .field__item {
   margin-left: 0.5em;
 }
 
-/* line 66, ../sass/partials/_proposals.scss */
-.profile .field {
-  margin-bottom: 0;
-  overflow: hidden;
-}
-/* line 71, ../sass/partials/_proposals.scss */
-.profile .field__label::after {
-  content: ":";
-}
-/* line 75, ../sass/partials/_proposals.scss */
-.profile .field__label,
-.profile .field__item {
-  float: left;
-}
-
-/* line 82, ../sass/partials/_proposals.scss */
+/* line 68, ../sass/partials/_proposals.scss */
 .header-info-top .node__submitted {
   color: #1664a6;
   margin-bottom: 0.5em;
   font-size: 1.2em;
 }
 
-/* line 90, ../sass/partials/_proposals.scss */
+/* line 76, ../sass/partials/_proposals.scss */
 .topic-summary ul {
   color: #1664a6;
 }
 
-/* line 94, ../sass/partials/_proposals.scss */
+/* line 80, ../sass/partials/_proposals.scss */
 .item-list ul {
   color: white;
 }
 
-/* line 100, ../sass/partials/_proposals.scss */
+/* line 86, ../sass/partials/_proposals.scss */
 #block-views-block-carousel-proposal-block-carousel-proposal h2 {
   text-align: left;
 }
 
-/* line 107, ../sass/partials/_proposals.scss */
+/* line 93, ../sass/partials/_proposals.scss */
 .flexslider .slides img {
   margin: 0 auto;
 }
-/* line 112, ../sass/partials/_proposals.scss */
+/* line 98, ../sass/partials/_proposals.scss */
 .flexslider .col-md-9.speaker-drupalcamp-topic,
 .flexslider .col-md-9.drupalcamp-speaker,
 .flexslider .col-md-9.topic-summary {
   text-align: center;
 }
-/* line 115, ../sass/partials/_proposals.scss */
+/* line 101, ../sass/partials/_proposals.scss */
 .flexslider h3.speaker-drupalcamp-topic a {
   color: #1664a6;
 }
 
-/* line 120, ../sass/partials/_proposals.scss */
+/* line 106, ../sass/partials/_proposals.scss */
 #block-views-block-carousel-proposal-block-carousel-proposal h2 {
   text-align: center;
 }
 
-/* line 123, ../sass/partials/_proposals.scss */
+/* line 109, ../sass/partials/_proposals.scss */
 .flexslider {
   margin-bottom: 2em;
 }
 
-/* line 127, ../sass/partials/_proposals.scss */
+/* line 113, ../sass/partials/_proposals.scss */
 .flex-direction-nav .flex-prev {
   left: 10px;
   height: 3em;
 }
-/* line 131, ../sass/partials/_proposals.scss */
+/* line 117, ../sass/partials/_proposals.scss */
 .flex-direction-nav .flex-next {
   right: 10px;
   height: 3em;
 }
-/* line 135, ../sass/partials/_proposals.scss */
+/* line 121, ../sass/partials/_proposals.scss */
 .flex-direction-nav a:before {
   color: #1664a6;
 }
 
-/* line 139, ../sass/partials/_proposals.scss */
+/* line 125, ../sass/partials/_proposals.scss */
 .flex-direction-nav a {
   opacity: 10;
 }
 
-/* line 142, ../sass/partials/_proposals.scss */
+/* line 128, ../sass/partials/_proposals.scss */
 .slides {
   padding-left: 2.5em;
   padding-right: 2.5em;
 }
 
-/* line 149, ../sass/partials/_proposals.scss */
+/* line 135, ../sass/partials/_proposals.scss */
 .slides,
 .slides > li,
 .flex-control-nav,
@@ -937,19 +984,19 @@ h6 a,
   padding-right: 18px;
 }
 
-/* line 153, ../sass/partials/_proposals.scss */
+/* line 139, ../sass/partials/_proposals.scss */
 ol.flex-control-nav {
   visibility: hidden;
 }
 
-/* line 158, ../sass/partials/_proposals.scss */
+/* line 144, ../sass/partials/_proposals.scss */
 .session-time {
   color: #1664a6;
   font-size: 1.2em;
   font-weight: 700;
 }
 
-/* line 165, ../sass/partials/_proposals.scss */
+/* line 151, ../sass/partials/_proposals.scss */
 .type,
 .level,
 .room {
@@ -960,29 +1007,29 @@ ol.flex-control-nav {
   padding-right: 1em;
 }
 
-/* line 172, ../sass/partials/_proposals.scss */
+/* line 158, ../sass/partials/_proposals.scss */
 .type {
   background-color: #1664a6;
 }
 
-/* line 175, ../sass/partials/_proposals.scss */
+/* line 161, ../sass/partials/_proposals.scss */
 .level {
   background-color: #fcb040;
 }
 
-/* line 178, ../sass/partials/_proposals.scss */
+/* line 164, ../sass/partials/_proposals.scss */
 .room {
   background-color: #89caae;
 }
 
-/* line 182, ../sass/partials/_proposals.scss */
+/* line 168, ../sass/partials/_proposals.scss */
 .speaker-drupalcamp-topic h3 {
   margin-bottom: 0;
   font-size: 1.4em;
   font-weight: 700;
 }
 
-/* line 188, ../sass/partials/_proposals.scss */
+/* line 174, ../sass/partials/_proposals.scss */
 h3.speaker-drupalcamp-topic {
   margin-bottom: 0;
   margin-top: 0.5em;
@@ -990,12 +1037,12 @@ h3.speaker-drupalcamp-topic {
   font-weight: 700;
 }
 
-/* line 196, ../sass/partials/_proposals.scss */
+/* line 182, ../sass/partials/_proposals.scss */
 .camp-button-wrapper {
   overflow: hidden;
   width: 100%;
 }
-/* line 199, ../sass/partials/_proposals.scss */
+/* line 185, ../sass/partials/_proposals.scss */
 .camp-button-wrapper .camp-button {
   font-size: 1.5em;
   text-transform: uppercase;
@@ -1012,19 +1059,19 @@ h3.speaker-drupalcamp-topic {
 /* BREAKPOINT SECTION */
 /* ================== */
 @media (min-width: 480px) {
-  /* line 217, ../sass/partials/_proposals.scss */
+  /* line 203, ../sass/partials/_proposals.scss */
   .flexslider .slides img {
     width: 40%;
   }
 
-  /* line 223, ../sass/partials/_proposals.scss */
+  /* line 209, ../sass/partials/_proposals.scss */
   .type,
   .level,
   .room {
     float: left;
   }
 
-  /* line 227, ../sass/partials/_proposals.scss */
+  /* line 213, ../sass/partials/_proposals.scss */
   .camp-button-wrapper .camp-button {
     width: 60%;
   }
@@ -1033,39 +1080,39 @@ h3.speaker-drupalcamp-topic {
 /* BREAKPOINT SECTION */
 /* ================== */
 @media (min-width: 1020px) {
-  /* line 238, ../sass/partials/_proposals.scss */
+  /* line 224, ../sass/partials/_proposals.scss */
   .flexslider .slides img {
     width: 100%;
   }
-  /* line 243, ../sass/partials/_proposals.scss */
+  /* line 229, ../sass/partials/_proposals.scss */
   .flexslider .col-md-9.speaker-drupalcamp-topic,
   .flexslider .col-md-9.drupalcamp-speaker,
   .flexslider .col-md-9.topic-summary {
     text-align: left;
   }
 
-  /* line 247, ../sass/partials/_proposals.scss */
+  /* line 233, ../sass/partials/_proposals.scss */
   .col-md-9.topic-summary {
     font-size: 1.2em;
   }
 
-  /* line 251, ../sass/partials/_proposals.scss */
+  /* line 237, ../sass/partials/_proposals.scss */
   .col-md-9.session-type-label,
   .col-md-9.session-level-label {
     float: right;
   }
 
-  /* line 254, ../sass/partials/_proposals.scss */
+  /* line 240, ../sass/partials/_proposals.scss */
   #block-views-block-carousel-proposal-block-carousel-proposal h2 {
     text-align: left;
   }
 
-  /* line 257, ../sass/partials/_proposals.scss */
+  /* line 243, ../sass/partials/_proposals.scss */
   .camp-button-wrapper {
     width: 100%;
     margin: 0 auto;
   }
-  /* line 260, ../sass/partials/_proposals.scss */
+  /* line 246, ../sass/partials/_proposals.scss */
   .camp-button-wrapper .camp-button {
     width: 31.5%;
   }
@@ -1074,8 +1121,116 @@ h3.speaker-drupalcamp-topic {
 /* BREAKPOINT SECTION */
 /* ================== */
 @media (min-width: 1200px) {
-  /* line 270, ../sass/partials/_proposals.scss */
+  /* line 256, ../sass/partials/_proposals.scss */
   .camp-button-wrapper .camp-button {
     width: 34%;
+  }
+}
+/* line 1, ../sass/partials/_user.scss */
+.profile {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 3, ../sass/partials/_user.scss */
+.profile .field {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+/* line 9, ../sass/partials/_user.scss */
+.profile .field__label::after {
+  content: ":";
+}
+/* line 13, ../sass/partials/_user.scss */
+.profile .field--name-field-profile-image {
+  margin: 0 15px 15px 0;
+}
+/* line 18, ../sass/partials/_user.scss */
+.profile .field__label,
+.profile .field__item {
+  color: #1664a6;
+  font-size: 1.1em;
+}
+/* line 24, ../sass/partials/_user.scss */
+.profile .form-item,
+.profile .form-item h4.label {
+  color: #1664a6;
+  font-family: "Montserrat", sans-serif;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 1em;
+  font-weight: normal;
+  text-transform: lowercase;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ======================= */
+/* ABOUT THE SPEAKER BLOCK */
+/* ======================= */
+/* line 40, ../sass/partials/_user.scss */
+.block-views-blockabout-the-speaker-block-1 {
+  overflow: hidden;
+  *zoom: 1;
+  background-color: #1664a6;
+  color: #fff;
+  padding: 15px;
+}
+/* line 46, ../sass/partials/_user.scss */
+.block-views-blockabout-the-speaker-block-1 h2, .block-views-blockabout-the-speaker-block-1 a {
+  color: #fff;
+}
+/* line 50, ../sass/partials/_user.scss */
+.block-views-blockabout-the-speaker-block-1 h2 {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+/* line 56, ../sass/partials/_user.scss */
+.block-views-blockabout-the-speaker-block-1 .speaker-image {
+  margin: 0 15px 15px 0;
+}
+/* line 60, ../sass/partials/_user.scss */
+.block-views-blockabout-the-speaker-block-1 .views-row > div {
+  font-size: 16px;
+}
+/* line 64, ../sass/partials/_user.scss */
+.block-views-blockabout-the-speaker-block-1 .views-row .speaker-username {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+/* ========================= */
+/* BREAKPOINT - USER PROFILE */
+/* ========================= */
+@media only screen and (min-width: 420px) {
+  /* line 74, ../sass/partials/_user.scss */
+  .profile {
+    margin-bottom: 30px;
+  }
+  /* line 77, ../sass/partials/_user.scss */
+  .profile .field--name-field-profile-image {
+    float: left;
+    margin: 0 15px 15px 0;
+  }
+  /* line 83, ../sass/partials/_user.scss */
+  .profile .field__label,
+  .profile .field__item {
+    font-size: 1.3em;
+  }
+  /* line 87, ../sass/partials/_user.scss */
+  .profile .form-item h4.label {
+    font-size: 1.1em;
+  }
+
+  /* line 92, ../sass/partials/_user.scss */
+  .block-views-blockabout-the-speaker-block-1 .speaker-image {
+    float: left;
+  }
+}
+@media only screen and (min-width: 1290px) {
+  /* line 100, ../sass/partials/_user.scss */
+  .profile .field__label,
+  .profile .field__item {
+    font-size: 1.5em;
   }
 }

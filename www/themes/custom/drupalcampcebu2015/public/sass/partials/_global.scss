@@ -15,6 +15,10 @@ h1, h2, h3, h4, h5, h6 {
   color: $color-white-text;
 }
 
+.header-info-top a {
+  text-decoration: underline;
+}
+
 .content,
 .view-content {
   p {
@@ -108,6 +112,7 @@ a:hover {
 .header-info-top {
   a {
     color: $color-white-text;
+    text-decoration: underline;
   }
   a:hover {
     color: $color-white-text;
@@ -124,33 +129,8 @@ p.subtitle {
     font-size: 2em;
     text-align: left;
     margin-top: 1em;
-    margin-bottom: 0.2em;
-  }
-}
-
-.profile {
-  .field--name-field-profile-image {
-    width: 35%;
-    float: left;
-    padding-right: 2em;
-  }
-  .field__label,
-  .field__item {
-    color: $color-blue;
-    font-size: 1.1em;
-  }
-
-  .form-item,
-  .form-item h4.label {
-    color: $color-blue;
-    font-family: $font-title;
-    padding-left: 0;
-    padding-right: 0;
-    font-size: 1em;
-    font-weight: normal;
-    text-transform: lowercase;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 1em;
+    padding-left: 0.2em;
   }
 }
 
@@ -181,20 +161,14 @@ p.subtitle {
   }
 }
 
+.path-node.node--type-sessions .region-content {
+  margin-bottom: 30px;
+}
+
 /* ================== */
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
 @media only screen and (min-width:420px) {
-  .profile {
-    .field__label,
-    .field__item {
-      font-size: 1.3em;
-    }
-    .form-item h4.label {
-      font-size: 1.1em;
-    }
-  }
-
   #block-views-block-user-sessions-block-user-sessions {
     h2 {
       font-size: 1.7em;
@@ -206,13 +180,6 @@ p.subtitle {
 }
 
 @media only screen and (min-width: 1290px) {
-  .profile {
-    .field__label,
-    .field__item {
-      font-size: 1.5em;
-    }
-  }
-
   #block-views-block-user-sessions-block-user-sessions{
     padding-top: 1em;
     h2 {
