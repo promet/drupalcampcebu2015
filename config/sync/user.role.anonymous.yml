@@ -10,4 +10,3 @@ permissions:
   0: 'access content'
   2: 'access user profiles'
   3: 'use text format basic_html'
-  4: 'use text format full_html'

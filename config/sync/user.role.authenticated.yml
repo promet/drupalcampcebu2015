@@ -11,4 +11,3 @@ permissions:
   4: 'edit own sessions content'
   5: 'access user profiles'
   6: 'use text format basic_html'
-  7: 'use text format full_html'
