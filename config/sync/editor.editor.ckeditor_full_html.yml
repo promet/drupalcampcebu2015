@@ -63,7 +63,7 @@ settings:
 image_upload:
   status: true
   scheme: public
-  directory: ''
+  directory: inline-images
   max_size: ''
   max_dimensions:
     width: null
