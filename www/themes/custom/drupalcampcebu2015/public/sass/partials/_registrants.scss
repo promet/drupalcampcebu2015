@@ -16,9 +16,6 @@
   .speaker-image {
     margin-bottom: 0.5em;
   }
-  .col-md-2.registrants:nth-child(n+3) {
-    display: none;
-  }
   .registrants {
     text-align: center;
     margin-top: 1em;
@@ -27,6 +24,12 @@
       font-size: 1.8em;
       text-decoration: underline;
     }
+  }
+}
+
+#block-views-block-block-registrants-block-registrants {
+  .col-md-2.registrants:nth-child(n+3) {
+    display: none;
   }
 }
 
