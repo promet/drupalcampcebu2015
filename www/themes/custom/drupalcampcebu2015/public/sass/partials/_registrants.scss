@@ -26,7 +26,6 @@
     }
   }
 }
-
 #block-views-block-block-registrants-block-registrants {
   .col-md-2.registrants:nth-child(n+3) {
     display: none;
@@ -41,20 +40,22 @@
 /* ================== */
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
-@media only screen and (min-width:1024px) {
-  .view-block-registrants.view-id-block_registrants {
-    h2,
-    .view-content {
-      text-align: left;
-    }
-    .camp-button {
-      width: 50%;
-    }
-    .col-md-2.registrants:nth-child(n+3) {
-      display: block;
-    }
+@media only screen and (min-width:420px) {
+  .view-block-registrants.view-id-block_registrants .registrants {
+    display: inline-block;
+  }
+  .view-footer {
+    text-align: center;
   }
   .view-block-registrants.view-id-block_registrants {
     margin-bottom: 1em;
+  }
+}
+
+@media only screen and (min-width:1024px) {
+  #block-views-block-block-registrants-block-registrants {
+    .col-md-2.registrants:nth-child(n+3) {
+      display: block;
+    }
   }
 }
