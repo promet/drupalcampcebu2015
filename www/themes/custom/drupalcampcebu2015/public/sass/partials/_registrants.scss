@@ -1,0 +1,57 @@
+//For registrants.
+.view-block-registrants.view-id-block_registrants {
+  margin-bottom: 3em;
+  overflow: hidden;
+  h2,
+  .view-content {
+    text-align: center;
+  }
+  .field-data  {
+    color: $color-blue;
+  }
+  .views-row {
+    display: inline-block;
+    padding: 1em;
+  }
+  .speaker-image {
+    margin-bottom: 0.5em;
+  }
+  .col-md-2.registrants:nth-child(n+3) {
+    display: none;
+  }
+  .registrants {
+    text-align: center;
+    margin-top: 1em;
+    a {
+      color: $color-orange;
+      font-size: 1.8em;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Logged in user should not be able to see the 'Register Now' button.
+.user-logged-in .register-now-button {
+  display: none;
+}
+
+/* ================== */
+/* BREAKPOINT SECTION FOR USER PROFILE */
+/* ================== */
+@media only screen and (min-width:1024px) {
+  .view-block-registrants.view-id-block_registrants {
+    h2,
+    .view-content {
+      text-align: left;
+    }
+    .camp-button {
+      width: 50%;
+    }
+    .col-md-2.registrants:nth-child(n+3) {
+      display: block;
+    }
+  }
+  .view-block-registrants.view-id-block_registrants {
+    margin-bottom: 1em;
+  }
+}

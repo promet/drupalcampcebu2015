@@ -1,0 +1,30 @@
+uuid: 1e08ff48-8ced-49e1-8b00-ecef70bee326
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.block_registrants
+  module:
+    - system
+    - views
+  theme:
+    - drupalcampcebu2015
+id: views_block__block_registrants_block_registrants
+theme: drupalcampcebu2015
+region: content_bottom
+weight: -11
+provider: null
+plugin: 'views_block:block_registrants-block_registrants'
+settings:
+  id: 'views_block:block_registrants-block_registrants'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
