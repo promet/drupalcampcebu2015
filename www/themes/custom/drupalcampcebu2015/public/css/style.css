@@ -713,13 +713,23 @@ Temporary fix, display: none. */
   font-size: 0.8em;
   color: white;
   font-family: "Open Sans", sans-serif;
-  padding-bottom: 0.5em;
   font-weight: 300;
 }
-/* line 21, ../sass/partials/_footer.scss */
+/* line 20, ../sass/partials/_footer.scss */
 .footer-container div:nth-child(1) p a,
 .footer-container div:nth-child(2) p a {
   color: white;
+  text-decoration: underline;
+}
+/* line 25, ../sass/partials/_footer.scss */
+.footer-container .drupal-8-footer {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+/* line 28, ../sass/partials/_footer.scss */
+.footer-container .drupal-8-footer img {
+  padding-right: 0.5em;
+  width: 10%;
 }
 
 @media only screen and (min-width: 420px) {
@@ -833,6 +843,11 @@ Temporary fix, display: none. */
     padding-top: 3em;
     padding-bottom: 5em;
     margin-top: 3em;
+  }
+  /* line 104, ../sass/partials/_media-queries.scss */
+  .footer-container .drupal-8-footer img {
+    padding-right: 0.5em;
+    width: 5%;
   }
 }
 /* line 1, ../sass/partials/_proposals.scss */

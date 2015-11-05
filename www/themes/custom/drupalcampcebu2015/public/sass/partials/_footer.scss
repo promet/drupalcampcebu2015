@@ -16,10 +16,18 @@
     font-size: 0.8em;
     color: $color-white-text;
     font-family: $font-text;
-    padding-bottom: 0.5em;
     font-weight: 300;
     p a {
       color: $color-white-text;
+      text-decoration: underline;
+    }
+  }
+  .drupal-8-footer {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    img {
+      padding-right: 0.5em;
+      width: 10%;
     }
   }
 }

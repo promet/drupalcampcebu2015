@@ -99,6 +99,12 @@
   .footer-container {
     padding-top: 3em;
     padding-bottom: 5em;
-    margin-top: 3em
+    margin-top: 3em;
+    .drupal-8-footer {
+      img {
+        padding-right: 0.5em;
+        width: 5%;
+      }
+    }
   }
 }
