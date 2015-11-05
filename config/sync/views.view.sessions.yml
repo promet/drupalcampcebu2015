@@ -634,7 +634,7 @@ display:
           expose:
             label: ''
           plugin_id: standard
-      title: Sessions
+      title: 'Sessions and Schedule'
       header:
         area_text_custom:
           id: area_text_custom
@@ -645,7 +645,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<p>Join us and attend sessions about Drupal, Coding, Business, DevOps and more ...</p>'
+          content: "<h3>8 AM</h3>\n<div class=\"views-view-grid horizontal cols-1 clearfix\">\n<div class=\"col-md-12 session-room\"><div class=\"speaker-drupalcamp-topic\"><h3>Registration</h3></div>\n<div class=\"session-summary\"><p>Registration starts at 8 AM. Entrance fee of P250 for student (Valid student ID required), P500 for professionals.</p></div></div></div>\n<h3>9 AM</h3>\n<div class=\"views-view-grid horizontal cols-1 clearfix\">\n<div class=\"col-md-12 session-room\"><div class=\"speaker-drupalcamp-topic\"><h3>Keynote</h3></div>\n<div class=\"session-summary\"><p>Keynote by Johnnie Fox, Director of Technology and Operations at Promet Source.</p></div></div></div>"
           plugin_id: text_custom
       footer: {  }
       empty:
