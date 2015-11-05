@@ -406,7 +406,7 @@ display:
           admin_label: 'See all registrants link'
           empty: false
           tokenize: false
-          content: "<div class=\"col-md-12  registrants\">\n   <a href=\"http://drupalcampcebu2015.dev/user/register\">See all registrants</a>\n</div>\n"
+          content: "<div class=\"col-md-12  registrants\">\n   <a href=\"/registrants\">See all registrants</a>\n</div>\n"
           plugin_id: text_custom
         area_text_custom_1:
           id: area_text_custom_1
@@ -417,7 +417,7 @@ display:
           admin_label: 'Registor Now button'
           empty: false
           tokenize: false
-          content: "<div class=\"col-md-8 camp-button-wrapper register-now-button\">\n       <a href=\"/registrants\">\n            <div class=\"camp-button\">Register Now</div>\n       </a>\n</div>"
+          content: "<div class=\"col-md-8 camp-button-wrapper register-now-button\">\n       <a href=\"http://drupalcampcebu2015.dev/user/register\">\n            <div class=\"camp-button\">Register Now</div>\n       </a>\n</div>"
           plugin_id: text_custom
       defaults:
         footer: false
