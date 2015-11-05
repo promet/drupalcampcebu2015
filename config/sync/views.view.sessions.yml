@@ -702,7 +702,7 @@ display:
         title: Sessions
         description: 'See all sessions'
         parent: ''
-        weight: 0
+        weight: -5
         context: '0'
         menu_name: main
       arguments: {  }
