@@ -56,7 +56,7 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 24
+          items_per_page: 25
           offset: 0
           id: 0
           total_pages: null
@@ -387,6 +387,11 @@ display:
           tokenize: false
           content: '<h2>Registered Drupalistas</h2>'
           plugin_id: text_custom
+        entity_block:
+          id: entity_block
+          table: views
+          field: entity_block
+          plugin_id: entity
       footer:
         area_text_custom:
           id: area_text_custom
@@ -427,7 +432,7 @@ display:
           admin_label: 'See all registrants link'
           empty: false
           tokenize: false
-          content: "<div class=\"col-md-12  registrants\">\n   <a href=\"/registrants\">See all registrants</a>\n</div>\n"
+          content: "<div class=\"col-md-12  see-all-registrants\">\n   <a href=\"/registrants\">See all registrants</a>\n</div>\n"
           plugin_id: text_custom
         area_text_custom_1:
           id: area_text_custom_1
