@@ -40,18 +40,6 @@
   display: none;
 }
 
-// Previous/next buttons for registrants page.
-ul.pager__items {
-  .is-active a {
-    background-color: $color-orange;
-    color: $color-white-text;
-  }
-  li a {
-    color: $color-orange;
-    border: 1px solid $color-orange;
-  }
-}
-
 /* ================== */
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
