@@ -1157,27 +1157,29 @@ h3.speaker-drupalcamp-topic {
 .view-block-registrants.view-id-block_registrants h2,
 .view-block-registrants.view-id-block_registrants .view-content {
   text-align: center;
+  overflow: hidden;
+  margin-bottom: 2em;
 }
-/* line 9, ../sass/partials/_registrants.scss */
+/* line 11, ../sass/partials/_registrants.scss */
 .view-block-registrants.view-id-block_registrants .field-data {
   color: #1664a6;
 }
-/* line 12, ../sass/partials/_registrants.scss */
+/* line 14, ../sass/partials/_registrants.scss */
 .view-block-registrants.view-id-block_registrants .views-row {
   display: inline-block;
   padding: 1em;
 }
-/* line 16, ../sass/partials/_registrants.scss */
+/* line 18, ../sass/partials/_registrants.scss */
 .view-block-registrants.view-id-block_registrants .speaker-image {
   margin-bottom: 0.5em;
 }
-/* line 20, ../sass/partials/_registrants.scss */
+/* line 22, ../sass/partials/_registrants.scss */
 .view-block-registrants.view-id-block_registrants .see-all-registrants,
 .view-block-registrants.view-id-block_registrants .registrants {
   text-align: center;
   margin-top: 1em;
 }
-/* line 23, ../sass/partials/_registrants.scss */
+/* line 25, ../sass/partials/_registrants.scss */
 .view-block-registrants.view-id-block_registrants .see-all-registrants a,
 .view-block-registrants.view-id-block_registrants .registrants a {
   color: #fcb040;
@@ -1185,37 +1187,48 @@ h3.speaker-drupalcamp-topic {
   text-decoration: underline;
 }
 
-/* line 31, ../sass/partials/_registrants.scss */
+/* line 33, ../sass/partials/_registrants.scss */
 #block-views-block-block-registrants-block-registrants .col-md-2.registrants:nth-child(n+3) {
   display: none;
 }
 
-/* line 37, ../sass/partials/_registrants.scss */
+/* line 39, ../sass/partials/_registrants.scss */
 .user-logged-in .register-now-button {
   display: none;
+}
+
+/* line 45, ../sass/partials/_registrants.scss */
+ul.pager__items .is-active a {
+  background-color: #fcb040;
+  color: white;
+}
+/* line 49, ../sass/partials/_registrants.scss */
+ul.pager__items li a {
+  color: #fcb040;
+  border: 1px solid #fcb040;
 }
 
 /* ================== */
 /* BREAKPOINT SECTION FOR USER PROFILE */
 /* ================== */
 @media only screen and (min-width: 420px) {
-  /* line 45, ../sass/partials/_registrants.scss */
+  /* line 59, ../sass/partials/_registrants.scss */
   .view-block-registrants.view-id-block_registrants .registrants {
     display: inline-block;
   }
 
-  /* line 48, ../sass/partials/_registrants.scss */
+  /* line 62, ../sass/partials/_registrants.scss */
   .see-all-registrants {
     text-align: center;
   }
 
-  /* line 51, ../sass/partials/_registrants.scss */
+  /* line 65, ../sass/partials/_registrants.scss */
   .view-block-registrants.view-id-block_registrants {
     margin-bottom: 1em;
   }
 }
 @media only screen and (min-width: 1024px) {
-  /* line 58, ../sass/partials/_registrants.scss */
+  /* line 72, ../sass/partials/_registrants.scss */
   #block-views-block-block-registrants-block-registrants .col-md-2.registrants:nth-child(n+3) {
     display: block;
   }
