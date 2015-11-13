@@ -75,6 +75,7 @@ h6,
 // Styling list sessions and proposals.
 .topic-summary ul {
   color: $color-blue;
+  text-align: left;
 }
 
 .item-list ul {
@@ -82,9 +83,9 @@ h6,
 }
 
 // Homepage carousel
-#block-views-block-carousel-proposal-block-carousel-proposal {
+.view-id-carousel_sessions {
   h2 {
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -103,9 +104,6 @@ h6,
   }
 }
 
-#block-views-block-carousel-proposal-block-carousel-proposal h2 {
-  text-align: center;
-}
 .flexslider {
   margin-bottom: 2em;
 }
@@ -237,8 +235,10 @@ h3.speaker-drupalcamp-topic {
   .col-md-9.session-level-label {
     float: right;
   }
-  #block-views-block-carousel-proposal-block-carousel-proposal h2 {
-    text-align: left;
+  .view-id-carousel_sessions {
+    h2 {
+      text-align: left;
+    }
   }
   .camp-button-wrapper {
     width: 100%;
