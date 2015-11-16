@@ -207,6 +207,19 @@ Temporary fix, display: none. */
   text-align: center;
 }
 
+.view-footer {
+  margin-bottom: 2em;
+  .view-id-sponsor_link  {
+    overflow: hidden;
+      .item-list li a {
+        color: $color-blue;
+      }
+    }
+  .view-sponsor-link.view-id-sponsor_link {
+    min-height: 0;
+  }
+}
+
 /* ================== */
 /* BREAKPOINT SECTION */
 /* ================== */
@@ -242,14 +255,6 @@ Temporary fix, display: none. */
       .view-id-sponsor_link .view-content ul {
         text-align: left;
       }
-    }
-  }
-  .view-footer {
-    .view-id-sponsor_link .item-list li a {
-      color: $color-blue;
-    }
-    .view-sponsor-link.view-id-sponsor_link {
-      min-height: 0;
     }
   }
   // Default sponsor link.
