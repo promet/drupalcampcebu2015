@@ -44,6 +44,9 @@
 
 // Previous/next buttons for registrants page.
 ul.pager__items {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+
   .is-active a {
     background-color: $color-orange;
     color: $color-white-text;
@@ -52,6 +55,9 @@ ul.pager__items {
     color: $color-orange;
     border: 1px solid $color-orange;
   }
+}
+.pager li {
+  display: inline-block;
 }
 
 /* ================== */
