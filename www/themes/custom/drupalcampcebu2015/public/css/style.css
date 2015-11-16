@@ -450,8 +450,8 @@ p.subtitle {
   text-align: center;
 }
 /* line 75, ../sass/partials/_sponsors.scss */
-.view-id-sponsors .view-content.col-md-4, .view-id-sponsors_and_partners_page .view-content.col-md-4 {
-  float: right;
+.view-id-sponsors .view-content.col-md-8, .view-id-sponsors_and_partners_page .view-content.col-md-8 {
+  overflow: hidden;
 }
 /* line 78, ../sass/partials/_sponsors.scss */
 .view-id-sponsors a, .view-id-sponsors_and_partners_page a {
