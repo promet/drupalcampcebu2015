@@ -36,13 +36,19 @@ class EntityRevisionTest extends UnitTestCase {
    */
   protected $entityManager;
 
-  public function setUp() {
+  /**
+   * @var \Drupal\Core\Field\FieldTypePluginManagerInterface
+   */
+  protected $fieldTypeManager;
+
+  protected function setUp() {
     parent::setUp();
 
     // Setup mocks to be used when creating a revision destination.
     $this->migration = $this->prophesize('\Drupal\migrate\Entity\MigrationInterface');
     $this->storage = $this->prophesize('\Drupal\Core\Entity\EntityStorageInterface');
     $this->entityManager = $this->prophesize('\Drupal\Core\Entity\EntityManagerInterface');
+    $this->fieldTypeManager = $this->prophesize('\Drupal\Core\Field\FieldTypePluginManagerInterface');
   }
 
   /**
@@ -183,7 +189,9 @@ class EntityRevisionTest extends UnitTestCase {
       $this->migration->reveal(),
       $this->storage->reveal(),
       [],
-      $this->entityManager->reveal());
+      $this->entityManager->reveal(),
+      $this->fieldTypeManager->reveal()
+    );
   }
 
 }
